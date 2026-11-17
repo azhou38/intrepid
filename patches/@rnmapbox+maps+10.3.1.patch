@@ -1,8 +1,8 @@
 diff --git a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift
-index 191bfe5..e96d506 100644
+index 191bfe5..bda088b 100644
 --- a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift
 +++ b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift
-@@ -514,13 +514,27 @@ open class RNMBXCamera : RNMBXMapAndMapViewComponentBase {
+@@ -514,13 +514,28 @@ open class RNMBXCamera : RNMBXMapAndMapViewComponentBase {
        
        withMapView { map in
          let bounds = [sw, ne]
@@ -24,6 +24,7 @@ index 191bfe5..e96d506 100644
 +            windowTop: CGFloat(stop["boundsWindowTop"] as? Double ?? 0),
 +            windowBottom: CGFloat(stop["boundsWindowBottom"] as? Double ?? Double(map.bounds.height)),
 +            shrink: CGFloat(stop["boundsShrink"] as? Double ?? 0.9),
++            points: Self.fitWindowPoints(stop["boundsPoints"]),
 +            bearing: bearing, pitch: pitchValue
 +          )
 +        } else {
@@ -37,7 +38,7 @@ index 191bfe5..e96d506 100644
        }
      } else {
        camera = CameraOptions(
-@@ -554,6 +568,75 @@ open class RNMBXCamera : RNMBXMapAndMapViewComponentBase {
+@@ -554,6 +569,87 @@ open class RNMBXCamera : RNMBXMapAndMapViewComponentBase {
      )
    }
    
@@ -53,7 +54,7 @@ index 191bfe5..e96d506 100644
 +  // hand-written latitude/projection maths.
 +  private func fitWindowCamera(
 +    map: MapView, sw: CLLocationCoordinate2D, ne: CLLocationCoordinate2D,
-+    windowTop: CGFloat, windowBottom: CGFloat, shrink: CGFloat,
++    windowTop: CGFloat, windowBottom: CGFloat, shrink: CGFloat, points: [CLLocationCoordinate2D]?,
 +    bearing: CLLocationDirection, pitch: CGFloat
 +  ) -> CameraOptions? {
 +    let mapbox: MapboxMap = map.mapboxMap   // implicitly-unwrapped on MapView; pin the type so it isn't inferred optional
@@ -65,15 +66,19 @@ index 191bfe5..e96d506 100644
 +    let availW = size.width * shrink
 +    let availH = (windowBottom - windowTop) * shrink
 +
-+    // The bounds' perimeter, 5 points per side.
-+    var samples: [CLLocationCoordinate2D] = []
-+    let n = 4
-+    for i in 0...n {
-+      for j in 0...n where i == 0 || i == n || j == 0 || j == n {
-+        samples.append(CLLocationCoordinate2D(
-+          latitude: sw.latitude + (ne.latitude - sw.latitude) * Double(j) / Double(n),
-+          longitude: sw.longitude + (ne.longitude - sw.longitude) * Double(i) / Double(n)
-+        ))
++    // The points to frame: the outline given (`boundsPoints`), else the bounds' perimeter, 5 points per side. A box's
++    // corners on a globe stand well clear of a big country's own borders (China's, the United States'), so fitting the
++    // box left the country small in the window.
++    var samples: [CLLocationCoordinate2D] = points ?? []
++    if samples.isEmpty {
++      let n = 4
++      for i in 0...n {
++        for j in 0...n where i == 0 || i == n || j == 0 || j == n {
++          samples.append(CLLocationCoordinate2D(
++            latitude: sw.latitude + (ne.latitude - sw.latitude) * Double(j) / Double(n),
++            longitude: sw.longitude + (ne.longitude - sw.longitude) * Double(i) / Double(n)
++          ))
++        }
 +      }
 +    }
 +
@@ -108,6 +113,14 @@ index 191bfe5..e96d506 100644
 +      }
 +    }
 +    return CameraOptions(center: center, zoom: zoom, bearing: bearing, pitch: pitch)
++  }
++
++  // `boundsPoints`: a JSON string of [lng, lat] pairs (see Camera.js), or nil when absent or malformed.
++  private static func fitWindowPoints(_ raw: Any?) -> [CLLocationCoordinate2D]? {
++    guard let str = raw as? String, let data = str.data(using: .utf8),
++          let pairs = try? JSONSerialization.jsonObject(with: data) as? [[Double]] else { return nil }
++    let coords = pairs.compactMap { $0.count == 2 ? CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0]) : nil }
++    return coords.count >= 2 ? coords : nil
 +  }
 +
    func _updateCamera() {
@@ -164,10 +177,10 @@ index 62861b5..2372271 100644
  
        if !self.styleLoadWaiters.hasInited(), let mapboxMap = self.mapboxMap {
 diff --git a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js b/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
-index da6b273..6f11a9f 100644
+index da6b273..ba97735 100644
 --- a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
 +++ b/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
-@@ -110,6 +110,11 @@ export const Camera = /*#__PURE__*/memo(/*#__PURE__*/forwardRef((props, ref) =>
+@@ -110,6 +110,12 @@ export const Camera = /*#__PURE__*/memo(/*#__PURE__*/forwardRef((props, ref) =>
          sw
        } = stop.bounds;
        _nativeStop.bounds = JSON.stringify(makeLatLngBounds(ne, sw));
@@ -176,6 +189,7 @@ index da6b273..6f11a9f 100644
 +      if (stop.bounds.windowTop !== undefined) _nativeStop.boundsWindowTop = stop.bounds.windowTop;
 +      if (stop.bounds.windowBottom !== undefined) _nativeStop.boundsWindowBottom = stop.bounds.windowBottom;
 +      if (stop.bounds.shrink !== undefined) _nativeStop.boundsShrink = stop.bounds.shrink;
++      if (stop.bounds.points !== undefined) _nativeStop.boundsPoints = JSON.stringify(stop.bounds.points);
      }
      const paddingTop = stop.padding?.paddingTop ?? stop.bounds?.paddingTop;
      if (paddingTop !== undefined) {

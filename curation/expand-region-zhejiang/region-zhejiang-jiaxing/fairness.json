@@ -1,0 +1,107 @@
+{
+ "inside_destinations": 8,
+ "standalone": 5,
+ "new_destinations": 2,
+ "lowest_kept": [
+  {
+   "name": "Pavilion of Mist and Rain",
+   "views": 0
+  },
+  {
+   "name": "Meiwan Street",
+   "views": 0
+  },
+  {
+   "name": "Yuehe Street",
+   "views": 0
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Wuzhen",
+   "views": 27290,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "1 counted sources, 27290 page views"
+  },
+  {
+   "name": "Hangzhou Bay Bridge",
+   "views": 17032,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2/vehicle: a road bridge, not a visitor place."
+  },
+  {
+   "name": "Zhapu",
+   "views": 3217,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage Pinghu names Zhapu port for seafood; no See listing; old harbour."
+  },
+  {
+   "name": "Jiaxing Catholic Church",
+   "views": 610,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage describes imposing national-listed ruin but interior closed; exterior and public lawn open since 2021."
+  },
+  {
+   "name": "Kim Ku Hideout",
+   "views": 318,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage singles out Kim Ku Hideout but notes it was under renovation; one source."
+  },
+  {
+   "name": "Jiaxing Vincent Abbey",
+   "views": 235,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: Wikivoyage-style entry is street view only, not open to visitors."
+  },
+  {
+   "name": "St. Theresa's Church, Haining",
+   "views": 225,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: exterior only, Wikipedia listing only."
+  },
+  {
+   "name": "Juehai Temple",
+   "views": 155,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only Wikipedia and Ctrip-type lists; no visitor source naming anything to see."
+  },
+  {
+   "name": "Huili Temple",
+   "views": 141,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only a Wikipedia listing; search found no visitor source or interior draw."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Xitang",
+   "views": 6446
+  },
+  {
+   "name": "Nanbei Lake",
+   "views": 0
+  },
+  {
+   "name": "Haining Tidal Bore Viewing Park",
+   "views": 0
+  },
+  {
+   "name": "Mo's Manor",
+   "views": 0
+  },
+  {
+   "name": "East Lake (Pinghu)",
+   "views": 0
+  }
+ ],
+ "benchmark": "n/a: no Wellington/NZ benchmark places in Jiaxing; Xitang kept standalone, Wuzhen kept"
+}

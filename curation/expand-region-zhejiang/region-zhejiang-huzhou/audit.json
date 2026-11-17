@@ -1,0 +1,118 @@
+[
+ {
+  "name": "Huzhou Taihu Lake Moon Hot Spring Resort",
+  "wiki": "Huzhou Taihu Lake Moon Hot Spring Resort",
+  "views": 2,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Huzhou Taihu Lake Moon Hot Spring Resort",
+   "wiki": "Huzhou Taihu Lake Moon Hot Spring Resort",
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Huzhou"
+   ],
+   "note": "resort: hot-spring resort on the Taihu shore (operator-run venue)",
+   "views": 2
+  }
+ },
+ {
+  "name": "Lake Tai",
+  "wiki": "Lake Tai",
+  "views": 24078,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "existing",
+  "candidate": {
+   "name": "Lake Tai",
+   "wiki": "Lake Tai",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Huzhou"
+   ],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/太湖"
+   ],
+   "note": "nature: large freshwater lake shared with Jiangsu; the Huzhou shore is the Taihu Lake resort and Changxing Taihu areas (lake is the place; its shore hosts most of the Huzhou stops)",
+   "coordinates": {
+    "lat": 31.2381,
+    "lng": 120.267
+   },
+   "coordinates_source": "OSM relation 1126533 (太湖) centre",
+   "views": 24078,
+   "existing_spot": "lake-tai"
+  }
+ },
+ {
+  "name": "Mount Mogan",
+  "wiki": "Mount Mogan",
+  "views": 6577,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Mount Mogan",
+   "wiki": "Mount Mogan",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Huzhou",
+    "https://en.wikivoyage.org/wiki/Moganshan"
+   ],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/莫干山",
+    "https://www.openstreetmap.org/way/373365921"
+   ],
+   "note": "nature: mountain and scenic area with a bamboo sea and villas, one of China's four famous summer resorts (zh Wikipedia)",
+   "coordinates": {
+    "lat": 30.6087,
+    "lng": 119.8634
+   },
+   "coordinates_source": "OSM way 373365921 (莫干山国家重点风景名胜区), leisure=park",
+   "views": 6577
+  }
+ },
+ {
+  "name": "Nanxun Ancient Town",
+  "wiki": "Nanxun",
+  "views": 2440,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Nanxun Ancient Town",
+   "wiki": "Nanxun",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Huzhou",
+    "https://en.wikivoyage.org/wiki/Nanxun"
+   ],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/南浔镇"
+   ],
+   "note": "town: historic silk-trade water town with bridges, Ming and Qing merchant houses; the old town is free, some houses charge; a 5A scenic area",
+   "coordinates": {
+    "lat": 30.8716,
+    "lng": 120.4302
+   },
+   "coordinates_source": "Wikivoyage Nanxun listing geotag (scenic area entrance)",
+   "views": 2440
+  }
+ },
+ {
+  "name": "Taihu Lake Tourist Resort",
+  "wiki": "Taihu Lake Tourist Resort",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Taihu Lake Tourist Resort",
+   "wiki": "Taihu Lake Tourist Resort",
+   "counted_sources": [],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/湖州市",
+    "https://zh.wikipedia.org/wiki/太湖"
+   ],
+   "note": "resort: state-level tourism and holiday resort district on the Huzhou shore of Lake Tai (Taihu), holding Xishan Yang and the Taihu Lake amusement park",
+   "views": 0
+  }
+ }
+]

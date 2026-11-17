@@ -1,0 +1,115 @@
+[
+ {
+  "name": "Dashigu Scenic Resort",
+  "wiki": "Dashigu",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Dashigu Scenic Resort",
+   "wiki": "Dashigu",
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikivoyage.org/wiki/Lin%27an"
+   ],
+   "note": "nature: scenic resort in Lin'an (named as a link on Wikivoyage)",
+   "views": 0
+  }
+ },
+ {
+  "name": "Leifeng Pagoda",
+  "wiki": "Leifeng Pagoda",
+  "views": 21474,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Leifeng Pagoda",
+   "wiki": "Leifeng Pagoda",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hangzhou"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Leifeng_Pagoda",
+    "https://www.openstreetmap.org/way/229726934"
+   ],
+   "note": "pagoda: pagoda on Sunset Hill at the south shore of West Lake, the Evening Glow viewpoint",
+   "coordinates": {
+    "lat": 30.2339,
+    "lng": 120.145
+   },
+   "coordinates_source": "OSM way 229726934 (Leifeng Pagoda) centre",
+   "views": 21474
+  }
+ },
+ {
+  "name": "Longjing Tea Fields",
+  "wiki": "Longjing tea",
+  "views": 71348,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Longjing Tea Fields",
+   "wiki": "Longjing tea",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hangzhou"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Longjing_tea"
+   ],
+   "note": "tea fields: tea plantations around Longjing village, visited in the spring harvest",
+   "views": 71348,
+   "coordinates": {
+    "lat": 30.22393,
+    "lng": 120.10683
+   },
+   "coordinates_source": "OSM node 13371708830 (龙井泉, Longjing Spring)"
+  }
+ },
+ {
+  "name": "Su Dongpo Memorial Hall",
+  "wiki": "Su Dongpo Memorial Hall",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Su Dongpo Memorial Hall",
+   "wiki": "Su Dongpo Memorial Hall",
+   "counted_sources": [],
+   "other_sources": [
+    "https://you.ctrip.com/sightlist/hangzhou14.html"
+   ],
+   "note": "museum: memorial hall of the poet Su Dongpo in Hangzhou (Ctrip)",
+   "views": 0
+  }
+ },
+ {
+  "name": "West Lake",
+  "wiki": "West Lake",
+  "views": 69075,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "West Lake",
+   "wiki": "West Lake",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hangzhou"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/West_Lake",
+    "https://www.openstreetmap.org/relation/2308774"
+   ],
+   "note": "lake: the scenic lake at the heart of Hangzhou, ringed by causeways, islands, temples and gardens",
+   "coordinates": {
+    "lat": 30.246,
+    "lng": 120.1384
+   },
+   "coordinates_source": "OSM relation 2308774 (West Lake) centre",
+   "views": 69075
+  }
+ }
+]

@@ -68,6 +68,8 @@ def spot_line(sid, dest, e):
         f.append(f"costPer: {q(s['costPer'])}")
     if s.get('needs'):
         f.append(f"needs: '{s['needs']}'")
+    if s.get('parkPass'):
+        f.append(f"parkPass: '{s['parkPass']}'")
     if s.get('ticketUrl'):
         f.append(f"ticketUrl: {q(s['ticketUrl'])}")
     return '  { ' + ', '.join(f) + ' },'

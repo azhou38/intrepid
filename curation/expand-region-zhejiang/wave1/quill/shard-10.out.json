@@ -1,0 +1,111 @@
+{
+ "hangzhou-20": {
+  "bio": "Limestone hill beside Lingyin Temple, carved with over 300 Buddhist rock statues from the 10th to 14th centuries.",
+  "icon": "⛰️",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Part of the Lingyin Feilai Peak scenic area; only the temple's own site (https://www.lingyinsi.org/) was found and it does not name Feilai Peak, so not used. Reservation is via the scenic area's mini-program (unverified).",
+  "sources": [
+   "https://www.worldjournal.com/wj/story/121343/9154474",
+   "https://en.wikipedia.org/wiki/Lingyin_Temple"
+  ],
+  "notes": "Scenic area dropped its 45 CNY ticket (and 30 CNY Lingyin Temple incense ticket) from 1 Dec 2025 with real-name timed reservation and daily cap, per news reports; current rules after Nov 2026 unverified. Carving count (300+) and dating from memory/unverified: bio claim needs check against Wikipedia Lingyin Temple 'Feilai Feng grottos' section.",
+  "price_source_weak": true
+ },
+ "hangzhou-7": {
+  "bio": "Stone bridge on West Lake's north shore, a snow-view spot and the setting of the White Snake legend.",
+  "icon": "🌉",
+  "category": "landmark",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "costBasis": "open",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Open public bridge on West Lake, no single steward.",
+  "sources": [],
+  "notes": "Free open access is unverified by a fetched source (West Lake's lakeshore is free); legend link from draft only. No Wikipedia article of its own (title is a disambiguation page)."
+ },
+ "nanbei-lake": {
+  "bio": "Lake-and-hill scenic area near Haiyan with a lakeside road, Butterfly Island tower and views over Hangzhou Bay.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Old official site www.nbh.com.cn (linked from zh Wikipedia) no longer loads; no live official site found.",
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/529/16166.html",
+   "https://zh.wikipedia.org/wiki/%E5%8D%97%E5%8C%97%E6%B9%96"
+  ],
+  "notes": "Ctrip (weak) lists the area as free entry, all year; some sub-sights charge (Butterfly Island 10 CNY, vehicle entry 20 CNY per a review). An older Qunar entry gave 80 CNY gate: conflicting, verify. 'Views over Hangzhou Bay' and 'Butterfly Island tower' partly from reviews/draft: check. Zh Wikipedia: AAAA scenic area in Haiyan.",
+  "price_source_weak": true
+ },
+ "ningbo-4": {
+  "bio": "Chan Buddhist temple in the Taibai hills of Yinzhou, one of China's five great Chan temples and the Soto school's cradle.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "No official website found; entry reservation is via the temple's WeChat mini-program per a Ctrip review.",
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Tiantong_Temple",
+   "https://gs.ctrip.com/html5/you/sight/ningbo83/9954.html"
+  ],
+  "notes": "Free entry per Ctrip (weak), reservation by mini-program reported in a travelogue: verify. Do not confuse with Tiantong National Forest Park, which has its own ticket (about 15 CNY on a group-buy site).",
+  "price_source_weak": true
+ },
+ "shaoxing-1": {
+  "bio": "Restored old-town quarter around Lu Xun's childhood home, with his memorial hall, the Three Flavours Study and Xianheng Tavern.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Reservation is by WeChat official accounts (Shaoxing Culture and Tourism Group / Shaoxing Lu Xun Memorial); no website found.",
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/18/2193.html",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lu_Xun_Native_Place"
+  ],
+  "notes": "Free but advance booking required per Ctrip and a 2023 notice (weak); sights named in bio (Three Flavours Study, Xianheng Tavern) are from memory, check against a source. Wikipedia article title is 'Lu Xun Native Place' = name."
+ },
+ "houtouwan-village": {
+  "bio": "Abandoned fishing village on Shengshan island, its stone houses now buried in ivy, reached on foot down a hillside path.",
+  "icon": "🌿",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "wiki": "Houtouwan",
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Houtouwan",
+   "https://www.ourchinastory.com/cn/8447",
+   "https://gs.ctrip.com/html5/you/sight/82/56062.html"
+  ],
+  "notes": "25 CNY village-entry ticket (10 CNY for the viewing platform only) comes from travelogues only; Ctrip shows no price: unverified, may be dated. Wikipedia describes the village as abandoned, depopulated by 2002, overgrown. Wikipedia article exists as 'Houtouwan'.",
+  "price_source_weak": true
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "hangzhou-10": {
+  "bio": "Pedestrian street of restored old shopfronts and snack stalls at the foot of Wushan, home to Hu Qingyu Tang.",
+  "icon": "🏮",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Open street with no single steward; no official site.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://subsites.chinadaily.com.cn/ezhejiang/hangzhou/2018-06/14/c_242888.htm",
+    "https://zh.wikipedia.org/wiki/河坊街"
+   ],
+   "cost": [
+    "https://chinatripedia.com/?p=17199",
+    "https://you.ctrip.com/sight/hangzhou14/135781.html"
+   ]
+  },
+  "notes": "Free: open pedestrian street (Ctrip lists it open all day; no admission). Hu Qingyu Tang pharmacy on the street per web search result, not fetched. Street length disagrees between sources (460 m vs 1,800 m); not used."
+ },
+ "hangzhou-30": {
+  "bio": "Lakeside park with a red fish pond, peony garden and lawns beside Su Causeway on West Lake.",
+  "icon": "🐟",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Part of West Lake scenic area; no separate official site found.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://www.ehangzhou.gov.cn/2018-06/14/c_271620.htm"
+   ],
+   "cost": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=7807"
+   ]
+  },
+  "notes": "Free per a guide and by absence from the West Lake paid-park list in search results; no current official page confirmed (price_source_weak). 'Beside Su Causeway' from search snippet (park at its south end, west side). Verify gate policy."
+ },
+ "huzhou-3": {
+  "bio": "Museum on Huzhou brush making, the writing brushes the city has made for over two thousand years.",
+  "icon": "🖌️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://www.dahepiao.com/lvyounews1/20250428511382.html"
+   ],
+   "cost": [
+    "https://ct.zj.gov.cn/art/2019/8/5/art_1664685_36385281.html",
+    "https://www.dahepiao.com/lvyounews1/20250428511382.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "CONFLICT: Zhejiang Dept of Culture and Tourism page (2019, seen in search result; fetch failed) says free; dahepiao ticket site (2025) says adult CNY 18 with free for under-18s, students, 70+. Recorded free per the government page; if 18 is right use costMin/Max 18. Phone 0572-2503478 to confirm. 'Over two thousand years' of brush making from news search snippet (Shanlian), unfetched; bio claim unverified."
+ },
+ "longquan-2": {
+  "bio": "Forest reserve with Zhejiang's highest peak and metasequoia trees in the Fengyangshan range.",
+  "icon": "🌲",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "costMin": 64,
+  "costMax": 64,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Adult",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; national park management body not located.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Baishanzu",
+    "https://zhejiang.chinadaily.com.cn/2020-06/03/c_497644.htm"
+   ],
+   "cost": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=1224"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Price from Qunar listing (adult 64; 75 with in-park shuttle) for Baishanzu scenic area at Baishanzu town, Qingyuan; not official, may be dated. Pin is in the reserve near Baishanzu peak. Metasequoia from the draft only, unverified. Wikipedia 'Baishanzu' redirects to the reserve article so wiki is null. Highest peak Huangmaojian is within the reserve (Wikipedia)."
+ },
+ "xikou-3": {
+  "bio": "Zen temple on Xuedou Mountain above Xikou, tied to the monk Budai and rebuilt several times.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 150,
+  "costMax": 150,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costPer": "Adult (Xuedou scenic area)",
+  "ticketUrl": null,
+  "ticket_note": "Official Xuedou Mountain site not found via search; no domain guessed.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/雪窦寺"
+   ],
+   "cost": [
+    "https://you.ctrip.com/sight/xikou69/107387.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Ctrip lists Xuedou Mountain from CNY 150 (scenic ticket, reportedly with shuttle); a blog gave 90 for the temple alone, undated. Temple has no confirmed separate gate price; may be covered by the scenic ticket. Budai/Maitreya link and rebuilds from zh Wikipedia (first built Jin dynasty). Free to over-70s; half price 60-70."
+ },
+ "shenxianju": {
+  "bio": "Rhyolite peaks and cliffs around Guanyin Peak, with a glass-floored platform and a cable car.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 110,
+  "costMax": 110,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Adult",
+  "ticketUrl": "https://www.zjshenxianju.com/",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://www.zjshenxianju.com/jqgk.jhtml",
+    "https://www.zjshenxianju.com/"
+   ],
+   "cost": [
+    "https://www.zjshenxianju.com/pwxx.jhtml",
+    "https://www.zjshenxianju.com/jqgk.jhtml"
+   ],
+   "link": [
+    "https://www.zjshenxianju.com/"
+   ]
+  },
+  "notes": "Official site loaded, titled 神仙居景区官方网站. Gate CNY 110 (official). Cable car 65 up / 55 down, Nantianding platform 99 are extras, not the price. 5A scenic area, 22.32 km2 core. The platform (南天顶) is an extra with its own ticket. Wikipedia 'Xianju National Park' is the larger park, not the spot, so wiki null."
+ }
+}

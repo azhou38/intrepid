@@ -1,0 +1,63 @@
+{
+ "hangzhou-1": {
+  "bio": "Hangzhou's freshwater lake, ringed by causeways, islands, pagodas and temples, with a free lakeside promenade.",
+  "icon": "🏞️", "category": "nature", "visitHoursMin": 2, "visitHoursMax": 4,
+  "free": true, "costBasis": "open", "currency": "CNY",
+  "ticketUrl": null,
+  "ticket_note": "Official West Lake Scenic Area site (hzwestlake.gov.cn) did not load from this network (fetch failed); not verified, so no link. Check in a browser.",
+  "wiki": null,
+  "sources": ["https://en.wikipedia.org/api/rest_v1/page/summary/West_Lake", "https://hznews.hangzhou.com.cn/chengshi/content/2017-09/30/content_6675907_2.htm"],
+  "notes": "Lake circuit free since 2002 per Hangzhou Daily; Lingyin Temple and some paid sights nearby are separate. Lake area/causeways/islands from Wikipedia."
+ },
+ "anji-6": {
+  "bio": "A high-mountain resort above Anji with a snow-season ski area, cliff swings and a grassland plateau at 1,168 m.",
+  "icon": "⛷️", "category": "entertainment", "visitHoursMin": 3, "visitHoursMax": 6,
+  "costMin": 174, "costMax": 174, "currency": "CNY", "costBasis": "entry", "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official website found (Ctrip results only); likely WeChat-only. Unverified.",
+  "wiki": null,
+  "sources": ["https://gs.ctrip.com/html5/you/sight/686/5553391.html", "https://www.dahepiao.com/lvyounews1/20240329454683.html"],
+  "notes": "174 is Ctrip's 'from' price for the scenic-area gate ticket (a 2024 reseller listed adult 180); ski lift/rental prices NOT found (unverified) and some play areas pause in snow season. Elevation 1,168 m and 'closest natural-snow ski area to Hangzhou' from Ctrip/draft; the 'closest' claim is dropped from the bio."
+ },
+ "youbu-ancient-town": {
+  "bio": "A river-port town in Lanxi with old streets, a 500 m breakfast lane and lantern and lion-dance traditions.",
+  "icon": "🏮", "category": "historic", "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "free": true, "costBasis": "open", "currency": "CNY",
+  "ticketUrl": null,
+  "ticket_note": "No official site; town is open access, run by the township.",
+  "wiki": null,
+  "sources": ["https://you.ctrip.com/sight/lanxi611/5708969.html"],
+  "notes": "Ctrip guide text says the town is free all day and parking is free (weak source). The lantern and lion-dance claim is from the draft and is not confirmed in the fetched source; check or reword before use."
+ },
+ "songlan-mountain-beach": {
+  "bio": "A long sand-and-rock coast on Xiangshan's east shore, with beaches, headlands and a seaside walking path.",
+  "icon": "🏖️", "category": "beach", "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "free": true, "costBasis": "open", "currency": "CNY",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; resort area managed locally (Xiangshan), WeChat only. Unverified.",
+  "wiki": null,
+  "sources": ["https://you.ctrip.com/sight/ninghai689/65049.html"],
+  "notes": "Ctrip lists the 4A resort as free, open all day (weak). Car park charges (10 yuan/vehicle) are not the price. Beach vs resort extent unverified."
+ },
+ "dachen-islands": {
+  "bio": "An island group off Taizhou reached by ferry, with a clifftop walkway, wartime sites and seafood villages.",
+  "icon": "🏝️", "category": "nature", "visitHoursMin": 6, "visitHoursMax": 24,
+  "free": true, "costBasis": "open", "currency": "CNY",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; booking is via a WeChat account (Dachen Tourism / Taizhou ticketing). Unverified.",
+  "wiki": null,
+  "sources": ["https://en.wikipedia.org/api/rest_v1/page/summary/Dachen_Islands", "https://you.ctrip.com/sight/taizhou402/62829.html"],
+  "notes": "Islands themselves have no entry fee per Ctrip travellers (weak); Jiawu Rock cliff walkway charges separately (about 48 to 60 CNY, sources disagree) and is not the island price. Ferry from Jiaojiang about 80 to 130 CNY is transport, not the cost. Dachen is administered by Jiaojiang District, Taizhou. The islands are 'one spot' covering Shang and Xia Dachen; worth a 'needs: booking' check for the ferry in peak season (daily cap about 2000 per a guide), unverified."
+ },
+ "yandang-mountains-2": {
+  "bio": "One of Yandang's three classic sights, with sheer cliffs and a cliff-side walkway above the Lingyan valley.",
+  "icon": "⛰️", "category": "nature", "visitHoursMin": 2, "visitHoursMax": 3,
+  "costMin": 50, "costMax": 50, "currency": "CNY", "costBasis": "entry", "price_source_weak": true,
+  "ticketUrl": "https://www.wzyds.com/",
+  "ticket_note": "Official Yandang Scenic Area site (title 雁荡山, hotline 0577-6217-8888, lists Lingyan Scenic Area). Online ticket link goes to wap.lotsmall.cn which is BLOCKED to scripts: check prices in a real browser. Also en.wzyds.com.",
+  "ticketUrl_blocked": "https://wap.lotsmall.cn/vue/?m_id=2275",
+  "wiki": null,
+  "sources": ["https://www.wzyds.com/", "https://www.dahepiao.com/lvyounews1/20240528466884.html", "https://you.ctrip.com/sight/yandangshan217/135800.html"],
+  "notes": "50 CNY is a 2024 reseller price for the standalone Lingyan ticket (weak); official page does not show it. Combo (Lingfeng+Lingyan+Dalongqiu) about 170 CNY. 'Wiki' broader article 'Yandang Mountains' not used. Cliff-side walkway (Wo Yun plank road) is named on the official hours notice; 'three classic sights' (灵峰、灵岩、大龙湫) per official site."
+ }
+}

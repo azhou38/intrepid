@@ -57,6 +57,10 @@ export const PARK_PASSES = {
     name: 'Mt Remarkable Pass', costMin: 14.4, currency: 'AUD',
     note: 'Mount Remarkable National Park, per vehicle per day (Parks SA).',
   },
+  'mount-putuo': {
+    name: 'Mount Putuo Pass', costMin: 140, costMax: 160, currency: 'CNY',
+    note: 'Mount Putuo scenic area gate fee, adult: 160 CNY in the high season, 140 CNY in the low season, as reported by Quill research from ticketing pages (weak: not confirmed on the official site). Individual temples charge their own small fees.',
+  },
 } satisfies Record<string, ParkPass>;
 
 export type ParkPassId = keyof typeof PARK_PASSES;

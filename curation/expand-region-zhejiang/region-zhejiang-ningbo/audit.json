@@ -1,0 +1,118 @@
+[
+ {
+  "name": "Ningbo Delson Green World Golf Club",
+  "wiki": "Ningbo Delson Green World Golf Club",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Ningbo Delson Green World Golf Club",
+   "wiki": "Ningbo Delson Green World Golf Club",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ningbo"
+   ],
+   "other_sources": [],
+   "note": "Golf club: 18-hole course that lists visitors welcome; a members' club rather than a visitor sight."
+  }
+ },
+ {
+  "name": "Ningbo Post Office Former Site",
+  "wiki": "Ningbo Post Bureau in Jiangbei",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Ningbo Post Office Former Site",
+   "wiki": "Ningbo Post Bureau in Jiangbei",
+   "coordinates": {
+    "lat": 29.8833,
+    "lng": 121.558
+   },
+   "coordinates_source": "OSM tourism=attraction",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "Overpass API (OSM, wikipedia-tagged features, Ningbo bbox 28.9-30.5N 120.9-122.3E)"
+   ],
+   "note": "Historic building: early-20th-century post bureau on the Jiangbei bund; seen from the outside."
+  }
+ },
+ {
+  "name": "Shen Guangwen Memorial Hall",
+  "wiki": "Shen Guangwen Memorial Hall",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Shen Guangwen Memorial Hall",
+   "wiki": "Shen Guangwen Memorial Hall",
+   "coordinates": {
+    "lat": 29.8062,
+    "lng": 121.4808
+   },
+   "coordinates_source": "OSM tourism=museum,historic=building",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "Overpass API (OSM, wikipedia-tagged features, Ningbo bbox 28.9-30.5N 120.9-122.3E)"
+   ],
+   "note": "Memorial museum: ancestral hall of the Ming-era Taiwan-linked scholar Shen Guangwen, Yinzhou."
+  }
+ },
+ {
+  "name": "Xikou",
+  "wiki": "Xikou",
+  "views": 18222,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Xikou",
+   "wiki": "Xikou",
+   "coordinates": {
+    "lat": 29.68972222,
+    "lng": 121.27611111
+   },
+   "coordinates_source": "wikipedia:Xikou",
+   "views": 18222,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ningbo",
+    "https://en.wikivoyage.org/wiki/Xikou"
+   ],
+   "other_sources": [
+    "https://you.ctrip.com/sight/ningbo83.html",
+    "https://zh.wikipedia.org/wiki/%E5%AE%81%E6%B3%A2%E5%B8%82"
+   ],
+   "note": "Town: Chiang Kai-shek's hometown and Xuedou Mountain gateway, Fenghua; the region's top stop for history and mountain scenery."
+  }
+ },
+ {
+  "name": "Zhang Cangshui Memorial Hall",
+  "wiki": "Former residence of Zhangcangshui",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Zhang Cangshui Memorial Hall",
+   "wiki": "Former residence of Zhangcangshui",
+   "coordinates": {
+    "lat": 29.8803,
+    "lng": 121.5446
+   },
+   "coordinates_source": "OSM tourism=attraction,historic=yes",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "Overpass API (OSM, wikipedia-tagged features, Ningbo bbox 28.9-30.5N 120.9-122.3E)"
+   ],
+   "note": "Memorial house: former home of the Ming loyalist Zhang Cangshui, Haishu."
+  }
+ }
+]

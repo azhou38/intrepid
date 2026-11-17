@@ -1,0 +1,120 @@
+{
+ "hangzhou-16": {
+  "bio": "Hangzhou museum of Chinese silk, textiles and the Silk Road, with galleries on silkworm rearing and weaving.",
+  "icon": "🧵",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "https://www.chinasilkmuseum.com/",
+  "wiki": null,
+  "sources": {
+   "ticketUrl": "https://www.chinasilkmuseum.com/",
+   "cost": "https://ct.zj.gov.cn/art/2019/8/5/art_1671969_36385240.html (free since 2004 per provincial culture dept page)",
+   "bio": "https://www.chinasilkmuseum.com/"
+  },
+  "notes": "Free entry per Zhejiang provincial page and search summaries; whether advance reservation is required is unverified (site has a 参观及预约 page, not read)."
+ },
+ "hangzhou-34": {
+  "bio": "Chan Buddhist temple in the hills of Yuhang, known for its tea-feast tradition and a five-gate entrance hall.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; temple/WeChat only, unverified",
+  "wiki": null,
+  "sources": {
+   "bio": "https://zh.wikipedia.org/wiki/径山寺",
+   "cost": "https://gs.ctrip.com/html5/you/sight/hangzhou14/1414691.html (user review, old)"
+  },
+  "notes": "30 CNY is from a Ctrip user review only; shuttle from visitor centre is free, holiday parking ~20 CNY (not counted). Verify."
+ },
+ "huzhou-9": {
+  "bio": "Qing-era merchant garden in Nanxun ancient town, built around a large lotus pond with a red-brick Western house.",
+  "icon": "🪷",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found for the garden; Nanxun scenic area site not verified",
+  "wiki": "Little Lotus Manor",
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Little_Lotus_Manor",
+   "cost": "https://gs.ctrip.com/html5/you/sight/Huzhou68/3980.html"
+  },
+  "notes": "25 CNY from Ctrip 'from' price (weak); a joint ticket with Jiaye Library exists at the same starting price; Nanxun town itself is free to enter."
+ },
+ "ningbo-1": {
+  "bio": "Ming-dynasty private library and garden in Ningbo, with a pond, rockeries and the book tower at its centre.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "https://www.tianyige.com.cn/",
+  "ticketUrl_note": "Page title 天一阁博物院 loaded, body is only a close button (script-rendered); confirm in a browser",
+  "ticketUrl_blocked": "https://www.tianyige.com.cn/",
+  "wiki": "Tianyi Ge",
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Tianyi_Pavilion",
+   "cost": "https://gs.ctrip.com/html5/you/sight/83/9964.html (Ctrip, and 2022 travel notes: 30 CNY)"
+  },
+  "notes": "30 CNY adult per Ctrip and a 2022 note; some visitors mention reservations required, unverified. Wikipedia title is 'Tianyi Ge'."
+ },
+ "longyou-caves": {
+  "bio": "Group of 24 man-made sandstone caverns near Longyou, cut into a hill at least 2,000 years ago by unknown hands.",
+  "icon": "🕳️",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 65,
+  "costMax": 85,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Longyou_Caves",
+   "cost": "https://gs.ctrip.com/html5/you/sight/812/145183523.html (85 list, Qunar 65 undated)"
+  },
+  "notes": "Price weak and inconsistent (Ctrip 85, Qunar 65); verify. Age: clay in silt dated 206BC-23AD, so 'at least 2,000 years' is a conservative reading."
+ },
+ "tiantai-mountain": {
+  "bio": "Sacred Tiantai Buddhist mountain, with Guoqing Temple, Shiliang waterfall and Huading peak at 1,138 m.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 8,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official scenic-area site found",
+  "wiki": null,
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Mount_Tiantai",
+   "cost": "https://gs.ctrip.com/html5/you/sight/tiantaimountain246/9056.html"
+  },
+  "notes": "Not one gate: Huading Forest Park 50 CNY, Shiliang 60, Great Waterfall 100, Qiongtai 65 (Ctrip/Maigoo, weak); Guoqing Temple is free. 50 is Huading's. Pin is the mountain; sub-site prices unverified."
+ }
+}

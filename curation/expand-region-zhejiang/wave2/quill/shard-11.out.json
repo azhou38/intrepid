@@ -1,0 +1,122 @@
+{
+ "hangzhou-6": {
+  "bio": "Willow-lined causeway across West Lake, built by the poet Su Shi and walked or cycled between lake and hills.",
+  "icon": "🌳",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "currency": "CNY",
+  "ticketUrl": null,
+  "ticket_note": "Public causeway on a free lake shore; no operator site.",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/West_Lake"
+  ],
+  "notes": "Free/open from general knowledge of West Lake's free shoreline, no price page fetched; Su Shi attribution not re-verified from a fetched page. English wiki 'Su Causeway' redirects to West Lake, so wiki should be null."
+ },
+ "fangyan-scenic-area": {
+  "bio": "Danxia red-rock scenic area in Yongkang with a half-hour climb to the Hu Gong temple on the summit.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 60,
+  "costMax": 65,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found by search (only ticket resellers).",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/189/17286.html",
+   "https://www.dahepiao.com/lvyounews1/20250610516251.html"
+  ],
+  "notes": "Ctrip 65 (from 60), reseller 63; one ticket covers Fangyan and Nanyan, sub-areas (Wufeng, Shiguliao) extra. 4A and Danxia status from zh.wikipedia disambiguation page (national scenic area); Hu Gong climb ~30 min from search summary. Hours not recorded."
+ },
+ "ningbo-16": {
+  "bio": "Fortified hill at the mouth of the Yong River in Zhenhai, with Ming-era Weiyuan fort and coastal-defence relics.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 50,
+  "costMax": 80,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": "Zhaobao Mountain",
+  "sources": [
+   "https://zh.wikipedia.org/wiki/招宝山",
+   "https://en.wikipedia.org/wiki/Zhaobao_Mountain",
+   "https://gs.ctrip.com/html5/you/sight/143873/1480686.html"
+  ],
+  "notes": "PRICE UNVERIFIED: only a 2011 travelogue (80, 50 at New Year); current price not found. National 4A, key heritage coastal-defence ruins from zh.wikipedia; Weiyuan fort Ming Jiajing 39 from search summary."
+ },
+ "shaoxing-2": {
+  "bio": "Song-dynasty garden in Shaoxing where the poet Lu You wrote of his lost love Tang Wan, with ponds and pavilions.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 40,
+  "costMax": 40,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found (resellers only).",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/沈园",
+   "https://gs.ctrip.com/html5/you/sight/18/2204.html"
+  ],
+  "notes": "PRICE UNVERIFIED: search found only combo tickets (145 four-site, 198 with Lu Xun house) and a Ctrip post claiming free entry; I could not confirm a single adult price, 40 is my uncertain figure and should be rechecked. Garden is a provincial heritage unit, Lu You story per zh.wikipedia; Tang Wan name not in fetched text. Ctrip hours showed evening opening/night show, ignored."
+ },
+ "jiangxin-island": {
+  "bio": "Islet in the Ou River at Wenzhou with twin pagodas, Jiangxin Temple and a former British consulate, reached by ferry.",
+  "icon": "🏝️",
+  "category": "historic",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3.5,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "Official presence is the scenic-area management office; no site found.",
+  "wiki": "Jiangxinyu",
+  "sources": [
+   "https://zh.wikipedia.org/wiki/江心屿",
+   "https://en.wikipedia.org/wiki/Jiangxin_Islet",
+   "https://www.dahepiao.com/lvyounews1/20240520465221.html"
+  ],
+  "notes": "ENTRY NAME ISSUE: evidence bundle's Wikipedia excerpt is the Nanjing Jiangxin Island (江心洲); this spot is Wenzhou's 江心屿 (zh name field wrong), coordinates are the Wenzhou islet. English article 'Jiangxinyu' is the right one. 30 CNY adult includes round-trip ferry (2024 reseller article, weak); Ctrip lists it free. 4A scenic area per zh.wikipedia."
+ },
+ "mount-putuo-5": {
+  "bio": "Highest hill on Putuo island, climbed by stone steps or cable car to Huiji Temple and views over the sea.",
+  "icon": "🛕",
+  "category": "hike",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 140,
+  "costMax": 160,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Island entry/Adult",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/16/2132.html",
+   "https://gs.ctrip.com/html5/you/sight/16/110364.html"
+  ],
+  "notes": "140 (Dec-Jan) to 160 (Feb-Nov) is the Mount Putuo island gate fee, not a Foding fee; cable car about 70 return not counted. No China scenic-area pass exists in parkPasses.ts; decide whether to price spots inside Putuo or treat as covered by the island gate (shard 8 did not count it). Huiji temple at summit, 1080 steps per one travelogue (unverified)."
+ }
+}

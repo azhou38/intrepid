@@ -103,9 +103,11 @@ import { Layers, Check, X, Search, CornerUpLeft, ChevronDown } from 'lucide-reac
 import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { useStore, useVisitIndex } from '../store';
+import { requestShadowSync } from '../utils/shadowSync';
+import { sheetInMotion } from '../utils/sheetMotion';
 import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
-import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
+import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity, getCountryOutline } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
 import spotDistricts from '../data/spotDistricts.json';
 import districtTypes from '../data/districtTypes.json';
@@ -116,7 +118,7 @@ import PinPhoto from '../components/Map/PinPhoto';
 import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
-import SpotSheet, { SPOT_SHEET_SLIDE_IN_MS } from '../components/Map/SpotSheet';
+import SpotSheet, { SPOT_SHEET_SLIDE_IN_START_MS, SPOT_SHEET_SLIDE_IN_DURATION_MS } from '../components/Map/SpotSheet';
 import CountrySheet, { COUNTRY_MOUNT_SLIDE_DELAY_MS } from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
@@ -1097,6 +1099,7 @@ const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number]
 // letting the grow/shrink animation target an exact pixel value instead of an unmeasured
 // 'auto'. Closed height is exactly MAP_PILL_BTN (a true circle); open height adds the
 // divider + two option rows beneath it.
+const GRID_VIEW_REGION_HOLD_MS = 1200;   // see handleGoToListView: past the sheet's slide-up and the camera's move
 const CRUMB_PILL_H        = 40;   // the breadcrumb pill's height (see styles.breadcrumbPillWhite)
 const CRUMB_SWAP_FADE_MS  = 200;  // the breadcrumb fading out as it was, on a new selection or an X close (see crumbFrozenRef)
 const MAP_PILL_BTN        = 44;   // also the pill's fixed width throughout
@@ -1334,11 +1337,16 @@ const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-ou
 // (its 40 ms mount delay and 280 ms slide, with a margin), so the jump's renders come after the slide (see handleCloseSpotToDestination).
 const GRID_CAMERA_DELAY_MS = 450;
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
-const SPOT_CAMERA_DELAY_MS = SPOT_SHEET_SLIDE_IN_MS + 120;   // a spot pin tap: the zoom-in starts once the spot sheet has slid in (the sheet mounts a commit, ~0.1 s, after the tap)
+// A spot pin tap: the zoom-in starts once the spot sheet's slide-in is ~60% through (it mounts a commit, ~0.1 s, after the
+// tap). Its ease-out has covered nearly all its distance by then and only settles, so a camera move no longer stutters it;
+// waiting for the very end made the zoom feel late.
+const SPOT_CAMERA_DELAY_MS = 100 + SPOT_SHEET_SLIDE_IN_START_MS + Math.round(SPOT_SHEET_SLIDE_IN_DURATION_MS * 0.6);
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
+const SPOT_FLIGHT_MAX_MS = 6000;   // see spotFlightDestId: its safety net, should the camera never get there
 const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
+const DEST_TAP_PLAN_IDLE_MAX_MS = 10000;   // how long a landed flight's plan waits for the map idle before the safety net ends it anyway
 const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
 const CAMERA_AFTER_PINS_MIN_MS = 80;    // see runCameraAfterPins: an idle sooner than this predates the new pin data
 const CAMERA_AFTER_PINS_MAX_MS = 400;   // its safety net: the camera goes anyway
@@ -1854,6 +1862,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
   const pillNextOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const upPillWrapStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -upPillBottomSV.value }], opacity: pillShownSV.value * pillHandoverSV.value }));
+  // Once the pills have faded in on the sheet taking them over, a few small commits re-apply their current (shown) values
+  // (see shadowSync.tsx). The fade runs on the UI thread only, and the commit that mounts that sheet ("← Country" mounting
+  // the country sheet) could reach the screen after it, redrawing the pills at the opacity it began with, 0: the X
+  // stayed hidden over the country sheet until something else happened to redraw it.
+  const syncPillsShown = useCallback(() => { requestShadowSync(); requestShadowSync(200); requestShadowSync(500); }, []);
+  useAnimatedReaction(
+    () => pillHandoverSV.value >= 1,
+    (done, prev) => { if (done && prev === false) runOnJS(syncPillsShown)(); },
+  );
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
   // Cleared again immediately after — DestinationSheet only reads these in its initial
@@ -2010,19 +2027,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const searchExpandedWidth  = SCREEN_W_GLOBAL - 24;
   const searchWidthAnim = useRef(new Animated.Value(searchCollapsedWidth)).current;
   const searchFromSheetRef = useRef(false);
-  // Where the Explore sheet was (shared snap vocabulary, plus its feed's scroll offset) — recorded from its own reports, and
-  // captured into exploreRestore when search opens (the sheet unmounts while searching), so
-  // closing search remounts it right where it was rather than at the bottom strip. Cleared once
-  // search closes, and on picking a result (that leaves the sheet behind for a
-  // country/destination/spot, after which the normal bottom-strip entrance applies).
+  // Where the Explore sheet is (shared snap vocabulary), from its own reports.
   const exploreSnapRef = useRef<'peek' | 'collapsed' | 'full'>('peek');
-  const exploreScrollYRef = useRef(0);
-  const [exploreRestore, setExploreRestore] =
-    useState<{ snap: 'peek' | 'collapsed' | 'full'; scrollY: number } | undefined>(undefined);
-  // Closing search via its X/backdrop holds the Explore sheet's remount back by a frame (see
-  // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
-  // once the sheet has actually remounted with it.
-  const [exploreHeld, setExploreHeld] = useState(false);
   // True from a spot's "‹ Destination" back until its zoom-out reaches the destination's view. Mounting a sheet during a
   // zoom-out (the destination sheet is a few hundred ms of render, on the UI thread the map draws on) froze the camera
   // animation, so the map jumped from the zoomed-in view to the zoomed-out one with no frames between. (The Explore sheet
@@ -2050,16 +2056,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // map with no sheet for a noticeable moment.
     sheetAfterCameraTimerRef.current = setTimeout(releaseSheetsAfterCamera, Math.min(durationMs + 300, SHEET_HOLD_MAX_MS));
   }, [releaseSheetsAfterCamera]);
-  // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
-  useLayoutEffect(() => {
-    if (!exploreHeld) return;
-    const id = requestAnimationFrame(() => setExploreHeld(false));
-    return () => cancelAnimationFrame(id);
-  }, [exploreHeld]);
-  useEffect(() => {
-    if (searchFocused) setExploreRestore({ snap: exploreSnapRef.current, scrollY: exploreScrollYRef.current });
-    else if (exploreRestore && !exploreHeld) setExploreRestore(undefined);
-  }, [searchFocused, exploreHeld]);
   // The bar's width and the layers pill swap instantly — no animation. Animating them (the bar
   // widening while the pill faded out) read as the two shapes merging into each other.
   // Layout effect: applied in the same commit as the focus change, not once the (heavy) screen's
@@ -2099,12 +2095,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // happens in the one commit that clears searchFocused (the width and fade via the layout effects
   // above), so no frame shows half of it. An earlier version started the fade and width change
   // imperatively before that commit, which showed one frame of the narrowed bar with the X still
-  // in it, pushed left. What keeps that commit light (it used to take ~0.5s) is that the Explore
-  // sheet's remount waits a frame (exploreHeld).
+  // in it, pushed left. The Explore sheet stays mounted through search (hidden: see its `searching`), so
+  // the same commit shows it again where it was, with nothing to build.
   const closeSearch = useCallback(() => {
     searchFromSheetRef.current = false;
     searchInputRef.current?.blur();
-    setExploreHeld(true);
     setSearchFocused(false);
     setSearchQuery('');
   }, []);
@@ -2325,7 +2320,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // destination prompt is written from BOTH a memo and handleCameraChanged's raw camera
   // events, so watching the rendered value is the only way to catch every case. Without this
   // an invisible breadcrumb keeps swallowing taps at the top of the map.
-  const [crumbInteractive, setCrumbInteractive] = useState(false);
+  const [crumbInteractive, setCrumbInteractiveNow] = useState(false);
+  // Not while a sheet is being dragged or settling (see sheetMotion.ts): the latest value goes in once it has come to rest.
+  const crumbInteractiveWantRef = useRef(false);
+  const crumbInteractiveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const setCrumbInteractive = useCallback((v: boolean) => {
+    crumbInteractiveWantRef.current = v;
+    if (crumbInteractiveTimerRef.current) return;
+    const apply = () => {
+      if (sheetInMotion()) { crumbInteractiveTimerRef.current = setTimeout(apply, 120); return; }
+      crumbInteractiveTimerRef.current = null;
+      setCrumbInteractiveNow(crumbInteractiveWantRef.current);
+    };
+    apply();
+  }, []);
   useAnimatedReaction(
     () => sheetCollapsedSV.value <= 0.5
       && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, crumbPeekSV.value) > 0.05,
@@ -2426,6 +2434,25 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Whether a destination's photo pin is on screen this render (promoted, and its tier on at the live zoom).
   const destPhotoShownRef = useRef<(id: string) => boolean>(() => false);
   const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
+  // A spot selected from further out than its destination's default view (from search, say): its destination's pin and dot
+  // stay off the map while the camera flies in. Selected, the destination's pin is drawn at every zoom, so it came up at the
+  // start of the flight and went again once the camera passed the destination's default view, where its spots take over.
+  // Ends once the camera is past that view (the map idle), at the user's own gesture, or after SPOT_FLIGHT_MAX_MS.
+  const [spotFlightDestId, setSpotFlightDestId] = useState<string | null>(null);
+  const spotFlightDestIdRef = useRef<string | null>(null);
+  const spotFlightTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const endSpotFlight = useCallback(() => {
+    if (spotFlightTimerRef.current) { clearTimeout(spotFlightTimerRef.current); spotFlightTimerRef.current = null; }
+    if (!spotFlightDestIdRef.current) return;
+    spotFlightDestIdRef.current = null;
+    setSpotFlightDestId(null);
+  }, []);
+  const beginSpotFlight = useCallback((destId: string) => {
+    spotFlightDestIdRef.current = destId;
+    setSpotFlightDestId(destId);
+    if (spotFlightTimerRef.current) clearTimeout(spotFlightTimerRef.current);
+    spotFlightTimerRef.current = setTimeout(endSpotFlight, SPOT_FLIGHT_MAX_MS);
+  }, [endSpotFlight]);
   const destTapPlanRef = useRef<DestTapPlan | null>(null);
   const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const endDestTapPlan = useCallback(() => {
@@ -2439,7 +2466,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destTapPlanRef.current = { destId, target, from, spots, fromDot };
     setDestTapPlan(destTapPlanRef.current);
     if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
-    destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
+    // The safety net ends the plan only if the flight never got near its target. A flight that has landed waits for the
+    // map idle to end it (handleMapIdle, with the exact resting zoom): the last camera event of a flight can report a zoom
+    // a hair under the target, and ending the plan on that (the idle came later than this timer, the map still loading
+    // the landing view's tiles and photos) showed the destination's pin again over its spots until the idle put it right.
+    const startedAt = Date.now();
+    const check = () => {
+      destTapPlanTimerRef.current = null;
+      const plan = destTapPlanRef.current;
+      if (!plan) return;
+      const landed = camZoomRef.current >= plan.target - DEST_TAP_HANDOFF_LEAD;
+      if (landed && Date.now() - startedAt < DEST_TAP_PLAN_IDLE_MAX_MS) { destTapPlanTimerRef.current = setTimeout(check, 500); return; }
+      endDestTapPlan();
+    };
+    destTapPlanTimerRef.current = setTimeout(check, DEST_TAP_PLAN_MAX_MS);
   }, [endDestTapPlan]);
   // Set by a back tap ("← Destination", "← Country"; see beginBackPlan): its target is kept although the parent is
   // selected, so the pins plan at the parent's view from the tap exactly as for an X close.
@@ -3010,15 +3050,10 @@ const destItems = useMemo((): DestItem[] =>
   }, [zoomedIntoDestIds, zoomedPastDefaultIds]);
   const hiddenDestIds = useStableSet(hiddenDestIdsRaw);
 
-  const stampFadeBaseZoom = useMemo(() => {
-    // Fade origin: the world-view boundary normally, or the selected country's own
-    // per-country threshold (see getCountryStampThreshold) — a geographically wide country
-    // (Australia, US...) needs a wider view than the flat world cutoff allows before its
-    // own stamps should appear.
-    const countryCode = planCountry?.countryCode ?? planDest?.countryCode;
-    const threshold = countryCode ? getCountryStampThreshold(countryCode) : WORLD_VIEW_LATDELTA;
-    return Math.max(0, latDeltaToZoom(threshold) - 0.35);
-  }, [planCountry, planDest]);
+  // Fade origin: the world-view boundary, whatever is selected. A selected country used to start its own dots at a wider
+  // view (getCountryStampThreshold) and all on the first tier, so selecting it showed every one of its dots at once; they
+  // now come in rank by rank at the same zooms as with nothing selected.
+  const stampFadeBaseZoom = Math.max(0, latDeltaToZoom(WORLD_VIEW_LATDELTA) - 0.35);
   const STAMP_TIER_STEP = 0.6; // zoom levels between successive tiers' fade-ins
 
   // Highest tier currently switched on — a discrete step function of the camera zoom.
@@ -3048,11 +3083,10 @@ const destItems = useMemo((): DestItem[] =>
   }
 
   const lastStampRef = useRef<{ sig: string; value: GeoJSON.FeatureCollection<GeoJSON.Point> } | null>(null);
+  // The destination kept off the map while a selected spot's camera flies in (spotFlightDestId): only while that spot,
+  // still selected, belongs to it.
+  const spotFlightHideId = spotFlightDestId && selectedSpot && spotDestination(selectedSpot)?.id === spotFlightDestId ? spotFlightDestId : null;
   const stampGeoJSON = useMemo(() => {
-    // With a spot selected its country's dots fade with the zoom like any others (they used to stay up zooming out, all
-    // on the earliest tier); the selected country's head start is for a country or destination selected on its own.
-    const selCountryCode = selectedSpot ? undefined : (planCountry?.countryCode ?? planDest?.countryCode);
-
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
       const saved = visitIndex.isDestVisited(dest.id);
@@ -3060,13 +3094,12 @@ const destItems = useMemo((): DestItem[] =>
       // represent it; see zoomedIntoDestIds).
       if (hiddenDestIds.has(dest.id)) continue;
       if (pendingRevealRef.current.has(dest.id)) continue;   // its photo pin is about to appear — no dot first
+      if (dest.id === spotFlightHideId) continue;   // a selected spot's destination while the camera flies in (spotFlightDestId)
       // A tapped destination flying in (destTapPlan): no dot from the tap. Its photo pin fades out on the way in, a little
       // before it is hidden (handoff), and its dot showed through in that gap, before its spot pins came in.
       // A destination tapped as a dot (fromDot) keeps it: it has no photo pin on the way in (see nativeDestPins).
       if (destTapPlan && !destTapPlan.fromDot && destTapPlan.destId === dest.id && selectedDest?.id === dest.id) continue;
-      const tier = dest.countryCode === selCountryCode
-        ? 1
-        : Math.max(1, dest.rank - (saved ? 1 : 0));
+      const tier = Math.max(1, dest.rank - (saved ? 1 : 0));
       // Cull features more than one tier beyond the active one — purely so far-from-
       // visible dots can't swallow taps meant for the map. One tier of headroom stays
       // mounted (at opacity 0) so an incoming tier fades IN from an already-present
@@ -3091,7 +3124,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { type: 'FeatureCollection' as const, features };
     lastStampRef.current = { sig, value };
     return value;
-  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot, destTapPlan, selectedDest]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot, destTapPlan, selectedDest, spotFlightHideId]);
   const stampGeoJSONRef = useRef(stampGeoJSON);
   stampGeoJSONRef.current = stampGeoJSON;
 
@@ -4173,7 +4206,7 @@ const destItems = useMemo((): DestItem[] =>
         return;
       }
 
-      const topBound = 0;                     // the very top of the screen
+      const topBound = insets.top + 8;        // below the status bar: a tall country's top went under it (New Zealand's)
       const bottomBound = framing === 'full'
         ? Math.max(40, mapViewH - PEEK_STRIP_H) // top of the peek strip — all the visible map
         : H / 2;                                // matches CountrySheet's own COLLAPSED_Y
@@ -4197,6 +4230,7 @@ const destItems = useMemo((): DestItem[] =>
           // Fields added by the @rnmapbox/maps patch (not in its types): frame the bounds inside this screen
           // window at `shrink` of its size. See the block comment above.
           mode: 'fitWindow',
+          points: getCountryOutline(cluster.countryCode) ?? undefined,
           windowTop: topBound,
           windowBottom: bottomBound,
           shrink: SHRINK,
@@ -4210,7 +4244,7 @@ const destItems = useMemo((): DestItem[] =>
       // once FIT_MS has elapsed.
       countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
     });
-  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn]);
+  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn, insets.top]);
 
   // The zoom fitCountryDefaultView's half-screen ('topHalf') framing lands on: the camera it captured last time, or else an
   // estimate from the country's bounds (the same 90% fit, in mercator). Only a look-ahead target for the pin planning while
@@ -4328,6 +4362,9 @@ const destItems = useMemo((): DestItem[] =>
     );
     afterSheetSlideIn(() => {
       beginProgrammaticCameraMove(durationMs);
+      // The camera's position reaches React once, as it lands, not every frame of the zoom (see regionHoldUntilRef): each
+      // update re-rendered the map's layers (20-70 ms), and the zoom runs alongside the spot sheet's slide, which stuttered.
+      regionHoldUntilRef.current = Date.now() + durationMs + 50;
       setCameraShortest({
         centerCoordinate: [spot.coordinates.longitude, centerLat],
         zoomLevel,
@@ -4542,7 +4579,10 @@ const destItems = useMemo((): DestItem[] =>
   }, [setSheetSnapState, setDestHomeToDefault]);
 
   // ── Spot selection ──────────────────────────────────────────────────────────
-  const handleSpotPress = useCallback((spot: Spot) => {
+  // hapticDone: openSpot gave the tap's haptic already (at the tap, not after the open sheet's slide off).
+  const handleSpotPress = useCallback((spot: Spot, hapticDone = false) => {
+    // First, so the tap is felt at once (it came after the selection's bookkeeping, at the end of this handler).
+    if (!hapticDone) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     cameraHoldUntilRef.current = Date.now() + SPOT_CAMERA_DELAY_MS;
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
@@ -4568,6 +4608,8 @@ const destItems = useMemo((): DestItem[] =>
     // Keep the parent destination selected so the country/destination breadcrumb stays present. A standalone spot has
     // none to select: it drops whichever destination was open (see the origin above) and a selected country that isn't
     // its own.
+    if (dest && !isPastDestDefaultZoom(dest.id, camZoomRef.current)) beginSpotFlight(dest.id);
+    else endSpotFlight();
     if (dest) {
       if (selectedDestRef.current?.id !== dest.id) {
         dropCountryIfForeign(dest.country);
@@ -4610,7 +4652,6 @@ const destItems = useMemo((): DestItem[] =>
       returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
       destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
     }
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // 280ms (down from 500) — tapping a new spot pin, the carousel itself is also sliding to
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
     // sluggish the combined transition reads.
@@ -4783,6 +4824,9 @@ const destItems = useMemo((): DestItem[] =>
   // to its full-screen Spots grid rather than the usual collapsed compact card. Always a
   // deliberate move INTO the destination, so it bypasses the provenance router.
   const handleGoToListView = useCallback(() => {
+    // The destination sheet opens at full screen, covering the map: the camera's move to the destination reaches React once,
+    // after it, rather than re-rendering the hidden map's layers every frame under the sheet's slide-up (see regionHoldUntilRef).
+    regionHoldUntilRef.current = Date.now() + GRID_VIEW_REGION_HOLD_MS;
     setDestInitialTab('spots');
     setDestInitialSnap('full');
     handleCloseSpotToDestination(undefined, true);
@@ -4935,14 +4979,6 @@ const destItems = useMemo((): DestItem[] =>
       }
     }, COUNTRY_MOUNT_SLIDE_DELAY_MS + COUNTRY_BACK_SLIDE_MS + 20);
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView, runCameraAfterPins]);
-
-  // Destination close/back, provenance-routed: drilled down from the country → back up to it;
-  // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
-  // destination's own zoom level instead, no fabricated country sheet in between.
-  const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
-    if (destOrigin === 'country') handleCloseDestinationSheetToCountry(toCollapsed);
-    else handleCloseDestinationToCountryView();
-  }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView]);
 
   // The breadcrumb's own back-return while a country (and no destination) is selected: just
   // re-centre the camera, leaving the sheet exactly where it is. So the framing has to follow
@@ -5097,7 +5133,10 @@ const destItems = useMemo((): DestItem[] =>
     setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
     // The back tap's follow-up (cameraStarted) is silent: the tap itself already gave the haptic.
     if (!opts?.cameraStarted) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (!opts?.cameraStarted) fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
+    // The camera starts once the map has drawn the selection (its border highlight, its pins), not at the tap: started at
+    // once, the flight's own tile loading kept the highlight waiting until the camera had landed. A short wait at most
+    // (runCameraAfterPins: the map's next idle, or CAMERA_AFTER_PINS_MAX_MS).
+    if (!opts?.cameraStarted) runCameraAfterPins(() => fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf'));
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for CountrySheet to mount and run its own
     // effect a render cycle later — same top-destination lookup CountrySheet uses for its
@@ -5109,7 +5148,7 @@ const destItems = useMemo((): DestItem[] =>
     const cacheKey = `country_${cluster.countryCode}`;
     if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, HEADER_PX, cluster.country);
     else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, HEADER_PX);
-  }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState]);
+  }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState, runCameraAfterPins]);
 
   // Closing from the back pill's X while a sheet is half-screen or bottom-screen: let it slide
   // off the bottom first (exitSignal → the sheets' own slide-out), and only then run the actual
@@ -5130,9 +5169,11 @@ const destItems = useMemo((): DestItem[] =>
     sheetExitingRef.current = false;
     action?.();
   }, []);
-  const closeWithSheetExit = useCallback((action: () => void) => {
+  // fromFull: slide the sheet off from full screen too (opening a spot from a destination's full-screen grid: "Map view").
+  // Otherwise a full-screen sheet has nothing to slide off over, and the action runs at once.
+  const closeWithSheetExit = useCallback((action: () => void, fromFull = false) => {
     if (sheetExitingRef.current) return;
-    if (sheetSnapStateRef.current === 'full') { action(); return; }
+    if (sheetSnapStateRef.current === 'full' && !fromFull) { action(); return; }
     sheetExitingRef.current = true;
     if (sheetKindRef.current) {
       sheetExitActionRef.current = action;
@@ -5143,13 +5184,27 @@ const destItems = useMemo((): DestItem[] =>
     setTimeout(() => { sheetExitingRef.current = false; action(); }, SHEET_EXIT_MS + 20);
   }, []);
 
-  // Opening a spot from a destination's (or a country's) sheet, and "← Destination" back from a spot's: the open sheet slides all the way
-  // off first and only then is the next one mounted, to rise in its place. Swapping them in one go (the old sheet sliding
-  // down as the new one rose) put the new sheet's mount, a few hundred ms of work, under both slides, and they stuttered.
-  // A sheet at full screen has no slide off (closeWithSheetExit runs the action at once).
+  // Destination close/back, provenance-routed: drilled down from the country → back up to it;
+  // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
+  // destination's own zoom level instead, no fabricated country sheet in between.
+  const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
+    // Back up to the country's sheet: the destination's slides all the way off first, then the country's rises (see openSpot).
+    if (destOrigin === 'country') closeWithSheetExit(() => handleCloseDestinationSheetToCountry(toCollapsed), true);
+    else handleCloseDestinationToCountryView();
+  }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView, closeWithSheetExit]);
+
+  // Sheet transitions by direction. Going IN a level (country -> destination, destination or country -> spot) is the quick
+  // swap: the old sheet slides down as the new one rises (see the sheet swaps below). Going back OUT (spot -> destination,
+  // destination -> country) is sequential: the open sheet slides all the way off first (closeWithSheetExit), and only then
+  // is the parent's sheet mounted, to rise from the bottom in its place.
   const openSpot = useCallback((spot: Spot) => {
-    if ((sheetKindRef.current === 'dest' || sheetKindRef.current === 'country') && sheetPose.get() !== null && !isMapInteracting()) closeWithSheetExit(() => handleSpotPress(spot));
-    else handleSpotPress(spot);
+    // Except from full screen ("Map view" from a destination's spot grid), which has no resting pose for the swap to slide
+    // from (sheetPose is null): the sheet slides down first, rather than vanishing as the spot sheet rises.
+    const sheetUp = sheetKindRef.current === 'dest' || sheetKindRef.current === 'country';
+    if (sheetUp && sheetSnapStateRef.current === 'full' && !isMapInteracting()) {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);   // at the tap, not after the slide off
+      closeWithSheetExit(() => handleSpotPress(spot, true), true);
+    } else handleSpotPress(spot);
   }, [closeWithSheetExit, handleSpotPress, isMapInteracting]);
 
   // The pills under the back/X row at half-screen and peek: "← Parent" always opens the parent's sheet (a spot's
@@ -5161,8 +5216,9 @@ const destItems = useMemo((): DestItem[] =>
     if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (selectedSpot) { if (selectedDest) closeWithSheetExit(() => handleCloseSpotToDestination()); }
-    else if (selectedDest) handleCloseDestinationSheetToCountry();
+    // Going out a level: the sheet slides all the way off, then the parent's rises (see openSpot).
+    if (selectedSpot) { if (selectedDest) closeWithSheetExit(() => handleCloseSpotToDestination(), true); }
+    else if (selectedDest) closeWithSheetExit(() => handleCloseDestinationSheetToCountry(), true);
   }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry, closeWithSheetExit]);
   // The X pill: close to the map (the sheet slides off first, then the camera steps back; see the *View closes).
   // The zoom an X close will fly out to (the same rules as the close handlers), or null where the camera stays put.
@@ -5292,7 +5348,6 @@ const destItems = useMemo((): DestItem[] =>
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
     addRecentSearch(toRecentSearch(item));
-    setExploreRestore(undefined);
     setSearchQuery('');
     setSearchFocused(false);
     // clear() as well as the state reset: the native field's own text can otherwise linger (or
@@ -5364,8 +5419,6 @@ const destItems = useMemo((): DestItem[] =>
   // The Explore sheet's props are all STABLE on purpose. MapScreen re-renders every ~50ms while the
   // camera moves, and the sheet (with its ~50 photo cards) re-rendering each time was real JS
   // work competing with the map's own pin updates — inline arrow props here defeated React.memo.
-  const exploreRestoreRef = useRef(exploreRestore);
-  exploreRestoreRef.current = exploreRestore;
   const handleExploreSnapChange = useCallback((state: 'peek' | 'collapsed' | 'full') => {
     exploreSnapRef.current = state;
     handleSheetSnapStateChange(state);
@@ -5378,10 +5431,7 @@ const destItems = useMemo((): DestItem[] =>
     // — the sheet restored at peek after closing search — read as a collapsed→peek move and
     // shifted the map. It also kept later Explore swipes from shifting when they should have.
     setSheetSnapState(state);
-    // A fresh (non-restored) sheet starts at the top of its feed.
-    if (!exploreRestoreRef.current) exploreScrollYRef.current = 0;
   }, [setSheetSnapState]);
-  const handleExploreScrollY = useCallback((y: number) => { exploreScrollYRef.current = y; }, []);
   const handleExploreSearchPress = useCallback(() => {
     // Opened from the sheet's own bar (which sits exactly where this one does, already
     // full-width): skip the width/fade animations so the hand-off is seamless.
@@ -5433,6 +5483,7 @@ const destItems = useMemo((): DestItem[] =>
     if (isGestureActive && !wasMapGestureActiveRef.current) {
       releaseHeldSelection();   // the user took over the camera: don't keep planning around the closed selection
       endDestTapPlan();
+      endSpotFlight();
       releaseSpotCloseTarget();
       if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
       // The user grabbed the map while a destination's initial fly-to was still in flight —
@@ -5449,6 +5500,20 @@ const destItems = useMemo((): DestItem[] =>
           clearTimeout(suppressDestReturnPromptTimerRef.current);
           suppressDestReturnPromptTimerRef.current = null;
         }
+      }
+      // A pan that begins before the map idle has recorded the country's home view (see handleMapIdle): the home is where
+      // the camera rested when the pan began. The idle waits for every tile and photo of the view to load, often longer
+      // than the user waits after landing (a return tap's especially, which clears the home), and the idle after the pan
+      // then recorded the panned-to view as home: the return arrow never showed. Not mid-way through the app's own move.
+      const homePending = countryCacheArmRef.current !== null && Date.now() < countryCacheArmRef.current.at;
+      if (selectedCountryRef.current && !selectedDestRef.current && !selectedSpotRef.current && !countryHomeRegionRef.current
+          && !homePending && !programmaticCameraMoveRef.current) {
+        const home: Region = {
+          latitude: center[1], longitude: center[0],
+          latitudeDelta: Math.abs(bounds.ne[1] - bounds.sw[1]), longitudeDelta: Math.abs(bounds.ne[0] - bounds.sw[0]),
+        };
+        countryHomeRegionRef.current = home;
+        setCountryHomeRegion(home);
       }
       // Likewise for a country fit still in flight — the user owns the camera now, so drop the pending capture
       // rather than have the idle after THEIR pan recorded as the country's default camera.
@@ -5566,6 +5631,8 @@ const destItems = useMemo((): DestItem[] =>
     // if this ever shows up as jank on lower-end devices, that batching is the first place to
     // look before backing the number off again.
     const now = Date.now();
+    // A sheet being dragged or settling: the camera's position reaches React once it has come to rest (see sheetMotion.ts).
+    if (!isGestureActive && sheetInMotion()) regionHoldUntilRef.current = Math.max(regionHoldUntilRef.current, now + 250);
     if (!isGestureActive && now < regionHoldUntilRef.current) {
       if (regionHoldFlushRef.current) clearTimeout(regionHoldFlushRef.current);
       regionHoldFlushRef.current = setTimeout(() => {
@@ -5661,6 +5728,7 @@ const destItems = useMemo((): DestItem[] =>
     if (cameraAfterPinsRef.current && Date.now() - cameraAfterPinsRef.current.since >= CAMERA_AFTER_PINS_MIN_MS) fireCameraAfterPins();
     // A destination tap's flight has landed (not an idle from before it got going): the live zoom takes over.
     if (destTapPlanRef.current && state.properties.zoom >= destTapPlanRef.current.target - ZOOM_EPSILON) endDestTapPlan();
+    if (spotFlightDestIdRef.current && isPastDestDefaultZoom(spotFlightDestIdRef.current, state.properties.zoom)) endSpotFlight();
     // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
     // until the user's next move (see planLandedRef).
     if (!planLandedRef.current) {
@@ -6092,7 +6160,7 @@ const destItems = useMemo((): DestItem[] =>
     const handoffIds = new Set(joinedHandoffDests.map(h => h.dest.id));
     // A destination tapped as a dot has no photo pin (nor name) until its spot pins take over (see DestTapPlan's fromDot).
     const tapDot = destTapPlan?.fromDot && selectedDest?.id === destTapPlan.destId ? destTapPlan.destId : null;
-    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)].filter(d => d.id !== tapDot);
+    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)].filter(d => d.id !== tapDot && d.id !== spotFlightHideId);
     for (const dest of drawn) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
@@ -6125,7 +6193,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest, spotFlightHideId]);
 
   // Which spot pin a tap is on. The box the map searches (spotPins' hitbox) is generous so the small pins, about 11 pt wide,
   // are easy to hit, but its first feature was whatever is drawn on top, so a photo pin anywhere in the box won over the
@@ -6147,9 +6215,21 @@ const destItems = useMemo((): DestItem[] =>
     }
     return (onPhoto ?? nearest)?.id;
   };
+  // Whether a spot pin feature is drawn at the live zoom: the selected spot always; a photo pin from its photo band's zoom
+  // (`pb`), a small pin from its reveal band's (`rb`); 'a' is always, 'fade' a photo fading in (see spotBandLayers).
+  const spotPinShows = (f: GeoJSON.Feature): boolean => {
+    const pr = f.properties ?? {};
+    if (pr.sel === 1) return true;
+    const band = String((pr.img ? pr.pb : pr.rb) ?? 'a');
+    return band === 'a' || band === 'fade' || camZoomRef.current >= Number(band) - ZOOM_EPSILON;
+  };
   // Destination taps, from a photo pin or a dot. A dot only takes a tap while it shows: each fades out below its tier's zoom
   // (stampOpacityExpr) but stays in the data.
-  const stampShown = (tier: number) => tier <= 5 && camZoomRef.current >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
+  // Tested at the WHOLE zoom level below the camera's, as Mapbox draws them: stampOpacityExpr reads both the zoom and each
+  // dot's tier, and Mapbox works such an expression out per map tile, at the tile's whole zoom level, not at the camera's
+  // exact zoom. At zoom 2.22 a tier whose threshold is 2.1 is still hidden (it shows from zoom 3), and tested against 2.22
+  // its dots took taps while invisible: a tap by Sydney's dot at the world view opened Wollongong.
+  const stampShown = (tier: number) => tier <= 5 && Math.floor(camZoomRef.current + ZOOM_EPSILON) >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
   const pressDest = (id: string) => {
     const dest = DESTINATIONS.find(d => d.id === id);
     if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
@@ -6632,9 +6712,14 @@ const destItems = useMemo((): DestItem[] =>
           shape={nativeSpotPins.shape}
           hitbox={{ width: 32, height: 40 }}
           onPress={(e) => {
-            const id = pickSpotPinAt(e.features, e.coordinates.longitude, e.coordinates.latitude);
+            // Only a pin that shows takes the tap: a spot stays in the data below the zoom its pin appears at (its band's
+            // layer has that as its min zoom), and a tap there used to open a spot with nothing drawn under the finger.
+            const shown = e.features.filter(spotPinShows);
+            const id = pickSpotPinAt(shown, e.coordinates.longitude, e.coordinates.latitude);
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
-            if (spot && !pressBlocked()) openSpot(spot);
+            if (spot) { if (!pressBlocked()) openSpot(spot); return; }
+            // Only hidden pins under the tap: hand it on to a destination dot there, if one shows (as the photo pins do).
+            pressDotAt(e.coordinates.longitude, e.coordinates.latitude);
           }}
         >
           {spotFadeLayers.under}
@@ -6952,21 +7037,19 @@ const destItems = useMemo((): DestItem[] =>
           Shown whenever nothing is selected; hidden the instant the user drills into a
           country/destination/spot, exactly like the other sheets are mutually exclusive
           with each other. ─────────────────────────────────────────────────────────────── */}
-      {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up. */}
-      {!searchFocused && !exploreHeld && (
-        <ExploreSheet
-          hidden={!!(selectedCountry || selectedDest || selectedSpot)}
-          collapseSignal={peekSheetSignal}
-          onSnapStateChange={handleExploreSnapChange}
-          onSelectDestination={handleExploreSelect}
-          initialSnap={exploreRestore?.snap}
-          onMountSnap={handleExploreMountSnap}
-          initialScrollY={exploreRestore?.scrollY}
-          mapGestureAtSV={mapGestureAtSV}
-          onScrollYChange={handleExploreScrollY}
-          onSearchPress={handleExploreSearchPress}
-        />
-      )}
+      {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up, and
+          (hidden in place) while search is open, so closing search shows it again at once, where it was. It used to
+          unmount for search and be built again on the close, its whole feed, which held it back a noticeable moment. */}
+      <ExploreSheet
+        hidden={!!(selectedCountry || selectedDest || selectedSpot)}
+        searching={searchFocused}
+        collapseSignal={peekSheetSignal}
+        onSnapStateChange={handleExploreSnapChange}
+        onSelectDestination={handleExploreSelect}
+        onMountSnap={handleExploreMountSnap}
+        mapGestureAtSV={mapGestureAtSV}
+        onSearchPress={handleExploreSearchPress}
+      />
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {effCountry && !effDest && !effSpot && (
@@ -7328,21 +7411,21 @@ const styles = StyleSheet.create({
   },
   countryPillCardGlow: {
     borderWidth: 1.5, borderColor: 'rgba(22,163,74,0.85)',
-    shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
-    shadowOffset: { width: 6, height: 0 },
+    shadowColor: '#16A34A', shadowOpacity: 0.45, shadowRadius: 5,
+    shadowOffset: { width: 3, height: 0 },
   },
   countryPillCircleGlow: {
-    shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
-    shadowOffset: { width: -6, height: 0 },
+    shadowColor: '#16A34A', shadowOpacity: 0.45, shadowRadius: 5,
+    shadowOffset: { width: -3, height: 0 },
   },
   // Selected but unvisited: the same split glow as above, white (the gray border comes from countryPillCardBorderGray).
   countryPillCardGlowWhite: {
-    shadowColor: '#FFFFFF', shadowOpacity: 0.9, shadowRadius: 10,
-    shadowOffset: { width: 6, height: 0 },
+    shadowColor: '#FFFFFF', shadowOpacity: 0.6, shadowRadius: 5,
+    shadowOffset: { width: 3, height: 0 },
   },
   countryPillCircleGlowWhite: {
-    shadowColor: '#FFFFFF', shadowOpacity: 0.9, shadowRadius: 10,
-    shadowOffset: { width: -6, height: 0 },
+    shadowColor: '#FFFFFF', shadowOpacity: 0.6, shadowRadius: 5,
+    shadowOffset: { width: -3, height: 0 },
   },
   // Same border color as countryPillCardGlow, minus the shadow — used for every OTHER
   // visited country's pill, always (the selected country keeps the full glow above instead).

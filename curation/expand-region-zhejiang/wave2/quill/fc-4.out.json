@@ -1,0 +1,92 @@
+{
+ "hangzhou-9": {
+  "verdict": "edited",
+  "bio": "West Lake's only natural island, once a Qing palace site and now Zhongshan Park beside the Zhejiang Provincial Museum.",
+  "changes": [
+   "Cut 'plum blossom gardens': not confirmed in any source read",
+   "Kept only-natural-island, palace site to Zhongshan Park (West Lake article); added the Provincial Museum, which absorbed the palace buildings"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free: no official source for the island's gate status; kept free/open with cost_unverified. English Wikipedia has no Solitary Hill article (404), so wiki null"
+  ]
+ },
+ "hengdian-world-studios": {
+  "verdict": "pass",
+  "bio": "One of the world's largest outdoor film studios, with replica palaces and streets from Chinese period dramas.",
+  "changes": [
+   "Bio confirmed (Wikipedia: one of the largest outdoor film studios; Qin Imperial Palace replica; official site lists Qin Palace and Qingming Shanghe Tu zones)",
+   "wiki set: the English article exists"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.hengdianworld.com/",
+  "wiki": "Hengdian World Studios",
+  "unresolved": [
+   "price stays price_source_weak: official site shows only the CNY 799 annual pass and combo tickets, no per-zone price; CNY 180-190 rests on third-party listings (eastchinatrip: one-day adult CNY 189)"
+  ]
+ },
+ "ningbo-2": {
+  "verdict": "pass",
+  "bio": "Ningbo's old riverside port quarter on the Yong River, with 54 listed sites including a Catholic cathedral.",
+  "changes": [
+   "Confirmed against Old Bund article: north bank of the Yong River, 54 historic sites, Cathedral of Our Lady of the Seven Sorrows (national-level protected)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "Old Bund",
+  "unresolved": [
+   "free: open waterfront, no official source stating no fee"
+  ]
+ },
+ "shaoxing-7": {
+  "verdict": "pass",
+  "bio": "A Song-dynasty stone arch bridge in Shaoxing, named for its resemblance to the character for eight.",
+  "changes": [
+   "Confirmed: built 1201-1204, rebuilt 1256, named for the character 八"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "Bazi Bridge",
+  "unresolved": [
+   "free: public street bridge, no official source"
+  ]
+ },
+ "master-and-apprentice-bridges": {
+  "verdict": "edited",
+  "bio": "Two timber arch covered bridges in Sixi village, Taishun, 300 metres apart, said to be built by a master and his apprentice.",
+  "changes": [
+   "Distance corrected from about 200 m to 300 m (zh Wikipedia, Beijian Bridge page; coordinates agree at about 400 m straight line)",
+   "English name fits: Chinese Wikipedia (Xidong Bridge) gives 泗溪师徒桥 (master-and-apprentice bridges) as a name besides 泗溪姐妹桥 (sister bridges), from the legend that a master and apprentice built them separately. Keep 'Master and Apprentice Bridges'; the Sister Bridges name is the more common alias and could go in the notes",
+   "Both are national-level protected (Xidong and Beijian Bridges)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free: Ctrip says Beijian Bridge is open all year with no ticket; Xidong not separately checked"
+  ]
+ },
+ "moxin-mountain": {
+  "verdict": "edited",
+  "bio": "Daishan island hill with the Ciyun Jile temple, tea terraces running down to the sea and wide sea views.",
+  "changes": [
+   "Bio no longer calls it the island's high point (sources disagree); wording kept to what a Ctrip review confirms: temple 慈云极乐寺, tea terraces, sea views",
+   "Ctrip page name is 磨心山景区, open 08:00-17:00, ticket from CNY 20; a review says the CNY 20 was a half-price day, so the full adult price may be higher (not confirmed)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price CNY 20 stays price_source_weak: no official or government source found; may be a half-price figure",
+   "no official site found"
+  ]
+ }
+}

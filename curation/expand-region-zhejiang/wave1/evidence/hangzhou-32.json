@@ -1,0 +1,26 @@
+{
+ "id": "hangzhou-32",
+ "name": "Hangzhou Botanical Garden",
+ "built": "2026-11-10",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hangzhou_Botanical_Garden",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-10",
+   "title": "Hangzhou Botanical Garden",
+   "excerpt": "Hangzhou Botanical Garden is a large public botanical garden located in Hangzhou City, Zhejiang Province, People's Republic of China."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

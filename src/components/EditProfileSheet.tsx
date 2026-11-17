@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ActionSheetIOS, Alert, Image, Modal, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system/legacy';
+import { localFileUri } from '../utils/localFiles';
 import * as Haptics from 'expo-haptics';
 import { Camera } from 'lucide-react-native';
 import { useStore } from '../store';
@@ -16,11 +17,11 @@ export function ProfileAvatar({ uri, name, size, crop }: { uri: string | null; n
   if (uri && crop) {
     return (
       <View style={[box, st.avatarBg, { overflow: 'hidden' }]}>
-        <Image source={{ uri }} style={[{ position: 'absolute' }, avatarImageFrame(crop, size)]} />
+        <Image source={{ uri: localFileUri(uri) }} style={[{ position: 'absolute' }, avatarImageFrame(crop, size)]} />
       </View>
     );
   }
-  if (uri) return <Image source={{ uri }} style={[box, st.avatarBg]} />;
+  if (uri) return <Image source={{ uri: localFileUri(uri) }} style={[box, st.avatarBg]} />;
   return (
     <View style={[box, st.avatarBg, st.center]}>
       <Text style={[st.initial, { fontSize: Math.round(size * 0.4) }]}>{name.trim().charAt(0).toUpperCase() || '?'}</Text>

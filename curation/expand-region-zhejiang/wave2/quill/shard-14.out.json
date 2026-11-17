@@ -1,0 +1,120 @@
+{
+ "tianmu-mountain": {
+  "bio": "Nature reserve in Lin'an with giant trees and forest walking trails, reached by shuttle bus from the gate.",
+  "icon": "🌲",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 110,
+  "costMax": 135,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "needs": null,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; reserve bureau site unverified. Phone 0571-63857361 (third-party listing).",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Tianmu_Mountain",
+   "https://www.dahepiao.com/lvyounews1/20250529514950.html",
+   "https://gs.ctrip.com/html5/you/sight/88/74700.html"
+  ],
+  "notes": "Third-party 2025 prices: 110 (half-day session) to 135 (all-day); Ctrip ~136. Whether shuttle bus is included unverified. wiki field: English article title equals name, so null in app if identical."
+ },
+ "liudong-mountain": {
+  "bio": "Karst scenic area near Lanxi with limestone caves and an underground river explored by boat.",
+  "icon": "🛶",
+  "category": "nature",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 69,
+  "costMax": 74,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/lanxi611/70351887.html",
+   "https://touch.piao.qunar.com/touch/detail.htm?id=518309"
+  ],
+  "notes": "Price is for the Underground River (地下长河) area from Ctrip/Qunar listings; not operator-confirmed. No English Wikipedia article (zh also missing)."
+ },
+ "shanglin-lake-yue-kilns": {
+  "bio": "Cluster of Tang-to-Song kiln sites beside Shanglin Lake in Cixi where Yue celadon was fired.",
+  "icon": "🏺",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": null,
+  "costMin": null,
+  "costMax": null,
+  "currency": "CNY",
+  "costBasis": null,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Shanglin_Lake_Yue_Kilns",
+   "https://zh.wikipedia.org/wiki/上林湖越窑遗址"
+  ],
+  "notes": "COST UNVERIFIED: no source states a fee for the kiln sites or the Yue Kiln Museum / celadon park. Needs a check. English article title equals name."
+ },
+ "wuxie-scenic-area": {
+  "bio": "Scenic area near Zhuji with a five-tier waterfall, forested hills and a lake crossed by boat.",
+  "icon": "💦",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costMin": 60,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/五泄",
+   "https://gs.ctrip.com/html5/you/sight/zhuji690/70738.html",
+   "https://www.dahepiao.com/lvyounews1/20250825527360.html"
+  ],
+  "notes": "Ctrip list 70, from 60; third-party says 60 includes return boat ticket. National scenic area, AAAA, 9.45 km2 per zh Wikipedia. No English article."
+ },
+ "wuma-street": {
+  "bio": "Pedestrian shopping street in old Wenzhou, about 424 m long, and the city's traditional commercial centre.",
+  "icon": "🛍️",
+  "category": "market",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Public street, no steward.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/五马街"
+  ],
+  "notes": "Pedestrian street since 1985 per zh Wikipedia; 'food stalls' is loosely supported (shops confirmed) - rewrite to 'shops' if strict. No English article."
+ },
+ "wushitang-beach": {
+  "bio": "Black-pebble shore on Zhujiajian island in Putuo, known for its smooth dark cobblestones.",
+  "icon": "🏖️",
+  "category": "beach",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": null,
+  "costMin": null,
+  "costMax": null,
+  "currency": "CNY",
+  "costBasis": null,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/2150961/4475154.html"
+  ],
+  "notes": "COST UNVERIFIED: Ctrip lists it inside the Wushitang scenic area, open all year; no clear fee found (one jumbled listing shows 20 or 90). Needs a check."
+ }
+}

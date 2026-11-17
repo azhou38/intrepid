@@ -1,0 +1,323 @@
+{
+ "hangzhou-2": {
+  "verdict": "edited",
+  "bio": "Chan Buddhist temple beside Feilai Peak, known for its many pagodas and rock-carved grottos.",
+  "changes": [
+   "'at the foot of' -> 'beside' (source: temple lies between Feilai Peak and Lingyin Hill)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.lingyinsi.com",
+  "wiki": "Lingyin Temple",
+  "unresolved": [
+   "Free-with-reservation rests on the Dec 2025 West Lake authority notice as reported in news; not re-confirmed as current in Nov 2026. needs:booking kept"
+  ]
+ },
+ "hangzhou-10": {
+  "verdict": "pass",
+  "bio": "Pedestrian street of restored old shopfronts and snack stalls at the foot of Wushan, home to Hu Qingyu Tang.",
+  "changes": [],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": []
+ },
+ "hangzhou-16": {
+  "verdict": "pass",
+  "bio": "Hangzhou museum of Chinese silk, textiles and the Silk Road, with galleries on silkworm rearing and weaving.",
+  "changes": [],
+  "cost_fields": {},
+  "ticketUrl": "https://www.chinasilkmuseum.com/",
+  "wiki": "China National Silk Museum",
+  "unresolved": [
+   "Whether advance reservation is required (site has a 参观及预约 page) not confirmed; free entry from provincial 2019 page"
+  ]
+ },
+ "hangzhou-20": {
+  "verdict": "edited",
+  "bio": "Limestone peak beside Lingyin Temple, carved with 345 Buddhist stone statues made from the 10th to 14th centuries.",
+  "changes": [
+   "Count 300+ replaced by 345 and dating 'Five Dynasties to Yuan' from zh Wikipedia 飞来峰造像; 'limestone' confirmed"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free-with-reservation from the same Dec 2025 scenic-area notice as Lingyin Temple; current status not re-confirmed"
+  ]
+ },
+ "hangzhou-25": {
+  "verdict": "pass",
+  "bio": "Hangzhou's largest surviving stone arch bridge, a three-arch span marking the end of the Grand Canal.",
+  "changes": [
+   "added full stop"
+  ],
+  "cost_fields": {
+   "price_source_weak": false
+  },
+  "ticketUrl": null,
+  "wiki": "Gongchen Bridge",
+  "unresolved": []
+ },
+ "hangzhou-31": {
+  "verdict": "edited",
+  "bio": "A seven-kilometre stream valley west of West Lake, running through tea gardens and wooded hills from Longjing village.",
+  "changes": [
+   "'Y-shaped' and 'misty trees' unsupported; replaced with 7 km stream valley, Longjing village to Jiuxi village, tea gardens and forest (zh Wikipedia)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free entry from Ctrip only: cost_unverified"
+  ]
+ },
+ "hangzhou-36": {
+  "verdict": "pass",
+  "bio": "Large safari park in Fuyang with walk-through zones, a drive-through area and animal shows.",
+  "changes": [
+   "Bio confirmed (walking and driving zones, show venues; Fuyang district) against zh Wikipedia"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.hzsp.com/",
+  "wiki": null,
+  "unresolved": [
+   "Price unresolved: official page shows no price; zh Wikipedia lists an old official adult price of 150 CNY (undated), Ctrip says 210 from (2026). Keep 210 weak"
+  ]
+ },
+ "fuchun-taoyuan": {
+  "verdict": "hold",
+  "bio": "Scenic area near Fuyang with a cave, lakes and forested hills, reached by escalator up the slope.",
+  "changes": [],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "No source found for the place, its cave, lakes or escalator; no zh/en Wikipedia page; price is a 2020 reseller figure; search engines blocked"
+  ]
+ },
+ "anji-2": {
+  "verdict": "edited",
+  "bio": "A large bamboo-themed park in Anji with bamboo gardens and exhibits on bamboo culture, a county centrepiece.",
+  "changes": [
+   "Dropped unverified 'China Bamboo Museum' name"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "No source read for the park at all (no official site, no Wikipedia); 70 CNY is an old blog price: weak. Consider hold"
+  ]
+ },
+ "huzhou-6": {
+  "verdict": "edited",
+  "bio": "A silk-trade canal town known for Ming and Qing bridges and old gardens, free to stroll, with a few mansions charging entry.",
+  "changes": [
+   "'Ming-Qing merchant houses' -> bridges and gardens (English Wikipedia Nanxun: ancient bridges, 27 gardens, silk wealth)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "Nanxun",
+  "unresolved": [
+   "Free town entry from Ctrip only; mansion prices excluded"
+  ]
+ },
+ "xinshi-ancient-town": {
+  "verdict": "edited",
+  "bio": "Water town in Deqing with old canal streets to walk, free to enter.",
+  "changes": [
+   "Dropped unverified hand-rowed boat rides"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free and every claim from Ctrip only; no Wikipedia or official page found"
+  ]
+ },
+ "nanbei-lake": {
+  "verdict": "edited",
+  "bio": "Scenic area in Haiyan County where mountains, sea and a lake meet, rated AAAA by China's tourism authority.",
+  "changes": [
+   "Dropped unverified Butterfly Island tower, lakeside road and Hangzhou Bay views; kept mountain-sea-lake and AAAA (zh Wikipedia 南北湖风景名胜区, in 海盐县)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free entry conflicts with older 80 CNY gate; sub-sights charge; no live official site"
+  ]
+ },
+ "yiwu-international-trade-city": {
+  "verdict": "edited",
+  "bio": "World's largest wholesale market for small commodities, in Yiwu, with multi-storey districts of stalls.",
+  "changes": [
+   "'five districts ... millions of products' not confirmed (sources list districts 1-4 with others); replaced with English Wikipedia's lead"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Yiwu International Trade City",
+  "unresolved": [
+   "Free admission rests on a 2019 provincial culture and tourism page; no official operator site verified"
+  ]
+ },
+ "guyan-painting-village": {
+  "verdict": "pass",
+  "bio": "Riverside village near Lishui where a historic weir meets painters' studios and bamboo boat rides.",
+  "changes": [],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "No source read for any claim (weir, painters, bamboo boats); 50 CNY is a weak Ctrip figure and may be for part of the area only"
+  ]
+ },
+ "ningbo-5": {
+  "verdict": "edited",
+  "bio": "Buddhist temple in Ningbo's Yinzhou District, founded in 282 and said to hold a relic of the Buddha.",
+  "changes": [
+   "Replaced 'open without an entry fee' with confirmed founding date (282, Western Jin) and relic tradition (zh Wikipedia 舍利)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "Temple of King Ashoka",
+  "unresolved": [
+   "Free entry from Ctrip and reviews only; no official site found"
+  ]
+ },
+ "ningbo-13": {
+  "verdict": "edited",
+  "bio": "Safari-style zoo by Dongqian Lake with elephants, giant pandas, sea lion shows and a bird show.",
+  "changes": [
+   "Dropped unverified 1,900 mu and walk-through areas; kept animals and shows from the zoo's own homepage"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "http://www.nbzoo.com/",
+  "wiki": null,
+  "unresolved": [
+   "70 CNY is a 2021 reseller price; official price page not located (/ticket/ is 404); homepage has a 门票价格 tab with no figure in text. Site uses a self-signed certificate over https"
+  ]
+ },
+ "xikou-3": {
+  "verdict": "pass",
+  "bio": "Zen temple on Xuedou Mountain above Xikou, tied to the monk Budai and rebuilt several times.",
+  "changes": [
+   "Confirmed: Chan temple, Budai (Maitreya) seat, destroyed and rebuilt several times (zh Wikipedia 雪窦寺)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "150 CNY is Xuedou scenic-area from-price, not confirmed as the temple's own gate; no official site"
+  ]
+ },
+ "baishuichong-waterfall": {
+  "verdict": "hold",
+  "bio": "A 53 m waterfall near Liangnong in Yuyao, reached on foot from a free car park below Baishui Mountain.",
+  "changes": [],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Location, 53 m height and free access come only from weak travel notes; no zh Wikipedia or agency page; search blocked"
+  ]
+ },
+ "jiangshan-2": {
+  "verdict": "hold",
+  "bio": "Old trading town on the Xianxia Ancient Road at the Zhejiang, Jiangxi and Fujian border, with a 2 km Ming-Qing street.",
+  "changes": [
+   "'Qing-era street' -> 2 km old street (zh Wikipedia 廿八都镇: 2 km street, Ming-Qing houses; midpoint of Xianxia Ancient Road; part of 5A Jianglangshan scenic area)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "No ticket price found (ticketed scenic area): cost cannot be set; ticketUrl_blocked www.28du.com left for browser check"
+  ]
+ },
+ "changshan-geopark": {
+  "verdict": "edited",
+  "bio": "A geopark around Changshan's Golden Spike, a global reference point for a geological boundary.",
+  "changes": [
+   "Dropped unverified 'limestone landscapes'"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "60 CNY from a 2019 summary only; UNESCO geopark status in 2026 may have changed the price; no source read for the Golden Spike claim"
+  ]
+ },
+ "shaoxing-9": {
+  "verdict": "edited",
+  "bio": "Birthplace of the educator Cai Yuanpei, a house built in the Daoguang reign of the Qing dynasty in Shaoxing.",
+  "changes": [
+   "'traditional courtyard house in old streets' unverified; replaced with Qing Daoguang-era building (English Wikipedia)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "Former Residence of Cai Yuanpei",
+  "unresolved": [
+   "Free entry has no source"
+  ]
+ },
+ "taizhou-4": {
+  "verdict": "edited",
+  "bio": "Fantawild Wild Mainland theme park in Taizhou, with rides, shows and animation-themed zones.",
+  "changes": [
+   "Dropped unverified 'Taizhou Bay' and night programme; 'Fonte' -> Fantawild"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.fangte.com/",
+  "wiki": null,
+  "unresolved": [
+   "195 CNY is a Qunar from-price; official price not found; operator homepage lists Taizhou Wild Mainland (checked)"
+  ]
+ },
+ "wenzhou-museum": {
+  "verdict": "pass",
+  "bio": "City museum on Shifu Road in Lucheng, with history, painting, calligraphy and pottery galleries, free to enter.",
+  "changes": [
+   "Confirmed: Shifu Road, Lucheng; history, painting, calligraphy, pottery galleries; free since 2008 (English Wikipedia) and free Tue-Sun per official site"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.wzmuseum.cn",
+  "wiki": "Wenzhou Museum",
+  "unresolved": []
+ },
+ "mount-putuo-3": {
+  "verdict": "pass",
+  "bio": "Stone Temple, one of Mount Putuo's three major temples, with a grand hall rebuilt in 1699.",
+  "changes": [
+   "added full stop; bio confirmed on English Wikipedia Fayu Temple"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Fayu Temple",
+  "unresolved": [
+   "140-160 CNY is the Mount Putuo scenic gate from a 2026 news piece; temples reportedly free from 2026: unresolved; Nine-Dragon ceiling not in bio"
+  ]
+ },
+ "lulan-qingsha": {
+  "verdict": "hold",
+  "bio": "A 3.6 km curve of fine sand on Daishan Island's east coast, with a paid beach park and water sports.",
+  "changes": [],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "No source for the 3.6 km length, the beach park or the 30 CNY price (one Ctrip review); no zh/en Wikipedia page; area under upgrade in 2026"
+  ]
+ }
+}

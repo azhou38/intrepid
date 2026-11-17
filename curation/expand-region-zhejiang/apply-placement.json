@@ -1,0 +1,4346 @@
+{
+ "placements": [
+  {
+   "id": "hangzhou-2",
+   "name": "Lingyin Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2427953,
+    "longitude": 120.0967987
+   },
+   "coordinates_source": "overpass node/1218588822 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Chan Buddhist temple beside Feilai Peak, known for its many pagodas and rock-carved grottos.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "ticketUrl": "https://www.lingyinsi.com",
+    "wiki": "Lingyin Temple",
+    "name": "Lingyin Temple",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-3",
+   "name": "Leifeng Pagoda",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2338841,
+    "longitude": 120.145013
+   },
+   "coordinates_source": "overpass way/229726934 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Rebuilt five-storey pagoda on Sunset Hill by West Lake, with the original's remains below and lake views from the top.",
+    "icon": "🗼",
+    "category": "landmark",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "costMin": 40,
+    "costMax": 40,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Leifeng Pagoda"
+   }
+  },
+  {
+   "id": "hangzhou-7",
+   "name": "Broken Bridge",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.261164,
+    "longitude": 120.1470187
+   },
+   "coordinates_source": "overpass way/1466925249 man_made=bridge (moved 30 m N: pin-shared with a neighbouring spot)",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Three-span stone arch bridge at West Lake's edge, known for winter snow views and the White Snake legend.",
+    "icon": "🌉",
+    "category": "landmark",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costBasis": "open",
+    "wiki": "Broken Bridge (Hangzhou)",
+    "name": "Broken Bridge",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-8",
+   "name": "Three Pools Mirroring the Moon",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2394753,
+    "longitude": 120.1397779
+   },
+   "coordinates_source": "overpass node/1468743788 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Island in West Lake with three stone pagodas standing in the water, reached by boat",
+    "icon": "⛵",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 55,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "ticket",
+    "name": "Three Pools Mirroring the Moon"
+   }
+  },
+  {
+   "id": "hangzhou-10",
+   "name": "Hefang Street",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2424766,
+    "longitude": 120.1647924
+   },
+   "coordinates_source": "overpass way/4880742 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Pedestrian street of restored old shopfronts and snack stalls at the foot of Wushan, home to Hu Qingyu Tang.",
+    "icon": "🏮",
+    "category": "landmark",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Hefang Street",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-11",
+   "name": "Six Harmonies Pagoda",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.1983338,
+    "longitude": 120.1266108
+   },
+   "coordinates_source": "overpass way/159184108 historic=tower",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Eight-sided, seven-storey brick-and-wood pagoda on Yuelun Hill above the Qiantang River, 59.89 m tall.",
+    "icon": "🏯",
+    "category": "landmark",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Liuhe Pagoda",
+    "name": "Six Harmonies Pagoda"
+   }
+  },
+  {
+   "id": "hangzhou-14",
+   "name": "Liangzhu Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.3797659,
+    "longitude": 120.0231606
+   },
+   "coordinates_source": "overpass way/433830824 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Chipperfield-designed museum of Liangzhu culture, with jade cong and bi from a 5,000-year-old walled city.",
+    "icon": "🏺",
+    "category": "museum",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "ticketUrl": "https://www.lzmuseum.cn",
+    "name": "Liangzhu Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-15",
+   "name": "China National Tea Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2221335,
+    "longitude": 120.1085607
+   },
+   "coordinates_source": "overpass relation/13237505 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Two-site museum in the Longjing hills with permanent exhibitions on Chinese tea culture and tea production.",
+    "icon": "🍵",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.teamuseum.cn/",
+    "wiki": "China National Tea Museum",
+    "name": "China National Tea Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-16",
+   "name": "China National Silk Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2251936,
+    "longitude": 120.1465893
+   },
+   "coordinates_source": "overpass relation/8281187 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Hangzhou museum of Chinese silk, textiles and the Silk Road, with galleries on silkworm rearing and weaving.",
+    "icon": "🧵",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.chinasilkmuseum.com/",
+    "wiki": "China National Silk Museum",
+    "name": "China National Silk Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-17",
+   "name": "Zhejiang Provincial Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2535309,
+    "longitude": 120.1387829
+   },
+   "coordinates_source": "overpass node/775020312 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Zhejiang's provincial museum, with ancient ceramics and lacquerware in its Gushan hall on West Lake.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "name": "Zhejiang Provincial Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-18",
+   "name": "Yue Fei Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2547029,
+    "longitude": 120.1298095
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Temple built around the tomb of Song general Yue Fei, a symbol of Chinese patriotism, on West Lake's north shore.",
+    "icon": "🏯",
+    "category": "religious",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "costMin": 25,
+    "costMax": 25,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Yue Fei Temple"
+   }
+  },
+  {
+   "id": "hangzhou-19",
+   "name": "Baochu Pagoda",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2633417,
+    "longitude": 120.1433748
+   },
+   "coordinates_source": "overpass node/5312284654 man_made=tower",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Slender seven-storey pagoda on Baoshi Hill, one of West Lake's landmarks, just north of the lake.",
+    "icon": "🗼",
+    "category": "landmark",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "wiki": "Baochu Pagoda",
+    "name": "Baochu Pagoda",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-20",
+   "name": "Feilai Peak",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2388764,
+    "longitude": 120.0964157
+   },
+   "coordinates_source": "overpass node/9020762381 natural=peak",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Limestone peak beside Lingyin Temple, carved with 345 Buddhist stone statues made from the 10th to 14th centuries.",
+    "icon": "⛰️",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "name": "Feilai Peak",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-21",
+   "name": "Jingci Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2313213,
+    "longitude": 120.1443366
+   },
+   "coordinates_source": "overpass node/4427428610 amenity=place_of_worship",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Buddhist temple at the foot of Nanping Hill on West Lake, paired with Lingyin Temple and home of the Evening Bell scene.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 10,
+    "costMax": 15,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Jingci Temple"
+   }
+  },
+  {
+   "id": "hangzhou-22",
+   "name": "Wushan Hill",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2391123,
+    "longitude": 120.1600791
+   },
+   "coordinates_source": "overpass node/4944243306 natural=peak",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A low hill above West Lake's east shore with temples, the Chenghuang Pavilion tower and views over Hangzhou.",
+    "icon": "⛰️",
+    "category": "viewpoint",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "costPer": "Chenghuang Pavilion only; the rest of the hill is free",
+    "name": "Wushan Hill"
+   }
+  },
+  {
+   "id": "hangzhou-24",
+   "name": "Beijing-Hangzhou Grand Canal Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.319674,
+    "longitude": 120.136993
+   },
+   "coordinates_source": "overpass way/424289940 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A free canal museum in Gongshu district tracing the Grand Canal's history, beside the canal itself.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "name": "Beijing-Hangzhou Grand Canal Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-25",
+   "name": "Gongchen Bridge",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.3204639,
+    "longitude": 120.1339172
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Hangzhou's largest surviving stone arch bridge, a three-arch span marking the end of the Grand Canal.",
+    "icon": "🌉",
+    "category": "landmark",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costBasis": "open",
+    "wiki": "Gongchen Bridge",
+    "name": "Gongchen Bridge",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-27",
+   "name": "Former Residence of Hu Xueyan",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2395853,
+    "longitude": 120.1682783
+   },
+   "coordinates_source": "overpass way/489075428 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A nationally protected Jiangnan mansion and garden in Hangzhou's Qinghefang historic district, built in the 1870s.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Former Residence of Hu Xueyan"
+   }
+  },
+  {
+   "id": "hangzhou-29",
+   "name": "Guo's Villa",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.245895,
+    "longitude": 120.1275924
+   },
+   "coordinates_source": "overpass node/4500306808 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Compact Jiangnan-style garden on Yanggong Causeway with two ponds, pavilions and rockwork open to West Lake.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Guo's Villa"
+   }
+  },
+  {
+   "id": "hangzhou-30",
+   "name": "Flower Pond Fish Viewing",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.234386,
+    "longitude": 120.137392
+   },
+   "coordinates_source": "overpass node/1881729397 tourism=viewpoint",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Lakeside park with a red fish pond, peony garden and lawns beside Su Causeway on West Lake.",
+    "icon": "🐟",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open",
+    "name": "Flower Pond Fish Viewing",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-31",
+   "name": "Jiuxi Smoky Trees",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2046172,
+    "longitude": 120.1085446
+   },
+   "coordinates_source": "overpass node/13458238803 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A seven-kilometre stream valley west of West Lake, running through tea gardens and wooded hills from Longjing village.",
+    "icon": "🌳",
+    "category": "viewpoint",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Jiuxi Smoky Trees",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-32",
+   "name": "Hangzhou Botanical Garden",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2542611,
+    "longitude": 120.1155179
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Hillside botanical garden on the north-west shore of West Lake, with more than 3,400 plant species and a plum-blossom garden.",
+    "icon": "🌿",
+    "category": "nature",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Hangzhou Botanical Garden"
+   }
+  },
+  {
+   "id": "hangzhou-33",
+   "name": "Wansong Academy",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2290341,
+    "longitude": 120.155994
+   },
+   "coordinates_source": "overpass way/520937302 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Academy on Phoenix Hill's west slope, founded in 1498 and among Hangzhou's best-known Ming and Qing academies.",
+    "icon": "🏛️",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Wansong Academy"
+   }
+  },
+  {
+   "id": "hangzhou-34",
+   "name": "Jingshan Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.3820787,
+    "longitude": 119.7611219
+   },
+   "coordinates_source": "overpass node/5237422822 amenity=place_of_worship",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Chan Buddhist temple in the hills of Yuhang, known for its tea-feast tradition and a five-gate entrance hall.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Jingshan Temple"
+   }
+  },
+  {
+   "id": "hangzhou-36",
+   "name": "Hangzhou Wildlife World",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.1550091,
+    "longitude": 119.9809686
+   },
+   "coordinates_source": "overpass way/437732061 tourism=zoo",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Large safari park in Fuyang with walk-through zones, a drive-through area and animal shows.",
+    "icon": "🦁",
+    "category": "entertainment",
+    "visitHoursMin": 4,
+    "visitHoursMax": 6,
+    "costMin": 210,
+    "costMax": 220,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.hzsp.com/",
+    "name": "Hangzhou Wildlife World"
+   }
+  },
+  {
+   "id": "hangzhou-37",
+   "name": "Hangzhou Paradise Park",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.1626114,
+    "longitude": 120.2409696
+   },
+   "coordinates_source": "overpass way/443223606 tourism=theme_park",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Amusement park on the Xianghu lake shore in Xiaoshan, with rides and a neighbouring water park.",
+    "icon": "🎢",
+    "category": "entertainment",
+    "visitHoursMin": 4,
+    "visitHoursMax": 7,
+    "costMin": 128,
+    "costMax": 190,
+    "currency": "CNY",
+    "costBasis": "ticket",
+    "name": "Hangzhou Paradise Park"
+   }
+  },
+  {
+   "id": "hangzhou-38",
+   "name": "China Comic and Animation Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.1644734,
+    "longitude": 120.2010685
+   },
+   "coordinates_source": "overpass way/607445656 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "China's first national-level comic and animation museum, on Baima Lake in Binjiang, with over 20,000 works.",
+    "icon": "🎬",
+    "category": "museum",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "name": "China Comic and Animation Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-40",
+   "name": "Qingshan Lake",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2582545,
+    "longitude": 119.7506324
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Large reservoir lake in Lin'an ringed by a 42 km greenway for walking and cycling, with water-sports areas.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "name": "Qingshan Lake",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "huzhou-1",
+   "name": "Huzhou Museum",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.8920107,
+    "longitude": 120.0839419
+   },
+   "coordinates_source": "overpass way/981518705 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Huzhou's city museum, with a Wuxing history exhibition, excavated relics and calligraphy and paintings, free to enter.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "http://www.huzhoumuseum.com/",
+    "name": "Huzhou Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "huzhou-3",
+   "name": "Huzhou Brush Museum",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.6972507,
+    "longitude": 120.3095771
+   },
+   "coordinates_source": "overpass way/121039006 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Museum on Huzhou brush making, the craft the city has been known for since the Jin dynasty, with live demonstrations.",
+    "icon": "🖌️",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "costMin": 18,
+    "costMax": 18,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Huzhou Brush Museum"
+   }
+  },
+  {
+   "id": "anji-1",
+   "name": "Great Bamboo Sea (Anji)",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.4880617,
+    "longitude": 119.6533169
+   },
+   "coordinates_source": "overpass node/5362816368 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Bamboo-covered hills at Tianhuangping near Anji, a film location for Crouching Tiger, Hidden Dragon.",
+    "icon": "🎋",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 58,
+    "costMax": 58,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Great Bamboo Sea (Anji)"
+   }
+  },
+  {
+   "id": "anji-2",
+   "name": "Anji Bamboo Exposition Park",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.594588,
+    "longitude": 119.6550565
+   },
+   "coordinates_source": "overpass way/1081321941 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A large bamboo-themed park in Anji with bamboo gardens and exhibits on bamboo culture, a county centrepiece.",
+    "icon": "🎋",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 70,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Anji Bamboo Exposition Park"
+   }
+  },
+  {
+   "id": "anji-3",
+   "name": "Jiangnan Tianchi",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.4707029,
+    "longitude": 119.5942555
+   },
+   "coordinates_source": "overpass node/5362808428 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Upper reservoir of the Tianhuangping pumped-storage plant, with lakeside paths and a tour bus around the lake.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 80,
+    "costMax": 80,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Jiangnan Tianchi"
+   }
+  },
+  {
+   "id": "anji-4",
+   "name": "Canglong Baipu",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.4456972,
+    "longitude": 119.6029695
+   },
+   "coordinates_source": "overpass node/8964547417 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Gorge of waterfalls and walking trails in Anji's Tianhuangping area, with a cableway and rafting.",
+    "icon": "🌊",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 60,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Canglong Baipu"
+   }
+  },
+  {
+   "id": "huzhou-6",
+   "name": "Nanxun Ancient Town",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.8688754,
+    "longitude": 120.4203004
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A silk-trade canal town known for Ming and Qing bridges and old gardens, free to stroll, with a few mansions charging entry.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "wiki": "Nanxun",
+    "name": "Nanxun Ancient Town",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "huzhou-7",
+   "name": "Jiaye Tang",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.872102,
+    "longitude": 120.423208
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Private library built 1920-24 by silk merchant Liu Chenggan in Nanxun, beside Xiaolian Villa.",
+    "icon": "📚",
+    "category": "historic",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "costMin": 25,
+    "costMax": 25,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Jiaye Tang"
+   }
+  },
+  {
+   "id": "huzhou-8",
+   "name": "Former Residence of Zhang Shiming",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.8733429,
+    "longitude": 120.4265244
+   },
+   "coordinates_source": "overpass relation/21918636 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Late-Qing merchant mansion in Nanxun, built 1899-1905, blending a Jiangnan layout with Western Renaissance influence.",
+    "icon": "🏠",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Former Residence of Zhang Shiming",
+    "name": "Former Residence of Zhang Shiming"
+   }
+  },
+  {
+   "id": "huzhou-9",
+   "name": "Little Lotus Garden",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.8718936,
+    "longitude": 120.4249967
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Qing-era merchant garden in Nanxun ancient town, built around a large lotus pond with a red-brick Western house.",
+    "icon": "🪷",
+    "category": "historic",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "costMin": 25,
+    "costMax": 25,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Little Lotus Manor",
+    "name": "Little Lotus Garden"
+   }
+  },
+  {
+   "id": "xinshi-ancient-town",
+   "name": "Xinshi Ancient Town",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.6170584,
+    "longitude": 120.2845764
+   },
+   "coordinates_source": "overpass way/1413769762 tourism=theme_park",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Water town in Deqing with old canal streets to walk, free to enter.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open",
+    "name": "Xinshi Ancient Town",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "jiaxing-2",
+   "name": "Pavilion of Mist and Rain",
+   "action": "spot",
+   "destination": "jiaxing",
+   "coordinates": {
+    "latitude": 30.757773,
+    "longitude": 120.7558587
+   },
+   "coordinates_source": "nominatim/wikidata (moved 30 m N: pin-shared with a neighbouring spot)",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Pavilion on a man-made island in Nanhu lake, Jiaxing, reached by boat and ringed by smaller halls and pavilions.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "entry",
+    "name": "Pavilion of Mist and Rain",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "jiaxing-5",
+   "name": "Jiaxing Museum",
+   "action": "spot",
+   "destination": "jiaxing",
+   "coordinates": {
+    "latitude": 30.7446093,
+    "longitude": 120.7599513
+   },
+   "coordinates_source": "overpass way/1515347881 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Jiaxing's city museum, with galleries on the Majiabang prehistoric culture and the history of the Jiaxing area.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "name": "Jiaxing Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "xitang",
+   "name": "Xitang",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.941703,
+    "longitude": 120.8870808
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Canal town of nine rivers and old stone bridges, with lanes of old houses to walk along the water",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 3,
+    "visitHoursMax": 5,
+    "costMin": 95,
+    "costMax": 95,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Xitang",
+    "name": "Xitang",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "nanbei-lake",
+   "name": "Nanbei Lake",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.3749601,
+    "longitude": 120.8588267
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Scenic area in Haiyan County where mountains, sea and a lake meet, rated AAAA by China's tourism authority.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "name": "Nanbei Lake",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "mos-manor",
+   "name": "Mo's Manor",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.7000717,
+    "longitude": 121.0149424
+   },
+   "coordinates_source": "overpass node/14093851702 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Late-Qing mansion of the Mo family in Pinghu, a national protected site of about 70 rooms on 4,851 sq m.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "costMin": 28,
+    "costMax": 28,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Mo's Manor",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "yiwu-international-trade-city",
+   "name": "Yiwu International Trade City",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.3370905,
+    "longitude": 120.110061
+   },
+   "coordinates_source": "overpass way/899350750 amenity=marketplace",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "World's largest wholesale market for small commodities, in Yiwu, with multi-storey districts of stalls.",
+    "icon": "🛍️",
+    "category": "market",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "entry",
+    "wiki": "Yiwu International Trade City",
+    "name": "Yiwu International Trade City",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "xianhua-mountain",
+   "name": "Xianhua Mountain",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.5249186,
+    "longitude": 119.8960142
+   },
+   "coordinates_source": "overpass node/7623596821 natural=peak",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Scenic area of rock peaks and hiking trails in the hills north of Pujiang town, rated 4A.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 35,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Xianhua Mountain",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "guyan-painting-village",
+   "name": "Guyan Painting Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.3040368,
+    "longitude": 119.7316363
+   },
+   "coordinates_source": "overpass relation/13389373 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Riverside village near Lishui where a historic weir meets painters' studios and bamboo boat rides.",
+    "icon": "🎨",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 50,
+    "costMax": 50,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Guyan Painting Village",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "ningbo-1",
+   "name": "Tianyi Pavilion",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8738039,
+    "longitude": 121.5359544
+   },
+   "coordinates_source": "overpass way/912692909 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ming-dynasty private library and garden in Ningbo, built in 1561, with a pond, rockeries and the book pavilion at its centre.",
+    "icon": "📚",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.tianyige.com.cn/",
+    "wiki": "Tianyi Ge",
+    "name": "Tianyi Pavilion"
+   }
+  },
+  {
+   "id": "ningbo-3",
+   "name": "Ningbo Museum",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8173595,
+    "longitude": 121.54092
+   },
+   "coordinates_source": "overpass relation/21455454 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Museum in Yinzhou on Ningbo's history and local customs, which opened in 2008.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 2.5,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "ticketUrl": "https://www.nbmuseum.cn",
+    "name": "Ningbo Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "ningbo-4",
+   "name": "Tiantong Temple",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8073461,
+    "longitude": 121.7905538
+   },
+   "coordinates_source": "overpass way/1232520241 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Chan Buddhist temple in the Taibai hills of Yinzhou, one of China's five great Chan temples and the Soto school's cradle.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "wiki": "Tiantong Temple",
+    "name": "Tiantong Temple",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "ningbo-5",
+   "name": "Temple of King Ashoka",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8485299,
+    "longitude": 121.7383887
+   },
+   "coordinates_source": "overpass way/551793028 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Buddhist temple in Ningbo's Yinzhou District, founded in 282 and said to hold a relic of the Buddha.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "wiki": "Temple of King Ashoka",
+    "name": "Temple of King Ashoka",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "ningbo-6",
+   "name": "Qing'an Guildhall",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8748581,
+    "longitude": 121.5588421
+   },
+   "coordinates_source": "overpass way/1447621853 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A restored 19th-century Fujianese guildhall and Mazu temple in Ningbo, now a maritime and folk-art museum.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Qing'an Guildhall",
+    "name": "Qing'an Guildhall"
+   }
+  },
+  {
+   "id": "ningbo-8",
+   "name": "Tianfeng Pagoda",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8679332,
+    "longitude": 121.5467747
+   },
+   "coordinates_source": "overpass node/775752405 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Rebuilt pagoda in central Ningbo that visitors can climb for views over the old town.",
+    "icon": "🗼",
+    "category": "monument",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Tianfeng Pagoda"
+   }
+  },
+  {
+   "id": "ningbo-9",
+   "name": "Baoguo Temple",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.9821695,
+    "longitude": 121.5168518
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Song-dynasty timber hall of 1013 on Lingshan hill, now a museum of ancient Chinese wooden architecture",
+    "icon": "🛕",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 18,
+    "costMax": 18,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Baoguo Temple (Zhejiang)",
+    "name": "Baoguo Temple"
+   }
+  },
+  {
+   "id": "ningbo-13",
+   "name": "Ningbo Youngor Zoo",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8062862,
+    "longitude": 121.6716917
+   },
+   "coordinates_source": "overpass way/691951921 tourism=zoo",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Safari-style zoo by Dongqian Lake with elephants, giant pandas, sea lion shows and a bird show.",
+    "icon": "🐘",
+    "category": "entertainment",
+    "visitHoursMin": 4,
+    "visitHoursMax": 6,
+    "costMin": 70,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "ticketUrl": "http://www.nbzoo.com/",
+    "name": "Ningbo Youngor Zoo"
+   }
+  },
+  {
+   "id": "ningbo-14",
+   "name": "Ningbo Museum of Art",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8810164,
+    "longitude": 121.5572392
+   },
+   "coordinates_source": "overpass way/232143544 tourism=gallery",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Wang Shu-designed art museum in a converted shipping terminal on the Yongjiang riverfront near Ningbo's Old Bund.",
+    "icon": "🖼️",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.nma.org.cn/",
+    "name": "Ningbo Museum of Art",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "ningbo-15",
+   "name": "China Port Museum",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.7587151,
+    "longitude": 121.9056681
+   },
+   "coordinates_source": "overpass way/559989176 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Conch-shaped museum of China's ports and underwater archaeology in Beilun, with a hands-on harbour science hall.",
+    "icon": "⚓",
+    "category": "museum",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "name": "China Port Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "xiangshan-global-studios",
+   "name": "Xiangshan Global Studios",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.2927239,
+    "longitude": 121.8350476
+   },
+   "coordinates_source": "overpass way/460757372 tourism=theme_park",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Film studio in Xiangshan, open since 2005, with period-set towns built for Chinese productions.",
+    "icon": "🎬",
+    "category": "entertainment",
+    "visitHoursMin": 3,
+    "visitHoursMax": 5,
+    "costMin": 125,
+    "costMax": 150,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Xiangshan Global Studios",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "hemudu-site-museum",
+   "name": "Hemudu Site Museum",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.9631801,
+    "longitude": 121.3454572
+   },
+   "coordinates_source": "overpass way/1032432800 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Museum at the Neolithic Hemudu site on the Yao River, with early cultivated rice and remains of stilt houses.",
+    "icon": "🏺",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "name": "Hemudu Site Museum",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "liangshanbo-butterfly-temple",
+   "name": "Liangshanbo Butterfly Temple",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.9105699,
+    "longitude": 121.4799995
+   },
+   "coordinates_source": "overpass way/329915695 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Park in Ningbo's western suburbs built around Liangshanbo Temple, his tomb and Butterfly Lovers sculptures.",
+    "icon": "🦋",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Liangshanbo Butterfly Temple",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "qiantong-ancient-town",
+   "name": "Qiantong Ancient Town",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.2272583,
+    "longitude": 121.3465818
+   },
+   "coordinates_source": "overpass node/10970172213 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ancient village near Ninghai with old lanes, houses and ancestral halls to wander.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 50,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Qiantong Ancient Town",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "quzhou-5",
+   "name": "Tianji Longmen Gorge",
+   "action": "spot",
+   "destination": "quzhou",
+   "coordinates": {
+    "latitude": 28.7267408,
+    "longitude": 118.9572018
+   },
+   "coordinates_source": "overpass node/5430674504 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Glass-floored cliff walkway and gorge scenery near Quzhou, with a zip line across the valley.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 65,
+    "costMax": 65,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Tianji Longmen Gorge"
+   }
+  },
+  {
+   "id": "longyou-caves",
+   "name": "Longyou Caves",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.0621706,
+    "longitude": 119.1843151
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Group of 24 man-made sandstone caverns near Longyou, more than 2,000 years old, with no record of who cut them.",
+    "icon": "🕳️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 65,
+    "costMax": 85,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Longyou Caves",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "sanqu-stone-forest",
+   "name": "Sanqu Stone Forest",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.9882915,
+    "longitude": 118.5008739
+   },
+   "coordinates_source": "overpass node/5263557298 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Karst stone forest in Changshan county with weathered limestone formations shaped like animals.",
+    "icon": "🪨",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3.5,
+    "costMin": 60,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Sanqu Stone Forest",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "changshan-geopark",
+   "name": "Changshan Geopark",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.8723971,
+    "longitude": 118.492332
+   },
+   "coordinates_source": "overpass node/5263548589 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A geopark around Changshan's Golden Spike, a global reference point for a geological boundary.",
+    "icon": "🪨",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "costMin": 60,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "park",
+    "name": "Changshan Geopark",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "shaoxing-1",
+   "name": "Lu Xun Native Place",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 29.9945796,
+    "longitude": 120.5825273
+   },
+   "coordinates_source": "overpass node/12141846979 tourism=artwork",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Historic quarter around Lu Xun's childhood home in Shaoxing, with his memorial hall, Three Flavours Study and Xianheng Hotel.",
+    "icon": "📚",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "name": "Lu Xun Native Place",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "shaoxing-3",
+   "name": "Orchid Pavilion",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 29.9289064,
+    "longitude": 120.4952933
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A Jin-era garden with a winding stream where Wang Xizhi wrote the Orchid Pavilion Preface in 353.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 70,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Orchid Pavilion"
+   }
+  },
+  {
+   "id": "shaoxing-4",
+   "name": "Mausoleum of Yu the Great",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 29.9661734,
+    "longitude": 120.6101162
+   },
+   "coordinates_source": "overpass node/2503547616 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "The memorial site of Yu the Great, legendary flood tamer, with a tomb, temple and stele pavilion at Mount Kuaiji.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 2.5,
+    "costMin": 50,
+    "costMax": 50,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Mausoleum of Yu the Great"
+   }
+  },
+  {
+   "id": "shaoxing-9",
+   "name": "Former Residence of Cai Yuanpei",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 30.009604,
+    "longitude": 120.5792026
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Birthplace of the educator Cai Yuanpei, a house built in the Daoguang reign of the Qing dynasty in Shaoxing.",
+    "icon": "🏠",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costBasis": "entry",
+    "wiki": "Former Residence of Cai Yuanpei",
+    "name": "Former Residence of Cai Yuanpei",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "shaoxing-10",
+   "name": "Zhou Enlai's Ancestral Home",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 30.0048231,
+    "longitude": 120.5816162
+   },
+   "coordinates_source": "overpass node/4784653519 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ancestral home of Zhou Enlai's family in Shaoxing, opened as a memorial in 1984, with an exhibition on his life.",
+    "icon": "🏠",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costBasis": "entry",
+    "name": "Zhou Enlai's Ancestral Home",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "xishi-guli",
+   "name": "Xishi Guli",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.70191,
+    "longitude": 120.2356301
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Riverside scenic area in Zhuji honouring the beauty Xi Shi, with a shrine, memorial halls and gardens.",
+    "icon": "🏛️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2.5,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Xishi Guli",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "guoqing-temple",
+   "name": "Guoqing Temple",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.1728687,
+    "longitude": 121.0434825
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Sui-dynasty Buddhist temple on Mount Tiantai, birthplace of the Tiantai school, free to enter.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "name": "Guoqing Temple",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "shenxianju",
+   "name": "Shenxianju",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.7486067,
+    "longitude": 120.6158604
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Volcanic-rock peaks and cliffs around Guanyin Peak, with a glass-floored platform and cable cars.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 110,
+    "costMax": 110,
+    "currency": "CNY",
+    "costBasis": "park",
+    "costPer": "Adult",
+    "ticketUrl": "https://www.zjshenxianju.com/",
+    "name": "Shenxianju",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "fangshan-geopark",
+   "name": "Fangshan Global Geopark",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.635931,
+    "longitude": 121.2792351
+   },
+   "coordinates_source": "overpass node/3322731860 natural=peak",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Volcanic-plateau scenic area in Wenling with Fangshan, Nansong Rock and Shifeng sections, part of Yandangshan Geopark.",
+    "icon": "🏔️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 40,
+    "costMax": 40,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Fangshan Global Geopark",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "wenzhou-museum",
+   "name": "Wenzhou Museum",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.9917694,
+    "longitude": 120.6940742
+   },
+   "coordinates_source": "overpass way/276856058 tourism=museum",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "City museum on Shifu Road in Lucheng, with history, painting, calligraphy and pottery galleries, free to enter.",
+    "icon": "🏛️",
+    "category": "museum",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.wzmuseum.cn",
+    "wiki": "Wenzhou Museum",
+    "name": "Wenzhou Museum",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "yucang-mountain",
+   "name": "Yucang Mountain",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.5256732,
+    "longitude": 120.2937327
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Forested granite mountain park in Cangnan with walking trails and rock carvings.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "name": "Yucang Mountain",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "wanghai-tower",
+   "name": "Wanghai Tower",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.840083,
+    "longitude": 121.1250005
+   },
+   "coordinates_source": "overpass way/1484030362 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Rebuilt tower on Dongtou island, Wenzhou, with upper-floor views over the island chain and fishing harbour.",
+    "icon": "🏯",
+    "category": "viewpoint",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 27,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Wanghai Tower",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "mount-putuo-2",
+   "name": "South Sea Guanyin",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "coordinates": {
+    "latitude": 29.9763348,
+    "longitude": 122.3894972
+   },
+   "coordinates_source": "overpass node/774375920 tourism=attraction",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A 33 m, 70-tonne bronze statue of Guanyin on Mount Putuo island, consecrated in 1997.",
+    "icon": "🗿",
+    "category": "monument",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 6,
+    "costMax": 6,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "South Sea Guanyin"
+   }
+  },
+  {
+   "id": "mount-putuo-3",
+   "name": "Fayu Temple",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "coordinates": {
+    "latitude": 30.0047712,
+    "longitude": 122.3892428
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Stone Temple, one of Mount Putuo's three major temples, with a grand hall rebuilt in 1699.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "needs": "park-pass",
+    "wiki": "Fayu Temple",
+    "parkPass": "mount-putuo",
+    "name": "Fayu Temple"
+   }
+  },
+  {
+   "id": "nansha-beach",
+   "name": "Nansha Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.8770882,
+    "longitude": 122.4053367
+   },
+   "coordinates_source": "overpass way/857410251 natural=beach",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Wide sand beach on Zhujiajian island in Zhoushan, inside a ticketed seaside scenic area.",
+    "icon": "🏖️",
+    "category": "beach",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 70,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Nansha Beach",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dongsha-beach",
+   "name": "Dongsha Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.8833739,
+    "longitude": 122.4150779
+   },
+   "coordinates_source": "overpass way/684588283 natural=beach",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Sandy beach on Zhujiajian island in the Zhoushan archipelago, one of several beaches near Nansha.",
+    "icon": "🏖️",
+    "category": "beach",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "costMin": 10,
+    "costMax": 35,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Dongsha Beach",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "jihu-beach",
+   "name": "Jihu Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.7161428,
+    "longitude": 122.469336
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Sandy beach on Sijiao island in the Shengsi Islands, the archipelago's main tourist attraction.",
+    "icon": "🏖️",
+    "category": "beach",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "costMin": 40,
+    "costMax": 40,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Jihu Beach",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "houtouwan-village",
+   "name": "Houtouwan Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.731095,
+    "longitude": 122.8179418
+   },
+   "coordinates_source": "nominatim/wikidata",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Abandoned fishing village on Shengshan island, its houses overtaken by greenery and a draw for visitors.",
+    "icon": "🌿",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 25,
+    "costMax": 25,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Houtouwan",
+    "name": "Houtouwan Village",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "hangzhou-1",
+   "name": "West Lake",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2609053,
+    "longitude": 120.14703
+   },
+   "coordinates_source": "hand: OSM way/1466925249 man_made=bridge 断桥 (Broken Bridge) + way/28538289 pedestrian; main lake [bridge on lake shore]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Hangzhou's freshwater lake, ringed by hills, with causeways, islands, pagodas and temples, free to visit.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "West Lake"
+   }
+  },
+  {
+   "id": "hangzhou-12",
+   "name": "Song Dynasty Town",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.17194,
+    "longitude": 120.09361
+   },
+   "coordinates_source": "hand: zh.wikipedia 宋城 coords + Commons geotagged Songcheng files (median ~30.1724,120.0929, ~70  [tourism theme park (attraction)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Song-dynasty theme park in Hangzhou with period streets, twenty theatres and the Songcheng Qianguqing show.",
+    "icon": "🏯",
+    "category": "entertainment",
+    "visitHoursMin": 3,
+    "visitHoursMax": 5,
+    "costMin": 320,
+    "costMax": 320,
+    "currency": "CNY",
+    "costBasis": "ticket",
+    "ticketUrl": "https://www.songcn.com/park/1",
+    "name": "Song Dynasty Town"
+   }
+  },
+  {
+   "id": "hangzhou-13",
+   "name": "Liangzhu Ancient City",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.3820108,
+    "longitude": 119.9794203
+   },
+   "coordinates_source": "hand: OSM node/12643193076 (bus stop named 良渚古城遗址公园, at the park's south entrance; park relation [park entrance bus stop]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "5,300-year-old walled city of the Liangzhu culture in Hangzhou, a World Heritage site toured by shuttle.",
+    "icon": "🏺",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 60,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "needs": "booking",
+    "ticketUrl": "http://www.lzsite.cn",
+    "wiki": "Archaeological ruins of Liangzhu City",
+    "name": "Liangzhu Ancient City"
+   }
+  },
+  {
+   "id": "hangzhou-23",
+   "name": "Hupao Spring",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2117722,
+    "longitude": 120.1300914
+   },
+   "coordinates_source": "hand: OSM node/4676431394 虎跑梦泉 (alt_name 虎跑泉); 虎跑 bus stops/entrance nodes within ~100 m [tourism=attraction (spring)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Spring and park in southwest Hangzhou, prized for tea-brewing water, with a memorial hall to the monk Li Shutong.",
+    "icon": "⛲",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 15,
+    "costMax": 15,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Hupao Spring"
+   }
+  },
+  {
+   "id": "hangzhou-26",
+   "name": "Hangzhou Arts and Crafts Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.3212005,
+    "longitude": 120.1334662
+   },
+   "coordinates_source": "hand: Photon/OSM way/457632694 tourism=museum 手工艺活态展示馆 (Living Crafts Exhibition Hall, Gongchen  [museum building]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Former textile-factory museum in Hangzhou with galleries of crafts, knives and swords, fans and umbrellas.",
+    "icon": "🏺",
+    "category": "museum",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "wiki": "Hangzhou Arts and Crafts Museum",
+    "name": "Hangzhou Arts and Crafts Museum",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-28",
+   "name": "Hu Qing Yu Tang",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2421975,
+    "longitude": 120.1639863
+   },
+   "coordinates_source": "hand: Nominatim OSM way/516415152 name 胡庆余堂 (building, 95 Dajing Lane); also node/5018661864 pha [building]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Late-Qing traditional Chinese medicine pharmacy on Dajing Lane, now a museum and working drugstore.",
+    "icon": "🏯",
+    "category": "museum",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "costMin": 15,
+    "costMax": 15,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Hu Qing Yu Tang",
+    "name": "Hu Qing Yu Tang"
+   }
+  },
+  {
+   "id": "hangzhou-35",
+   "name": "Tianducheng",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.385305,
+    "longitude": 120.243499
+   },
+   "coordinates_source": "hand: OSM way/337741972 天都城埃菲尔铁塔 (Eiffel Tower of Tiandu) [landmark replica tower]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Paris-style housing estate in Hangzhou, with a 108 m replica of the Eiffel Tower.",
+    "icon": "🗼",
+    "category": "landmark",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Tianducheng",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-39",
+   "name": "Xianghu Lake",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.1271755,
+    "longitude": 120.1937575
+   },
+   "coordinates_source": "hand: OSM node/11953020534 老虎洞游客中心船埠 [visitor-centre boat pier]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Lake in Xiaoshan, a 4A scenic area created in 1112 as a reservoir, with lakeside paths and boat cruises.",
+    "icon": "🌊",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "name": "Xianghu Lake",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "hangzhou-4",
+   "name": "Longjing Tea Fields",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.22417,
+    "longitude": 120.10699
+   },
+   "coordinates_source": "hand: OSM n13371708831 amenity=cafe 龙井茶室 (30.22417,120.10699) + Commons geotagged 龙井问茶 files (30 [cafe/tea house at Longjing Wencha]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Tea plantations around Longjing village in Hangzhou's hills, where Dragon Well tea is grown and sold.",
+    "icon": "🍵",
+    "category": "nature",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "wiki": "Longjing, Hangzhou",
+    "name": "Longjing Tea Fields"
+   }
+  },
+  {
+   "id": "hangzhou-41",
+   "name": "Longmen Ancient Town",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 29.902064,
+    "longitude": 119.947412
+   },
+   "coordinates_source": "hand: Photon/OSM way/1509810480 tourism=theme_park 龙门古镇 (town P1 parking 29.9069,119.9426 and pl [scenic area way centre (old town)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ancient town in Fuyang whose Sun clan traces its descent from Wu emperor Sun Quan.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 70,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Longmen Ancient Town"
+   }
+  },
+  {
+   "id": "hangzhou-5",
+   "name": "Xixi National Wetland Park",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.257327,
+    "longitude": 120.056453
+   },
+   "coordinates_source": "hand: OSM way/463217862 西溪湿地周家村售票处 [ticket office (main Zhoujiacun south gate)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Wetland park of watercourses, ponds and marshes west of Hangzhou, explored on foot or by traditional rowing boat.",
+    "icon": "🌾",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 80,
+    "costMax": 80,
+    "currency": "CNY",
+    "costBasis": "park",
+    "costPer": "Adult/Day",
+    "name": "Xixi National Wetland Park"
+   }
+  },
+  {
+   "id": "hangzhou-6",
+   "name": "Su Causeway",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.2391571,
+    "longitude": 120.1355676
+   },
+   "coordinates_source": "hand: OSM way/30072138 (one of 8 ways named 苏堤 forming the causeway; middle segment) [highway=pedestrian (causeway midpoint)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Causeway across West Lake built in 1089 under the poet Su Shi, crossed by six bridges.",
+    "icon": "🌳",
+    "category": "landmark",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Su Causeway"
+   }
+  },
+  {
+   "id": "hangzhou-9",
+   "name": "Solitary Hill",
+   "action": "spot",
+   "destination": "hangzhou",
+   "coordinates": {
+    "latitude": 30.254194,
+    "longitude": 120.137781
+   },
+   "coordinates_source": "hand: OSM node/9035381272 place=island 孤山 (via Photon); Wikidata Q10122551 30.253,120.1375 (~130 [hill-island centroid (on the hill)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "West Lake's only natural island, once a Qing palace site and now Zhongshan Park beside the Zhejiang Provincial Museum.",
+    "icon": "⛰️",
+    "category": "viewpoint",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open",
+    "name": "Solitary Hill",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "qiandao-lake",
+   "name": "Qiandao Lake",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.5934005,
+    "longitude": 119.0028512
+   },
+   "coordinates_source": "hand: OSM way/1131151339 千岛湖客运码头 (Chun'an main passenger wharf, central lake tours) [tourist wharf]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Reservoir lake in Chun'an, created in 1959, dotted with 1,078 islands above 2,500 square metres.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 45.5,
+    "costMax": 195,
+    "currency": "CNY",
+    "costBasis": "ticket",
+    "name": "Qiandao Lake",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "tianmu-mountain",
+   "name": "Tianmu Mountain",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.314245,
+    "longitude": 119.443152
+   },
+   "coordinates_source": "hand: OSM node/2647331335 天目山景区 (with bus stop n13169305019 at same point); 禅源寺 n5127564669 at 3 [scenic-area visitor node (West Tianmu)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Nature reserve in Lin'an known for giant Japanese cedars, waterfalls and temples on twin peaks.",
+    "icon": "🌲",
+    "category": "nature",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 110,
+    "costMax": 135,
+    "currency": "CNY",
+    "costBasis": "park",
+    "wiki": "Tianmu Mountain",
+    "name": "Tianmu Mountain",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "anji-5",
+   "name": "Anji Yucun",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.527464,
+    "longitude": 119.60683
+   },
+   "coordinates_source": "hand: OSM node/9107228610 余村 place=village [place=village]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Village in Anji where the 'green mountains are gold' saying was born, with a stone monument and bamboo-hill walks.",
+    "icon": "🎋",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "name": "Anji Yucun",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "anji-6",
+   "name": "Yunshang Grassland Starry Sky Ski Resort",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.4496764,
+    "longitude": 119.6412332
+   },
+   "coordinates_source": "hand: OSM node/9107233368 leisure=resort 云上草原高山四季旅游度假区 [resort node]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A high-mountain resort above Anji with a snow-season ski area, cliff swings and a grassland plateau at 1,168 m.",
+    "icon": "⛷️",
+    "category": "entertainment",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 180,
+    "costMax": 180,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Yunshang Grassland Starry Sky Ski Resort"
+   }
+  },
+  {
+   "id": "anji-7",
+   "name": "Zhejiang Museum of Natural History Anji Branch",
+   "action": "spot",
+   "destination": "anji",
+   "coordinates": {
+    "latitude": 30.6717633,
+    "longitude": 119.6416327
+   },
+   "coordinates_source": "hand: Photon/OSM node/12819666537 tourism=museum 浙江自然博物馆安吉馆 [museum node]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Anji branch of the Zhejiang Museum of Natural History, with a dinosaur hall from Triassic to Cretaceous.",
+    "icon": "🦕",
+    "category": "museum",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "ticketUrl": "https://www.zmnh.com",
+    "name": "Zhejiang Museum of Natural History Anji Branch",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "huzhou-2",
+   "name": "Lianhuazhuang Park",
+   "action": "spot",
+   "destination": "huzhou",
+   "coordinates": {
+    "latitude": 30.859672,
+    "longitude": 120.101096
+   },
+   "coordinates_source": "hand: Photon/OSM way/359363095 leisure=park 莲花庄 [park way centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Former Yuan-dynasty garden of Zhao Mengfu in Huzhou, restored in the 1980s, with a lotus pond and pavilions.",
+    "icon": "🪷",
+    "category": "nature",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Lianhuazhuang Park"
+   }
+  },
+  {
+   "id": "lake-tai",
+   "name": "Lake Tai",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 31.0611167,
+    "longitude": 119.9806648
+   },
+   "coordinates_source": "hand: OSM node/13093272950 太湖观景台 tourism=viewpoint (Changxing, Huzhou shore) [lakeshore viewpoint]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "China's third-largest freshwater lake, with about 90 islands, its southern shore forming the Zhejiang border at Huzhou.",
+    "icon": "🌊",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open",
+    "name": "Lake Tai",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "moganshan-villa-cluster",
+   "name": "Moganshan Villa Cluster",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.6061736,
+    "longitude": 119.862364
+   },
+   "coordinates_source": "hand: OSM node/5594849503 游客中心 Tourist Center, beside 剑池 (way/751464092) and 芦花荡公园 (node/5594849 [tourism=information]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "154 Western-style villas, mostly built by foreign residents from the 1890s, among Moganshan's bamboo forest.",
+    "icon": "🏡",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "costMin": 80,
+    "costMax": 80,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.mgsfjq.com/",
+    "name": "Moganshan Villa Cluster",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "haining-tidal-bore-viewing-park",
+   "name": "Haining Tidal Bore Viewing Park",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.40167,
+    "longitude": 120.54501
+   },
+   "coordinates_source": "hand: Commons geotagged Zhan'ao Pagoda photos (30.40167,120.54501); zh.wikipedia 盐官海塘 30.40191,1 [landmark / viewing pagoda on seawall]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Riverside park at Yanguan on the Qiantang River, where visitors watch the tidal bore roll upstream along the sea wall.",
+    "icon": "🌊",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2.5,
+    "costMin": 30,
+    "costMax": 90,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Haining Tidal Bore Viewing Park",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "jiaxing-1",
+   "name": "South Lake",
+   "action": "spot",
+   "destination": "jiaxing",
+   "coordinates": {
+    "latitude": 30.757503,
+    "longitude": 120.755859
+   },
+   "coordinates_source": "hand: OSM way/1411776917 烟雨楼 (Misty Rain Tower) on Huxin Island; park way/687335830 南湖景区 centre  [building (the lake's signature visitor stop)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Lake in Jiaxing with an islet and the Misty Rain Tower, where the Communist Party's first congress ended aboard a boat in 1921.",
+    "icon": "🏞️",
+    "category": "nature",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "wiki": "South Lake (Jiaxing)",
+    "name": "South Lake"
+   }
+  },
+  {
+   "id": "jiaxing-4",
+   "name": "Yuehe Street",
+   "action": "spot",
+   "destination": "jiaxing",
+   "coordinates": {
+    "latitude": 30.7735331,
+    "longitude": 120.7461061
+   },
+   "coordinates_source": "hand: Nominatim OSM way/1030903883 landuse=commercial 月河街区 centroid; 月河码头 ferry terminal node/88 [area centroid of historic street district]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Canal-side quarter in Jiaxing of three rivers and three streets, with teahouses, a flower and bird market and a zongzi museum.",
+    "icon": "🏮",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Yuehe Street",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "wuzhen-2",
+   "name": "Wuzhen Eastern Quarter",
+   "action": "spot",
+   "destination": "wuzhen",
+   "coordinates": {
+    "latitude": 30.7401647,
+    "longitude": 120.4937681
+   },
+   "coordinates_source": "hand: OSM node/13483276148 东栅景区游客中心 (relation/20135383); area way/438726256 centre is 30.74201,1 [visitor centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "The Eastern Quarter of Wuzhen water town, with canals, stone bridges and the Mao Dun former residence.",
+    "icon": "🏮",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 110,
+    "costMax": 110,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "ticketUrl": "http://www.wuzhen.com.cn",
+    "name": "Wuzhen Eastern Quarter"
+   }
+  },
+  {
+   "id": "fangyan-scenic-area",
+   "name": "Fangyan Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.9273576,
+    "longitude": 120.1875457
+   },
+   "coordinates_source": "hand: OSM node/11925150184 胡公祠 (Hugong Temple, the headline sight on the Fangyan plateau); sceni [place_of_worship]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Danxia red-rock scenic area in Yongkang with a cliffside walkway and a temple to the Song official Hu Ze.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 60,
+    "costMax": 65,
+    "currency": "CNY",
+    "costBasis": "park",
+    "name": "Fangyan Scenic Area",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "hengdian-world-studios",
+   "name": "Hengdian World Studios",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.1766097,
+    "longitude": 120.2986613
+   },
+   "coordinates_source": "hand: Photon/OSM way/317231689 tourism=theme_park 明清宫苑 (flagship Hengdian studio); neighbours wa [theme_park way centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "One of the world's largest outdoor film studios, with replica palaces and streets from Chinese period dramas.",
+    "icon": "🎬",
+    "category": "entertainment",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 180,
+    "costMax": 190,
+    "currency": "CNY",
+    "costBasis": "ticket",
+    "costPer": "Per Zone",
+    "ticketUrl": "https://www.hengdianworld.com/",
+    "wiki": "Hengdian World Studios",
+    "name": "Hengdian World Studios",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "liudong-mountain",
+   "name": "Liudong Mountain",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.20773,
+    "longitude": 119.53592
+   },
+   "coordinates_source": "hand: OSM way/809340449 六洞山地下长河 tourism=attraction (centre) [tourism=attraction]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Karst scenic area near Lanxi with limestone caves and an underground river.",
+    "icon": "🛶",
+    "category": "nature",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 69,
+    "costMax": 74,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Liudong Mountain",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "luzhai-residence",
+   "name": "Luzhai Residence",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.26606,
+    "longitude": 120.242274
+   },
+   "coordinates_source": "hand: OSM way/1528242678 东阳卢宅 (Residence of the Lu Family in Dongyang) [attraction building complex]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ming-era Lu family residential complex in Dongyang, among Jiangnan's largest, with halls and fine wood carving.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 58,
+    "costMax": 58,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Luzhai Residence",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "youbu-ancient-town",
+   "name": "Youbu Ancient Town",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.123216,
+    "longitude": 119.326607
+   },
+   "coordinates_source": "hand: OSM way/1214231672 游埠古街 (old street) within the 游埠古镇 area way/1214413126; 游埠酱园 museum 29.1 [old street]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A river-port town in Lanxi with old streets, a 500 m breakfast lane and lantern and lion-dance traditions.",
+    "icon": "🏮",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Youbu Ancient Town",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "zhuge-bagua-village",
+   "name": "Zhuge Bagua Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.25107,
+    "longitude": 119.29139
+   },
+   "coordinates_source": "hand: Commons geotagged files median (15 files, 29.25107,119.29139) + zh.wikipedia 诸葛村 29.25139, [village centre (heritage village core)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ming-Qing village near Lanxi laid out on the eight trigrams around a central pond, with ancestral halls to visit.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "costMin": 85,
+    "costMax": 85,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Zhuge Bagua Village",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "shimen-cave-scenic-area",
+   "name": "Shimen Cave Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.27564,
+    "longitude": 120.11356
+   },
+   "coordinates_source": "hand: Wikidata Q17039221 石门洞摩崖题刻 (cliff inscriptions at Shimen Cave) P625 [cave inscription site]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Forest park on the Oujiang near Qingtian, with a 112 m waterfall, rock inscriptions and a shrine to Liu Ji.",
+    "icon": "💦",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "costMin": 60,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Shimen Cave Scenic Area",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "tongji-weir",
+   "name": "Tongji Weir",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.3072,
+    "longitude": 119.7247
+   },
+   "coordinates_source": "hand: zh Wikipedia 通济堰 coords 28.30694,119.72417; Commons geotagged 通济堰/古堰 files (Yantou village [weir / heritage site]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Weir and irrigation works at Bihu near Lishui, begun in the Liang dynasty and counted the world's earliest arch dam.",
+    "icon": "🌉",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Tongji Weir",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "xiandu-scenic-area",
+   "name": "Xiandu Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.692667,
+    "longitude": 120.1384
+   },
+   "coordinates_source": "hand: OSM way/1030312129 鼎湖峰 attraction + peak node n5622749310 + zh Wikipedia 仙都 28.69222,120.1 [Dinghu Peak, headline feature of scenic area]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "National 5A scenic area in Jinyun around Dinghu Peak, Furong Gorge and Ni Weng Cave.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 70,
+    "costMax": 110,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Xiandu Scenic Area",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "yangjiatang-village",
+   "name": "Yangjiatang Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.46304,
+    "longitude": 119.54214
+   },
+   "coordinates_source": "hand: OSM node/12852682463 杨家堂村 place=hamlet (only match in Songyang area) [place=hamlet]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Quiet hillside village in Songyang county with Qing-dynasty houses and old trees at its entrance.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open",
+    "name": "Yangjiatang Village",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "danshan-chishui",
+   "name": "Danshan Chishui",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.79557,
+    "longitude": 121.15593
+   },
+   "coordinates_source": "hand: OSM node/5864604627 柿林村 tourism=attraction + place=village (scenic area is in Shilin villa [tourism=attraction village]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Canyon and cliff scenic area in Dalan town, Yuyao, in the Siming Mountains, with Taoist cultural sites.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 65,
+    "costMax": 65,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Danshan Chishui",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "five-dragon-pool",
+   "name": "Five Dragon Pool",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.7969388,
+    "longitude": 121.2569283
+   },
+   "coordinates_source": "hand: OSM node/11954816720 五龙潭 plus the provided hint 29.7968,121.2576 (~70 m) [pool/scenic-spot node]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ningbo's 4A gorge of five dragon-named pools and waterfalls, reached by a gentle climb in Yinzhou's hills.",
+    "icon": "🌊",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "costMin": 50,
+    "costMax": 50,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Five Dragon Pool",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "ningbo-10",
+   "name": "Cicheng",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.986227,
+    "longitude": 121.445379
+   },
+   "coordinates_source": "hand: OSM way/1249862962 慈城古县城 (Cicheng Ancient Town) attraction [attraction area centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Walled town in Ningbo's Jiangbei district dating from the 8th century, with old lanes and a Confucian temple.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "name": "Cicheng",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "ningbo-16",
+   "name": "Zhaobao Mountain",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.96263,
+    "longitude": 121.72112
+   },
+   "coordinates_source": "hand: OSM way/298086857 招宝山旅游风景区 tourism=attraction centre; Wikidata Q8070604 29.96248,121.72197 [tourism=attraction / hilltop temple and Weiyuan Fortress]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Hill at the mouth of the Yong River in Zhenhai, with the Ming Weiyuan city wall, Aozhu Pagoda and defence relics.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2.5,
+    "costMin": 50,
+    "costMax": 80,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Zhaobao Mountain",
+    "name": "Zhaobao Mountain"
+   }
+  },
+  {
+   "id": "ningbo-2",
+   "name": "Old Bund",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8792028,
+    "longitude": 121.5564711
+   },
+   "coordinates_source": "hand: OSM way/232143558 tourism=attraction 宁波老外滩 [attraction area]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ningbo's old riverside port quarter on the Yong River, with 54 listed sites including a Catholic cathedral.",
+    "icon": "🏛️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open",
+    "wiki": "Old Bund",
+    "name": "Old Bund",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "ningbo-7",
+   "name": "Moon Lake",
+   "action": "spot",
+   "destination": "ningbo",
+   "coordinates": {
+    "latitude": 29.8696,
+    "longitude": 121.5392
+   },
+   "coordinates_source": "hand: Commons geotagged files on 柳汀 (Liuting) causeway: 瀛洲接武牌坊 29.869646,121.539273; Nominatim p [lakeside causeway landmarks]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Lake in central Ningbo, a Tang-era reservoir later shaped with Song-era islets, bridges and old halls.",
+    "icon": "🌙",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open",
+    "name": "Moon Lake",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "shipu",
+   "name": "Shipu",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.2062161,
+    "longitude": 121.9271788
+   },
+   "coordinates_source": "hand: OSM relation/18186742 place=town 石浦镇 + zh Wikipedia 石浦镇 29.20546,121.92774 [town centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A fishing-harbour old town on Xiangshan's coast, with stone-paved streets, old houses and a working seafood port.",
+    "icon": "⚓",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 50,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Shipu",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "songlan-mountain-beach",
+   "name": "Songlan Mountain Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.4403143,
+    "longitude": 121.9666933
+   },
+   "coordinates_source": "hand: OSM way/590770336 natural=beach 松兰山中央沙滩 (29.4403,121.9667) + zh Wikipedia 松兰山 coords 29.44 [beach way]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Long coast on Xiangshan's east shore of sand beaches, rocky headlands and a seaside walking path.",
+    "icon": "🏖️",
+    "category": "beach",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Songlan Mountain Beach",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "quzhou-1",
+   "name": "Quzhou Ancient City",
+   "action": "spot",
+   "destination": "quzhou",
+   "coordinates": {
+    "latitude": 28.963307,
+    "longitude": 118.861797
+   },
+   "coordinates_source": "hand: OSM way/1494320062 衢州古城·水亭门历史文化街区 [historic quarter (theme_park tag)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Walled old quarter of Quzhou with the Nankong Confucian temple, Shuiting Gate street and old city walls.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open",
+    "name": "Quzhou Ancient City",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "quzhou-2",
+   "name": "Confucius South Family Temple",
+   "action": "spot",
+   "destination": "quzhou",
+   "coordinates": {
+    "latitude": 28.9635924,
+    "longitude": 118.8721214
+   },
+   "coordinates_source": "hand: OSM way/1494317479 building 孔氏南宗家庙 [building]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Temple of the Confucius family's southern branch in Quzhou, where they settled after the Song court fled south.",
+    "icon": "⛩️",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Confucius South Family Temple"
+   }
+  },
+  {
+   "id": "quzhou-3",
+   "name": "Lanke Mountain",
+   "action": "spot",
+   "destination": "quzhou",
+   "coordinates": {
+    "latitude": 28.879461,
+    "longitude": 118.919494
+   },
+   "coordinates_source": "hand: OSM way/856154978 natural=bare_rock 烂柯山 (28.87946,118.91949) + zh Wikipedia 烂柯山 28.87861,1 [summit/rock]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Low hill near Quzhou with a natural stone bridge and the cave of the Wang Zhi legend, a cradle of Go lore.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Lanke Mountain"
+   }
+  },
+  {
+   "id": "quzhou-4",
+   "name": "Yaowang Mountain",
+   "action": "spot",
+   "destination": "quzhou",
+   "coordinates": {
+    "latitude": 28.76508,
+    "longitude": 118.977352
+   },
+   "coordinates_source": "hand: OSM node/5430941057 药王山入口 [entrance node]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "National forest park at Huangtankou near Quzhou, known for a glass skywalk and a glass slide over wooded hills.",
+    "icon": "🌲",
+    "category": "nature",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "costMin": 65,
+    "costMax": 65,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Yaowang Mountain"
+   }
+  },
+  {
+   "id": "dafo-temple-xinchang",
+   "name": "Dafo Temple",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.49666889,
+    "longitude": 120.89555611
+   },
+   "coordinates_source": "hand: zh Wikipedia 大佛寺 (新昌) coordinates [temple]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Temple in Xinchang built around a giant Maitreya carved into the hillside, called Jiangnan's greatest Buddha.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 68,
+    "costMax": 80,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Dafo Temple (Xinchang)",
+    "name": "Dafo Temple",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "shaoxing-2",
+   "name": "Shen Garden",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 29.99298,
+    "longitude": 120.586215
+   },
+   "coordinates_source": "hand: OSM way/845557536 沈氏园 (Shen Yuan) park, matches hint 29.993404,120.586143 [park/garden way centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Song-dynasty garden in Shaoxing where the poet Lu You wrote of his lost love Tang Wan, with ponds and pavilions.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "costMin": 40,
+    "costMax": 40,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Shen Garden"
+   }
+  },
+  {
+   "id": "shaoxing-7",
+   "name": "Bazi Bridge",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 30.002247,
+    "longitude": 120.587772
+   },
+   "coordinates_source": "hand: Wikidata Q10892089 / enwiki Bazi Bridge 30.002247,120.587772; Commons Shaoxing Bazi Qiao p [bridge]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A Song-dynasty stone arch bridge in Shaoxing, named for its resemblance to the character for eight.",
+    "icon": "🌉",
+    "category": "historic",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costBasis": "open",
+    "wiki": "Bazi Bridge",
+    "name": "Bazi Bridge",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "shaoxing-8",
+   "name": "Shusheng Cultural Street",
+   "action": "spot",
+   "destination": "shaoxing",
+   "coordinates": {
+    "latitude": 30.0087603,
+    "longitude": 120.5820698
+   },
+   "coordinates_source": "hand: OSM node/12141044540 书圣故里游客中心 (visitor centre), consistent with 蕺山街 pedestrian street 30.0 [visitor centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Historic lanes in Shaoxing's old town around the Wang Xizhi residence, Jiezhu Temple and the Ink Pond.",
+    "icon": "🖌️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open",
+    "name": "Shusheng Cultural Street",
+    "currency": "CNY"
+   }
+  },
+  {
+   "id": "wuxie-scenic-area",
+   "name": "Wuxie Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.737302,
+    "longitude": 120.047079
+   },
+   "coordinates_source": "hand: OSM node/13188305239 第五泄 viewpoint; Commons geotagged files of 第五泄/第四泄 at 29.7374,120.0474 [viewpoint (main waterfalls area)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "National scenic area near Zhuji with a five-tier waterfall, forested hills and a lake crossed by ferry.",
+    "icon": "💦",
+    "category": "nature",
+    "visitHoursMin": 3,
+    "visitHoursMax": 5,
+    "costMin": 60,
+    "costMax": 70,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Wuxie Scenic Area",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dachen-islands",
+   "name": "Dachen Islands",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.450346,
+    "longitude": 121.899158
+   },
+   "coordinates_source": "hand: OSM node/7380497780 大陈镇 place=town (Xia Dachen, ferry terminal 28.4550,121.8952) [place=town]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Island group off Taizhou reached by ferry, held by the Nationalists until their 1955 evacuation, now with fishing villages.",
+    "icon": "🏝️",
+    "category": "nature",
+    "visitHoursMin": 6,
+    "visitHoursMax": 24,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Dachen Islands",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dalu-island",
+   "name": "Dalu Island",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.0925711,
+    "longitude": 121.4025844
+   },
+   "coordinates_source": "hand: OSM node/4660677665 大鹿岛 ferry_terminal (island is 大鹿岛/大鹿山 relation/6945470) [ferry_terminal]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Forested island off Yuhuan reached by ferry, with sea-eroded rocks and cliffs, circled on foot in about two hours.",
+    "icon": "🏝️",
+    "category": "nature",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "costMin": 45,
+    "costMax": 45,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Dalu Island",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dongji-islands",
+   "name": "Dongji Islands",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.191626,
+    "longitude": 122.6841706
+   },
+   "coordinates_source": "hand: OSM node/11895325432 东极庙子湖 ferry terminal (hub island Miaozihu) [ferry terminal on main island]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Island group off Zhoushan, reached by boat from the mainland, with fishing villages, cliffs and sea views.",
+    "icon": "🏝️",
+    "category": "nature",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Dongji Islands",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "linhai-ancient-city-wall",
+   "name": "Linhai Ancient City Wall",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.8412755,
+    "longitude": 121.1128916
+   },
+   "coordinates_source": "hand: OSM way/1554030253 兴善门 city_gate; zh.wikipedia 台州府城 coords 28.84123,121.11289 [historic=city_gate]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Walk the restored walls of old Taizhou Fu, nicknamed the Jiangnan Great Wall, along the ridge above Linhai.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 55,
+    "costMax": 60,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Walled City of Taizhou Fu",
+    "name": "Linhai Ancient City Wall",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "shitang-fishing-village",
+   "name": "Shitang Fishing Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.2821474,
+    "longitude": 121.6020319
+   },
+   "coordinates_source": "hand: OSM node/6144358890 place=town 石塘镇 + zh Wikipedia 石塘镇 28.28185,121.6022 (30 m) [town centre]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Wenling coastal fishing town of stacked stone houses, many now guesthouses, beside the Millennium Dawn viewing park.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open",
+    "name": "Shitang Fishing Village",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "taozhu-ancient-city",
+   "name": "Taozhu Ancient City",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.82894,
+    "longitude": 121.53395
+   },
+   "coordinates_source": "hand: zh.wikipedia 桃渚城 28.82894,121.53384; Commons 桃渚财神庙 28.828938,121.53395 (10 m); OSM place=v [historic walled town]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ming-dynasty fortified town at Taozhu in Linhai, built against Japanese pirate raids.",
+    "icon": "🏯",
+    "category": "historic",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Taozhu Ancient City",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "baizhangji-waterfall",
+   "name": "Baizhangji Waterfall",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.84667,
+    "longitude": 120.01083
+   },
+   "coordinates_source": "hand: Wikidata Q17028083 / zh.wikipedia 百丈漈 27.84667,120.01083; Commons 百丈漈飞瀑 27.84538,120.01177 [waterfall]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Wencheng waterfall whose first drop of 207 m was recognised in 2013 as China's tallest single drop.",
+    "icon": "💧",
+    "category": "nature",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 65,
+    "costMax": 65,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Baizhangji Waterfall",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dasha-ao-beach",
+   "name": "Dasha'ao Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.8215115,
+    "longitude": 121.1714586
+   },
+   "coordinates_source": "hand: Photon/OSM node/13607337573 tourism=attraction 大沙岙 (Wenzhou); beach way/1546274173 大沙岙海滨浴场 [attraction node]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Dongtou island's fine iron-sand beach, three-sided by hills, with a cliff cafe and indoor shore-life hall.",
+    "icon": "🏖️",
+    "category": "beach",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 25,
+    "costMax": 25,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Dasha'ao Beach",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "furong-ancient-village",
+   "name": "Furong Ancient Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.3329,
+    "longitude": 120.73019
+   },
+   "coordinates_source": "hand: zh Wikipedia 芙蓉村 coords 28.3329,120.73019; hint 28.33328,120.73202 is ~180 m east [village]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Ancient village in Yantou, Yongjia County, in the Nanxi River area, on a shared ticket with two nearby villages.",
+    "icon": "🏘️",
+    "category": "historic",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 18,
+    "costMax": 18,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Furong Ancient Village",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "jiangxin-island",
+   "name": "Jiangxin Island",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.030225,
+    "longitude": 120.642624
+   },
+   "coordinates_source": "hand: OSM way/1251870994 江心寺 (Jiangxin Temple); island relation 20249421 / scenic area 20249420  [place_of_worship]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Islet in the Ou River at Wenzhou with twin pagodas, Jiangxin Temple and a former British consulate, reached by ferry.",
+    "icon": "🏝️",
+    "category": "historic",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3.5,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Jiangxinyu",
+    "name": "Jiangxin Island",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "master-and-apprentice-bridges",
+   "name": "Master and Apprentice Bridges",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.4742897,
+    "longitude": 119.995748
+   },
+   "coordinates_source": "hand: OSM way/509002003 北涧桥 and Wikidata Q10903672 北涧桥 (27.47443,119.99555), ~25 m apart [covered bridge]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Two timber arch covered bridges in Sixi village, Taishun, 300 metres apart, said to be built by a master and his apprentice.",
+    "icon": "🌉",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Master and Apprentice Bridges",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "wuma-street",
+   "name": "Wuma Street",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 28.0155397,
+    "longitude": 120.6553222
+   },
+   "coordinates_source": "hand: OSM way/175330582 highway=pedestrian 五马街 + zh Wikipedia 五马街 28.01529,120.65463 [pedestrian street]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Pedestrian shopping street in old Wenzhou, about 424 m long, and the city's traditional commercial centre.",
+    "icon": "🛍️",
+    "category": "market",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Wuma Street",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "wuyanling-national-nature-reserve",
+   "name": "Wuyanling National Nature Reserve",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.7101,
+    "longitude": 119.67374
+   },
+   "coordinates_source": "hand: Commons File:乌岩岭景区入口 - panoramio.jpg geotag (scenic area entrance); zh.wikipedia/Wikidata  [main entrance (geotagged photo)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Forested mountain nature reserve in Taishun County, rising to 1,611 m at Baiyun Peak on the Zhejiang-Fujian border.",
+    "icon": "🌲",
+    "category": "nature",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "costMin": 60,
+    "costMax": 120,
+    "currency": "CNY",
+    "costBasis": "park",
+    "wiki": "Wuyanling National Nature Reserve",
+    "name": "Wuyanling National Nature Reserve",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "yuhai-tower",
+   "name": "Yuhai Tower",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 27.78457,
+    "longitude": 120.6295
+   },
+   "coordinates_source": "hand: zh.wikipedia 玉海楼 coordinates; Commons geotagged files (Yuhailou, 玉海楼正门) median ~27.7849,12 [historic building (Rui'an)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "A Qing-era scholar's library house in Rui'an, built in 1888 and one of Zhejiang's four great private libraries.",
+    "icon": "📚",
+    "category": "historic",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costBasis": "entry",
+    "name": "Yuhai Tower",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dongfu-mountain",
+   "name": "Dongfu Mountain",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.1437978,
+    "longitude": 122.7541112
+   },
+   "coordinates_source": "hand: OSM node/6150675850 东福山灯塔 (lighthouse, man_made=lighthouse) on Dongfu Island [lighthouse (island landmark/viewpoint)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Remote island in the Dongji archipelago where visitors hike to watch the sunrise, reached by small boat from Miaozihu.",
+    "icon": "🌅",
+    "category": "viewpoint",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costBasis": "open",
+    "name": "Dongfu Mountain",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "dongji",
+   "name": "Dongji",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.19579,
+    "longitude": 122.68194
+   },
+   "coordinates_source": "hand: OSM node/11930091658 东极村 place=village; zh.wikipedia 东极镇 30.1958,122.68195; OSM 东极镇 n48493 [village (Miaozihu Island)]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Island group off Zhoushan with fishing villages, Miaozihu and Qingbang islands, and the setting of the film Hou Hui Wu Qi.",
+    "icon": "🏝️",
+    "category": "nature",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "free": true,
+    "costBasis": "open",
+    "name": "Dongji",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "gouqi-island",
+   "name": "Gouqi Island",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.7166585,
+    "longitude": 122.7749634
+   },
+   "coordinates_source": "hand: OSM node/7049646092 枸杞乡 place=town (island's main settlement) [place=town]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Island in the Shengsi archipelago with Dawang Beach, East Cliff sunrise views and an abandoned stone village.",
+    "icon": "🏝️",
+    "category": "nature",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "free": true,
+    "costBasis": "open",
+    "name": "Gouqi Island",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "mount-putuo-1",
+   "name": "Puji Temple",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "coordinates": {
+    "latitude": 29.9877688,
+    "longitude": 122.3824314
+   },
+   "coordinates_source": "hand: OSM node/4519392716 普济寺 + way/657939310 temple; zh.wikipedia 普济寺 (普陀山) 29.98777778,122.382 [place_of_worship]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Largest temple on Mount Putuo, a Guanyin sanctuary founded in 916 by the monk Hui'e.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "wiki": "Puji Temple",
+    "name": "Puji Temple"
+   }
+  },
+  {
+   "id": "mount-putuo-4",
+   "name": "Huiji Temple",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "coordinates": {
+    "latitude": 30.01327,
+    "longitude": 122.38571
+   },
+   "coordinates_source": "hand: Wikidata Q11074160 慧济禅寺 30.01336,122.38597 + Commons median of 7 temple files (30.01327,12 [temple]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Temple near the summit of Foding Mountain on Mount Putuo, reached by cable car or on foot.",
+    "icon": "🛕",
+    "category": "religious",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Huiji Temple"
+   }
+  },
+  {
+   "id": "mount-putuo-5",
+   "name": "Foding Mountain",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "coordinates": {
+    "latitude": 30.01129,
+    "longitude": 122.38632
+   },
+   "coordinates_source": "hand: OSM node/915535747 natural=peak (Foding summit area of Mount Putuo); zh.wikipedia 普陀山 30.0 [natural=peak]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Highest hill on Putuo island, climbed by stone steps or cable car, with sea views and Huiji Temple at the top.",
+    "icon": "🛕",
+    "category": "hike",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": true,
+    "currency": "CNY",
+    "costBasis": "open",
+    "name": "Foding Mountain"
+   }
+  },
+  {
+   "id": "moxin-mountain",
+   "name": "Moxin Mountain",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 30.261449,
+    "longitude": 122.190757
+   },
+   "coordinates_source": "hand: OSM node/12071380633 磨心山景区 attraction [scenic-area node]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "Daishan island hill with the Ciyun Jile temple, tea terraces running down to the sea and wide sea views.",
+    "icon": "⛰️",
+    "category": "nature",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "CNY",
+    "costBasis": "entry",
+    "name": "Moxin Mountain",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  },
+  {
+   "id": "shenjiamen-fishing-port",
+   "name": "Shenjiamen Fishing Port",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": 29.946412,
+    "longitude": 122.305764
+   },
+   "coordinates_source": "hand: Hint point; Commons geotags 沈家门夜市/沈家门/海滨 files at 29.9464-29.9468,122.306-122.309 (within  [harbour waterfront]",
+   "photo": null,
+   "photoless": true,
+   "photo_verdict": "accept",
+   "spot": {
+    "bio": "National central fishing port on Zhoushan's Putuo waterfront, with fishing boats along Binggang Road facing Lujiazhi island.",
+    "icon": "⚓",
+    "category": "landmark",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open",
+    "name": "Shenjiamen Fishing Port",
+    "currency": "CNY",
+    "country": "China",
+    "countryCode": "CN",
+    "continent": "Asia",
+    "timezone": "Asia/Shanghai"
+   }
+  }
+ ]
+}

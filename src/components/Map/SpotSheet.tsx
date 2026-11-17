@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
+import { beginSheetMotion, endSheetMotion, sheetInMotion } from '../../utils/sheetMotion';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
   Dimensions, Platform, Linking, Image,
@@ -13,8 +14,8 @@ import { ScrollView as GHScrollView, Gesture, GestureDetector } from 'react-nati
 // importing a plain `Animated` name, since `View`/`Pressable`/etc above already come from core
 // react-native and mixing the two default-export namings would be confusing.
 import Reanimated, {
-  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
+  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
@@ -44,8 +45,11 @@ import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import { NO_PHOTO } from '../../data/imageOverrides';
 import {
-  VisitCardList, VisitModuleSheet, PhotoGalleryModal,
+  VisitCardList, VisitModuleSheet, PhotoGalleryModal, StarRating,
   useDeferredMount,
+  useTabScrollMemory,
+  usePanelShift,
+  trackRoom,
   AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
@@ -79,9 +83,10 @@ const MOUNT_SLIDE_DELAY_MS = 80;   // see transitionTo: the slide-in waits out t
 // The slide-in on mount: a little slower than a snap (SNAP_CONFIG's 280 ms), and after the mount frames, so it reads as one
 // steady rise rather than one whose start was swallowed by the frames that build the sheet.
 const MOUNT_SLIDE_CONFIG = { duration: 360, easing: Easing.out(Easing.cubic) };
-// When the slide-in has landed, from mount: MapScreen holds the spot's camera move until then (a camera flying under the
-// slide made it stutter).
-export const SPOT_SHEET_SLIDE_IN_MS = MOUNT_SLIDE_DELAY_MS + MOUNT_SLIDE_CONFIG.duration;
+// When the slide-in starts (from mount) and how long it runs: MapScreen times the spot's camera move from these (a camera
+// flying under the fast part of the slide made it stutter).
+export const SPOT_SHEET_SLIDE_IN_START_MS = MOUNT_SLIDE_DELAY_MS;
+export const SPOT_SHEET_SLIDE_IN_DURATION_MS = MOUNT_SLIDE_CONFIG.duration;
 // Tab-panel slide — matches DestinationSheet's own TAB_SLIDE_CONFIG (a plain tween, not the
 // spring this used before switching to Reanimated): no overshoot on switching or settling.
 const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -131,8 +136,10 @@ const CAROUSEL_WIDEN_MS = 1000;
 // The full-screen panels (hidden at half-screen) mount after the slide-in and the camera's zoom to the spot, not during
 // either: mounting them is ~0.35 s of work, and when it ran as the slide landed (where the zoom starts) the card stayed
 // blank and the camera stood still for over a second after a pin tap. Heading to full screen mounts them at once, a swipe
-// up included (revealPanels; the hero's dark backdrop stands in until they arrive).
-const SPOT_PANEL_MOUNT_DELAY_MS = 1300;
+// up included (revealPanels; the hero's dark backdrop stands in until they arrive). Just after the zoom ends (~0.95 s), not
+// later: a swipe up within the wait mounted them mid-swipe, so the sheet rose blank (the backdrop, white below) for a third
+// of a second, and their mount's commit re-applied the carousel's fade as it was a moment before (a flash of the card).
+const SPOT_PANEL_MOUNT_DELAY_MS = 950;
 // Most clones of the spots at the other end on each side of the looping carousel (see extendedSpots); fewer when the
 // destination has fewer spots.
 const MAX_LOOP_CLONES = 6;
@@ -497,7 +504,9 @@ function SpotSheet({
   const handleDeleteVisitModule = useCallback((id: string) => {
     if (!savedSpot) return;
     const updated = localVisits.filter(v => v.id !== id);
-    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
+    // The rating goes with the last visit: it is only shown, and set, alongside visits (My Rating, the visit editor), so a
+    // rating left behind would be one nothing shows or can change.
+    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate, ...(updated.length ? {} : { rating: undefined }) });
   }, [savedSpot, localVisits, activeSpot.id, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
@@ -556,6 +565,15 @@ function SpotSheet({
   // spring this used before migration for the same plain-tween, no-overshoot feel SNAP_CONFIG
   // already gives the sheet's own position (see that migration's own reasoning).
   const tabSlideAnim    = useSharedValue(0);
+  const scrollYSV    = useSharedValue(0);
+  const scrollAnimRef = useAnimatedRef<any>();
+  // Each tab's own scroll position (useTabScrollMemory); tabPinYSV is the scroll at which the hero has scrolled away and the
+  // tab bar pins (compactBarStyle's `at`).
+  const tabPinYSV = useSharedValue(0);
+  tabPinYSV.value = (HERO_H - insets.bottom) - 24 - (insets.top + 6 + 36);
+  const tabScroll = useTabScrollMemory({ count: 2, slide: tabSlideAnim, width: W, scrollY: scrollYSV, scrollRef: scrollAnimRef, pinY: tabPinYSV });
+  const panelShiftVisit = usePanelShift(tabScroll, scrollYSV, 0);
+  const panelShiftAbout = usePanelShift(tabScroll, scrollYSV, 1);
   const activeTabRef    = useRef<'visit' | 'about'>('visit');
   const tabSwipeBaseRef = useSharedValue(0);
   const tabIndicatorLeft = useAnimatedStyle(() => ({
@@ -574,7 +592,11 @@ function SpotSheet({
     const [hVisit, hAbout] = panelHeightsSV.value;
     if (!hVisit || !hAbout) return { height: undefined };   // until both are measured
     const t = Math.max(0, Math.min(1, -tabSlideAnim.value / W));
-    return { height: hVisit + (hAbout - hVisit) * t };
+    // While the tabs slide each panel keeps its own position (useTabScrollMemory), so the track holds room for both and the
+    // page never moves (it followed the slide's height before, dragging a scrolled page up); it changes once the slide lands.
+    if (t === 0) return { height: hVisit };
+    if (t === 1) return { height: hAbout };
+    return { height: Math.max(hVisit + trackRoom(tabScroll, scrollYSV, 0), hAbout + trackRoom(tabScroll, scrollYSV, 1)) };
   });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
@@ -585,7 +607,9 @@ function SpotSheet({
     if (activeTabRef.current === newTab) return;
     activeTabRef.current = newTab;
     setActiveTab(newTab);
-    tabSlideAnim.value = withTiming(newTab === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+    runOnUI(tabScroll.begin)();
+    const idx = newTab === 'visit' ? 0 : 1;
+    tabSlideAnim.value = withTiming(newTab === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(idx); });
   };
   const setActiveTabJS = useCallback((tab: 'visit' | 'about') => {
     activeTabRef.current = tab;
@@ -617,7 +641,8 @@ function SpotSheet({
   const snapTabToNearest = () => {
     'worklet';
     const nearest: 'visit' | 'about' = tabSlideAnim.value > -W / 2 ? 'visit' : 'about';
-    tabSlideAnim.value = withTiming(nearest === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+    const nIdx = nearest === 'visit' ? 0 : 1;
+    tabSlideAnim.value = withTiming(nearest === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(nIdx); });
     runOnJS(setActiveTabJS)(nearest);
   };
   // A real UI-thread worklet now (no `.runOnJS(true)`) — matches DestinationSheet's own
@@ -635,6 +660,7 @@ function SpotSheet({
     .activeOffsetX([-12, 12])
     .failOffsetY([-10, 10])
     .onStart(() => {
+      tabScroll.begin();
       tabSwipeBaseRef.value = tabSlideAnim.value;
       tabDragEngagedSV.value = false;
     })
@@ -663,7 +689,8 @@ function SpotSheet({
         const targetIdx = Math.max(0, Math.min(1, curIdx + dir));
         goTo = targetIdx === 0 ? 'visit' : 'about';
       }
-      tabSlideAnim.value = withTiming(goTo === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+      const goIdx = goTo === 'visit' ? 0 : 1;
+      tabSlideAnim.value = withTiming(goTo === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(goIdx); });
       // Always sync JS state rather than trying to skip a no-op by comparing against
       // activeTabRef.current here — a plain JS ref read from inside a UI-thread worklet can
       // hold a stale snapshot (refs aren't live-synced across the JS/UI boundary the way a
@@ -740,7 +767,6 @@ function SpotSheet({
   // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only let
   // a downward drag pull the sheet once its inner ScrollView is already at top) — a plain ref
   // can't be read reliably from a UI-thread worklet (see the tab gesture's own comment on why).
-  const scrollYSV    = useSharedValue(0);
 
   // COLLAPSED_Y is a plain module constant (this sheet's carousel is always exactly
   // half-screen, never a dynamically measured height the way DestinationSheet's collapsed card
@@ -848,15 +874,20 @@ function SpotSheet({
   const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string) => void>(() => {});
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
-  const [panelsReady, revealPanels] = useDeferredMount(SPOT_PANEL_MOUNT_DELAY_MS);
+  // Not once the sheet is leaving (leaveNow, leaving): its deferred work (panels, carousel widening) landed on the next
+  // sheet's slide-in ("Grid view" a second after opening a spot: two 50-85 ms renders under the destination sheet's rise).
+  const [panelsReady, revealPanels] = useDeferredMount(SPOT_PANEL_MOUNT_DELAY_MS, false, !!leaveNow || !!leaving);
   // Set once an upward drag has asked for the full-screen content (see the pan's onUpdate), so it asks only once per drag.
   const revealAskedSV = useSharedValue(false);
   const [carouselWindow, setCarouselWindow] = useState(CAROUSEL_WINDOW_AT_MOUNT);
-  useEffect(() => { const t = setTimeout(() => setCarouselWindow(CAROUSEL_WINDOW), CAROUSEL_WIDEN_MS); return () => clearTimeout(t); }, []);
+  useEffect(() => {
+    if (leaveNow || leaving) return;
+    const t = setTimeout(() => setCarouselWindow(CAROUSEL_WINDOW), CAROUSEL_WIDEN_MS);
+    return () => clearTimeout(t);
+  }, [leaveNow, leaving]);
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
-  const scrollAnimRef = useAnimatedRef<any>();
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
   const resetScrollToTop = () => {
@@ -869,6 +900,9 @@ function SpotSheet({
   };
 
   transitionToRef.current = (next, reason) => {
+    // A tap that is really the end of a drag (a swipe down that began on the header or the tab bar also fired their
+    // onPress, which expands the sheet: it went up instead of down) does nothing while the sheet is moving.
+    if (reason === 'user' && sheetInMotion()) return;
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
     closingRef.current = false;
@@ -914,10 +948,7 @@ function SpotSheet({
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
   const callSnapToPeek      = useCallback(() => snapToPeekRef.current(), []);
   const callSnapBack = useCallback(() => {
-    const st = snapStateRef.current;
-    if (st === 'peek') snapToPeekRef.current();
-    else if (st === 'full') snapToFullRef.current();
-    else snapToCollapsedRef.current();
+    transitionToRef.current(snapStateRef.current, 'snapBack');
   }, []);
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
@@ -1066,7 +1097,8 @@ function SpotSheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
     snapStateSV.value = next;
     lastPos.value = target;
-    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    beginSheetMotion();
+    slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) endSheetMotion(); });
   };
   // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
   const peekFromMapGesture = useCallback(() => {
@@ -1117,6 +1149,7 @@ function SpotSheet({
       // deliberate pull before the sheet (and the pill riding along with it) starts moving.
       if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
+      beginSheetMotion();   // the sheet is being dragged (sheetMotion.ts); cleared when its settle ends
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
         // Peek is the lowest point now — swiping down from either collapsed or peek can no
@@ -1342,21 +1375,23 @@ isVisited ? (
                   // Tapping a subtab from half/bottom-screen expands to full, same as the
                   // other sheets' own tab bars — the tab bar itself is only fully readable at
                   // full-screen, so tapping it signals "show me this content".
+                  if (sheetInMotion()) return;   // the end of a drag, not a tap (see transitionTo)
                   if (snapStateRef.current !== 'full') snapToFullRef.current();
                   switchTabRef.current('visit');
                 }}
               >
-                <Text style={[st.tabBtnTxt, activeTab === 'visit' && st.tabBtnTxtActive]}>My Visit</Text>
+                <TabLabel index={0} slide={tabSlideAnim}>My Visit</TabLabel>
               </Pressable>
               <View style={st.tabDivider} />
               <Pressable
                 style={st.tabBtn}
                 onPress={() => {
+                  if (sheetInMotion()) return;   // the end of a drag, not a tap (see transitionTo)
                   if (snapStateRef.current !== 'full') snapToFullRef.current();
                   switchTabRef.current('about');
                 }}
               >
-                <Text style={[st.tabBtnTxt, activeTab === 'about' && st.tabBtnTxtActive]}>About</Text>
+                <TabLabel index={1} slide={tabSlideAnim}>About</TabLabel>
               </Pressable>
               <Reanimated.View style={[st.tabIndicatorTrack, tabIndicatorLeft]}>
                 <View style={st.tabIndicator} />
@@ -1500,11 +1535,15 @@ isVisited ? (
               <Reanimated.View style={[st.slideTrack, slideTrackStyle]}>
                 <Reanimated.View style={[st.slideRow, slideRowStyle]}>
                   {/* ── MY VISIT PANEL ─────────────────────────────────── */}
-                  <View style={st.slidePanel} onLayout={e => measurePanel(0, e.nativeEvent.layout.height)}>
+                  <Reanimated.View style={[st.slidePanel, panelShiftVisit]} onLayout={e => measurePanel(0, e.nativeEvent.layout.height)}>
                     {/* Each logged visit is its own standalone module — its own title, dates,
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
+                    {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
+                        used to each show and edit it, so rating one visit changed them all). */}
+                    {/* Only alongside a visit: with none logged (the last one removed), there is nothing to rate yet. */}
+                    {localVisits.length > 0 && <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />}
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
@@ -1512,15 +1551,14 @@ isVisited ? (
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}
-                      ratingValue={savedSpot?.rating}
                       hideSingleDayCount
                     />
-                  </View>
+                  </Reanimated.View>
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
-                  <View style={st.slidePanel} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
+                  <Reanimated.View style={[st.slidePanel, panelShiftAbout]} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
                     <SpotAbout spot={activeSpot} tabbed nearbySpots={nearbySpots} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
-                  </View>
+                  </Reanimated.View>
                 </Reanimated.View>
               </Reanimated.View>
             ) : (
@@ -1705,11 +1743,10 @@ isVisited ? (
           onClose={() => setEditingVisitModule(null)}
           // No selectorLabel/selectorItems — a spot has nothing beneath it to tag a visit with.
           onRemoveLegacy={() => unsaveSpot(activeSpot.id)}
-          // Rating lives outside the visits system (it's a per-spot attribute, not tied to any
-          // one trip) — rendered by VisitModuleSheet itself, right under Dates, rather than a
-          // separate always-visible card on the My Visit tab.
+          // The spot's one rating (not the visit's): edited in the My Visit tab's "My rating" row. The editor asks for it
+          // only while the spot has none, so logging a first visit can rate it in passing.
           ratingValue={savedSpot?.rating ?? 0}
-          onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
+          onRatingChange={r => updateSpot(activeSpot.id, { rating: r || undefined })}
           // Spots call these "visits", not "trips" — a spot is a single stop, not a whole
           // journey. Also hides the "1 day" subtitle for a same-day visit (still shows a real
           // multi-day count, e.g. camping).
@@ -1865,6 +1902,49 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
     </>
   );
 }
+
+// A tab's label, its colour following the panels' slide (the selected one dark): it changes with the tap or swipe, not when
+// the tab state catches up once the slide has ended (the other sheets' TabLabel).
+function TabLabel({ index, slide, children }: { index: number; slide: SharedValue<number>; children: React.ReactNode }) {
+  const style = useAnimatedStyle(() => ({
+    color: interpolateColor(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], ['#9CA3AF', '#111827', '#9CA3AF']),
+  }));
+  return <Reanimated.Text style={[st.tabBtnTxt, style]} numberOfLines={1}>{children}</Reanimated.Text>;
+}
+
+// A spot's "My rating" row (My Visit). The stars follow a tap at once, from their own state: written straight to the
+// store, a tap re-rendered the whole spot sheet (and everything else reading saved spots) before the stars could change,
+// which read as slow. The store gets the rating a moment later, once taps have stopped.
+const RATING_SAVE_MS = 400;
+const MyRating = React.memo(function MyRating({ spotId, value }: { spotId: string; value: number }) {
+  const updateSpot = useStore(s => s.updateSpot);
+  const [shown, setShown] = useState(value);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingRef = useRef<{ spotId: string; rating: number } | null>(null);
+  const flush = useCallback(() => {
+    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
+    const p = pendingRef.current;
+    pendingRef.current = null;
+    if (p) updateSpot(p.spotId, { rating: p.rating || undefined });   // 0: cleared (StarRating), stored as no rating
+  }, [updateSpot]);
+  // Another spot, or a rating changed elsewhere (the visit editor): show it, saving any rating still pending first.
+  useEffect(() => { if (!pendingRef.current) setShown(value); }, [value]);
+  useEffect(() => { flush(); setShown(value); }, [spotId]);   // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => flush, [flush]);
+  const onChange = useCallback((r: number) => {
+    setShown(r);
+    pendingRef.current = { spotId, rating: r };
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(flush, RATING_SAVE_MS);
+  }, [spotId, flush]);
+  return (
+    <View style={st.myRating}>
+      <Text style={st.myRatingLabel}>My Rating</Text>
+      <StarRating value={shown} size={22} onChange={onChange} />
+      {shown > 0 && <Text style={st.myRatingNum}>{shown}</Text>}
+    </View>
+  );
+});
 
 const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFill, zIndex: 210, elevation: 210 } as any,
@@ -2046,7 +2126,6 @@ const st = StyleSheet.create({
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
-  tabBtnTxtActive: { color: '#111827' },
   // Sliding underline — outer track keeps the existing per-tab left/width positioning; the
   // visible bar itself is a narrower, centered child so it doesn't span the full tab width.
   tabIndicatorTrack: { position: 'absolute', bottom: 0, width: '50%', alignItems: 'center' },
@@ -2054,6 +2133,11 @@ const st = StyleSheet.create({
 
   // Content
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
+  // The panel's own gap (16) and the visit list's top padding (20) already sit between this row and the first visit card,
+  // so the row takes some of that back.
+  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 10, marginTop: 6, marginBottom: -8 },
+  myRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
+  myRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
   slidePanel: { width: W, paddingHorizontal: 16, gap: 16 },

@@ -1,0 +1,312 @@
+[
+ {
+  "name": "Hangzhou",
+  "action": "new-destination",
+  "id": "hangzhou",
+  "coordinates": {
+   "lat": 30.246,
+   "lng": 120.1384
+  },
+  "coordinates_source": "West Lake centre, OSM relation 2308774 (visitor hub of the city)",
+  "category": "city",
+  "rank": 2,
+  "defaultZoomSpanKm": 80,
+  "name_evidence": "Wikivoyage has a Hangzhou city page whose See section lists West Lake, Lingyin Temple, Leifeng Pagoda, Longjing and Xixi; West Lake is a UNESCO World Heritage Site and Hangzhou a headline Chinese destination (Wikipedia/Wikivoyage \"Hangzhou\").",
+  "reason": "Rank 2: a national highlight in guidebooks, the Jiangnan city built around West Lake. 42 kept spots, far above the four-spot bar. Span 80 km covers Yuhang, Xiaoshan, Binjiang and the near Fuyang and Lin'an districts.",
+  "region": "zhejiang-hangzhou"
+ },
+ {
+  "name": "Huzhou",
+  "action": "new-destination",
+  "id": "huzhou",
+  "coordinates": {
+   "lat": 30.8626,
+   "lng": 120.0983
+  },
+  "coordinates_source": "Lianhuazhuang/Wuxing city point from candidates (Wuxing district centre); pin stage to confirm against OSM place=city",
+  "pin_needed": true,
+  "category": "city",
+  "rank": 5,
+  "defaultZoomSpanKm": 70,
+  "name_evidence": "Wikivoyage has a \"Huzhou\" city/prefecture page that lists the Huzhou Museum, Lianhuazhuang and Changxing sights (Chinese Alligator Village).",
+  "reason": "5 kept spots (Huzhou Museum, Lianhuazhuang Park, Brush Museum, Gu Zhu Mountain, Chinese Alligator Village), above the four-spot bar. Rank 4: a prefecture city that guidebooks cover but not a headline; Anji, Nanxun and Moganshan are separate named bases. Overlap checked against Anji, Nanxun, Hangzhou: centres >33 km apart.",
+  "merged_from": "nanxun",
+  "region": "zhejiang-huzhou"
+ },
+ {
+  "name": "Anji",
+  "action": "new-destination",
+  "id": "anji",
+  "coordinates": {
+   "lat": 30.56,
+   "lng": 119.65
+  },
+  "coordinates_source": "centre of the Anji spots (county seat Dipu and Tianhuangping); pin stage to confirm",
+  "pin_needed": true,
+  "category": "nature",
+  "rank": 4,
+  "defaultZoomSpanKm": 60,
+  "name_evidence": "Wikivoyage has an \"Anji\" page covering the county: Bamboo Exposition Park, Great Bamboo Sea, Yunshang ski resort; Anji is a tourism brand (\"China Bamboo Town\").",
+  "reason": "8 kept spots, a county travellers name (bamboo sea, Tianhuangping). Rank 4: worth a detour from Hangzhou/Shanghai. Moganshan (Deqing, ~22 km E) is outside Anji and stays standalone.",
+  "region": "zhejiang-huzhou"
+ },
+ {
+  "name": "Jiaxing",
+  "action": "new-destination",
+  "id": "jiaxing",
+  "category": "city",
+  "rank": 5,
+  "coordinates": {
+   "lat": 30.7522,
+   "lng": 120.7585
+  },
+  "defaultZoomSpanKm": 25,
+  "name_evidence": "Wikivoyage 'Jiaxing' city page with See/Do (South Lake, Meiwan, Yuehe); prefecture-level city, rail stop between Shanghai and Hangzhou",
+  "spots": 5,
+  "note": "Centre approximated between South Lake (30.7568,120.7557) and Jiaxing Museum; no source for a city-centre point beyond that, pin stage to confirm. Wuzhen 28 km west, outside metro.",
+  "region": "zhejiang-jiaxing"
+ },
+ {
+  "name": "Wuzhen",
+  "action": "new-destination",
+  "id": "wuzhen",
+  "category": "city",
+  "rank": 2,
+  "coordinates": {
+   "lat": 30.74275,
+   "lng": 120.487778
+  },
+  "defaultZoomSpanKm": 15,
+  "name_evidence": "Wikivoyage 'Wuzhen' (Jiaxing/Tongxiang), 5A water town, Wikipedia 27,290 views/yr; headline trip in itself (Dongzha, Xizha, Mao Dun)",
+  "spots": 3,
+  "note": "Only 3 spots: justified by the headline-attraction clause (a trip in itself), not the four-spot bar; Wuzhen itself is the destination so no 'Wuzhen' wrapper spot. Not Jiangnan Water Towns (Jiangsu): ~65 km from its centre. Fall back to three standalone spots if the owner rejects.",
+  "source_coordinates": "wikipedia:Wuzhen",
+  "owner_approved": "rank 2 (owner)",
+  "region": "zhejiang-jiaxing"
+ },
+ {
+  "name": "Jinhua",
+  "action": "new-destination",
+  "id": "jinhua",
+  "coordinates": {
+   "lat": 29.079,
+   "lng": 119.647
+  },
+  "coordinates_source": "English Wikipedia \"Jinhua\" article coordinates (city centre)",
+  "category": "city",
+  "rank": 5,
+  "defaultZoomSpanKm": 40,
+  "name_evidence": "Wikivoyage has a \"Jinhua\" page (the prefecture) whose See section lists Shiwang Mansion, Shuanglong Cave and Jinhua Mountain; Wikipedia \"Jinhua\".",
+  "reason": "Regional city and base with 4 kept spots (Shuanglong Cave, Architecture Park, Jinhua Mountain, Shiwang Mansion), meeting the four-spot bar. Rank 5: a local hub, not a national draw. Span 40 km covers the urban Wucheng/Jindong area; Lanxi, Dongyang, Yiwu and Yongkang are separate county-level cities and their spots stay standalone.",
+  "region": "zhejiang-jinhua"
+ },
+ {
+  "name": "Wuyi Hot Springs",
+  "action": "new-destination",
+  "id": "wuyi",
+  "coordinates": {
+   "lat": 28.9006,
+   "lng": 119.806
+  },
+  "coordinates_source": "English Wikipedia \"Wuyi County, Zhejiang\" article coordinates (county seat)",
+  "category": "nature",
+  "rank": 5,
+  "defaultZoomSpanKm": 60,
+  "wiki": "Wuyi County, Zhejiang",
+  "name_evidence": "Wikipedia \"Wuyi County, Zhejiang\" and Wikivoyage has a \"Wuyi\" page; China Daily Jinhua presents Wuyi (hot springs, ancient villages, Danxia scenery) as a two-day tour and the Wuyi Hot Springs as a tourism brand. Weak: a county name, also shared with the Fujian Wuyi Mountains, so the owner may rename it \"Wuyi Hot Springs\" or fold it.",
+  "reason": "8 kept spots clustered in one county (hot springs, Ming-Qing villages, Danxia, forest park, old town, family farm): above the four-spot bar, and no larger named region (Jinhua is 25 km away with a different draw) holds them. Rank 5.",
+  "rename_note": "skeptic lean; owner has not chosen between rename and folding into Jinhua",
+  "region": "zhejiang-jinhua"
+ },
+ {
+  "action": "new-destination",
+  "id": "longquan",
+  "name": "Longquan",
+  "category": "city",
+  "rank": 5,
+  "coordinates": {
+   "lat": 28.05812,
+   "lng": 119.127256
+  },
+  "defaultZoomSpanKm": 60,
+  "name_evidence": "Wikivoyage has a Longquan page (outline: celadon and swords, a city in Zhejiang)",
+  "reason": "5 kept spots (celadon kiln site, celadon museum, sword factory and museum, Baishanzu). Baishanzu is a national park under construction with one kept spot, so it is a spot of Longquan, not a destination.",
+  "coordinates_source": "centre = Longquan Celadon Museum point (Candidates, in Longquan town); refine from OSM place=town at research",
+  "region": "zhejiang-lishui"
+ },
+ {
+  "name": "Ningbo",
+  "action": "new-destination",
+  "id": "ningbo",
+  "category": "city",
+  "rank": 3,
+  "coordinates": {
+   "lat": 29.8683,
+   "lng": 121.544
+  },
+  "defaultZoomSpanKm": 70,
+  "name_evidence": "Wikivoyage 'Ningbo' city page lists See/Do sections for the city and surroundings; major port city on guidebook itineraries",
+  "spots": 16,
+  "region": "zhejiang-ningbo"
+ },
+ {
+  "name": "Xikou",
+  "action": "new-destination",
+  "id": "xikou",
+  "category": "nature",
+  "rank": 4,
+  "coordinates": {
+   "lat": 29.6897,
+   "lng": 121.2761
+  },
+  "defaultZoomSpanKm": 30,
+  "name_evidence": "Wikivoyage 'Xikou' page (Chiang Kai-shek's hometown, Xuedou Mountain); China Daily Ningbo lists 'Xikou-Tengtou Tourist Area' (5A); Xikou itself is the destination, not a spot",
+  "spots": 4,
+  "note": "33 km from Ningbo centre, centres farther than 0.75x larger radius; outside Ningbo urban metro",
+  "region": "zhejiang-ningbo"
+ },
+ {
+  "id": "quzhou",
+  "name": "Quzhou",
+  "action": "new-destination",
+  "rank": 4,
+  "category": "city",
+  "icon": "🏯",
+  "coordinates": {
+   "lat": 28.9739,
+   "lng": 118.8541
+  },
+  "coordinates_source": "OSM place=city relation (Quzhou); city centre point",
+  "defaultZoomSpanKm": 50,
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai",
+  "name_evidence": "China Daily Quzhou government tourism pages use 'Quzhou' as the heading for its ancient city, Confucius South Family Temple and Lanke Mountain; English Wikipedia 'Quzhou' (~18k views/yr); Wikivoyage Zhejiang lists it as a city. Wikivoyage has no own Quzhou page (judge note).",
+  "reason": "Prefecture-level city and regional hub with seven kept spots in and around it; rank 4 (worth a detour, not a national top-tier draw).",
+  "spot_ids": [
+   "quzhou-1",
+   "quzhou-2",
+   "quzhou-3",
+   "quzhou-4",
+   "quzhou-5",
+   "quzhou-6",
+   "quzhou-7"
+  ],
+  "region": "zhejiang-quzhou"
+ },
+ {
+  "id": "jiangshan",
+  "name": "Jiangshan",
+  "action": "new-destination",
+  "rank": 4,
+  "category": "mountain",
+  "icon": "⛰️",
+  "coordinates": {
+   "lat": 28.53,
+   "lng": 118.57
+  },
+  "coordinates_source": "Centre between Mount Jianglang (OSM peak) and its village/pass cluster; not from memory of a town centre",
+  "defaultZoomSpanKm": 50,
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai",
+  "name_evidence": "Wikivoyage 'Jiangshan' page and the Wikivoyage Zhejiang region page (counted); China Daily gov Jiangshan one-day itinerary listing Jianglang Mountain, Nianbadu, Qingyang and Xianxia Pass. Named for the county-level city which travellers use as the base for Jianglang Mountain.",
+  "reason": "Four kept spots around the Jiangshan base (Mount Jianglang, Nianbadu, Qingyang Village, Xianxia Pass); the town Jiangshan itself is the gateway, not a separate spot beside its own attractions.",
+  "spot_ids": [
+   "jiangshan-1",
+   "jiangshan-2",
+   "jiangshan-3",
+   "jiangshan-4"
+  ],
+  "region": "zhejiang-quzhou"
+ },
+ {
+  "name": "Shaoxing",
+  "action": "new-destination",
+  "id": "shaoxing",
+  "category": "city",
+  "rank": 3,
+  "coordinates": {
+   "lat": 29.9955,
+   "lng": 120.581
+  },
+  "coordinates_source": "Wikivoyage Shaoxing / Lu Xun precinct geo tag (old-town centre)",
+  "defaultZoomSpanKm": 40,
+  "name_evidence": "Wikivoyage 'Shaoxing' city page with See/Do listings; guidebook chapter, 'Venice of the East' water-town brand",
+  "spots": 10,
+  "region": "zhejiang-shaoxing"
+ },
+ {
+  "id": "taizhou",
+  "name": "Taizhou",
+  "action": "new-destination",
+  "rank": 5,
+  "category": "city",
+  "icon": "🏙️",
+  "coordinates": {
+   "lat": 28.663,
+   "lng": 121.412
+  },
+  "coordinates_source": "proxy: Taizhou Museum, Jiaojiang (Wikipedia); city-centre point to be resolved from an OSM place=city node",
+  "defaultZoomSpanKm": 60,
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai",
+  "name_evidence": "English Wikivoyage has a page \"Taizhou (Zhejiang)\" listing See/Do entries; the prefecture-level city of Jiaojiang, Huangyan and Luqiao.",
+  "reason": "Four kept places (Taizhou Museum, Ocean World, Jiufeng Mountain, Fonte Wild Mainland) inside the urban area (Fonte ~21 km, Jiufeng ~13 km from centre, within 75% of a 60 km span). Zhejiang's Taizhou, not Jiangsu's. Rank 5: local hub.",
+  "spot_ids": [
+   "taizhou-1",
+   "taizhou-2",
+   "taizhou-3",
+   "taizhou-4"
+  ],
+  "region": "zhejiang-taizhou"
+ },
+ {
+  "id": "yandang-mountains",
+  "name": "Yandang Mountains",
+  "action": "new-destination",
+  "rank": 3,
+  "category": "mountain",
+  "icon": "🏔️",
+  "coordinates": {
+   "lat": 28.37,
+   "lng": 121.06
+  },
+  "coordinates_source": "wikipedia:Yandang Mountains",
+  "defaultZoomSpanKm": 30,
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai",
+  "name_evidence": "Wikivoyage Wenzhou lists 'Yandang Mountains' as a headline See entry with the sub-areas Lingfeng, Lingyan, Dalongchu and Sanzhe; English Wikipedia article 'Yandang Mountains' (national scenic area, ~6,000 views/yr).",
+  "reason": "Named headline scenic area with four kept sub-area spots; ranked 3 (regional favourite, not a national top-tier draw).",
+  "spot_ids": [
+   "yandang-mountains-1",
+   "yandang-mountains-2",
+   "yandang-mountains-3",
+   "yandang-mountains-4"
+  ],
+  "region": "zhejiang-wenzhou"
+ },
+ {
+  "name": "Mount Putuo",
+  "action": "new-destination",
+  "id": "mount-putuo",
+  "coordinates": {
+   "lat": 30.00972222,
+   "lng": 122.385
+  },
+  "coordinates_source": "Wikipedia: Mount Putuo (island point)",
+  "category": "island",
+  "rank": 3,
+  "defaultZoomSpanKm": 15,
+  "name_evidence": "Wikivoyage has a Putuoshan page (and Zhoushan page listing it); Buddhist sacred island, one of four sacred Buddhist mountains of China, national park.",
+  "spots": 6,
+  "reason": "Six kept spots on the island itself (Puji, South Sea Guanyin, Fayu, Huiji, Foding Mountain, Hundred Step Beach), above the four-spot bar; rank 3 honestly, a famous pilgrimage island but not a top-two country highlight. Span 15 km covers the 8.6 km island. Zhoushan is not proposed as a region destination: the islands are separate ferry bases spread over ~150 km, so a region span would balloon.",
+  "region": "zhejiang-zhoushan"
+ }
+]

@@ -1,0 +1,146 @@
+{
+ "hangzhou-1": {
+  "lat": 30.2609053,
+  "lon": 120.14703,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1466925249 man_made=bridge 断桥 (Broken Bridge) + way/28538289 pedestrian; main lakeside visitor point",
+  "feature": "bridge on lake shore",
+  "note": "West Lake is a large lake; pinned at Broken Bridge, the iconic shore access, not the lake centroid"
+ },
+ "hangzhou-26": {
+  "lat": 30.3212005,
+  "lon": 120.1334662,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM way/457632694 tourism=museum 手工艺活态展示馆 (Living Crafts Exhibition Hall, Gongchen Bridge complex housing the museum)",
+  "feature": "museum building",
+  "note": "matches the hint; museum name in OSM is the exhibition hall of the same complex"
+ },
+ "taihu-lake-source": {
+  "lat": 30.2694121,
+  "lon": 119.5922945,
+  "confidence": "LOW",
+  "source": "OSM relation/8309068 place=town 太湖源镇",
+  "feature": "town centre",
+  "note": "scenic spot itself not found in OSM; this is the township centre, not the scenic area gate"
+ },
+ "anji-6": {
+  "lat": 30.4496764,
+  "lon": 119.6412332,
+  "confidence": "MEDIUM",
+  "source": "OSM node/9107233368 leisure=resort 云上草原高山四季旅游度假区",
+  "feature": "resort node",
+  "note": "exact-name OSM feature; ~4 km from the supplied hint (30.4556,119.6833), which could not be verified"
+ },
+ "jiaxing-3": {
+  "lat": 30.755398,
+  "lon": 120.7437159,
+  "confidence": "LOW",
+  "source": "OSM way/1259695931 landuse=retail 梅湾街 (area centre)",
+  "feature": "retail area centroid",
+  "note": "street way not found; ferry terminal 梅湾街码头 at 30.75528,120.74192 is on the street's west end"
+ },
+ "jinhua-3": {
+  "lat": 29.2042945,
+  "lon": 119.6203696,
+  "confidence": "MEDIUM",
+  "source": "OSM node/370303616 natural=cave_entrance 双龙洞 (Shuanglong Cave, main gate of Jinhua Mountain scenic area; 冰壶洞 node/10205516507 29.20372,119.62160 is 100 m away)",
+  "feature": "cave entrance, main visitor point",
+  "note": "supplied hint (29.12,119.64) was ~9 km south, in the city plain"
+ },
+ "wuyi-8": {
+  "confidence": "LOW",
+  "source": "",
+  "feature": "",
+  "note": "ranch is 熊猫猪猪两头乌国际牧场 in Wucheng District, Jinhua (Ctrip/news), not Wuyi County; no OSM feature or coordinates found"
+ },
+ "longquan-1": {
+  "confidence": "LOW",
+  "source": "",
+  "feature": "",
+  "note": "site is in Xiaomei Town 大窑村, Longquan (no coordinates found; OSM name lookups failed, mirrors down)"
+ },
+ "lishui-city-museum": {
+  "lat": 28.439064,
+  "lon": 119.919806,
+  "confidence": "LOW",
+  "source": "supplied hint only",
+  "feature": "hint",
+  "note": "OSM has no 丽水市博物馆 under that name; unverified"
+ },
+ "ningbo-2": {
+  "lat": 29.8792028,
+  "lon": 121.5564711,
+  "confidence": "MEDIUM",
+  "source": "OSM way/232143558 tourism=attraction 宁波老外滩",
+  "feature": "attraction area",
+  "note": "matches hint"
+ },
+ "shipu": {
+  "lat": 29.2062161,
+  "lon": 121.9271788,
+  "confidence": "HIGH",
+  "source": "OSM relation/18186742 place=town 石浦镇 + zh Wikipedia 石浦镇 29.20546,121.92774",
+  "feature": "town centre",
+  "note": "old fishing town (石浦古城/东门渔港) is nearer the hint 29.2114,121.9434, ~1.7 km east of the town centre"
+ },
+ "quzhou-2": {
+  "lat": 28.9635924,
+  "lon": 118.8721214,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1494317479 building 孔氏南宗家庙",
+  "feature": "building",
+  "note": "matches hint"
+ },
+ "jiming-mountain-folk-houses": {
+  "confidence": "LOW",
+  "source": "",
+  "feature": "",
+  "note": "= 龙游民居苑 (鸡鸣山民居苑), 宝塔路46号, Donghua Subdistrict, Longyou County; no coordinates found"
+ },
+ "dafo-temple-xinchang": {
+  "lat": 29.49666889,
+  "lon": 120.89555611,
+  "confidence": "MEDIUM",
+  "source": "zh Wikipedia 大佛寺 (新昌) coordinates",
+  "feature": "temple",
+  "note": "hint was 1 km west; no OSM feature found (mirrors down)"
+ },
+ "changyu-dongtian": {
+  "lat": 28.43472222,
+  "lon": 121.43888889,
+  "confidence": "LOW",
+  "source": "zh Wikipedia 长屿硐天 coordinates",
+  "feature": "quarry caves area",
+  "note": "hint 28.4229,121.4400 is 1.3 km south; no OSM feature found"
+ },
+ "wuma-street": {
+  "lat": 28.0155397,
+  "lon": 120.6553222,
+  "confidence": "HIGH",
+  "source": "OSM way/175330582 highway=pedestrian 五马街 + zh Wikipedia 五马街 28.01529,120.65463",
+  "feature": "pedestrian street",
+  "note": "within 80 m"
+ },
+ "nanxi-river": {
+  "lat": 28.3225426,
+  "lon": 120.7796533,
+  "confidence": "LOW",
+  "source": "OSM node/11340665939 railway station 楠溪江 (hint)",
+  "feature": "station",
+  "note": "river is a long feature; no visitor centre/scenic hub found; consider 岩头古村 or 狮子岩 instead"
+ },
+ "xiandie-rock": {
+  "confidence": "LOW",
+  "source": "",
+  "feature": "",
+  "note": "not found (mirrors down)"
+ },
+ "wushitang-beach": {
+  "lat": 29.9239597,
+  "lon": 122.3998257,
+  "confidence": "MEDIUM",
+  "source": "OSM node/7967534393 highway=bus_stop 乌石塘 (also node/7967505283)",
+  "feature": "bus stop at site",
+  "note": "Zhujiajian east coast; stop is at the visitor access, not a beach feature"
+ }
+}

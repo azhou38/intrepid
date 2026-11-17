@@ -1,0 +1,869 @@
+{
+ "region": "zhejiang-wenzhou",
+ "new_destinations": [
+  {
+   "id": "yandang-mountains",
+   "name": "Yandang Mountains",
+   "action": "new-destination",
+   "rank": 3,
+   "category": "mountain",
+   "icon": "🏔️",
+   "coordinates": {
+    "lat": 28.37,
+    "lng": 121.06
+   },
+   "coordinates_source": "wikipedia:Yandang Mountains",
+   "defaultZoomSpanKm": 30,
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "name_evidence": "Wikivoyage Wenzhou lists 'Yandang Mountains' as a headline See entry with the sub-areas Lingfeng, Lingyan, Dalongchu and Sanzhe; English Wikipedia article 'Yandang Mountains' (national scenic area, ~6,000 views/yr).",
+   "reason": "Named headline scenic area with four kept sub-area spots; ranked 3 (regional favourite, not a national top-tier draw).",
+   "spot_ids": [
+    "yandang-mountains-1",
+    "yandang-mountains-2",
+    "yandang-mountains-3",
+    "yandang-mountains-4"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Jiangxin Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "jiangxin-island",
+   "icon": "🏝️",
+   "category": "historic",
+   "bio": "Island in the Ou River in Wenzhou with an old pagoda, gardens, a water park and a theme park.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "lat": 28.03048,
+    "lng": 120.635047
+   },
+   "coordinates_source": "Wikivoyage Wenzhou listing geo (en article is a Nanjing island)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Wenzhou city draws: only three kept places in the city (eight more in review), under the four-spot bar for a Wenzhou destination; they sit inside Wenzhou's metro but no Wenzhou destination exists."
+  },
+  {
+   "name": "Wenzhou Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "wenzhou-museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free main city museum of Wenzhou in Lucheng District, open Tuesday to Sunday.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": 27.9918,
+    "lng": 120.6941
+   },
+   "coordinates_source": "OSM museum way 'Wenzhou Museum' (zh wiki link)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Wenzhou city draws: only three kept places in the city (eight more in review), under the four-spot bar for a Wenzhou destination; they sit inside Wenzhou's metro but no Wenzhou destination exists."
+  },
+  {
+   "name": "Wuma Street",
+   "action": "standalone",
+   "destination": null,
+   "id": "wuma-street",
+   "icon": "🛍️",
+   "category": "market",
+   "bio": "Wenzhou's most popular pedestrian street, known for snacks and local specialties.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "lat": 28.01742,
+    "lng": 120.65655
+   },
+   "coordinates_source": "OSM street node '五马街'",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Wenzhou city draws: only three kept places in the city (eight more in review), under the four-spot bar for a Wenzhou destination; they sit inside Wenzhou's metro but no Wenzhou destination exists."
+  },
+  {
+   "name": "Dongtou Islands",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongtou-islands",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Group of 168 islands off Wenzhou with beaches and scenic spots, reached by ferry.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "coordinates": {
+    "lat": 27.829114,
+    "lng": 121.128976
+   },
+   "coordinates_source": "Wikivoyage Wenzhou listing geo",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Dongtou islands are offshore from Wenzhou, outside the Wenzhou city metro; only the islands plus three scenic spots kept (the destination itself would be the fourth), under the four-spot bar for a Dongtou destination; Banping Mountain is in review and would make it four."
+  },
+  {
+   "name": "Nanji Islands",
+   "action": "standalone",
+   "destination": null,
+   "id": "nanji-islands",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Archipelago and marine nature reserve off Pingyang, reached by ferry.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "coordinates": {
+    "lat": 27.465658,
+    "lng": 121.077842
+   },
+   "coordinates_source": "Wikivoyage Wenzhou/Pingyang listing geo",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "South Yandang Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "south-yandang-mountain",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "South Yandang (Nan Yandang) in Pingyang County, a scenic mountain area listed for visitors.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "lat": 27.596234,
+    "lng": 120.28276
+   },
+   "coordinates_source": "Wikivoyage Wenzhou/Pingyang listing geo",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Lingfeng Scenic Area",
+   "action": "spot",
+   "destination": "yandang-mountains",
+   "id": "yandang-mountains-1",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "North Yandang scenic area of rock pinnacles, known for its night views.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.38117,
+    "lng": 121.11057
+   },
+   "coordinates_source": "OSM entrance node 'Entrance of Lingfeng Scenic Area'",
+   "wiki": "Yandang Mountains",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Inside the Yandang Mountains scenic area (Yueqing), a sub-area named on Wikivoyage Wenzhou; within 5 km of the destination centre."
+  },
+  {
+   "name": "Lingyan Scenic Area",
+   "action": "spot",
+   "destination": "yandang-mountains",
+   "id": "yandang-mountains-2",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "North Yandang scenic area of cliffs and a flying crossing between rock walls.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.36244,
+    "lng": 121.08747
+   },
+   "coordinates_source": "OSM entrance node 'Entrance of Lingyan Scenic Area'",
+   "wiki": "Yandang Mountains",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Inside the Yandang Mountains scenic area (Yueqing), a sub-area named on Wikivoyage Wenzhou; within 3 km of the destination centre."
+  },
+  {
+   "name": "Dalongchu Scenic Area",
+   "action": "spot",
+   "destination": "yandang-mountains",
+   "id": "yandang-mountains-3",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "North Yandang scenic area built around the Dalongchu waterfall and its gorge.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.35337,
+    "lng": 121.04922
+   },
+   "coordinates_source": "OSM attraction 'Dalongqiu Scenic Area'",
+   "wiki": "Yandang Mountains",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Inside the Yandang Mountains scenic area (Yueqing), a sub-area named on Wikivoyage Wenzhou; within 2 km of the destination centre."
+  },
+  {
+   "name": "Sanzhe Waterfall",
+   "action": "spot",
+   "destination": "yandang-mountains",
+   "id": "yandang-mountains-4",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Waterfall zone of the Yandang Mountains, entered from its own gate.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": 28.37082,
+    "lng": 121.10295
+   },
+   "coordinates_source": "OSM entrance node 'Entrance of Sanzhepu Scenic Area'",
+   "wiki": "Yandang Mountains",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Inside the Yandang Mountains scenic area (Yueqing), a sub-area named on Wikivoyage Wenzhou; within 4 km of the destination centre."
+  },
+  {
+   "name": "Nanxi River",
+   "action": "standalone",
+   "destination": null,
+   "id": "nanxi-river",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "River gorge in Yongjia County known for bamboo-raft rides and ancient villages.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "lat": 28.32254,
+    "lng": 120.77965
+   },
+   "coordinates_source": "OSM river node '楠溪江' (point on the river)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Nanxi River is in Yongjia County, a separate area from the Yandang scenic area (about 28-30 km from its centre, outside its bounds); only three kept places round it, so no destination of its own."
+  },
+  {
+   "name": "Furong Ancient Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "furong-ancient-village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Historic village of old houses in the Nanxi River scenic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": 28.33328,
+    "lng": 120.73202
+   },
+   "coordinates_source": "OSM attraction node 'Furong Old Village'",
+   "wiki": "Nanxi River",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Nanxi River is in Yongjia County, a separate area from the Yandang scenic area (about 28-30 km from its centre, outside its bounds); only three kept places round it, so no destination of its own."
+  },
+  {
+   "name": "Cangpo Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "cangpo-village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Village in the Nanxi River area with a folk museum and a traditional wedding ceremony.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": "Nanxi River",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Nanxi River is in Yongjia County, a separate area from the Yandang scenic area (about 28-30 km from its centre, outside its bounds); only three kept places round it, so no destination of its own."
+  },
+  {
+   "name": "Yucang Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "yucang-mountain",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "Mount Yucang (Yucang Shan) in Cangnan County, a mountain listed among its scenic spots.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": "Mount Yucang",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Shunxi Ancient Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "shunxi-ancient-village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Ming and Qing-era village complex in Pingyang with traditional houses.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": 27.566778,
+    "lng": 120.201108
+   },
+   "coordinates_source": "Wikivoyage Wenzhou/Pingyang listing geo",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Wuyanling National Nature Reserve",
+   "action": "standalone",
+   "destination": null,
+   "id": "wuyanling-national-nature-reserve",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "National nature reserve in Taishun with a visitor scenic area and trails.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "lat": 27.706,
+    "lng": 119.675
+   },
+   "coordinates_source": "wikipedia:Wuyanling National Nature Reserve",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Baizhangji Waterfall",
+   "action": "standalone",
+   "destination": null,
+   "id": "baizhangji-waterfall",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Waterfall and national scenic area near Feiyun Lake in Wencheng County.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "lat": 27.83371,
+    "lng": 120.00637
+   },
+   "coordinates_source": "Wikivoyage Wenzhou listing geo ('Baizhangxia')",
+   "wiki": "Baizhangji",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Master and Apprentice Bridges",
+   "action": "standalone",
+   "destination": null,
+   "id": "master-and-apprentice-bridges",
+   "icon": "🌉",
+   "category": "historic",
+   "bio": "Pair of old bridges in the hills south-west of Wenzhou, named on the Wikivoyage listing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "lat": 27.473092,
+    "lng": 119.995287
+   },
+   "coordinates_source": "Wikivoyage Wenzhou listing geo (not Wikipedia)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Yuhai Tower",
+   "action": "standalone",
+   "destination": null,
+   "id": "yuhai-tower",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Yuhai Lou, a national key heritage building in Rui'an.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  },
+  {
+   "name": "Xiandie Rock",
+   "action": "standalone",
+   "destination": null,
+   "id": "xiandie-rock",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Rock formation on the Dongtou islands off Wenzhou, a named scenic spot of the group.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Dongtou islands are offshore from Wenzhou, outside the Wenzhou city metro; only the islands plus three scenic spots kept (the destination itself would be the fourth), under the four-spot bar for a Dongtou destination; Banping Mountain is in review and would make it four."
+  },
+  {
+   "name": "Dasha'ao Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "dasha-ao-beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Cove and beach on the Dongtou islands off Wenzhou, a named scenic spot of the group.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Dongtou islands are offshore from Wenzhou, outside the Wenzhou city metro; only the islands plus three scenic spots kept (the destination itself would be the fourth), under the four-spot bar for a Dongtou destination; Banping Mountain is in review and would make it four."
+  },
+  {
+   "name": "Wanghai Tower",
+   "action": "standalone",
+   "destination": null,
+   "id": "wanghai-tower",
+   "icon": "🗼",
+   "category": "viewpoint",
+   "bio": "Sea-view tower on the Dongtou islands, a viewing point over the coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Dongtou islands are offshore from Wenzhou, outside the Wenzhou city metro; only the islands plus three scenic spots kept (the destination itself would be the fourth), under the four-spot bar for a Dongtou destination; Banping Mountain is in review and would make it four."
+  },
+  {
+   "name": "Liu Ji Temple and Tomb",
+   "action": "standalone",
+   "destination": null,
+   "id": "liu-ji-temple-and-tomb",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Temple and tomb of Liu Ji (Liu Bowen) in Wencheng, a national heritage site.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": "Liu Ji Temple",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "reason": "Standalone: Outside the bounds of any proposed or existing destination; a stop on its own, with no kept cluster round it."
+  }
+ ],
+ "existing_fixes": [],
+ "review": [
+  {
+   "name": "Jiangxin Temple",
+   "views": 1131,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage lists the temple (free) with old and new pagodas on Jiangxin Island (rule 1, 2).",
+   "case_against": "Part of the Jiangxin Island spot (rule 3) and its link is dead; kept island alone covers the visit."
+  },
+  {
+   "name": "Taiping Temple",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage See listing: temple founded 942, rebuilt 2003-06, free (rule 1).",
+   "case_against": "Wikivoyage itself calls it \"really new\"; a rebuilt local temple, short visit, one source."
+  },
+  {
+   "name": "Epoch Art Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: contemporary art museum in Bailuzhou Park, Y30 (rule 1, 2).",
+   "case_against": "Single source, listing dated 2019, local contemporary art; opening status unverified."
+  },
+  {
+   "name": "Wenzhou Revolutionary History Memorial Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: free revolutionary-history museum on Jiangxin Island (rule 1, 2).",
+   "case_against": "Memorial-hall museum of local interest, dead link, adjacent to the island spot."
+  },
+  {
+   "name": "Wutian Old Street",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: grey-brick traditional architecture beside the Tanghe River, evening strolls (rule 1, 2).",
+   "case_against": "Single source, partly rebuilt/commercial, only listed with a night bus; short visit."
+  },
+  {
+   "name": "Jingshan Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: large forest park with views over Wenzhou, Y30 (rule 1, 2).",
+   "case_against": "Local park whose main draw is the zoo inside; dead link."
+  },
+  {
+   "name": "Jiushan Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: small lake park with a tall pagoda to climb for city views, free (rule 1, 2).",
+   "case_against": "Small local park, pagoda access hours listed as 8-11 and 1-2."
+  },
+  {
+   "name": "Sanyang Wetlands",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: 136 islands linked by bridges, metro S1 (rule 1, 2).",
+   "case_against": "Dead link; Wikivoyage says the attraction was still being built, so what a visitor can do is unclear."
+  },
+  {
+   "name": "Wenzhou Zoo",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing: city zoo with penguins and lions, Y30 (rule 1, 2).",
+   "case_against": "Ordinary city zoo, one source, dead link; friend test fails."
+  },
+  {
+   "name": "Wenzhou Amusement Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Wenzhou See listing Do: permanent ride park, Y130 (rule 1, 2).",
+   "case_against": "Local theme park 30 km out; not a reason to travel; one source."
+  },
+  {
+   "name": "Puzhuang Fortress",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "China Daily (Zhejiang) features the 630-year-old Puzhuangsuo fortress, a national relic in Cangnan; no Wikivoyage or guidebook entry found (rule 1).",
+   "case_against": "Only a news feature, not a visitor listing."
+  },
+  {
+   "name": "Longwan Fort",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "Wikivoyage Wenzhou names the \"historic Yongchang Fort\" in Longwan (likely this place) (rule 1).",
+   "case_against": "Name match uncertain, one passing mention, access unverified."
+  },
+  {
+   "name": "Middle Yandang Mountains",
+   "views": 495,
+   "counted_sources": 0,
+   "case_for": "Wikivoyage Wenzhou district blurb: Zhong Yandang scenic area is \"perfect for hiking\" (rule 1).",
+   "case_against": "Separate range section from North Yandang but one passing mention; may be part of Yandang spot."
+  },
+  {
+   "name": "Yan Lake",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Official Yandangshan site lists Yanhu (Wild Goose Lake) as one of its eight zones; Wikivoyage ticketed listing (rule 1).",
+   "case_against": "A lake zone with less to do than the Three Wonders; part of the larger Yandang spot."
+  },
+  {
+   "name": "Fang Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage ticketed listing; Trip.com guide mentions the Fangdong zone with a cable car in the core Yandang route (rule 1, 2).",
+   "case_against": "Part of Yandang; the official site names a different cave (Yangjiaodong) among its zones."
+  },
+  {
+   "name": "Twelve Peaks",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage ticketed listing; web search found it in itineraries without description (rule 1).",
+   "case_against": "Part of Nanxi River; no detail found on what a visitor does."
+  },
+  {
+   "name": "Daitou Ancient Village",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage ticketed listing; web search found it only in lists with Furong and Cangpo, no detail (rule 1).",
+   "case_against": "Little independent description; overlaps two stronger villages."
+  },
+  {
+   "name": "Shiwei Rock",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage ticketed listing; Trip.com guide describes a mast-shaped Danxia rock for hiking and rafting (rule 1, 2).",
+   "case_against": "A feature of Nanxi River scenic area, one visit among many."
+  },
+  {
+   "name": "Qingjie She Village",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Pingyang See: She ethnic village with song and dance performances (rule 1).",
+   "case_against": "Experience is performance-based and may not run daily (rule 4); one source."
+  },
+  {
+   "name": "Pingyang County Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Pingyang See listing, Tue-Sun (rule 1, 2).",
+   "case_against": "Local county museum, no description of exhibits, one source."
+  },
+  {
+   "name": "Fenghu Theme Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Pingyang See: free lakeside park for walking and sunsets (rule 1, 2).",
+   "case_against": "Local urban park; no distinct draw."
+  },
+  {
+   "name": "Su Buqing's Former Residence",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Pingyang See: house of the famed mathematician (rule 1).",
+   "case_against": "Public access and exhibits unclear; one source, short visit."
+  },
+  {
+   "name": "Mount Akaiwa",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Pingyang Do: \"roof of Pingyang\" climb for experienced walkers (rule 1, 2).",
+   "case_against": "Rarely visited, one source, no trail details."
+  },
+  {
+   "name": "Taishun Radon Spring",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "A Taishun attractions list names the Radon Spring Scenic Area beside Wuyanling and Langqiao Cultural Park; hot-spring venue judged on merits (rule 1, 2).",
+   "case_against": "Only a list mention; exact site match uncertain."
+  },
+  {
+   "name": "Banping Mountain",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "Wikivoyage Dongtou blurb; Trip.com describes a sea cliff on the east of the area, best seen from Wanghai Tower (rule 1).",
+   "case_against": "Mostly a view from the tower, so part of that stop."
+  }
+ ],
+ "notes": [
+  "Wenzhou city, Dongtou and Nanxi River stay standalone: each has fewer than four kept places. If the review entries (8 Wenzhou city sites; Banping Mountain for Dongtou; Daitou, Shiwei Rock, Twelve Peaks for Nanxi) are approved, Wenzhou, Dongtou and Nanxi River would each reach the four-spot bar and should be re-placed as destinations.",
+  "Coordinates marked from Wikivoyage listing geo are the listing's own point; the pin stage should still run resolve-pin on every spot. Entries with coordinates null have pin_needed true.",
+  "Costs would be CNY; all draft fields left null with needs_research."
+ ]
+}

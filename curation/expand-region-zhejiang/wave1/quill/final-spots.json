@@ -1,0 +1,3172 @@
+{
+ "hangzhou-2": {
+  "bio": "Chan Buddhist temple beside Feilai Peak, known for its many pagodas and rock-carved grottos.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.lingyinsi.com",
+  "wiki": "Lingyin Temple",
+  "price_source_weak": true,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lingyin_Temple",
+   "https://www.yzwb.net/news/txs/202511/t20251129_294897.html",
+   "https://www.lingyinsi.com/"
+  ],
+  "notes": "Free entry with advance reservation reported from 1 Dec 2025 (old fee 45 CNY Feilai Peak + 30 CNY incense ticket); news is from Nov 2025, current policy unverified. Official site title 杭州灵隐寺 loaded OK.",
+  "id": "hangzhou-2",
+  "name": "Lingyin Temple",
+  "zh": "灵隐寺",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2427953,
+   "lng": 120.0967987
+  },
+  "coordinates_source": "overpass node/1218588822 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free-with-reservation rests on the Dec 2025 West Lake authority notice as reported in news; not re-confirmed as current in Nov 2026. needs:booking kept"
+  ]
+ },
+ "hangzhou-3": {
+  "bio": "Rebuilt five-storey pagoda on Sunset Hill by West Lake, with the original's remains below and lake views from the top.",
+  "icon": "🗼",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 40,
+  "costMax": 40,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticketUrl_blocked": "http://jing.leifengta.com",
+  "ticket_note": "Official ticket site cited by English Wikipedia; not reachable from scripts, check in a real browser. Not confirmed it names the place.",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Leifeng_Pagoda (40 yuan/person, cites jing.leifengta.com)",
+   "https://you.ctrip.com/sight/hangzhou14/2033.html (address, concessions)"
+  ],
+  "notes": "Price 40 CNY from Wikipedia citing the official site (2014 cite); not re-verified on operator page.",
+  "id": "hangzhou-3",
+  "name": "Leifeng Pagoda",
+  "zh": "雷峰塔",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2338841,
+   "lng": 120.145013
+  },
+  "coordinates_source": "overpass way/229726934 tourism=attraction (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "ticketUrl http://jing.leifengta.com unreachable from script: orchestrator browser check"
+  ]
+ },
+ "hangzhou-7": {
+  "bio": "Three-span stone arch bridge at West Lake's edge, known for winter snow views and the White Snake legend.",
+  "icon": "🌉",
+  "category": "landmark",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "costBasis": "open",
+  "wiki": "Broken Bridge (Hangzhou)",
+  "ticketUrl": null,
+  "ticket_note": "Open public bridge on West Lake, no single steward.",
+  "sources": [],
+  "notes": "Free open access is unverified by a fetched source (West Lake's lakeshore is free); legend link from draft only. No Wikipedia article of its own (title is a disambiguation page).",
+  "cost_unverified": true,
+  "id": "hangzhou-7",
+  "name": "Broken Bridge",
+  "zh": "断桥",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2608939,
+   "lng": 120.1470187
+  },
+  "coordinates_source": "overpass way/1466925249 man_made=bridge (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free open access not confirmed by a fetched source; snow-view and White Snake legend not in a fetched source"
+  ]
+ },
+ "hangzhou-8": {
+  "bio": "Island in West Lake with three stone pagodas standing in the water, reached by boat",
+  "icon": "⛵",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costBasis": "ticket",
+  "wiki": null,
+  "ticketUrl": null,
+  "sources": [
+   "https://www.dahepiao.com/lvyounews1/20250813525666.html"
+  ],
+  "notes": "Price is the West Lake boat plus island ticket (55 CNY standard boat, 70 CNY deluxe) from third-party ticket sites, not official; sources disagree (one lists 79 deluxe). Verify. Wikipedia article not found. Sold via West Lake boat operators, so no single official link.",
+  "costMin": 55,
+  "costMax": 70,
+  "currency": "CNY",
+  "price_source_weak": true,
+  "ticket_note": "Boat/island ticket sold by West Lake boat operators; no single official site verified",
+  "id": "hangzhou-8",
+  "name": "Three Pools Mirroring the Moon",
+  "zh": "三潭印月",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2394753,
+   "lng": 120.1397779
+  },
+  "coordinates_source": "overpass node/1468743788 tourism=attraction (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "hangzhou-10": {
+  "bio": "Pedestrian street of restored old shopfronts and snack stalls at the foot of Wushan, home to Hu Qingyu Tang.",
+  "icon": "🏮",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Open street with no single steward; no official site.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://subsites.chinadaily.com.cn/ezhejiang/hangzhou/2018-06/14/c_242888.htm",
+    "https://zh.wikipedia.org/wiki/河坊街"
+   ],
+   "cost": [
+    "https://chinatripedia.com/?p=17199",
+    "https://you.ctrip.com/sight/hangzhou14/135781.html"
+   ]
+  },
+  "notes": "Free: open pedestrian street (Ctrip lists it open all day; no admission). Hu Qingyu Tang pharmacy on the street per web search result, not fetched. Street length disagrees between sources (460 m vs 1,800 m); not used.",
+  "id": "hangzhou-10",
+  "name": "Hefang Street",
+  "zh": "河坊街",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2424766,
+   "lng": 120.1647924
+  },
+  "coordinates_source": "overpass way/4880742 tourism=attraction (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": []
+ },
+ "hangzhou-11": {
+  "bio": "Eight-sided, seven-storey brick-and-wood pagoda on Yuelun Hill above the Qiantang River, 59.89 m tall.",
+  "icon": "🏯",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; run by the West Lake scenic area's Qianjiang office (Hangzhou West Lake Scenic Area); WeChat account only known",
+  "wiki": "Liuhe Pagoda",
+  "sources": [
+   "https://zh.wikipedia.org/wiki/六和塔",
+   "https://hznews.hangzhou.com.cn/chengshi/content/2011-11/30/content_3976557.htm",
+   "https://you.ctrip.com/sight/hangzhou14/2039.html"
+  ],
+  "notes": "10 CNY tower ticket is from a 2011 Hangzhou news report quoting the scenic area office (stale); a Ctrip travel note mentions 20 CNY park entry plus 10 CNY tower. Current price unverified. Wikipedia EN has no article. Crowd-control may suspend tower entry (2025 report).",
+  "id": "hangzhou-11",
+  "name": "Six Harmonies Pagoda",
+  "zh": "六和塔",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.1983338,
+   "lng": 120.1266108
+  },
+  "coordinates_source": "overpass way/159184108 historic=tower (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "price 30 not from an official page (price_source_weak stays true)",
+   "no official site found"
+  ]
+ },
+ "hangzhou-14": {
+  "bio": "Chipperfield-designed museum of Liangzhu culture, with jade cong and bi from a 5,000-year-old walled city.",
+  "icon": "🏺",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.lzmuseum.cn",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/良渚博物院",
+   "https://www.lzmuseum.cn",
+   "https://hznews.hangzhou.com.cn/chengshi/content/2019-08/02/content_7238887.htm",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Liangzhu_Museum"
+  ],
+  "notes": "Free: 2019 Hangzhou news says museum ticket is free; official site loaded (title 良渚博物院) and carries a visit-reservation mini-program notice, hence needs booking. Free status not restated on a current official page; verify. English article title 'Liangzhu Museum' equals name so wiki null. 5,000-year claim is the Liangzhu culture's standard dating, not quoted from a fetched page.",
+  "cost_unverified": true,
+  "id": "hangzhou-14",
+  "name": "Liangzhu Museum",
+  "zh": "良渚博物院",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.3797659,
+   "lng": 120.0231606
+  },
+  "coordinates_source": "overpass way/433830824 tourism=museum (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "Free admission rests on a 2019 news report; official page only shows the reservation mini-program notice"
+  ]
+ },
+ "hangzhou-15": {
+  "bio": "Two-site museum in the Longjing hills with permanent exhibitions on Chinese tea culture and tea production.",
+  "icon": "🍵",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "https://www.teamuseum.cn/",
+  "wiki": "China National Tea Museum",
+  "sources": {
+   "ticketUrl": "https://www.teamuseum.cn/",
+   "bio": [
+    "https://en.wikipedia.org/wiki/China_National_Tea_Museum",
+    "https://www.teamuseum.cn/"
+   ],
+   "cost": "https://gs.ctrip.com/html5/you/sight/14/4078.html"
+  },
+  "price_source_weak": true,
+  "notes": "Free entry reported only by third-party travel sites (Ctrip, westchinago.com/china-national-tea-museum); official site has no fee page in the cached text. Shuangfeng (Longjing Rd 88) and Longjing (Wengjiashan 268) sites. Reservation need unverified.",
+  "cost_unverified": true,
+  "id": "hangzhou-15",
+  "name": "China National Tea Museum",
+  "zh": "中国茶叶博物馆",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2221335,
+   "lng": 120.1085607
+  },
+  "coordinates_source": "overpass relation/13237505 tourism=museum (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "free status not confirmed by an official source"
+  ]
+ },
+ "hangzhou-16": {
+  "bio": "Hangzhou museum of Chinese silk, textiles and the Silk Road, with galleries on silkworm rearing and weaving.",
+  "icon": "🧵",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "https://www.chinasilkmuseum.com/",
+  "wiki": "China National Silk Museum",
+  "sources": {
+   "ticketUrl": "https://www.chinasilkmuseum.com/",
+   "cost": "https://ct.zj.gov.cn/art/2019/8/5/art_1671969_36385240.html (free since 2004 per provincial culture dept page)",
+   "bio": "https://www.chinasilkmuseum.com/"
+  },
+  "notes": "Free entry per Zhejiang provincial page and search summaries; whether advance reservation is required is unverified (site has a 参观及预约 page, not read).",
+  "id": "hangzhou-16",
+  "name": "China National Silk Museum",
+  "zh": "中国丝绸博物馆",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2251936,
+   "lng": 120.1465893
+  },
+  "coordinates_source": "overpass relation/8281187 tourism=museum (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "Whether advance reservation is required (site has a 参观及预约 page) not confirmed; free entry from provincial 2019 page"
+  ]
+ },
+ "hangzhou-17": {
+  "bio": "Zhejiang's provincial museum, with ancient ceramics and lacquerware in its Gushan hall on West Lake.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": null,
+  "ticketUrl_blocked": "http://www.zhejiangmuseum.com/",
+  "ticket_note": "Official site www.zhejiangmuseum.com (from zh.wikipedia infobox) returned 403 / ICP filing wall to script; check in real browser.",
+  "wiki": null,
+  "sources": {
+   "free": "https://zh.wikipedia.org/wiki/浙江省博物馆 (free since 1 Jan 2004)",
+   "bio": "https://zh.wikipedia.org/wiki/浙江省博物馆; https://en.wikipedia.org/api/rest_v1/page/summary/Zhejiang_Provincial_Museum",
+   "ticketUrl": "https://zh.wikipedia.org/wiki/浙江省博物馆"
+  },
+  "notes": "Coordinates presumably one of its sites (Gushan hall vs Zhijiang). Free admission; reservation was required in 2020, current booking requirement unverified (needs=booking tentative). Special exhibits may need separate reservation.",
+  "cost_unverified": true,
+  "id": "hangzhou-17",
+  "name": "Zhejiang Provincial Museum",
+  "zh": "浙江省博物馆",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2535309,
+   "lng": 120.1387829
+  },
+  "coordinates_source": "overpass node/775020312 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "free entry rests on a 2011 Guangming Daily headline ('zero threshold') and no current official page; needs=booking unconfirmed",
+   "ticketUrl http://www.zhejiangmuseum.com/ fetch failed (blocked): orchestrator browser check"
+  ]
+ },
+ "hangzhou-18": {
+  "bio": "Temple built around the tomb of Song general Yue Fei, a symbol of Chinese patriotism, on West Lake's north shore.",
+  "icon": "🏯",
+  "category": "religious",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found in search (only ticket platforms); not guessed.",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yue_Fei_Temple",
+   "https://touch.piao.qunar.com/touch/detail.htm?id=833",
+   "https://you.ctrip.com/sight/hangzhou14/140707.html"
+  ],
+  "notes": "Adult 25 CNY from Qunar/Ctrip snippets (2022 era); may have changed. Visit duration is an estimate.",
+  "id": "hangzhou-18",
+  "name": "Yue Fei Temple",
+  "zh": "杭州岳王庙",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2547029,
+   "lng": 120.1298095
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "25 CNY still only from Qunar/Ctrip (price_source_weak stays)",
+   "No official site found"
+  ]
+ },
+ "hangzhou-19": {
+  "bio": "Slender seven-storey pagoda on Baoshi Hill, one of West Lake's landmarks, just north of the lake.",
+  "icon": "🗼",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "open hill, no single steward site found",
+  "wiki": "Baochu Pagoda",
+  "sources": {
+   "bio": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Baochu_Pagoda",
+    "https://zh.wikipedia.org/wiki/保俶塔"
+   ],
+   "cost": [
+    "https://chinahangzhoutour.com/attractions/show/baochu-pagoda.htm"
+   ]
+  },
+  "notes": "Free per travel sites only (weak, no official statement); pagoda reopened after restoration 2020 (ehangzhou.gov.cn/2020-04/28/c_269937.htm). Zh Wikipedia: 8-sided 7-tier, 45.3 m. Views claim from Baoshi Hill guides, mark view wording unverified.",
+  "price_source_weak": true,
+  "cost_unverified": true,
+  "id": "hangzhou-19",
+  "name": "Baochu Pagoda",
+  "zh": "保俶塔",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2633417,
+   "lng": 120.1433748
+  },
+  "coordinates_source": "overpass node/5312284654 man_made=tower (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "free status not confirmed by an official source"
+  ]
+ },
+ "hangzhou-20": {
+  "bio": "Limestone peak beside Lingyin Temple, carved with 345 Buddhist stone statues made from the 10th to 14th centuries.",
+  "icon": "⛰️",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Part of the Lingyin Feilai Peak scenic area; only the temple's own site (https://www.lingyinsi.org/) was found and it does not name Feilai Peak, so not used. Reservation is via the scenic area's mini-program (unverified).",
+  "sources": [
+   "https://www.worldjournal.com/wj/story/121343/9154474",
+   "https://en.wikipedia.org/wiki/Lingyin_Temple"
+  ],
+  "notes": "Scenic area dropped its 45 CNY ticket (and 30 CNY Lingyin Temple incense ticket) from 1 Dec 2025 with real-name timed reservation and daily cap, per news reports; current rules after Nov 2026 unverified. Carving count (300+) and dating from memory/unverified: bio claim needs check against Wikipedia Lingyin Temple 'Feilai Feng grottos' section.",
+  "price_source_weak": true,
+  "id": "hangzhou-20",
+  "name": "Feilai Peak",
+  "zh": "飞来峰",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2388764,
+   "lng": 120.0964157
+  },
+  "coordinates_source": "overpass node/9020762381 natural=peak (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free-with-reservation from the same Dec 2025 scenic-area notice as Lingyin Temple; current status not re-confirmed"
+  ]
+ },
+ "hangzhou-21": {
+  "bio": "Buddhist temple at the foot of Nanping Hill on West Lake, paired with Lingyin Temple and home of the Evening Bell scene.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costBasis": "entry",
+  "wiki": null,
+  "ticketUrl": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jingci_Temple",
+   "https://m.bendibao.com/show560477.html",
+   "https://touch.travel.qunar.com/poi/7642230"
+  ],
+  "notes": "Price 10 CNY (includes incense sticks) from local-guide/Qunar pages, not official; temple-card holders enter free. No official site found. Verify.",
+  "costMin": 10,
+  "costMax": 15,
+  "currency": "CNY",
+  "price_source_weak": true,
+  "ticket_note": "No official website found (searched)",
+  "id": "hangzhou-21",
+  "name": "Jingci Temple",
+  "zh": "净慈寺",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2313213,
+   "lng": 120.1443366
+  },
+  "coordinates_source": "overpass node/4427428610 amenity=place_of_worship (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "price 10-15 CNY not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "hangzhou-22": {
+  "bio": "A low hill above West Lake's east shore with temples, the Chenghuang Pavilion tower and views over Hangzhou.",
+  "icon": "⛰️",
+  "category": "viewpoint",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costPer": "Chenghuang Pavilion only; the rest of the hill is free",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found; hill is run by the city, tower fee reported by news/Ctrip only",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/吴山_(杭州市)",
+   "https://gs.ctrip.com/html5/you/sight/hangzhou14/2027.html",
+   "https://cn.chinadaily.com.cn/a/202410/14/WS6717391ba310b59111d9f29b.html"
+  ],
+  "notes": "Only the Chenghuang Pavilion is ticketed (30 CNY per a May 2026 news report seen via search); other areas free. Tower was closed for renovation in 2024-25: reopening unverified. Consider free/open if the hill itself is the spot.",
+  "id": "hangzhou-22",
+  "name": "Wushan Hill",
+  "zh": "吴山",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2391123,
+   "lng": 120.1600791
+  },
+  "coordinates_source": "overpass node/4944243306 natural=peak (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "30 CNY for the tower only from news/Ctrip (weak); tower reopening after renovation unverified",
+   "No official site"
+  ]
+ },
+ "hangzhou-24": {
+  "bio": "A free canal museum in Gongshu district tracing the Grand Canal's history, beside the canal itself.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": null,
+  "ticket_note": "Reservations run through the museum's WeChat official account; no official website found",
+  "wiki": null,
+  "sources": [
+   "https://hznews.hangzhou.com.cn/chengshi/content/2023-09/05/content_8612855.htm",
+   "https://you.ctrip.com/sight/hangzhou14/143993.html"
+  ],
+  "notes": "Free but timed reservation via WeChat (1000 slots/day per 2023 report; may have changed). Not on English Wikipedia.",
+  "cost_unverified": true,
+  "id": "hangzhou-24",
+  "name": "Beijing-Hangzhou Grand Canal Museum",
+  "zh": "京杭大运河博物馆",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.319674,
+   "lng": 120.136993
+  },
+  "coordinates_source": "overpass way/424289940 tourism=museum (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "free status not confirmed by an official source"
+  ]
+ },
+ "hangzhou-25": {
+  "bio": "Hangzhou's largest surviving stone arch bridge, a three-arch span marking the end of the Grand Canal.",
+  "icon": "🌉",
+  "category": "landmark",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Open public bridge on the Grand Canal with no single operator; no official site",
+  "wiki": "Gongchen Bridge",
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/拱宸桥",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Gongchen_Bridge"
+   ],
+   "cost": [
+    "https://gs.ctrip.com/html5/you/sight/14/144100.html"
+   ]
+  },
+  "price_source_weak": false,
+  "notes": "Free: Ctrip lists the bridge as free to visit (weak source); built 1631, rebuilt 1885, 92.1 m long per zh Wikipedia. Canal boats nearby are separate and not counted.",
+  "id": "hangzhou-25",
+  "name": "Gongchen Bridge",
+  "zh": "拱宸桥",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.3204639,
+   "lng": 120.1339172
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "pass",
+  "unresolved": []
+ },
+ "hangzhou-27": {
+  "bio": "A nationally protected Jiangnan mansion and garden in Hangzhou's Qinghefang historic district, built in the 1870s.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 20,
+  "costMax": 20,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; official WeChat account only reported by aggregators",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Former_Residence_of_Hu_Xueyan",
+   "https://www.dahepiao.com/lvyounews1/20250925531774.html"
+  ],
+  "notes": "20 CNY adult from a ticket-agent page (weak); evening ticket 98 CNY is a separate product. Built date 1872 from draft, unverified beyond that.",
+  "id": "hangzhou-27",
+  "name": "Former Residence of Hu Xueyan",
+  "zh": "胡雪岩故居",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2395853,
+   "lng": 120.1682783
+  },
+  "coordinates_source": "overpass way/489075428 tourism=attraction (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "price not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "hangzhou-29": {
+  "bio": "Compact Jiangnan-style garden on Yanggong Causeway with two ponds, pavilions and rockwork open to West Lake.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site verified; operator is WeChat/ticket-phone only in search results",
+  "wiki": null,
+  "sources": [
+   "https://m.bendibao.com/show563794.html",
+   "https://hznews.hangzhou.com.cn/chengshi/content/2017-02/15/content_6466936_2.htm",
+   "https://you.ctrip.com/sight/hangzhou14/25577.html"
+  ],
+  "notes": "10 CNY from an undated Bendibao list and a 2017 Hangzhou news report; current price unverified. Bio details (ponds, pavilions) are generic and unverified beyond the draft: re-check.",
+  "id": "hangzhou-29",
+  "name": "Guo's Villa",
+  "zh": "郭庄",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.245895,
+   "lng": 120.1275924
+  },
+  "coordinates_source": "overpass node/4500306808 tourism=attraction (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "10 CNY from undated/2017 sources only (weak)",
+   "No official site"
+  ]
+ },
+ "hangzhou-30": {
+  "bio": "Lakeside park with a red fish pond, peony garden and lawns beside Su Causeway on West Lake.",
+  "icon": "🐟",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Part of West Lake scenic area; no separate official site found.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://www.ehangzhou.gov.cn/2018-06/14/c_271620.htm"
+   ],
+   "cost": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=7807"
+   ]
+  },
+  "notes": "Free per a guide and by absence from the West Lake paid-park list in search results; no current official page confirmed (price_source_weak). 'Beside Su Causeway' from search snippet (park at its south end, west side). Verify gate policy.",
+  "cost_unverified": true,
+  "id": "hangzhou-30",
+  "name": "Flower Pond Fish Viewing",
+  "zh": "花港观鱼",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.234386,
+   "lng": 120.137392
+  },
+  "coordinates_source": "overpass node/1881729397 tourism=viewpoint (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "free status not confirmed by an official source"
+  ]
+ },
+ "hangzhou-31": {
+  "bio": "A seven-kilometre stream valley west of West Lake, running through tea gardens and wooded hills from Longjing village.",
+  "icon": "🌳",
+  "category": "viewpoint",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Open scenic valley with no single operator",
+  "wiki": null,
+  "sources": [
+   "https://you.ctrip.com/sight/hangzhou14/2024.html"
+  ],
+  "notes": "Free per Ctrip page (open all day, weak) and visitor reviews; one 2022 ticket-agent page showing a price is a bundled product, ignored. Ctrip lists open year-round.",
+  "cost_unverified": true,
+  "id": "hangzhou-31",
+  "name": "Jiuxi Smoky Trees",
+  "zh": "九溪烟树",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2046172,
+   "lng": 120.1085446
+  },
+  "coordinates_source": "overpass node/13458238803 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free entry from Ctrip only: cost_unverified"
+  ]
+ },
+ "hangzhou-32": {
+  "bio": "Hillside botanical garden on the north-west shore of West Lake, with more than 3,400 plant species and a plum-blossom garden.",
+  "icon": "🌿",
+  "category": "nature",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site confirmed: hzbg.com.cn returned 403 (BLOCKED) and could not be tied to the garden; hzbg.cn unreachable. Check in a real browser; not recorded as ticketUrl_blocked because domain is a guess.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/杭州植物园",
+   "https://you.ctrip.com/sight/hangzhou14/25434.html",
+   "https://en.wikipedia.org/wiki/Hangzhou_Botanical_Garden"
+  ],
+  "notes": "Adult 10 CNY (half-price concession 5) from a third-party ticket site via search and Ctrip concession list; weak, unverified on operator page. Wikipedia: 3,458 plant species, 248 ha, Taoyuanling NW of West Lake; plum 'Lingfeng tan mei' garden from Ctrip. Ticket office hours not recorded. Pass-list check irrelevant (China).",
+  "id": "hangzhou-32",
+  "name": "Hangzhou Botanical Garden",
+  "zh": "杭州植物园",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2542611,
+   "lng": 120.1155179
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "price not from an official page (weak)",
+   "no official site confirmed"
+  ]
+ },
+ "hangzhou-33": {
+  "bio": "Academy on Phoenix Hill's west slope, founded in 1498 and among Hangzhou's best-known Ming and Qing academies.",
+  "icon": "🏛️",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "Managed by West Lake Scenic Area Phoenix Hill office; no dedicated official site found.",
+  "wiki": null,
+  "sources": {
+   "cost": "https://hznews.hangzhou.com.cn/chengshi/content/2020-05/03/content_7726808_2.htm",
+   "bio": [
+    "https://zh.wikipedia.org/wiki/万松书院",
+    "https://hznews.hangzhou.com.cn/chengshi/content/2018-05/24/content_7007206_0.htm",
+    "https://gs.ctrip.com/html5/you/sight/14/26650.html"
+   ]
+  },
+  "notes": "10 CNY from a 2020 Hangzhou Net article; may be outdated or now free: unverified. Address Wansongling Rd 81, Shangcheng.",
+  "id": "hangzhou-33",
+  "name": "Wansong Academy",
+  "zh": "万松书院",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2290341,
+   "lng": 120.155994
+  },
+  "coordinates_source": "overpass way/520937302 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "10 CNY from a 2020 article only (weak); may now be free",
+   "No official site"
+  ]
+ },
+ "hangzhou-34": {
+  "bio": "Chan Buddhist temple in the hills of Yuhang, known for its tea-feast tradition and a five-gate entrance hall.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; temple/WeChat only, unverified",
+  "wiki": null,
+  "sources": {
+   "bio": "https://zh.wikipedia.org/wiki/径山寺",
+   "cost": "https://gs.ctrip.com/html5/you/sight/hangzhou14/1414691.html (user review, old)"
+  },
+  "notes": "30 CNY is from a Ctrip user review only; shuttle from visitor centre is free, holiday parking ~20 CNY (not counted). Verify.",
+  "id": "hangzhou-34",
+  "name": "Jingshan Temple",
+  "zh": "径山寺",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.3820787,
+   "lng": 119.7611219
+  },
+  "coordinates_source": "overpass node/5237422822 amenity=place_of_worship (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "hangzhou-36": {
+  "bio": "Large safari park in Fuyang with walk-through zones, a drive-through area and animal shows.",
+  "icon": "🦁",
+  "category": "entertainment",
+  "visitHoursMin": 4,
+  "visitHoursMax": 6,
+  "costMin": 210,
+  "costMax": 220,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "https://www.hzsp.com/",
+  "wiki": null,
+  "sources": {
+   "ticketUrl": "https://www.hzsp.com/ (title 杭州野生动物世界官方网站, loaded)",
+   "cost": "https://gs.ctrip.com/html5/you/sight/1513.html; https://www.dahepiao.com/lvyounews1/20220316260174.html",
+   "bio": "https://www.hzsp.com/ (walk zone 步行区, drive zone 车行区, shows)"
+  },
+  "notes": "Official page shows no price in fetched text. Ctrip adult from CNY 210 (2026), older ticket-seller list 220. Weak. Self-drive vehicle pass is extra and excluded. Location in Fuyang district (registered address Yinhu Street).",
+  "id": "hangzhou-36",
+  "name": "Hangzhou Wildlife World",
+  "zh": "杭州野生动物世界",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.1550091,
+   "lng": 119.9809686
+  },
+  "coordinates_source": "overpass way/437732061 tourism=zoo (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "Price unresolved: official page shows no price; zh Wikipedia lists an old official adult price of 150 CNY (undated), Ctrip says 210 from (2026). Keep 210 weak"
+  ]
+ },
+ "hangzhou-37": {
+  "bio": "Amusement park on the Xianghu lake shore in Xiaoshan, with rides and a neighbouring water park.",
+  "icon": "🎢",
+  "category": "entertainment",
+  "visitHoursMin": 4,
+  "visitHoursMax": 7,
+  "costMin": 128,
+  "costMax": 190,
+  "currency": "CNY",
+  "costBasis": "ticket",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; hzparadise.com is an unrelated hosting company. Likely WeChat only.",
+  "wiki": null,
+  "sources": [
+   "https://www.dahepiao.com/lvyounews1/20220314259916.html",
+   "https://au.trip.com/travel-guide/review-attraction/hangzhou-paradise-park-10558747/165013140",
+   "https://govt.chinadaily.com.cn/s/202210/14/WS63490486498ea274927a5ac7/hangzhou-amusement-land.html"
+  ],
+  "notes": "Price range from aggregators (128 from 2022 group-buy, 168 Trip.com, 190 China Daily 2022); weak, unverified. Water park is a separate ticket. Visit duration is an estimate.",
+  "id": "hangzhou-37",
+  "name": "Hangzhou Paradise Park",
+  "zh": "杭州乐园",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.1626114,
+   "lng": 120.2409696
+  },
+  "coordinates_source": "overpass way/443223606 tourism=theme_park (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "price range from aggregators only (weak)",
+   "no official site"
+  ]
+ },
+ "hangzhou-38": {
+  "bio": "China's first national-level comic and animation museum, on Baima Lake in Binjiang, with over 20,000 works.",
+  "icon": "🎬",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": null,
+  "ticket_note": "booking is via the WeChat public account CCAMuseum; zh Wikipedia lists an official website only as an archived page, not loaded",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/中国动漫博物馆"
+   ],
+   "cost": [
+    "https://zh.wikipedia.org/wiki/中国动漫博物馆",
+    "https://www.ehangzhou.gov.cn/2021-12/24/c_279019.htm",
+    "https://govt.chinadaily.com.cn/s/202107/02/WS60de75b4498e02b3aaaae3d0/china-cartoon-and-animation-museum.html"
+   ]
+  },
+  "notes": "Free, WeChat booking required (zh Wikipedia, ehangzhou). Closed Mon-Tue per sources (not recorded).",
+  "id": "hangzhou-38",
+  "name": "China Comic and Animation Museum",
+  "zh": "中国动漫博物馆",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.1644734,
+   "lng": 120.2010685
+  },
+  "coordinates_source": "overpass way/607445656 tourism=museum (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "Official site not loaded (archived on zh Wikipedia only)"
+  ]
+ },
+ "hangzhou-40": {
+  "bio": "Large reservoir lake in Lin'an ringed by a 42 km greenway for walking and cycling, with water-sports areas.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "No single official site found; WeChat-only or none known",
+  "wiki": null,
+  "sources": [
+   "https://hznews.hangzhou.com.cn/chengshi/content/2018-03/08/content_6815317.htm",
+   "https://hznews.hangzhou.com.cn/jingji/content/2020-03/24/content_7700780.htm"
+  ],
+  "notes": "Greenway is public; free status of the lake itself unverified for 2026 (a 2020 free-opening notice was temporary). Paid water-sports centre is an extra. Pin note: some guides say the scenic-area entrance is across the lake.",
+  "cost_unverified": true,
+  "id": "hangzhou-40",
+  "name": "Qingshan Lake",
+  "zh": "青山湖",
+  "region": "zhejiang-hangzhou",
+  "destination": "hangzhou",
+  "coordinates": {
+   "lat": 30.2582545,
+   "lng": 119.7506324
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "free status not confirmed by an official source"
+  ]
+ },
+ "huzhou-1": {
+  "bio": "Huzhou's city museum, with a Wuxing history exhibition, excavated relics and calligraphy and paintings, free to enter.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.huzhoumuseum.com/",
+  "ticket_note": "No official site found; may be WeChat only.",
+  "wiki": null,
+  "sources": [
+   "https://chinatripedia.com/?p=30548 (ticket free, opened 2006 in Renhuangshan, national second-level museum)",
+   "https://gs.ctrip.com/html5/you/sight/huzhou68/136632737.html (free admission)"
+  ],
+  "notes": "Free per chinatripedia and Ctrip only; whether a booking/ID is needed is unverified.",
+  "id": "huzhou-1",
+  "name": "Huzhou Museum",
+  "zh": "湖州市博物馆",
+  "region": "zhejiang-huzhou",
+  "destination": "huzhou",
+  "coordinates": {
+   "lat": 30.8920107,
+   "lng": 120.0839419
+  },
+  "coordinates_source": "overpass way/981518705 tourism=museum (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "free entry from Ctrip/chinatripedia only; official page does not state it",
+   "booking/ID requirement unknown"
+  ]
+ },
+ "huzhou-3": {
+  "bio": "Museum on Huzhou brush making, the craft the city has been known for since the Jin dynasty, with live demonstrations.",
+  "icon": "🖌️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "free": false,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://www.dahepiao.com/lvyounews1/20250428511382.html"
+   ],
+   "cost": [
+    "https://ct.zj.gov.cn/art/2019/8/5/art_1664685_36385281.html",
+    "https://www.dahepiao.com/lvyounews1/20250428511382.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "CONFLICT: Zhejiang Dept of Culture and Tourism page (2019, seen in search result; fetch failed) says free; dahepiao ticket site (2025) says adult CNY 18 with free for under-18s, students, 70+. Recorded free per the government page; if 18 is right use costMin/Max 18. Phone 0572-2503478 to confirm. 'Over two thousand years' of brush making from news search snippet (Shanlian), unfetched; bio claim unverified.",
+  "costMin": 18,
+  "costMax": 18,
+  "currency": "CNY",
+  "id": "huzhou-3",
+  "name": "Huzhou Brush Museum",
+  "zh": "中国湖笔博物馆",
+  "region": "zhejiang-huzhou",
+  "destination": "huzhou",
+  "coordinates": {
+   "lat": 30.6972507,
+   "lng": 120.3095771
+  },
+  "coordinates_source": "overpass way/121039006 tourism=museum (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "18 CNY from a ticket reseller (2025); conflicts with 2019 government 'free' (unreachable). Confirm by phone 0572-2503478",
+   "No official site"
+  ]
+ },
+ "anji-1": {
+  "bio": "Bamboo-covered hills at Tianhuangping near Anji, a film location for Crouching Tiger, Hidden Dragon.",
+  "icon": "🎋",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 58,
+  "costMax": 58,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found; ticket office phone 0572-5210999 only",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/68/135810.html",
+   "https://www.dahepiao.com/lvyounews1/20220526274245.html"
+  ],
+  "notes": "58 CNY is from a 2022 travel post (original price), unverified; discounted 50 from ticket reseller. Film-location claim comes from the draft, not re-verified. Not the Yixing bamboo sea in Jiangsu.",
+  "id": "anji-1",
+  "name": "Great Bamboo Sea (Anji)",
+  "zh": "中国大竹海",
+  "region": "zhejiang-huzhou",
+  "destination": "anji",
+  "coordinates": {
+   "lat": 30.4880617,
+   "lng": 119.6533169
+  },
+  "coordinates_source": "overpass node/5362816368 tourism=attraction (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "anji-2": {
+  "bio": "A large bamboo-themed park in Anji with bamboo gardens and exhibits on bamboo culture, a county centrepiece.",
+  "icon": "🎋",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 70,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; not verified",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/686/145435472.html",
+   "https://www.dahepiao.com/lvyounews1/20221122331800.html"
+  ],
+  "notes": "70 CNY adult from an old travel blog; Ctrip shows 70 as lowest listing; current gate price unverified. Museum name from draft, unverified.",
+  "id": "anji-2",
+  "name": "Anji Bamboo Exposition Park",
+  "zh": "中国竹子博览园",
+  "region": "zhejiang-huzhou",
+  "destination": "anji",
+  "coordinates": {
+   "lat": 30.594588,
+   "lng": 119.6550565
+  },
+  "coordinates_source": "overpass way/1081321941 tourism=museum (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "No source read for the park at all (no official site, no Wikipedia); 70 CNY is an old blog price: weak. Consider hold"
+  ]
+ },
+ "anji-3": {
+  "bio": "Upper reservoir of the Tianhuangping pumped-storage plant, with lakeside paths and a tour bus around the lake.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 80,
+  "costMax": 80,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; only a ticket phone line (0572-5041858) on Ctrip",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/江南天池",
+    "https://you.ctrip.com/sight/anji686/55799.html"
+   ],
+   "cost": [
+    "https://you.ctrip.com/sight/anji686/55799.html"
+   ]
+  },
+  "notes": "80 CNY adult gate price from a Ctrip visitor post and listing (weak, unverified with operator); ski, hot spring and water-park are extra; children 1.2-1.5 m half price. The lake is the upper reservoir of the Tianhuangping pumped-storage plant (zh Wikipedia).",
+  "id": "anji-3",
+  "name": "Jiangnan Tianchi",
+  "zh": "江南天池",
+  "region": "zhejiang-huzhou",
+  "destination": "anji",
+  "coordinates": {
+   "lat": 30.4707029,
+   "lng": 119.5942555
+  },
+  "coordinates_source": "overpass node/5362808428 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "price not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "anji-4": {
+  "bio": "Gorge of waterfalls and walking trails in Anji's Tianhuangping area, with a cableway and rafting.",
+  "icon": "🌊",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 60,
+  "costMax": 60,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://you.ctrip.com/sight/anji686/55781.html"
+  ],
+  "notes": "60 CNY from Ctrip only (weak); rafting and cableway cost extra and are not included. 'Tianhuangping town' per Ctrip.",
+  "id": "anji-4",
+  "name": "Canglong Baipu",
+  "zh": "藏龙百瀑",
+  "region": "zhejiang-huzhou",
+  "destination": "anji",
+  "coordinates": {
+   "lat": 30.4456972,
+   "lng": 119.6029695
+  },
+  "coordinates_source": "overpass node/8964547417 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "60 CNY from Ctrip only (weak)",
+   "No official site"
+  ]
+ },
+ "huzhou-6": {
+  "bio": "A silk-trade canal town known for Ming and Qing bridges and old gardens, free to stroll, with a few mansions charging entry.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Ctrip listings only",
+  "wiki": "Nanxun",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nanxun",
+   "https://gs.ctrip.com/html5/you/sight/1955403.html"
+  ],
+  "notes": "Old town free from a recent year per a Ctrip travel note (weak). Individual houses charge, e.g. Little Lotus Villa 25 CNY, Zhang Shiming residence 20 CNY (Ctrip, weak); not the spot's cost. Wiki article 'Nanxun' covers the town.",
+  "cost_unverified": true,
+  "id": "huzhou-6",
+  "name": "Nanxun Ancient Town",
+  "zh": "南浔镇",
+  "region": "zhejiang-huzhou",
+  "destination": "huzhou",
+  "coordinates": {
+   "lat": 30.8688754,
+   "lng": 120.4203004
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free town entry from Ctrip only; mansion prices excluded"
+  ]
+ },
+ "huzhou-7": {
+  "bio": "Private library built 1920-24 by silk merchant Liu Chenggan in Nanxun, beside Xiaolian Villa.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Nanxun old town is free and the paid gardens are sold through aggregators.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/嘉业堂藏书楼",
+   "https://gs.ctrip.com/html5/you/sight/Zhejiang100065/135811.html"
+  ],
+  "notes": "Price is a Ctrip 'from 25 CNY' listing for Xiaolianzhuang and Jiaye Tang; a travel note mentions a ~75 CNY combined ticket for several Nanxun gardens. Which one covers Jiaye Tang alone is unverified. Category set to historic (Wikipedia: national key heritage site, library building and gardens) rather than museum; museum also acceptable. No English Wikipedia article (404).",
+  "id": "huzhou-7",
+  "name": "Jiaye Tang",
+  "zh": "嘉业堂藏书楼",
+  "region": "zhejiang-huzhou",
+  "destination": "huzhou",
+  "coordinates": {
+   "lat": 30.872102,
+   "lng": 120.423208
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "25 CNY is a combination ticket with Xiaolian Villa (2026 guide); no library-only price; all-inclusive Nanxun ticket about 85",
+   "no official site"
+  ]
+ },
+ "huzhou-8": {
+  "bio": "Late-Qing merchant mansion in Nanxun, built 1899-1905, blending a Jiangnan layout with Western Renaissance influence.",
+  "icon": "🏠",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 20,
+  "costMax": 20,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Nanxun town runs it with other sights.",
+  "wiki": "Former Residence of Zhang Shiming",
+  "sources": {
+   "cost": "https://gs.ctrip.com/html5/you/sight/57022.html",
+   "bio": [
+    "https://en.wikipedia.org/wiki/Former_Residence_of_Zhang_Shiming",
+    "https://gs.ctrip.com/html5/you/sight/Huzhou68/135811.html"
+   ]
+  },
+  "notes": "20 CNY is Ctrip's starting price. A travel blog mentions a ~75 CNY combined ticket for Nanxun's paid sights (unverified).",
+  "id": "huzhou-8",
+  "name": "Former Residence of Zhang Shiming",
+  "zh": "张石铭旧居",
+  "region": "zhejiang-huzhou",
+  "destination": "huzhou",
+  "coordinates": {
+   "lat": 30.8733429,
+   "lng": 120.4265244
+  },
+  "coordinates_source": "overpass relation/21918636 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "20 CNY is a Ctrip starting price (weak)",
+   "No official site"
+  ]
+ },
+ "huzhou-9": {
+  "bio": "Qing-era merchant garden in Nanxun ancient town, built around a large lotus pond with a red-brick Western house.",
+  "icon": "🪷",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found for the garden; Nanxun scenic area site not verified",
+  "wiki": "Little Lotus Manor",
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Little_Lotus_Manor",
+   "cost": "https://gs.ctrip.com/html5/you/sight/Huzhou68/3980.html"
+  },
+  "notes": "25 CNY from Ctrip 'from' price (weak); a joint ticket with Jiaye Library exists at the same starting price; Nanxun town itself is free to enter.",
+  "id": "huzhou-9",
+  "name": "Little Lotus Garden",
+  "zh": "小莲庄",
+  "region": "zhejiang-huzhou",
+  "destination": "huzhou",
+  "coordinates": {
+   "lat": 30.8718936,
+   "lng": 120.4249967
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "xinshi-ancient-town": {
+  "bio": "Water town in Deqing with old canal streets to walk, free to enter.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "No single official site found; place is open streets.",
+  "wiki": null,
+  "sources": {
+   "cost": "https://gs.ctrip.com/html5/you/sight/1011.html (search summary: no entrance fee, boat ride CNY 28 extra)",
+   "bio": "https://gs.ctrip.com/html5/you/sight/1011.html"
+  },
+  "notes": "Weak (Ctrip only). Search results show it as 4A, not 5A; the draft's 5A claim is unconfirmed and not used. Boat ride excluded from price. Ctrip page not re-fetched for the cost.",
+  "cost_unverified": true,
+  "id": "xinshi-ancient-town",
+  "name": "Xinshi Ancient Town",
+  "zh": "新市古镇",
+  "region": "zhejiang-huzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 30.6170584,
+   "lng": 120.2845764
+  },
+  "coordinates_source": "overpass way/1413769762 tourism=theme_park (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free and every claim from Ctrip only; no Wikipedia or official page found"
+  ]
+ },
+ "jiaxing-2": {
+  "bio": "Pavilion on a man-made island in Nanhu lake, Jiaxing, reached by boat and ringed by smaller halls and pavilions.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site verified.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/jiaxing272/117763.html",
+   "https://touch.travel.qunar.com/youji/7727239"
+  ],
+  "notes": "Nanhu scenic area listed as free on Ctrip; boat (about 20 CNY) is transport and not counted. Whether the island pavilion itself charges is unverified. Bio claims (island, boat, gardens) come from search summaries of Ctrip/Qunar only.",
+  "cost_unverified": true,
+  "id": "jiaxing-2",
+  "name": "Pavilion of Mist and Rain",
+  "zh": "烟雨楼",
+  "region": "zhejiang-jiaxing",
+  "destination": "jiaxing",
+  "coordinates": {
+   "lat": 30.7575027,
+   "lng": 120.7558587
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "free entry unverified: Nanhu scenic area listed free on Ctrip only; boat is transport"
+  ]
+ },
+ "jiaxing-5": {
+  "bio": "Jiaxing's city museum, with galleries on the Majiabang prehistoric culture and the history of the Jiaxing area.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticketUrl_blocked": "http://www.jxmuseum.cn",
+  "ticket_note": "URL taken from memory of the museum's domain, returned 403 GeoBL from this network; not confirmed it is the museum site; check in a real browser",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/嘉兴博物馆"
+   ],
+   "cost": [
+    "https://regional.chinadaily.com.cn/ezhejiang/jiaxing/2025-01/10/c_1063642.htm"
+   ]
+  },
+  "notes": "General admission free per China Daily listing (2025); reservation rules unverified. Zh Wikipedia: national first-class museum, 'Hexing Origins' and 'Fertile Jiahe' exhibitions. Domain jxmuseum.cn is unconfirmed.",
+  "id": "jiaxing-5",
+  "name": "Jiaxing Museum",
+  "zh": "嘉兴博物馆",
+  "region": "zhejiang-jiaxing",
+  "destination": "jiaxing",
+  "coordinates": {
+   "lat": 30.7446093,
+   "lng": 120.7599513
+  },
+  "coordinates_source": "overpass way/1515347881 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "ticketUrl_blocked jxmuseum.cn left for the orchestrator's browser check (domain from memory, 403)"
+  ]
+ },
+ "xitang": {
+  "bio": "Canal town of nine rivers and old stone bridges, with lanes of old houses to walk along the water",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costBasis": "entry",
+  "wiki": "Xitang",
+  "ticketUrl": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Xitang",
+   "https://gs.ctrip.com/html5/you/sight/15/17884.html",
+   "https://www.dahepiao.com/lvyounews1/20250925531771.html"
+  ],
+  "notes": "Gate ticket 95 CNY (online from about 85) per Ctrip/third-party, includes about 12 small sights; not official. No official site found.",
+  "costMin": 95,
+  "costMax": 95,
+  "currency": "CNY",
+  "price_source_weak": true,
+  "ticket_note": "No official website found (searched)",
+  "id": "xitang",
+  "name": "Xitang",
+  "zh": "西塘镇 (嘉善县)",
+  "region": "zhejiang-jiaxing",
+  "destination": null,
+  "coordinates": {
+   "lat": 30.941703,
+   "lng": 120.8870808
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "nanbei-lake": {
+  "bio": "Scenic area in Haiyan County where mountains, sea and a lake meet, rated AAAA by China's tourism authority.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Old official site www.nbh.com.cn (linked from zh Wikipedia) no longer loads; no live official site found.",
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/529/16166.html",
+   "https://zh.wikipedia.org/wiki/%E5%8D%97%E5%8C%97%E6%B9%96"
+  ],
+  "notes": "Ctrip (weak) lists the area as free entry, all year; some sub-sights charge (Butterfly Island 10 CNY, vehicle entry 20 CNY per a review). An older Qunar entry gave 80 CNY gate: conflicting, verify. 'Views over Hangzhou Bay' and 'Butterfly Island tower' partly from reviews/draft: check. Zh Wikipedia: AAAA scenic area in Haiyan.",
+  "price_source_weak": true,
+  "cost_unverified": true,
+  "id": "nanbei-lake",
+  "name": "Nanbei Lake",
+  "zh": "南北湖",
+  "region": "zhejiang-jiaxing",
+  "destination": null,
+  "coordinates": {
+   "lat": 30.3749601,
+   "lng": 120.8588267
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free entry conflicts with older 80 CNY gate; sub-sights charge; no live official site"
+  ]
+ },
+ "mos-manor": {
+  "bio": "Late-Qing mansion of the Mo family in Pinghu, a national protected site of about 70 rooms on 4,851 sq m.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "costMin": 28,
+  "costMax": 28,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official website found; official presence unverified",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/533/16168.html"
+  ],
+  "notes": "28 CNY from a March 2023 travel blog; Ctrip page says paid, price on request. Unverified.",
+  "id": "mos-manor",
+  "name": "Mo's Manor",
+  "zh": "莫氏庄园",
+  "region": "zhejiang-jiaxing",
+  "destination": null,
+  "coordinates": {
+   "lat": 30.7000717,
+   "lng": 121.0149424
+  },
+  "coordinates_source": "overpass node/14093851702 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "28 CNY from a 2023 blog only (weak); Trip.com lists it open 08:30-17:00 with paid tickets, price not shown",
+   "no official site"
+  ]
+ },
+ "jinhua-1": {
+  "bio": "A 5A scenic area near Jinhua where visitors lie down in a small boat to pass through the cave's narrow entrance.",
+  "icon": "🕳️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 80,
+  "costMax": 80,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/jinhua219/8605.html",
+   "https://en.wikipedia.org/wiki/Shuanglong_Cave"
+  ],
+  "notes": "Ctrip lists 80 CNY from (门市价); caves and shuttle may cost extra, unverified. Wikipedia title equals name only for the cave; kept as wiki.",
+  "id": "jinhua-1",
+  "name": "Shuanglong Cave",
+  "zh": "双龙风景名胜区",
+  "region": "zhejiang-jinhua",
+  "destination": "jinhua",
+  "coordinates": {
+   "lat": 29.2068046,
+   "lng": 119.6259086
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "80 CNY from Ctrip only (weak); cave and shuttle extras unknown",
+   "No official site"
+  ]
+ },
+ "jinhua-4": {
+  "bio": "Taiping prince's mansion in Jinhua's old city, a museum with painted murals and exhibits on the rebellion",
+  "icon": "🏛️",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": null,
+  "ticket_note": "Site is run by the local museum with no official site found; WeChat reservation only per Ctrip review",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/太平天国侍王府"
+   ],
+   "cost": [
+    "https://gs.ctrip.com/html5/you/sight/jinhua219/8634.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Free entry with WeChat QR reservation per a Ctrip review (weak, unverified). Address Gulou Li 70, Wucheng. Draft said 4A/Ming-style: not confirmed.",
+  "cost_unverified": true,
+  "id": "jinhua-4",
+  "name": "Taiping Heavenly Kingdom Shiwang Mansion",
+  "zh": "太平天国侍王府",
+  "region": "zhejiang-jinhua",
+  "destination": "jinhua",
+  "coordinates": {
+   "lat": 29.1048324,
+   "lng": 119.6601695
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "free status not confirmed by an official source"
+  ]
+ },
+ "yiwu-international-trade-city": {
+  "bio": "World's largest wholesale market for small commodities, in Yiwu, with multi-storey districts of stalls.",
+  "icon": "🛍️",
+  "category": "market",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "operator site not verified; yiwugo.com is a B2B platform, not used",
+  "wiki": "Yiwu International Trade City",
+  "sources": [
+   "https://ct.zj.gov.cn/art/2019/8/5/art_1664685_36385348.html",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Yiwu_International_Trade_City",
+   "https://cn.chinadaily.com.cn/a/202505/30/WS68395ffca310205377035e63.html"
+  ],
+  "notes": "Free admission per Zhejiang culture and tourism dept page (2019, old). Draft claim 'every day of the year' not verified, dropped.",
+  "id": "yiwu-international-trade-city",
+  "name": "Yiwu International Trade City",
+  "zh": "义乌国际商贸城",
+  "region": "zhejiang-jinhua",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.3370905,
+   "lng": 120.110061
+  },
+  "coordinates_source": "overpass way/899350750 amenity=marketplace (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free admission rests on a 2019 provincial culture and tourism page; no official operator site verified"
+  ]
+ },
+ "xianhua-mountain": {
+  "bio": "Scenic area of rock peaks and hiking trails in the hills north of Pujiang town, rated 4A.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 35,
+  "costMax": 60,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/1686706.html",
+   "https://gs.ctrip.com/html5/you/sight/219/45180.html"
+  ],
+  "notes": "Ctrip sources conflict (35 vs 60 CNY); range recorded, weak. Rated AAAA, 2 km north of Pujiang county seat. No cableway per a Ctrip Q&A.",
+  "id": "xianhua-mountain",
+  "name": "Xianhua Mountain",
+  "zh": "仙华山",
+  "region": "zhejiang-jinhua",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.5249186,
+   "lng": 119.8960142
+  },
+  "coordinates_source": "overpass node/7623596821 natural=peak (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "35-60 CNY range from aggregators only (weak)",
+   "4A and 2 km north of county seat from Ctrip only; no Wikipedia page",
+   "no official site"
+  ]
+ },
+ "longquan-2": {
+  "bio": "Nature reserve in the Fengyangshan and Baishanzu ranges, home to Zhejiang's highest peak, Huangmaojian.",
+  "icon": "🌲",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "costMin": 64,
+  "costMax": 64,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Adult",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; national park management body not located.",
+  "wiki": "Fengyangshan–Baishanzu National Nature Reserve",
+  "sources": {
+   "bio": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Baishanzu",
+    "https://zhejiang.chinadaily.com.cn/2020-06/03/c_497644.htm"
+   ],
+   "cost": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=1224"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Price from Qunar listing (adult 64; 75 with in-park shuttle) for Baishanzu scenic area at Baishanzu town, Qingyuan; not official, may be dated. Pin is in the reserve near Baishanzu peak. Metasequoia from the draft only, unverified. Wikipedia 'Baishanzu' redirects to the reserve article so wiki is null. Highest peak Huangmaojian is within the reserve (Wikipedia).",
+  "id": "longquan-2",
+  "name": "Baishanzu",
+  "zh": "百山祖",
+  "region": "zhejiang-lishui",
+  "destination": "longquan",
+  "coordinates": {
+   "lat": 27.754264,
+   "lng": 119.2053802
+  },
+  "coordinates_source": "overpass node/4197256592 natural=peak (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "guyan-painting-village": {
+  "bio": "Riverside village near Lishui where a historic weir meets painters' studios and bamboo boat rides.",
+  "icon": "🎨",
+  "category": "historic",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/lishui441/56153.html (list 50, from 45; ticket covers weir, village and ferry per one travel note)"
+  ],
+  "notes": "Weak Ctrip price; village reportedly free to wander early and late, the ticket is for the ferry and weir side. In Datougang town, Liandu.",
+  "id": "guyan-painting-village",
+  "name": "Guyan Painting Village",
+  "zh": "古堰画乡",
+  "region": "zhejiang-lishui",
+  "destination": null,
+  "coordinates": {
+   "lat": 28.3040368,
+   "lng": 119.7316363
+  },
+  "coordinates_source": "overpass relation/13389373 tourism=attraction (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "No source read for any claim (weir, painters, bamboo boats); 50 CNY is a weak Ctrip figure and may be for part of the area only"
+  ]
+ },
+ "ningbo-1": {
+  "bio": "Ming-dynasty private library and garden in Ningbo, built in 1561, with a pond, rockeries and the book pavilion at its centre.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "https://www.tianyige.com.cn/",
+  "ticketUrl_note": "Page title 天一阁博物院 loaded, body is only a close button (script-rendered); confirm in a browser",
+  "ticketUrl_blocked": "https://www.tianyige.com.cn/",
+  "wiki": "Tianyi Ge",
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Tianyi_Pavilion",
+   "cost": "https://gs.ctrip.com/html5/you/sight/83/9964.html (Ctrip, and 2022 travel notes: 30 CNY)"
+  },
+  "notes": "30 CNY adult per Ctrip and a 2022 note; some visitors mention reservations required, unverified. Wikipedia title is 'Tianyi Ge'.",
+  "id": "ningbo-1",
+  "name": "Tianyi Pavilion",
+  "zh": "天一阁",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8738039,
+   "lng": 121.5359544
+  },
+  "coordinates_source": "overpass way/912692909 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "30 CNY corroborated by a 2026 guide, not official (weak)",
+   "ticketUrl https://www.tianyige.com.cn/ loads with title 天一阁博物院 but body is script-rendered: orchestrator browser check",
+   "'pond, rockeries' from draft, not re-confirmed"
+  ]
+ },
+ "ningbo-3": {
+  "bio": "Museum in Yinzhou on Ningbo's history and local customs, which opened in 2008.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.nbmuseum.cn",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Ningbo_Museum",
+   "https://www.chinanews.com.cn/sh/news/2008/12-02/1470863.shtml",
+   "https://www.nbmuseum.cn/"
+  ],
+  "notes": "Free admission reported by 2008 news (free ticket required, daily cap); 2020 report of advance reservation. Official site 宁波博物院 loaded; it says the museum wing closed for works from 16 Mar 2026 with reopening to be announced, so reopening is unverified. Current booking rule unverified.",
+  "id": "ningbo-3",
+  "name": "Ningbo Museum",
+  "zh": "宁波博物馆",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8173595,
+   "lng": 121.54092
+  },
+  "coordinates_source": "overpass relation/21455454 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Official site notes a closure from 16 Mar 2026 with reopening mid-late June; hours are listed now but reopening not stated explicitly"
+  ]
+ },
+ "ningbo-4": {
+  "bio": "Chan Buddhist temple in the Taibai hills of Yinzhou, one of China's five great Chan temples and the Soto school's cradle.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "wiki": "Tiantong Temple",
+  "ticketUrl": null,
+  "ticket_note": "No official website found; entry reservation is via the temple's WeChat mini-program per a Ctrip review.",
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Tiantong_Temple",
+   "https://gs.ctrip.com/html5/you/sight/ningbo83/9954.html"
+  ],
+  "notes": "Free entry per Ctrip (weak), reservation by mini-program reported in a travelogue: verify. Do not confuse with Tiantong National Forest Park, which has its own ticket (about 15 CNY on a group-buy site).",
+  "price_source_weak": true,
+  "cost_unverified": true,
+  "id": "ningbo-4",
+  "name": "Tiantong Temple",
+  "zh": "天童寺",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8073461,
+   "lng": 121.7905538
+  },
+  "coordinates_source": "overpass way/1232520241 tourism=attraction (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "free status not confirmed by an official source"
+  ]
+ },
+ "ningbo-5": {
+  "bio": "Buddhist temple in Ningbo's Yinzhou District, founded in 282 and said to hold a relic of the Buddha.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costBasis": "entry",
+  "wiki": "Temple of King Ashoka",
+  "ticketUrl": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Temple_of_King_Ashoka",
+   "https://gs.ctrip.com/html5/you/sight/83/9953.html"
+  ],
+  "notes": "Free entry per Ctrip page and visitor reviews, not an official source. Vegetarian meal is separate (about 10 CNY reported). No official site found.",
+  "free": true,
+  "ticket_note": "No official website found (searched)",
+  "cost_unverified": true,
+  "id": "ningbo-5",
+  "name": "Temple of King Ashoka",
+  "zh": "阿育王寺",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8485299,
+   "lng": 121.7383887
+  },
+  "coordinates_source": "overpass way/551793028 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free entry from Ctrip and reviews only; no official site found"
+  ]
+ },
+ "ningbo-6": {
+  "bio": "A restored 19th-century Fujianese guildhall and Mazu temple in Ningbo, now a maritime and folk-art museum.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "museum has no verified official site (old site only in an archived Wikipedia link)",
+  "wiki": "Qing'an Guildhall",
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Qing'an_Guildhall",
+   "https://zh.wikipedia.org/wiki/庆安会馆"
+  ],
+  "notes": "10 CNY adult from Chinese Wikipedia (ticket section, 2009 museum page archived); may have changed. Sources disagree on whether Monday is closed: no hours recorded.",
+  "id": "ningbo-6",
+  "name": "Qing'an Guildhall",
+  "zh": "庆安会馆",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8748581,
+   "lng": 121.5588421
+  },
+  "coordinates_source": "overpass way/1447621853 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "'19th-century' and 'now a museum' not re-read in detail",
+   "price not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "ningbo-8": {
+  "bio": "Rebuilt pagoda in central Ningbo that visitors can climb for views over the old town.",
+  "icon": "🗼",
+  "category": "monument",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 5,
+  "costMax": 5,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://you.ctrip.com/sight/ningbo83/20522.html",
+   "https://gs.ctrip.com/html5/you/sight/83/9968.html"
+  ],
+  "notes": "5 CNY to climb (cash only, from reviews; seniors and students half). Not climbing is free. Pagoda age and rebuild facts unverified.",
+  "id": "ningbo-8",
+  "name": "Tianfeng Pagoda",
+  "zh": "天封塔",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8679332,
+   "lng": 121.5467747
+  },
+  "coordinates_source": "overpass node/775752405 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "5 CNY from reviews only (weak); no Wikipedia or official source for the pagoda found"
+  ]
+ },
+ "ningbo-9": {
+  "bio": "Song-dynasty timber hall of 1013 on Lingshan hill, now a museum of ancient Chinese wooden architecture",
+  "icon": "🛕",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 18,
+  "costMax": 18,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found by search",
+  "wiki": "Baoguo Temple (Zhejiang)",
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/保国寺"
+   ],
+   "cost": [
+    "https://gs.ctrip.com/html5/you/sight/83/135640.html"
+   ]
+  },
+  "notes": "18 CNY is Ctrip's lowest listed price, not an operator price; the government page for the Tianyige/Baoguo museum group shows 30 CNY general admission (govt.chinadaily.com.cn, 2021), so the real adult price is unverified. Wiki title taken from the disambiguation page; article existence not fetched. Hall completed 1013, museum since 2006 (zh Wikipedia).",
+  "id": "ningbo-9",
+  "name": "Baoguo Temple",
+  "zh": "保国寺",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.9821695,
+   "lng": 121.5168518
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "price conflict: 18 (Ctrip low) vs 30 (govt 2021); real adult price unverified"
+  ]
+ },
+ "ningbo-13": {
+  "bio": "Safari-style zoo by Dongqian Lake with elephants, giant pandas, sea lion shows and a bird show.",
+  "icon": "🐘",
+  "category": "entertainment",
+  "visitHoursMin": 4,
+  "visitHoursMax": 6,
+  "costMin": 70,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "http://www.nbzoo.com/",
+  "wiki": null,
+  "sources": {
+   "ticketUrl": "http://www.nbzoo.com/ (loaded; phone 0574-88378378 and Dongqian Lake address match Ctrip listing; page has no title tag, shows 门票价格 menu, elephant/panda/sea lion show items)",
+   "cost": "https://www.dahepiao.com/lvyounews1/20211115230160.html (70 yuan from, 2021)",
+   "bio": "http://www.nbzoo.com/; https://govt.chinadaily.com.cn/s/201712/15/WS5b7854a5498e855160e8d855/ningbo-youngor-zoo.html"
+  },
+  "notes": "Price is from a 2021 reseller page and probably outdated; official price page not found (/ticket.html 404). Verify. Now listed as Ningbo Wildlife Park (宁波野生动物园) on Ctrip; 1,900 mu from China Daily.",
+  "id": "ningbo-13",
+  "name": "Ningbo Youngor Zoo",
+  "zh": "宁波野生动物园",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8062862,
+   "lng": 121.6716917
+  },
+  "coordinates_source": "overpass way/691951921 tourism=zoo (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "70 CNY is a 2021 reseller price; official price page not located (/ticket/ is 404); homepage has a 门票价格 tab with no figure in text. Site uses a self-signed certificate over https"
+  ]
+ },
+ "ningbo-14": {
+  "bio": "Wang Shu-designed art museum in a converted shipping terminal on the Yongjiang riverfront near Ningbo's Old Bund.",
+  "icon": "🖼️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "https://www.nma.org.cn/",
+  "ticket_note": "Official site not found (nbmoa.com/.cn did not load); likely WeChat only.",
+  "wiki": null,
+  "sources": [
+   "https://you.ctrip.com/sight/ningbo83/135773.html"
+  ],
+  "notes": "UNVERIFIED: free entry and whether reservation is needed not confirmed by any source read; Ctrip page title mentions visit reservation. Address from Ctrip only. Exhibition content in bio unverified, check before use.",
+  "cost_unverified": true,
+  "id": "ningbo-14",
+  "name": "Ningbo Museum of Art",
+  "zh": "宁波美术馆",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.8810164,
+   "lng": 121.5572392
+  },
+  "coordinates_source": "overpass way/232143544 tourism=gallery (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "free entry and online reservation requirement not stated on any page read"
+  ]
+ },
+ "ningbo-15": {
+  "bio": "Conch-shaped museum of China's ports and underwater archaeology in Beilun, with a hands-on harbour science hall.",
+  "icon": "⚓",
+  "category": "museum",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "official site not found; chinaportmuseum.com and similar did not load; check in a browser",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/中国港口博物馆"
+   ],
+   "cost": [
+    "https://zh.wikipedia.org/wiki/中国港口博物馆",
+    "https://govt.chinadaily.com.cn/s/202104/20/WS607e739b498e7a02c6f6aed0/china-port-museum.html"
+   ]
+  },
+  "notes": "CONFLICT: zh Wikipedia says four main halls are free and only the science-exploration and Digital Ocean halls cost 30 CNY (extras, only Wed/Sat/Sun); China Daily lists general admission 30 CNY. Recorded free per Wikipedia; if China Daily is right use costMin=costMax=30. Needs owner/browser check.",
+  "price_source_weak": true,
+  "alt_cost_cny": 30,
+  "id": "ningbo-15",
+  "name": "China Port Museum",
+  "zh": "中国港口博物馆",
+  "region": "zhejiang-ningbo",
+  "destination": "ningbo",
+  "coordinates": {
+   "lat": 29.7587151,
+   "lng": 121.9056681
+  },
+  "coordinates_source": "overpass way/559989176 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Cost conflict: zh Wikipedia says four main halls free and two extra halls 30 CNY; China Daily lists 30 CNY. Kept free",
+   "No official site loaded"
+  ]
+ },
+ "xikou-1": {
+  "bio": "Chiang Kai-shek's family home in Xikou, with the Fenghao Room and the salt shop where he was born.",
+  "icon": "🏠",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 120,
+  "costMax": 120,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://touch.piao.qunar.com/ticket/detail_1772819044.html (adult 120)",
+   "https://you.ctrip.com/sight/xikou69/4023.html (Fenghao Room, Xikou)"
+  ],
+  "notes": "120 CNY seen via search summaries of Qunar/Ctrip; combined tickets with Xuedou Mountain are 205. Stream name 'Shan Stream' (剡溪) from search summary; verify.",
+  "id": "xikou-1",
+  "name": "Chiang Kai-shek's Former Residence",
+  "zh": "蒋氏故居",
+  "region": "zhejiang-ningbo",
+  "destination": "xikou",
+  "coordinates": {
+   "lat": 29.6834366,
+   "lng": 121.2801234
+  },
+  "coordinates_source": "overpass way/1431456824 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "xikou-3": {
+  "bio": "Zen temple on Xuedou Mountain above Xikou, tied to the monk Budai and rebuilt several times.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 150,
+  "costMax": 150,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costPer": "Adult (Xuedou scenic area)",
+  "ticketUrl": null,
+  "ticket_note": "Official Xuedou Mountain site not found via search; no domain guessed.",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/雪窦寺"
+   ],
+   "cost": [
+    "https://you.ctrip.com/sight/xikou69/107387.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Ctrip lists Xuedou Mountain from CNY 150 (scenic ticket, reportedly with shuttle); a blog gave 90 for the temple alone, undated. Temple has no confirmed separate gate price; may be covered by the scenic ticket. Budai/Maitreya link and rebuilds from zh Wikipedia (first built Jin dynasty). Free to over-70s; half price 60-70.",
+  "id": "xikou-3",
+  "name": "Xuedou Temple",
+  "zh": "雪窦寺",
+  "region": "zhejiang-ningbo",
+  "destination": "xikou",
+  "coordinates": {
+   "lat": 29.6873807,
+   "lng": 121.2174508
+  },
+  "coordinates_source": "overpass way/973905665 historic=yes (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "150 CNY is Xuedou scenic-area from-price, not confirmed as the temple's own gate; no official site"
+  ]
+ },
+ "xiangshan-global-studios": {
+  "bio": "Film studio in Xiangshan, open since 2005, with period-set towns built for Chinese productions.",
+  "icon": "🎬",
+  "category": "entertainment",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costMin": 125,
+  "costMax": 150,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "official site not found; no Wikipedia official link retrieved",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Xiangshan_Global_Studios",
+   "https://gs.ctrip.com/html5/you/sight/xiangshan723/65051.html"
+  ],
+  "notes": "150 CNY list price from Ctrip only (weak). 'period-set streets' bio detail is generic, verify. 4A rated, 784,000 m2, opened 2005 per Wikipedia.",
+  "id": "xiangshan-global-studios",
+  "name": "Xiangshan Global Studios",
+  "zh": "象山影视城",
+  "region": "zhejiang-ningbo",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.2927239,
+   "lng": 121.8350476
+  },
+  "coordinates_source": "overpass way/460757372 tourism=theme_park (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "price from aggregators only (weak)",
+   "no official site"
+  ]
+ },
+ "hemudu-site-museum": {
+  "bio": "Museum at the Neolithic Hemudu site on the Yao River, with early cultivated rice and remains of stilt houses.",
+  "icon": "🏺",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "hemudusite.com (cited by zh Wikipedia) unreachable from scripts; official site not confirmed.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/河姆渡遗址",
+   "https://gs.ctrip.com/html5/you/sight/98/1482742.html",
+   "https://www.peopleapp.com/rmharticle/30044680538"
+  ],
+  "notes": "Free: zh Wikipedia says free since 2008; Ctrip page marks free (a reviewer says no booking). A new Hemudu archaeological site park began trial operation Feb 2026 with a separate ticket (Ctrip from 28 CNY); whether the museum charges now is unverified. Site 5000-3000 BC dating from zh Wikipedia. No English article (404).",
+  "cost_unverified": true,
+  "id": "hemudu-site-museum",
+  "name": "Hemudu Site Museum",
+  "zh": "河姆渡遗址博物馆",
+  "region": "zhejiang-ningbo",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.9631801,
+   "lng": 121.3454572
+  },
+  "coordinates_source": "overpass way/1032432800 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free entry from an older report; a new site park with a separate ticket opened Feb 2026",
+   "No official site loaded"
+  ]
+ },
+ "liangshanbo-butterfly-temple": {
+  "bio": "Park in Ningbo's western suburbs built around Liangshanbo Temple, his tomb and Butterfly Lovers sculptures.",
+  "icon": "🦋",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; official ticket line is 0574-88447238 (Ctrip).",
+  "wiki": null,
+  "sources": {
+   "cost": "https://ct.zj.gov.cn/art/2019/8/5/art_1671967_36385278.html",
+   "bio": [
+    "https://you.ctrip.com/sight/ningbo83/9987.html",
+    "https://www.dahepiao.com/lvyounews1/20220406264122.html"
+   ]
+  },
+  "notes": "30 CNY from the Zhejiang Dept of Culture and Tourism listing (2019, seen via search snippet only; page fetch failed), possibly outdated. English Wikipedia 'Liangzhu Culture Park' is a different place (Hangzhou).",
+  "id": "liangshanbo-butterfly-temple",
+  "name": "Liangshanbo Butterfly Temple",
+  "zh": "梁祝文化公园",
+  "region": "zhejiang-ningbo",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.9105699,
+   "lng": 121.4799995
+  },
+  "coordinates_source": "overpass way/329915695 tourism=attraction (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": []
+ },
+ "qiantong-ancient-town": {
+  "bio": "Ancient village near Ninghai with old lanes, houses and ancestral halls to wander.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 50,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/689/72628.html",
+   "https://touch.travel.qunar.com/poi/715351"
+  ],
+  "notes": "Prices 50-70 CNY vary by aggregator (weak). Ming-Qing era is from general knowledge, unverified here; Tong clan ancestral hall reported temporarily closed on Ctrip. Consider softening bio if unverified.",
+  "id": "qiantong-ancient-town",
+  "name": "Qiantong Ancient Town",
+  "zh": "前童古镇",
+  "region": "zhejiang-ningbo",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.2272583,
+   "lng": 121.3465818
+  },
+  "coordinates_source": "overpass node/10970172213 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "50-70 CNY from aggregators only (weak)",
+   "Tong clan ancestral hall reported temporarily closed (Ctrip)",
+   "no official site"
+  ]
+ },
+ "quzhou-5": {
+  "bio": "Glass-floored cliff walkway and gorge scenery near Quzhou, with a zip line across the valley.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 65,
+  "costMax": 65,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://ct.zj.gov.cn/art/2019/8/5/art_1671963_36385575.html",
+   "https://touch.piao.qunar.com/touch/detail.htm?id=1547"
+  ],
+  "notes": "Adult 65 CNY on Zhejiang provincial tourism page (2019) and Qunar/Ctrip; glass walkway 20 and zip line 45 are extras. Visit duration is an estimate.",
+  "id": "quzhou-5",
+  "name": "Tianji Longmen Gorge",
+  "zh": "天脊龙门",
+  "region": "zhejiang-quzhou",
+  "destination": "quzhou",
+  "coordinates": {
+   "lat": 28.7267408,
+   "lng": 118.9572018
+  },
+  "coordinates_source": "overpass node/5430674504 tourism=attraction (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "65 CNY from 2019 provincial page plus Qunar (weak)",
+   "No official site"
+  ]
+ },
+ "jiangshan-1": {
+  "bio": "Three sandstone peaks in a river-shaped line above Jiangshan, part of China Danxia World Heritage; Langfeng is 816.8 m.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costMin": 105,
+  "costMax": 105,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; scenic-area ticket office phone 0570-4911010 on Ctrip.",
+  "wiki": "Mount Jianglang",
+  "sources": [
+   "https://zh.wikipedia.org/wiki/江郎山",
+   "https://en.wikipedia.org/wiki/Mount_Jianglang",
+   "https://you.ctrip.com/sight/jiangshan2038/16223.html"
+  ],
+  "notes": "Adult 105 CNY list price (Ctrip, search summary; sometimes discounted to 89), ticket said to include sightseeing bus; a visitor says bus 15 CNY extra, so inclusion is unverified. Needs advance reservation per Ctrip, but not recorded as needs=booking since unconfirmed officially. Ctrip notes seasonal free-ticket announcements ('free off-season before April') of unknown currency. Wikipedia: part of China Danxia WHS 2010, AAAAA scenic area; Jiangshan, Shimen town.",
+  "costPer": "Adult",
+  "id": "jiangshan-1",
+  "name": "Mount Jianglang",
+  "zh": "江郎山",
+  "region": "zhejiang-quzhou",
+  "destination": "jiangshan",
+  "coordinates": {
+   "lat": 28.5294794,
+   "lng": 118.565744
+  },
+  "coordinates_source": "overpass node/4555897313 natural=peak (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "whether 105 includes the sightseeing bus unverified"
+  ]
+ },
+ "longyou-caves": {
+  "bio": "Group of 24 man-made sandstone caverns near Longyou, more than 2,000 years old, with no record of who cut them.",
+  "icon": "🕳️",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 65,
+  "costMax": 85,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Longyou_Caves",
+   "cost": "https://gs.ctrip.com/html5/you/sight/812/145183523.html (85 list, Qunar 65 undated)"
+  },
+  "notes": "Price weak and inconsistent (Ctrip 85, Qunar 65); verify. Age: clay in silt dated 206BC-23AD, so 'at least 2,000 years' is a conservative reading.",
+  "id": "longyou-caves",
+  "name": "Longyou Caves",
+  "zh": "龍游石窟",
+  "region": "zhejiang-quzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.0621706,
+   "lng": 119.1843151
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "65-85 CNY inconsistent between Qunar and Ctrip (weak); no official site"
+  ]
+ },
+ "sanqu-stone-forest": {
+  "bio": "Karst stone forest in Changshan county with weathered limestone formations shaped like animals.",
+  "icon": "🪨",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3.5,
+  "costMin": 60,
+  "costMax": 60,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://touch.piao.qunar.com/touch/detail.htm?id=928",
+   "https://gs.ctrip.com/html5/you/sight/174/1407699.html"
+  ],
+  "notes": "Adult 60 CNY from Qunar (Ctrip from 58); aggregator prices only. Bio detail about caves/lake and walking route not verified from a source; treat bio as unverified, Ctrip says 27.58 km2 4A scenic area.",
+  "id": "sanqu-stone-forest",
+  "name": "Sanqu Stone Forest",
+  "zh": "三衢石林",
+  "region": "zhejiang-quzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 28.9882915,
+   "lng": 118.5008739
+  },
+  "coordinates_source": "overpass node/5263557298 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "changshan-geopark": {
+  "bio": "A geopark around Changshan's Golden Spike, a global reference point for a geological boundary.",
+  "icon": "🪨",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 60,
+  "costMax": 60,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://ct.zj.gov.cn/art/2019/8/5/art_1664685_36385604.html",
+   "https://www.news.cn/travel/20260416/5f1299525ae74dcb9f29429e6ec4c226/c.html"
+  ],
+  "notes": "60 CNY comes from a 2019 provincial culture and tourism department page (search summary; page unreachable by script). Park became a UNESCO Global Geopark in April 2026 (Xinhua, per search summary) so price may have changed; Ctrip says ask the scenic area. Unverified.",
+  "id": "changshan-geopark",
+  "name": "Changshan Geopark",
+  "zh": "常山金钉子国家地质公园",
+  "region": "zhejiang-quzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 28.8723971,
+   "lng": 118.492332
+  },
+  "coordinates_source": "overpass node/5263548589 tourism=attraction (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "60 CNY from a 2019 summary only; UNESCO geopark status in 2026 may have changed the price; no source read for the Golden Spike claim"
+  ]
+ },
+ "shaoxing-1": {
+  "bio": "Historic quarter around Lu Xun's childhood home in Shaoxing, with his memorial hall, Three Flavours Study and Xianheng Hotel.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "wiki": null,
+  "ticketUrl": null,
+  "ticket_note": "Reservation is by WeChat official accounts (Shaoxing Culture and Tourism Group / Shaoxing Lu Xun Memorial); no website found.",
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/18/2193.html",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lu_Xun_Native_Place"
+  ],
+  "notes": "Free but advance booking required per Ctrip and a 2023 notice (weak); sights named in bio (Three Flavours Study, Xianheng Tavern) are from memory, check against a source. Wikipedia article title is 'Lu Xun Native Place' = name.",
+  "id": "shaoxing-1",
+  "name": "Lu Xun Native Place",
+  "zh": "鲁迅故里",
+  "region": "zhejiang-shaoxing",
+  "destination": "shaoxing",
+  "coordinates": {
+   "lat": 29.9945796,
+   "lng": 120.5825273
+  },
+  "coordinates_source": "overpass node/12141846979 tourism=artwork (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "free entry with advance booking from Ctrip/2023 notice only (weak)",
+   "no website; booking via WeChat"
+  ]
+ },
+ "shaoxing-3": {
+  "bio": "A Jin-era garden with a winding stream where Wang Xizhi wrote the Orchid Pavilion Preface in 353.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 70,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "official site not found; only Ctrip/Qunar/resellers",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/兰亭",
+   "https://www.dahepiao.com/lvyounews1/20250402508224.html",
+   "https://touch.travel.qunar.com/comment/17257453"
+  ],
+  "notes": "Price 70 (reseller 2025) vs 80 (Qunar review): conflicting, weak. Combined ticket with Shen Garden, East Lake, Yu Mausoleum from 145 CNY. No English Wikipedia article for the pavilion.",
+  "id": "shaoxing-3",
+  "name": "Orchid Pavilion",
+  "zh": "兰亭",
+  "region": "zhejiang-shaoxing",
+  "destination": "shaoxing",
+  "coordinates": {
+   "lat": 29.9289064,
+   "lng": 120.4952933
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "70 CNY adult from a 2025 reseller; Qunar says 80 (weak)",
+   "No official site"
+  ]
+ },
+ "shaoxing-4": {
+  "bio": "The memorial site of Yu the Great, legendary flood tamer, with a tomb, temple and stele pavilion at Mount Kuaiji.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Zhejiang tourism page lists it as Kuaiji Mountain Scenic Area",
+  "wiki": null,
+  "sources": [
+   "https://ct.zj.gov.cn/art/2019/8/5/art_1664685_36392449.html"
+  ],
+  "notes": "50 CNY from provincial culture and tourism page dated 2019 (surfaced in search; page itself failed to load for me), may have changed. Bio details (tomb, temple, stele) from general knowledge, unverified.",
+  "id": "shaoxing-4",
+  "name": "Mausoleum of Yu the Great",
+  "zh": "大禹陵",
+  "region": "zhejiang-shaoxing",
+  "destination": "shaoxing",
+  "coordinates": {
+   "lat": 29.9661734,
+   "lng": 120.6101162
+  },
+  "coordinates_source": "overpass node/2503547616 tourism=attraction (HIGH)",
+  "verdict": "edited",
+  "unresolved": []
+ },
+ "shaoxing-9": {
+  "bio": "Birthplace of the educator Cai Yuanpei, a house built in the Daoguang reign of the Qing dynasty in Shaoxing.",
+  "icon": "🏠",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "Government-owned heritage house; no official site found",
+  "wiki": "Former Residence of Cai Yuanpei",
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/蔡元培故居",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Former_Residence_of_Cai_Yuanpei"
+   ]
+  },
+  "notes": "Free entry is unverified: no source found stating the price; it is not part of the Shaoxing combined ticket mentioned in a Ctrip post. Confirm before applying. Address Bifeinong 13.",
+  "cost_unverified": true,
+  "id": "shaoxing-9",
+  "name": "Former Residence of Cai Yuanpei",
+  "zh": "绍兴蔡元培故居",
+  "region": "zhejiang-shaoxing",
+  "destination": "shaoxing",
+  "coordinates": {
+   "lat": 30.009604,
+   "lng": 120.5792026
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free entry has no source"
+  ]
+ },
+ "shaoxing-10": {
+  "bio": "Ancestral home of Zhou Enlai's family in Shaoxing, opened as a memorial in 1984, with an exhibition on his life.",
+  "icon": "🏠",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costBasis": "entry",
+  "wiki": null,
+  "ticketUrl": null,
+  "sources": [
+   "https://m.tuniu.com/g39578/pinglun/",
+   "https://you.ctrip.com/asks/75811"
+  ],
+  "notes": "Free per Tuniu listing and reviews (one 2016 review mentions 18 CNY); not official, verify. No official site found.",
+  "free": true,
+  "ticket_note": "No official website found (searched)",
+  "cost_unverified": true,
+  "id": "shaoxing-10",
+  "name": "Zhou Enlai's Ancestral Home",
+  "zh": "周恩来祖居",
+  "region": "zhejiang-shaoxing",
+  "destination": "shaoxing",
+  "coordinates": {
+   "lat": 30.0048231,
+   "lng": 120.5816162
+  },
+  "coordinates_source": "overpass node/4784653519 tourism=museum (HIGH)",
+  "verdict": "edited",
+  "unresolved": [
+   "free entry from Tuniu/Ctrip only (an old review mentions 18 CNY)",
+   "no official site"
+  ]
+ },
+ "xishi-guli": {
+  "bio": "Riverside scenic area in Zhuji honouring the beauty Xi Shi, with a shrine, memorial halls and gardens.",
+  "icon": "🏛️",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/690/70744.html"
+  ],
+  "notes": "Area itself free per Ctrip (weak); Xishi Hall, Fan Li shrine and other halls charge separately (Xishi Hall about 45 CNY from a user review, unverified). 'Riverside' is unverified; address Zhuluo East Rd.",
+  "cost_unverified": true,
+  "id": "xishi-guli",
+  "name": "Xishi Guli",
+  "zh": "西施故里",
+  "region": "zhejiang-shaoxing",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.70191,
+   "lng": 120.2356301
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "Free area from Ctrip only; individual halls charge separately",
+   "No official site"
+  ]
+ },
+ "taizhou-1": {
+  "bio": "A city museum on Aihua Road in Jiaojiang with galleries on Taizhou's history and its folk culture.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.taizhoumuseum.com/",
+  "wiki": "Taizhou Museum",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Taizhou_Museum",
+   "https://zh.wikipedia.org/wiki/台州市博物馆",
+   "http://www.taizhoumuseum.com/",
+   "https://gs.ctrip.com/html5/you/sight/taizhou402/2686593.html"
+  ],
+  "notes": "Free (Ctrip 'free admission'; local report says no booking needed, from a holiday notice, may be dated). Site loaded with title 台州博物馆 (only the title was visible to the fetcher).",
+  "cost_unverified": true,
+  "id": "taizhou-1",
+  "name": "Taizhou Museum",
+  "zh": "台州博物馆",
+  "region": "zhejiang-taizhou",
+  "destination": "taizhou",
+  "coordinates": {
+   "lat": 28.66318,
+   "lng": 121.41195
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "free status not confirmed by an official source"
+  ]
+ },
+ "taizhou-4": {
+  "bio": "Fantawild Wild Mainland theme park in Taizhou, with rides, shows and animation-themed zones.",
+  "icon": "🎢",
+  "category": "entertainment",
+  "visitHoursMin": 5,
+  "visitHoursMax": 8,
+  "costMin": 195,
+  "costMax": 195,
+  "currency": "CNY",
+  "costBasis": "ticket",
+  "price_source_weak": true,
+  "ticketUrl": "https://www.fangte.com/",
+  "wiki": null,
+  "sources": {
+   "ticketUrl": "https://www.fangte.com/",
+   "cost": "https://touch.piao.qunar.com/touch/detail.htm?id=515877",
+   "bio": [
+    "https://gs.ctrip.com/html5/you/sight/taizhou402/69101963.html",
+    "https://www.dahepiao.com/lvyounews1/20251226540608.html"
+   ]
+  },
+  "notes": "Operator (Fangte/华强方特) homepage lists 台州方特•狂野大陆 but has no deep page for it; use the homepage. 195 CNY is Qunar's adult standard from-price (Ctrip shows 150 from, a discounted price); official price unverified.",
+  "id": "taizhou-4",
+  "name": "Fonte Wild Mainland",
+  "zh": "台州方特•狂野大陆",
+  "region": "zhejiang-taizhou",
+  "destination": "taizhou",
+  "coordinates": {
+   "lat": 28.5529767,
+   "lng": 121.5710356
+  },
+  "coordinates_source": "overpass way/903619728 tourism=theme_park (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "195 CNY is a Qunar from-price; official price not found; operator homepage lists Taizhou Wild Mainland (checked)"
+  ]
+ },
+ "guoqing-temple": {
+  "bio": "Sui-dynasty Buddhist temple on Mount Tiantai, birthplace of the Tiantai school, free to enter.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Guoqing_Temple (built 598, Mount Tiantai)",
+   "https://m.thepaper.cn/newsDetail_forward_13493101 (once 5 yuan, now free)",
+   "https://zh.wikipedia.org/wiki/国清寺"
+  ],
+  "notes": "Free admission per Ctrip posts and a 2021 Paper report, not an official page. Tiantai school claim from general knowledge/zh wiki; wiki field null because article title matches name.",
+  "id": "guoqing-temple",
+  "name": "Guoqing Temple",
+  "zh": "國清寺",
+  "region": "zhejiang-taizhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.1728687,
+   "lng": 121.0434825
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "free entry not from an official page",
+   "no official site"
+  ]
+ },
+ "shenxianju": {
+  "bio": "Volcanic-rock peaks and cliffs around Guanyin Peak, with a glass-floored platform and cable cars.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 110,
+  "costMax": 110,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Adult",
+  "ticketUrl": "https://www.zjshenxianju.com/",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://www.zjshenxianju.com/jqgk.jhtml",
+    "https://www.zjshenxianju.com/"
+   ],
+   "cost": [
+    "https://www.zjshenxianju.com/pwxx.jhtml",
+    "https://www.zjshenxianju.com/jqgk.jhtml"
+   ],
+   "link": [
+    "https://www.zjshenxianju.com/"
+   ]
+  },
+  "notes": "Official site loaded, titled 神仙居景区官方网站. Gate CNY 110 (official). Cable car 65 up / 55 down, Nantianding platform 99 are extras, not the price. 5A scenic area, 22.32 km2 core. The platform (南天顶) is an extra with its own ticket. Wikipedia 'Xianju National Park' is the larger park, not the spot, so wiki null.",
+  "id": "shenxianju",
+  "name": "Shenxianju",
+  "zh": "神仙居",
+  "region": "zhejiang-taizhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 28.7486067,
+   "lng": 120.6158604
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": []
+ },
+ "fangshan-geopark": {
+  "bio": "Volcanic-plateau scenic area in Wenling with Fangshan, Nansong Rock and Shifeng sections, part of Yandangshan Geopark.",
+  "icon": "🏔️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 40,
+  "costMax": 40,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "official site not found",
+  "wiki": null,
+  "sources": [
+   "https://you.ctrip.com/sight/wenling546/70438.html",
+   "https://www.dahepiao.com/lvyounews1/20240829485247.html"
+  ],
+  "notes": "Located in Wenling, Changyu town; Ctrip says Fangshan, Nansongyan and Shifeng sub-areas. Price ~40 CNY from reseller and a 2021 review (weak). Claim that it is part of a global geopark (Yandangshan) is a user comment: unverified, bio avoids it; consider renaming 'Global Geopark'.",
+  "id": "fangshan-geopark",
+  "name": "Fangshan Global Geopark",
+  "zh": "方山",
+  "region": "zhejiang-taizhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 28.635931,
+   "lng": 121.2792351
+  },
+  "coordinates_source": "overpass node/3322731860 natural=peak (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "wenzhou-museum": {
+  "bio": "City museum on Shifu Road in Lucheng, with history, painting, calligraphy and pottery galleries, free to enter.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "https://www.wzmuseum.cn",
+  "wiki": "Wenzhou Museum",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Wenzhou_Museum",
+   "https://www.wzmuseum.cn"
+  ],
+  "notes": "Site loaded, title 温州博物馆; states free admission Tue-Sun, ID required, optional reservation via WeChat, so no needs. Visit duration is an estimate.",
+  "id": "wenzhou-museum",
+  "name": "Wenzhou Museum",
+  "zh": "温州博物馆",
+  "region": "zhejiang-wenzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 27.9917694,
+   "lng": 120.6940742
+  },
+  "coordinates_source": "overpass way/276856058 tourism=museum (HIGH)",
+  "verdict": "pass",
+  "unresolved": []
+ },
+ "yucang-mountain": {
+  "bio": "Forested granite mountain park in Cangnan with walking trails and rock carvings.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://gs.ctrip.com/html5/you/sight/2049/16196.html"
+   ],
+   "cost": [
+    "https://gs.ctrip.com/html5/you/sight/2049/16196.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Ctrip: 4A national forest park, listed free with no ticket (an older review says 55 CNY, probably outdated). Gate/open status unverified; costBasis may be entry if staffed. Legend and rock-carving claims from Ctrip review, weak.",
+  "cost_unverified": true,
+  "id": "yucang-mountain",
+  "name": "Yucang Mountain",
+  "zh": "玉苍山",
+  "region": "zhejiang-wenzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 27.5256732,
+   "lng": 120.2937327
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "free/open basis rests on one Ctrip page; an older review says 55 CNY; Trip.com lists it as ticketed",
+   "no official site"
+  ]
+ },
+ "wanghai-tower": {
+  "bio": "Rebuilt tower on Dongtou island, Wenzhou, with upper-floor views over the island chain and fishing harbour.",
+  "icon": "🏯",
+  "category": "viewpoint",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 27,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Dongtou scenic area operator not identified.",
+  "wiki": null,
+  "sources": {
+   "cost": "https://touch.piao.qunar.com/touch/detail.htm?id=10594 (adult 27); https://gs.ctrip.com/html5/you/sight/506/118016.html (from 30)",
+   "bio": "https://you.ctrip.com/sight/dongtou506/118016.html (first built 434, rebuilt, opened 2007, national 4A)"
+  },
+  "notes": "Weak prices (Qunar/Ctrip). Coordinates 27.840,121.125 are Dongtou; verify the pin is the tower. Original 434 AD building claim is from Ctrip text.",
+  "id": "wanghai-tower",
+  "name": "Wanghai Tower",
+  "zh": "望海楼",
+  "region": "zhejiang-wenzhou",
+  "destination": null,
+  "coordinates": {
+   "lat": 27.840083,
+   "lng": 121.1250005
+  },
+  "coordinates_source": "overpass way/1484030362 tourism=attraction (MEDIUM)",
+  "verdict": "pass",
+  "unresolved": [
+   "27-30 CNY from Qunar/Ctrip (weak)",
+   "No official site; pin should be checked"
+  ]
+ },
+ "mount-putuo-2": {
+  "bio": "A 33 m, 70-tonne bronze statue of Guanyin on Mount Putuo island, consecrated in 1997.",
+  "icon": "🗿",
+  "category": "monument",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 6,
+  "costMax": 6,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "Island operated through the Putuoshan WeChat account; no official site verified",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/travels/16/4097446.html",
+   "https://www.cncn.com/guide/60bf2de2fca914a1325d1fc1f6496f29.html"
+  ],
+  "notes": "6 CNY entry to the statue per travel guides. The island gate fee (160 CNY Feb-Nov) is not counted here. Statue height from draft, unverified.",
+  "id": "mount-putuo-2",
+  "name": "South Sea Guanyin",
+  "zh": "南海观音",
+  "region": "zhejiang-zhoushan",
+  "destination": "mount-putuo",
+  "coordinates": {
+   "lat": 29.9763348,
+   "lng": 122.3894972
+  },
+  "coordinates_source": "overpass node/774375920 tourism=attraction (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)"
+  ]
+ },
+ "mount-putuo-3": {
+  "bio": "Stone Temple, one of Mount Putuo's three major temples, with a grand hall rebuilt in 1699.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 140,
+  "costMax": 160,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "Reached through the Mount Putuo scenic area; its official booking is a WeChat mini-program, no site found",
+  "wiki": "Fayu Temple",
+  "sources": {
+   "bio": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Fayu_Temple"
+   ],
+   "cost": [
+    "https://www.sina.cn/news/article/nimffsp3668999.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Price is the Mount Putuo gate ticket (160 Feb-Nov, 140 Dec-Jan) from a 2026 news article (weak); temples themselves reportedly free from 2026, older guides say 5 CNY. Boat (60) and cable car (70) not counted. Check whether other mount-putuo spots use the same gate price. Nine-Dragon ceiling in draft not verified.",
+  "id": "mount-putuo-3",
+  "name": "Fayu Temple",
+  "zh": "法雨寺 (普陀山)",
+  "region": "zhejiang-zhoushan",
+  "destination": "mount-putuo",
+  "coordinates": {
+   "lat": 30.0047712,
+   "lng": 122.3892428
+  },
+  "coordinates_source": "nominatim/wikidata (HIGH)",
+  "verdict": "pass",
+  "unresolved": [
+   "140-160 CNY is the Mount Putuo scenic gate from a 2026 news piece; temples reportedly free from 2026: unresolved; Nine-Dragon ceiling not in bio"
+  ]
+ },
+ "nansha-beach": {
+  "bio": "Wide sand beach on Zhujiajian island in Zhoushan, inside a ticketed seaside scenic area.",
+  "icon": "🏖️",
+  "category": "beach",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 70,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "official site not found; operator uses WeChat reservation per search",
+  "wiki": null,
+  "sources": [
+   "https://www.dahepiao.com/lvyounews1/20240824484221.html",
+   "https://gs.ctrip.com/html5/you/sight/zhoushan479/139887.html"
+  ],
+  "notes": "Paid scenic area, 70 CNY adult (reseller + Ctrip, weak); a 2026 article cites ~75 and timed reservations, unverified. Reservation may be needed (needs not set).",
+  "id": "nansha-beach",
+  "name": "Nansha Beach",
+  "zh": "南沙",
+  "region": "zhejiang-zhoushan",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.8770882,
+   "lng": 122.4053367
+  },
+  "coordinates_source": "overpass way/857410251 natural=beach (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "70 CNY from a reseller and Ctrip (weak); a 2026 piece cites ~75 with timed reservations",
+   "No official site"
+  ]
+ },
+ "dongsha-beach": {
+  "bio": "Sandy beach on Zhujiajian island in the Zhoushan archipelago, one of several beaches near Nansha.",
+  "icon": "🏖️",
+  "category": "beach",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 10,
+  "costMax": 35,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "Managed as part of Zhujiajian scenic area; no separate official site found",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/zhoushan479/139887.html",
+   "https://touch.travel.qunar.com/comment/5800384"
+  ],
+  "notes": "Conflicting prices: Ctrip 35 from, Qunar 2021 review 10 CNY, no charge after 18:00; Zhujiajian page says from 10. Unverified. Bio's 'quieter' and 'free showers' come from reviews/draft, unverified.",
+  "id": "dongsha-beach",
+  "name": "Dongsha Beach",
+  "zh": "东沙",
+  "region": "zhejiang-zhoushan",
+  "destination": null,
+  "coordinates": {
+   "lat": 29.8833739,
+   "lng": 122.4150779
+  },
+  "coordinates_source": "overpass way/684588283 natural=beach (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "cost price from an aggregator or review, not official; could not re-confirm (official sources blocked or not found)",
+   "bio kept minimal: existence/details only from aggregator listings; price 10-35 conflicting",
+   "consider owner review"
+  ]
+ },
+ "jihu-beach": {
+  "bio": "Sandy beach on Sijiao island in the Shengsi Islands, the archipelago's main tourist attraction.",
+  "icon": "🏖️",
+  "category": "beach",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costBasis": "entry",
+  "wiki": null,
+  "ticketUrl": null,
+  "sources": [
+   "https://www.dahepiao.com/lvyounews1/20220826293077.html",
+   "https://gs.ctrip.com/html5/you/sight/82/4037.html"
+  ],
+  "notes": "Gate ticket 40 CNY from third-party ticket sites and a travelogue (about 2021-22), not official; verify. No official site found. Island is in Shengsi (Zhoushan).",
+  "costMin": 40,
+  "costMax": 40,
+  "currency": "CNY",
+  "price_source_weak": true,
+  "ticket_note": "No official website found (searched)",
+  "id": "jihu-beach",
+  "name": "Jihu Beach",
+  "zh": "基湖沙滩",
+  "region": "zhejiang-zhoushan",
+  "destination": null,
+  "coordinates": {
+   "lat": 30.7161428,
+   "lng": 122.469336
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "40 CNY gate price from 2021-22 third-party pages only (weak)",
+   "no official site"
+  ]
+ },
+ "houtouwan-village": {
+  "bio": "Abandoned fishing village on Shengshan island, its houses overtaken by greenery and a draw for visitors.",
+  "icon": "🌿",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "wiki": "Houtouwan",
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Houtouwan",
+   "https://www.ourchinastory.com/cn/8447",
+   "https://gs.ctrip.com/html5/you/sight/82/56062.html"
+  ],
+  "notes": "25 CNY village-entry ticket (10 CNY for the viewing platform only) comes from travelogues only; Ctrip shows no price: unverified, may be dated. Wikipedia describes the village as abandoned, depopulated by 2002, overgrown. Wikipedia article exists as 'Houtouwan'.",
+  "price_source_weak": true,
+  "id": "houtouwan-village",
+  "name": "Houtouwan Village",
+  "zh": "后头湾",
+  "region": "zhejiang-zhoushan",
+  "destination": null,
+  "coordinates": {
+   "lat": 30.731095,
+   "lng": 122.8179418
+  },
+  "coordinates_source": "nominatim/wikidata (MEDIUM)",
+  "verdict": "edited",
+  "unresolved": [
+   "25 CNY from travelogues only (weak)",
+   "No official site"
+  ]
+ }
+}

@@ -1,0 +1,501 @@
+{
+ "region": "zhejiang-jiaxing",
+ "new_destinations": [
+  {
+   "name": "Jiaxing",
+   "action": "new-destination",
+   "id": "jiaxing",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "lat": 30.7522,
+    "lng": 120.7585
+   },
+   "defaultZoomSpanKm": 25,
+   "name_evidence": "Wikivoyage 'Jiaxing' city page with See/Do (South Lake, Meiwan, Yuehe); prefecture-level city, rail stop between Shanghai and Hangzhou",
+   "spots": 5,
+   "note": "Centre approximated between South Lake (30.7568,120.7557) and Jiaxing Museum; no source for a city-centre point beyond that, pin stage to confirm. Wuzhen 28 km west, outside metro."
+  },
+  {
+   "name": "Wuzhen",
+   "action": "new-destination",
+   "id": "wuzhen",
+   "category": "city",
+   "rank": 2,
+   "coordinates": {
+    "lat": 30.74275,
+    "lng": 120.487778
+   },
+   "defaultZoomSpanKm": 15,
+   "name_evidence": "Wikivoyage 'Wuzhen' (Jiaxing/Tongxiang), 5A water town, Wikipedia 27,290 views/yr; headline trip in itself (Dongzha, Xizha, Mao Dun)",
+   "spots": 3,
+   "note": "Only 3 spots: justified by the headline-attraction clause (a trip in itself), not the four-spot bar; Wuzhen itself is the destination so no 'Wuzhen' wrapper spot. Not Jiangnan Water Towns (Jiangsu): ~65 km from its centre. Fall back to three standalone spots if the owner rejects.",
+   "source_coordinates": "wikipedia:Wuzhen",
+   "owner_approved": "rank 2 (owner)"
+  }
+ ],
+ "placements": [
+  {
+   "name": "South Lake",
+   "action": "spot",
+   "destination": "jiaxing",
+   "id": "jiaxing-1",
+   "coordinates": {
+    "lat": 30.7568,
+    "lng": 120.7557
+   },
+   "coordinates_source": "OSM relation 3808151 (南湖) centre",
+   "reason": "Inside Jiaxing urban area, within 75% of 25 km span; Jiaxing's headline lake.",
+   "views": 1288,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage's main sight with lakeshore walks and ferry; Jiaxing's headline draw.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Pavilion of Mist and Rain",
+   "action": "spot",
+   "destination": "jiaxing",
+   "id": "jiaxing-2",
+   "coordinates": {
+    "lat": 30.75753,
+    "lng": 120.75588
+   },
+   "coordinates_source": "OSM relation 19317231 (湖心岛, mid-lake island)",
+   "reason": "Inside Jiaxing urban area, within 75% of 25 km span; the lake's mid-lake island, reached by ferry.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage describes the 1549 pavilion and gardens on the mid-lake island, ferry-only; a half-day sight.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Meiwan Street",
+   "action": "spot",
+   "destination": "jiaxing",
+   "id": "jiaxing-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside Jiaxing urban area, within 75% of 25 km span; SW shore of South Lake; no sourced pin yet.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-3: Wikivoyage describes restored canal-side lanes with small museums, restaurants and historic houses; second-tier stroll.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_needed": true
+  },
+  {
+   "name": "Yuehe Street",
+   "action": "spot",
+   "destination": "jiaxing",
+   "id": "jiaxing-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside Jiaxing urban area, within 75% of 25 km span; north of old city; no sourced pin yet.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-3: Wikivoyage recommends the restored canal street as a taste of canal towns, tea rooms and workshops.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_needed": true
+  },
+  {
+   "name": "Jiaxing Museum",
+   "action": "spot",
+   "destination": "jiaxing",
+   "id": "jiaxing-5",
+   "coordinates": {
+    "lat": 30.74461,
+    "lng": 120.75995
+   },
+   "coordinates_source": "OSM way 1515347881 (嘉兴博物馆)",
+   "reason": "Inside Jiaxing urban area, within 75% of 25 km span; city museum on Yantang Road.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage lists the large free city museum with hours; museum.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Wuzhen Western Quarter",
+   "action": "spot",
+   "destination": "wuzhen",
+   "id": "wuzhen-1",
+   "coordinates": {
+    "lat": 30.75683,
+    "lng": 120.47892
+   },
+   "coordinates_source": "OSM way 973491034 (乌镇西栅景区)",
+   "reason": "Inside Wuzhen town bounds, ~1.7 km from its centre.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-3: Wikivoyage describes Xizha as larger, canal-based quarter with boat-bus, ancient theatre, inns; ticketed core of Wuzhen.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Wuzhen Eastern Quarter",
+   "action": "spot",
+   "destination": "wuzhen",
+   "id": "wuzhen-2",
+   "coordinates": {
+    "lat": 30.74201,
+    "lng": 120.4917
+   },
+   "coordinates_source": "OSM way 438726256 (乌镇东栅景区)",
+   "reason": "Inside Wuzhen town bounds.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-3: Wikivoyage describes Dongzha with museums, temples, shops; separately ticketed quarter.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mao Dun Former Residence",
+   "action": "spot",
+   "destination": "wuzhen",
+   "id": "wuzhen-3",
+   "coordinates": {
+    "lat": 30.74962,
+    "lng": 120.48166
+   },
+   "coordinates_source": "OSM node 13197829766 (茅盾纪念堂)",
+   "reason": "In Wuzhen's old northern quarter, inside town bounds.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage lists writer's family home and Lizhi College as the Mao Dun Memorial, museum.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xitang",
+   "action": "standalone",
+   "destination": null,
+   "id": "xitang",
+   "coordinates": {
+    "lat": 30.9461,
+    "lng": 120.8898
+   },
+   "coordinates_source": "OSM way 1303203868 (Xitang Ancient Town) centre",
+   "reason": "Jiashan canal town ~28 km from Jiangnan Water Towns' centre (Jiangsu, span 40 km, 15 km reach) and in another province; Jiaxing centre ~25 km and Wuzhen ~40 km away, outside both bounds, so standalone. Not a Wuzhen spot: ~40 km away.",
+   "views": 6446,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: 5A water town; Wikivoyage entry with ticket info; Zhejiang government tourism page for Xitang (ct.zj.gov.cn) via search; major draw.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Nanbei Lake",
+   "action": "standalone",
+   "destination": null,
+   "id": "nanbei-lake",
+   "coordinates": {
+    "lat": 30.37491,
+    "lng": 120.85669
+   },
+   "coordinates_source": "OSM relation 2308836 (南北湖)",
+   "reason": "Haiyan county, ~40 km from Jiaxing centre, outside its bounds; no cluster.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage Tongxiang names 4A lake, trails, viewpoints; China Daily Jiaxing pages mention it; admission.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Haining Tidal Bore Viewing Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "haining-tidal-bore-viewing-park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Haining on the Qiantang seawall, ~35 km from Jiaxing, outside its bounds; no sourced pin yet.",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Zhejiang China Daily page on the Qiantang tide and Klook name the viewing park, platform and Zhan'ao Tower; permanent venue.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_needed": true
+  },
+  {
+   "name": "Mo's Manor",
+   "action": "standalone",
+   "destination": null,
+   "id": "mos-manor",
+   "coordinates": {
+    "lat": 30.70007,
+    "lng": 121.01494
+   },
+   "coordinates_source": "OSM node 14093851702 (莫氏庄园)",
+   "reason": "Pinghu, ~33 km from Jiaxing centre, outside its bounds; with East Lake only two Pinghu spots, so no destination.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage Pinghu headlines Mo's Manor, 1890s merchant home with furnished rooms.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "East Lake (Pinghu)",
+   "action": "standalone",
+   "destination": null,
+   "id": "east-lake-pinghu",
+   "coordinates": {
+    "lat": 30.7,
+    "lng": 121.02346
+   },
+   "coordinates_source": "OSM way 438233652 (东湖公园)",
+   "reason": "Pinghu, ~33 km from Jiaxing, outside its bounds; two Pinghu spots never make a destination.",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Rule 1-2: Wikivoyage Pinghu lists East Lake stroll with lantern-lit buildings.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "review": [
+  {
+   "name": "Xiaoyingzhou Island",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage names a pavilion and covered bridge, ferry stop; short visit.",
+   "case_against": "Part of South Lake and a near-twin of the Pavilion island."
+  },
+  {
+   "name": "Haogu Pagoda",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage lists a rebuilt pagoda with Wu Zixu shrine at a ferry stop; one source, short.",
+   "case_against": "Rebuilt 2004, modest."
+  },
+  {
+   "name": "Boat Culture Museum",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. No counted source in candidate; fresh search found none. Unresolved, not rejected.",
+   "case_against": "Could be a minor venue."
+  },
+  {
+   "name": "Meihuazhou Scenic Area",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Recurs on Jiaxing attraction lists (Ctrip, 17tr, China Daily Jiaxing listing) as a 4A area; no Wikivoyage entry.",
+   "case_against": "Neolithic culture area, little to see."
+  },
+  {
+   "name": "Jiaxing Catholic Church",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage describes imposing national-listed ruin but interior closed; exterior and public lawn open since 2021.",
+   "case_against": "Exterior only; 'local church seen from the street' risk, yet guide singles it out."
+  },
+  {
+   "name": "Jiaxing Citadel",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage names citadel gate and wall remnant; open as park; one source.",
+   "case_against": "Limited to a gate."
+  },
+  {
+   "name": "Kim Ku Hideout",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage singles out Kim Ku Hideout but notes it was under renovation; one source.",
+   "case_against": "May be closed; part of Meiwan Street."
+  },
+  {
+   "name": "Museum of Zongzi Culture",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage names the zongzi museum on Yuehe Street; one source, short visit.",
+   "case_against": "Part of Yuehe Street."
+  },
+  {
+   "name": "Majiabang Culture Museum",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage lists a free branch museum of Neolithic finds; one source, outlying.",
+   "case_against": "Minor and far from centre."
+  },
+  {
+   "name": "Luofan Pavilion",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. No counted source found by search (English); unresolved.",
+   "case_against": "Canal site, unconfirmed."
+  },
+  {
+   "name": "Shuangkui Lane",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. No counted source in candidate; not found; unresolved.",
+   "case_against": "Minor lane."
+  },
+  {
+   "name": "Xiangjiadang",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. No counted source in candidate; not found; unresolved.",
+   "case_against": "Wetland, unverified."
+  },
+  {
+   "name": "Xincheng Ancient Town",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Old canal town; no counted source found; unresolved.",
+   "case_against": "Obscure."
+  },
+  {
+   "name": "Liansi Lake",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Lake listed in Xiuzhou sights; no counted source found.",
+   "case_against": "Unverified."
+  },
+  {
+   "name": "Zui Garden",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Search shows Zui Garden is one of the 11 ticketed sights, Ming-era garden; supporting sources only.",
+   "case_against": "Part of Xitang combined ticket."
+  },
+  {
+   "name": "Mu Xin Art Museum",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage mentions Mu Xin residence in Eastern Quarter; search shows museum (CNY20, closed Mon), supporting only.",
+   "case_against": "Inside Wuzhen scenic area."
+  },
+  {
+   "name": "Wu Village",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Village near Western Quarter; no counted source found.",
+   "case_against": "Unverified."
+  },
+  {
+   "name": "Tongxiang Museum",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage lists free local history museum; one source, short.",
+   "case_against": "Generic."
+  },
+  {
+   "name": "Puyuan Ancient Town",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. 4A fashion-themed town per Ctrip; no counted source found.",
+   "case_against": "Commercial market."
+  },
+  {
+   "name": "Qi Garden",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Qi Garden listed as top Jiaxing attraction (Expedia, 17tr); China Daily Haiyan article seen only by search.",
+   "case_against": "Possibly more resort than garden."
+  },
+  {
+   "name": "Yanguan Ancient Town",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Intotravelchina and Klook describe old town with tide viewing; counted Zhejiang source not confirmed.",
+   "case_against": "Overlaps the viewing park."
+  },
+  {
+   "name": "Yanguan Sea Wall and Sea God Temple",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Sea God Temple: palace-style complex per chinatripedia/Klook; Trip.com shows temporarily closed; status unresolved.",
+   "case_against": "May be closed."
+  },
+  {
+   "name": "Wang Guowei Former Residence",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Heritage residence of notable scholar; no counted source found.",
+   "case_against": "Possibly closed."
+  },
+  {
+   "name": "Xu Zhimo Former Residence",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Famed poet's home; only Ctrip; fresh counted source not found.",
+   "case_against": "Poet is well known in China."
+  },
+  {
+   "name": "Gefeisong Chocolate Town",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Chocolate-themed 4A attraction per Ctrip; search identifies Aficion Chocolate Village tentatively.",
+   "case_against": "Commercial theme park."
+  },
+  {
+   "name": "Yunlanwan Hot Spring",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Hot-spring resort listed in Jiaxing lists; a resort venue.",
+   "case_against": "Venue not place."
+  },
+  {
+   "name": "Taozhuang Fenhu",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Lake and wetland in Jiashan, no counted source found.",
+   "case_against": "Unverified."
+  },
+  {
+   "name": "Sun Daolin Film Art Museum",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Film museum in Jiashan; no source found.",
+   "case_against": "Local museum."
+  },
+  {
+   "name": "Baoben Pagoda",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage names Ming pagoda in temple on East Lake; one source.",
+   "case_against": "Part of East Lake."
+  },
+  {
+   "name": "Pinghu Museum",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage lists free museum of Liangzhu-era finds; one source.",
+   "case_against": "Small."
+  },
+  {
+   "name": "Zhapu Fort",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Qing fort remains and 1842 battle site; no counted source found.",
+   "case_against": "Little to see."
+  },
+  {
+   "name": "Zhapu",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wikivoyage Pinghu names Zhapu port for seafood; no See listing; old harbour.",
+   "case_against": "Mostly a meal stop."
+  },
+  {
+   "name": "Jiulong Mountain (Pinghu)",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Resort hill with hiking; no counted source found.",
+   "case_against": "Resort."
+  },
+  {
+   "name": "Hangzhou Bay Wetland",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. Wetland reserve; no visitor source found; location unverified.",
+   "case_against": "Possibly elsewhere."
+  },
+  {
+   "name": "Ginkgo Swan Lake",
+   "case_for": "Wikivoyage Jiaxing/Tongxiang/Pinghu opened. 4A scenic spot per Ctrip; location unresolved.",
+   "case_against": "Unverified."
+  },
+  {
+   "name": "Wuzhen Theatre",
+   "case_for": "Rule 1-2: a lotus-shaped 2010 theatre by Kris Yao on the water in Wuzhen, reached by boat or bridge; only architecture press (Dezeen, ArchDaily) found, no visitor source, and public access outside performances unverified.",
+   "case_against": "Case for: an architecture landmark in a headline water town. Against: it is a performance venue with unconfirmed visitor access; no visitor source."
+  }
+ ]
+}

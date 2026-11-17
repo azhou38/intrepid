@@ -9,12 +9,19 @@
 // every touch ends (by then the animation it started has landed).
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
+import { sheetInMotion } from './sheetMotion';
 
 let bump: (() => void) | null = null;
 
+// Not while a sheet is being dragged or settling (sheetMotion.ts): the commit re-applies each animated value as it was a
+// moment before, and on a moving sheet that is a visibly older position (a flash of where it was). It waits for the sheet.
+function bumpAtRest() {
+  if (sheetInMotion()) { setTimeout(bumpAtRest, 120); return; }
+  bump?.();
+}
 export function requestShadowSync(delayMs = 0) {
-  if (delayMs <= 0) bump?.();
-  else setTimeout(() => bump?.(), delayMs);
+  if (delayMs <= 0) bumpAtRest();
+  else setTimeout(bumpAtRest, delayMs);
 }
 
 // After a touch: once the animation it most likely started has landed (a snap or a tab slide by 450 ms, a sheet that

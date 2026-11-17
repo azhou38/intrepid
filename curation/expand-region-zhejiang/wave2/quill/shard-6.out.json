@@ -1,0 +1,110 @@
+{
+ "hangzhou-35": {
+  "bio": "Paris-style housing estate in Hangzhou, with a 108 m replica of the Eiffel Tower.",
+  "icon": "🗼",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "residential estate, no operator site",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Tianducheng"
+  ],
+  "notes": "Free: public streets of a residential estate; no ticket source found, unverified beyond that. 108 m figure from draft, not re-sourced."
+ },
+ "east-lake-pinghu": {
+  "bio": "Lakeside park in Pinghu with a waterfront walk and Baoben Temple on its shore.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "municipal park, no official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/533.html"
+  ],
+  "notes": "Free per Ctrip listing (weak, 4A, open-access park). Baoben Temple mention from same listing."
+ },
+ "xiandu-scenic-area": {
+  "bio": "National 5A scenic area of peaks, caves and temples, with a cable car and shuttle buses.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 70,
+  "costMax": 110,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found (WeChat account only suspected); unverified",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/xiandu225/8462.html",
+   "https://zh.wikipedia.org/wiki/%E4%BB%99%E9%83%BD"
+  ],
+  "notes": "Price weak: Ctrip from-price 70; 2020 travelogue combined ticket 110 incl. shuttle. Current price unverified. Bio claims from draft, cable car/cave details not re-verified."
+ },
+ "quzhou-1": {
+  "bio": "Walled old quarter of Quzhou, built around the Confucian Family Temple of the southern branch.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/quzhou174/5717132.html"
+  ],
+  "notes": "UNVERIFIED: Ctrip lists it open all day, centred on Nankong culture; one listing may show ~80 CNY (likely a sub-attraction). Treated as free to wander; Confucian Temple may charge its own entry. Check."
+ },
+ "taozhu-ancient-city": {
+  "bio": "Ming-dynasty walled town at Taozhu, built against pirate raids, with its original walls.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 20,
+  "costMax": 20,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/544/16208.html",
+   "https://www.dahepiao.com/lvyounews1/20240730479310.html"
+  ],
+  "notes": "Ctrip 20 CNY for the ancient city alone (combo with Taojiang 13 Islets 50); another page says 14.5. Weak."
+ },
+ "dongsha-ancient-town": {
+  "bio": "Old fishing town on Daishan Island of lanes and courtyard houses.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": [
+   "https://www.dahepiao.com/lvyounews1/20220922308696.html",
+   "https://gs.ctrip.com/html5/you/sight/59787.html"
+  ],
+  "notes": "UNVERIFIED: 2022 group-buy price 15 CNY from a ticket reseller; Qunar shows 200 (unclear). Ctrip rates it 4A (paid). Check current price."
+ }
+}

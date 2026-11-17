@@ -1,0 +1,154 @@
+[
+ {
+  "id": "hangzhou",
+  "verdict": "keep",
+  "rank": 2,
+  "into": null,
+  "rule": "Headline exemption (rank 1-2); name test",
+  "reason": "Wikivoyage Hangzhou page verified (own city page, West Lake, Lingyin, Longjing, Xixi). 42 spots. Rank 2 stands. Shaoxing 51 km, Wuzhen 65 km, Huzhou 69 km are outside the 30 km overlap radius."
+ },
+ {
+  "id": "huzhou",
+  "verdict": "rerank",
+  "rank": 5,
+  "into": null,
+  "rule": "Ranking destinations; sizable settlements",
+  "reason": "Wikivoyage Huzhou prefecture page verified (lists Anji, Nanxun, Changxing, Moganshan). A prefecture hub with 5 modest spots and no headline sight is a rank-5 base, not a rank-4 detour. Keep as destination (sizable settlement with a guidebook page). If Nanxun merges in, widen the span to hold it (~31 km from centre)."
+ },
+ {
+  "id": "anji",
+  "verdict": "keep",
+  "rank": 4,
+  "into": null,
+  "rule": "Name test; Rule of thumb (8 spots)",
+  "reason": "Wikivoyage Anji page verified (Bamboo Exposition Park, Great Bamboo Sea, Tianhuangping). County is also a tourism brand (China Bamboo Town). 8 spots, rank 4 fits. 54 km from Huzhou, no overlap. Moganshan (own Wikivoyage page, 22 km east, with Sword Pool and Xiazhu Lake) is a stronger candidate for its own destination than a standalone spot: owner may want to revisit."
+ },
+ {
+  "id": "nanxun",
+  "verdict": "merge",
+  "rank": null,
+  "into": "huzhou",
+  "rule": "Rule of thumb; A town is a spot only when the town itself is a draw; Prefer the region",
+  "reason": "Wikivoyage Nanxun page verified (small town, one of six Jiangnan water towns), but all four spots sit inside the one ticketed ancient town, and Nanxun Ancient Town is the wrapper. Without it there are 3 spots (a town and its sights is one attraction). Wikivoyage's Huzhou page lists Nanxun as a district and a see entry, so fold into Huzhou, widening its span. Not Wuzhen (15 km, a different prefecture). If the owner prefers to keep Nanxun Ancient Town as the headline sight of a destination, it needs rank 4 and the same 'headline trip in itself' case as Wuzhen."
+ },
+ {
+  "id": "jiaxing",
+  "verdict": "keep",
+  "rank": 5,
+  "into": null,
+  "rule": "Sizable settlements are destinations",
+  "reason": "Wikivoyage Jiaxing page verified (38k chars, South Lake, Meiwan, Yuehe; covers Wuzhen and Xitang as suburbs). Prefecture city and rail hub, 5 spots, rank 5. Wuzhen 26 km is outside the 9 km overlap radius. Xitang (25 km) and East Lake Pinghu stand alone for now; Wikivoyage groups Xitang under Jiaxing."
+ },
+ {
+  "id": "wuzhen",
+  "verdict": "review",
+  "rank": 3,
+  "into": null,
+  "rule": "Rule of thumb (only rank 1-2 exempt); name test",
+  "reason": "Name verified: Wikivoyage 'Wuzhen' redirects to Tongxiang, with a Wuzhen section (Eastern and Western Quarters), and the Jiaxing page has a Wuzhen section. Wuzhen is what travellers say ('we're going to Wuzhen'), a 5A water town and overnight trip in itself. FOR: headline attraction that is a trip in itself; strong name. AGAINST: 3 spots at rank 3 is not the rank 1-2 exemption, the two quarters and the Mao Dun house are one attraction, and Wikivoyage files it under Tongxiang/Jiaxing. Options: keep at rank 3 as a headline-attraction destination (my lean), rerank 2 (inflated), or demote to three standalone spots or Jiaxing spots (Jiaxing is 26 km away, outside its reach)."
+ },
+ {
+  "id": "jinhua",
+  "verdict": "keep",
+  "rank": 5,
+  "into": null,
+  "rule": "Sizable settlements are destinations",
+  "reason": "Wikivoyage Jinhua page verified (prefecture, Shuanglong Scenic Area, Jinhua Mountain). Prefecture hub with its own guidebook page, 4 spots, rank 5. Wuyi is 25 km away, outside the combined overlap radius; Liudong Mountain (18 km) and Youbu (32 km) standalone fall within or near its 40 km span and should be reviewed as Jinhua spots."
+ },
+ {
+  "id": "wuyi",
+  "verdict": "review",
+  "rank": 5,
+  "into": null,
+  "rule": "Name test (county name collision); Prefer the region",
+  "reason": "Wikivoyage has no Wuyi page (404); the Jinhua page lists Wuyi County only as a bus destination. The name collides with the Fujian Wuyi Mountains and only China Daily presents Wuyi hot springs as a brand; 8 spots, most with 0 counted sources. FOR: a tight cluster of 8 spots that no larger region holds. AGAINST: no Wikivoyage heading, county label. Options: rename 'Wuyi Hot Springs' (my lean, rank 5), or fold into Jinhua with a widened span (Wuyi centre is 25 km out, past Jinhua's reach). Xiandu (own Wikivoyage page, 39 km, Lishui) is an unresolved neighbour."
+ },
+ {
+  "id": "longquan",
+  "verdict": "rerank",
+  "rank": 5,
+  "into": null,
+  "rule": "Ranking destinations; name test",
+  "reason": "Wikivoyage has a Longquan page (outline: celadon and swords, 'a city in Zhejiang'); the cited Lishui-section evidence does not exist (Lishui page never names Longquan), so correct name_evidence to the Longquan page. Celadon (UNESCO craft) and sword brands pass the name test. 5 spots incl. Baishanzu, but a niche craft town is a rank-5 base."
+ },
+ {
+  "id": "songyang",
+  "verdict": "demote",
+  "rank": null,
+  "into": null,
+  "rule": "Name test; evidence not verified",
+  "reason": "Wikivoyage has no Songyang page (404) and the Lishui page does not mention Songyang, so the cited section does not exist; the WildChina and That's Mags evidence was written from recall. Exactly 4 spots with no verified visitor source heading. Spots become standalone (no Lishui destination exists to hold them; a Lishui prefecture destination, which has a Wikivoyage page, is the obvious home and would also take Longquan's neighbours). The owner may restore with a real source."
+ },
+ {
+  "id": "ningbo",
+  "verdict": "keep",
+  "rank": 3,
+  "into": null,
+  "rule": "Headline exemption/ranking; Sizable settlements",
+  "reason": "Wikivoyage Ningbo page verified (see/do sections for the city and surroundings). 16 spots, rank 3. Xikou 33 km is outside the 26 km overlap radius."
+ },
+ {
+  "id": "xikou",
+  "verdict": "keep",
+  "rank": 4,
+  "into": null,
+  "rule": "Name test; Rule of thumb (4 spots)",
+  "reason": "Wikivoyage Xikou page verified (outline; Chiang Kai-shek's hometown; Ningbo page lists Xuedou Mountain under Xikou). 5A Xikou-Tengtou area. 4 spots, rank 4 fits (worth a detour). It is 33 km from Ningbo, outside its span and overlap radius, so not a Ningbo spot. A small town, but its draws are its own, no named region covers them."
+ },
+ {
+  "id": "xiangshan",
+  "verdict": "demote",
+  "rank": null,
+  "into": null,
+  "rule": "Name test (county label); Prefer the region",
+  "reason": "Wikivoyage has no Xiangshan page (404); the Ningbo page uses Xiangshan only as an outer-district name, with Shipu, Songlan Beach and Hua'ao Stone Forest as separate See entries. A county name, 76 km from Ningbo, with one spot (Global Studios) having 0 counted sources. Spots stand alone (Shipu, Hua'ao Stone Forest, Songlan Mountain Beach, Global Studios); revisit if a 'Xiangshan coast' brand source is found."
+ },
+ {
+  "id": "quzhou",
+  "verdict": "keep",
+  "rank": 4,
+  "into": null,
+  "rule": "Sizable settlements; name test",
+  "reason": "Wikivoyage has no Quzhou page (404, only listed on the Zhejiang page); China Daily gov pages use Quzhou as the heading for the ancient city, Confucius South Family Temple and Lanke Mountain, and a prefecture-level hub meets the settlement rule. 7 spots, rank 4. Longyou Caves (34 km) and Sanqu Stone Forest (34 km) are standalone inside the 50 km span: consider making them Quzhou spots."
+ },
+ {
+  "id": "jiangshan",
+  "verdict": "keep",
+  "rank": 4,
+  "into": null,
+  "rule": "Name test; Rule of thumb (4 spots)",
+  "reason": "Wikivoyage Jiangshan page verified (Jianglang Mountain WHS, Qingyang, county granary group). 4 spots with the town correctly not a spot; rank 4 fits a World Heritage gateway. Fix the centre: 28.53,118.57 is the mountain, not the Jiangshan base (Wikivoyage town 28.74,118.62), so centre on the town or the midpoint and widen the span if Xianxia Pass falls outside 37 km."
+ },
+ {
+  "id": "shaoxing",
+  "verdict": "keep",
+  "rank": 3,
+  "into": null,
+  "rule": "Headline exemption/ranking; name test",
+  "reason": "Wikivoyage Shaoxing page verified (48k chars, see/do listings, water town brand). 10 spots, rank 3. 51 km from Hangzhou, no overlap."
+ },
+ {
+  "id": "taizhou",
+  "verdict": "keep",
+  "rank": 5,
+  "into": null,
+  "rule": "Sizable settlements are destinations",
+  "reason": "Wikivoyage 'Taizhou (Zhejiang)' page verified (see section lists Taizhou Museum, Linhai, Tiantai Mountain, Ocean World). Prefecture hub, 4 spots, rank 5. Linhai Ancient City Wall (36 km) and Changyu Dongtian (27 km) stand alone inside its 60 km span: consider making them Taizhou spots."
+ },
+ {
+  "id": "yandang-mountains",
+  "verdict": "keep",
+  "rank": 3,
+  "into": null,
+  "rule": "Name test; ranking",
+  "reason": "No own Wikivoyage page, but the Wenzhou page verified: Yandang Mountains is a headline See entry with Lingfeng and Dalongchu areas; Wikipedia article exists and it is a national scenic area and geopark. 4 sub-area spots with a headline attraction, rank 3 is acceptable. Standalone Nanxi River (28 km) and Furong Village lie outside its span."
+ },
+ {
+  "id": "mount-putuo",
+  "verdict": "keep",
+  "rank": 3,
+  "into": null,
+  "rule": "Name test; headline attraction",
+  "reason": "Wikivoyage Putuoshan page verified (titled Mount Putuo). Sacred Buddhist island, 6 spots, rank 3. Shenjiamen (10 km) stays standalone or a Zhoushan matter."
+ }
+]

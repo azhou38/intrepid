@@ -1,0 +1,118 @@
+{
+ "hangzhou-14": {
+  "bio": "Chipperfield-designed museum of Liangzhu culture, with jade cong and bi from a 5,000-year-old walled city.",
+  "icon": "🏺",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.lzmuseum.cn",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/良渚博物院",
+   "https://www.lzmuseum.cn",
+   "https://hznews.hangzhou.com.cn/chengshi/content/2019-08/02/content_7238887.htm",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Liangzhu_Museum"
+  ],
+  "notes": "Free: 2019 Hangzhou news says museum ticket is free; official site loaded (title 良渚博物院) and carries a visit-reservation mini-program notice, hence needs booking. Free status not restated on a current official page; verify. English article title 'Liangzhu Museum' equals name so wiki null. 5,000-year claim is the Liangzhu culture's standard dating, not quoted from a fetched page."
+ },
+ "hangzhou-32": {
+  "bio": "Hillside botanical garden on the north-west shore of West Lake, with about 3,400 plant species and a plum-blossom garden.",
+  "icon": "🌿",
+  "category": "nature",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site confirmed: hzbg.com.cn returned 403 (BLOCKED) and could not be tied to the garden; hzbg.cn unreachable. Check in a real browser; not recorded as ticketUrl_blocked because domain is a guess.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/杭州植物园",
+   "https://you.ctrip.com/sight/hangzhou14/25434.html",
+   "https://en.wikipedia.org/wiki/Hangzhou_Botanical_Garden"
+  ],
+  "notes": "Adult 10 CNY (half-price concession 5) from a third-party ticket site via search and Ctrip concession list; weak, unverified on operator page. Wikipedia: 3,458 plant species, 248 ha, Taoyuanling NW of West Lake; plum 'Lingfeng tan mei' garden from Ctrip. Ticket office hours not recorded. Pass-list check irrelevant (China)."
+ },
+ "huzhou-7": {
+  "bio": "Private library built 1920-24 in Nanxun, once holding 160,000 volumes, with moated gardens beside Xiaolianzhuang.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Nanxun old town is free and the paid gardens are sold through aggregators.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/嘉业堂藏书楼",
+   "https://gs.ctrip.com/html5/you/sight/Zhejiang100065/135811.html"
+  ],
+  "notes": "Price is a Ctrip 'from 25 CNY' listing for Xiaolianzhuang and Jiaye Tang; a travel note mentions a ~75 CNY combined ticket for several Nanxun gardens. Which one covers Jiaye Tang alone is unverified. Category set to historic (Wikipedia: national key heritage site, library building and gardens) rather than museum; museum also acceptable. No English Wikipedia article (404)."
+ },
+ "hemudu-site-museum": {
+  "bio": "Museum on the Yao River at the 7,000-year-old Hemudu site, with early rice and the remains of wooden stilt houses.",
+  "icon": "🏺",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "hemudusite.com (cited by zh Wikipedia) unreachable from scripts; official site not confirmed.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/河姆渡遗址",
+   "https://gs.ctrip.com/html5/you/sight/98/1482742.html",
+   "https://www.peopleapp.com/rmharticle/30044680538"
+  ],
+  "notes": "Free: zh Wikipedia says free since 2008; Ctrip page marks free (a reviewer says no booking). A new Hemudu archaeological site park began trial operation Feb 2026 with a separate ticket (Ctrip from 28 CNY); whether the museum charges now is unverified. Site 5000-3000 BC dating from zh Wikipedia. No English article (404)."
+ },
+ "jiangshan-1": {
+  "bio": "Three sandstone peaks in a river-shaped line above Jiangshan, part of China Danxia World Heritage; Langfeng is 816.8 m.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costMin": 105,
+  "costMax": 105,
+  "currency": "CNY",
+  "costBasis": "park",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; scenic-area ticket office phone 0570-4911010 on Ctrip.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/江郎山",
+   "https://en.wikipedia.org/wiki/Mount_Jianglang",
+   "https://you.ctrip.com/sight/jiangshan2038/16223.html"
+  ],
+  "notes": "Adult 105 CNY list price (Ctrip, search summary; sometimes discounted to 89), ticket said to include sightseeing bus; a visitor says bus 15 CNY extra, so inclusion is unverified. Needs advance reservation per Ctrip, but not recorded as needs=booking since unconfirmed officially. Ctrip notes seasonal free-ticket announcements ('free off-season before April') of unknown currency. Wikipedia: part of China Danxia WHS 2010, AAAAA scenic area; Jiangshan, Shimen town."
+ },
+ "taizhou-3": {
+  "bio": "Hillside park in Huangyan with nine small peaks, old wells and pagodas, plum-stump gardens and walking paths.",
+  "icon": "⛰️",
+  "category": "hike",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Municipal park; no official site found.",
+  "wiki": null,
+  "sources": [
+   "https://you.ctrip.com/sight/taizhou402/16925.html",
+   "https://gs.ctrip.com/html5/you/sight/402/16925.html"
+  ],
+  "notes": "COORDINATES WRONG: supplied point 27.3728, 112.3234 is in Hunan, not Taizhou. The Taizhou 'Jiufeng' is Jiufeng Park (九峰公园, 4A), 243 Jiufeng Rd, Huangyan District, Taizhou, 1.5 km from Huangyan centre; pin must be re-resolved by the orchestrator. Free per Ctrip ('free, no ticket') and reviewers; weak source. Name may be better 'Jiufeng Park'. Gate hours exist so costBasis 'open' is arguable; 'entry' with free=true is the alternative."
+ }
+}

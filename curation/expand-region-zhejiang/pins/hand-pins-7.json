@@ -1,0 +1,146 @@
+{
+ "hangzhou-23": {
+  "lat": 30.2117722,
+  "lon": 120.1300914,
+  "confidence": "MEDIUM",
+  "source": "OSM node/4676431394 虎跑梦泉 (alt_name 虎跑泉); 虎跑 bus stops/entrance nodes within ~100 m",
+  "feature": "tourism=attraction (spring)",
+  "note": "Spring area at Hupao park; bus stop 虎跑 at 30.2125,120.1304 agrees"
+ },
+ "tianmu-mountain": {
+  "lat": 30.314245,
+  "lon": 119.443152,
+  "confidence": "MEDIUM",
+  "source": "OSM node/2647331335 天目山景区 (with bus stop n13169305019 at same point); 禅源寺 n5127564669 at 30.3235,119.4425 is 1 km away",
+  "feature": "scenic-area visitor node (West Tianmu)",
+  "note": "West Tianmu main visitor point; not the peak (西天目山 peak 30.3495,119.4238)"
+ },
+ "anji-5": {
+  "lat": 30.527464,
+  "lon": 119.60683,
+  "confidence": "MEDIUM",
+  "source": "OSM node/9107228610 余村 place=village",
+  "feature": "place=village",
+  "note": "Village centre; no separate OSM visitor centre found"
+ },
+ "jiaxing-1": {
+  "lat": 30.757503,
+  "lon": 120.755859,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1411776917 烟雨楼 (Misty Rain Tower) on Huxin Island; park way/687335830 南湖景区 centre 30.75737,120.75472 within 100 m",
+  "feature": "building (the lake's signature visitor stop)",
+  "note": "Lake's main visitor point = tower on Huxin Island; scenic-area gate/bus stop is at 30.7510,120.7612"
+ },
+ "jinhua-2": {
+  "lat": 29.110912,
+  "lon": 119.686861,
+  "confidence": "LOW",
+  "source": "OSM relation/9395654 金华建筑艺术公园 (park centroid)",
+  "feature": "park centroid",
+  "note": "No entrance/car park nodes in OSM for the park; centroid only, move if an entrance is found"
+ },
+ "wuyi-7": {
+  "lat": 28.89489,
+  "lon": 119.815956,
+  "confidence": "LOW",
+  "source": "OSM way/459387026 熟溪桥 (Shuxi Bridge), Wuyi old centre",
+  "feature": "bridge (guess for old town)",
+  "note": "'Wuyi Ancient City' (武义古城) not in OSM; web sources only say it is near 壶山广场/Wuyi station; this is the old-town Shuxi Bridge, unverified"
+ },
+ "youbu-ancient-town": {
+  "lat": 29.123216,
+  "lon": 119.326607,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1214231672 游埠古街 (old street) within the 游埠古镇 area way/1214413126; 游埠酱园 museum 29.1217,119.3250",
+  "feature": "old street",
+  "note": "Visitor point = the old street, not the area centroid (29.1222,119.3250, ~100 m away)"
+ },
+ "songzhuang-village": {
+  "lat": 28.4776877,
+  "lon": 119.5768684,
+  "confidence": "LOW",
+  "source": "OSM node/4250561521 三都乡 (township); Ctrip: 松庄村 is in 三都乡, Songyang",
+  "feature": "township place node",
+  "note": "Village itself not in OSM; this is the township point, likely several km off. Needs the village's own point"
+ },
+ "qingtian-stone-carving-cultural-park": {
+  "lat": 28.1385354,
+  "lon": 120.2880961,
+  "confidence": "LOW",
+  "source": "OSM way/1230745891 涌泉街 (Ctrip: 中国青田石雕文化旅游区 address 涌泉街26号, Qingtian)",
+  "feature": "street centre",
+  "note": "Park/museum not mapped in OSM by name; street centre only"
+ },
+ "xikou-4": {
+  "lat": 29.704415,
+  "lon": 121.383309,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1241953250 滕头景区 (Tengtou scenic spot); village node 滕头村 n10137653891 at 29.70305,121.38656 ~300 m away",
+  "feature": "tourism=attraction (scenic area)",
+  "note": ""
+ },
+ "quzhou-1": {
+  "lat": 28.963307,
+  "lon": 118.861797,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1494320062 衢州古城·水亭门历史文化街区",
+  "feature": "historic quarter (theme_park tag)",
+  "note": "Shuitingmen district is the visitor core of the ancient city"
+ },
+ "qicai-changhong": {
+  "lat": null,
+  "lon": null,
+  "confidence": "LOW",
+  "source": "",
+  "feature": "",
+  "note": "Not in OSM by name within Kaihua/Quzhou bboxes; web: in Kaihua, ~35 km from Kaihua town, by Jiangwan (Wuyuan border). Unresolved"
+ },
+ "wuxie-scenic-area": {
+  "lat": 29.737302,
+  "lon": 120.047079,
+  "confidence": "HIGH",
+  "source": "OSM node/13188305239 第五泄 viewpoint; Commons geotagged files of 第五泄/第四泄 at 29.7374,120.0474",
+  "feature": "viewpoint (main waterfalls area)",
+  "note": "Main falls/temple area (五泄禅寺 29.7346,120.0471); main car parks 29.7086,120.0491 and 29.7406,120.0497"
+ },
+ "dachen-islands": {
+  "lat": 28.450346,
+  "lon": 121.899158,
+  "confidence": "MEDIUM",
+  "source": "OSM node/7380497780 大陈镇 place=town (Xia Dachen, ferry terminal 28.4550,121.8952)",
+  "feature": "place=town",
+  "note": "Main visitor base of the archipelago; Wikipedia centre 28.46,121.90 agrees (~1 km)"
+ },
+ "jiangxin-island": {
+  "lat": 28.030225,
+  "lon": 120.642624,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1251870994 江心寺 (Jiangxin Temple); island relation 20249421 / scenic area 20249420 centroid 28.0313,120.6418",
+  "feature": "place_of_worship",
+  "note": "Wenzhou's Jiangxin Island (江心屿); the todo's zh '江心洲 (南京)' is the Nanjing island, wrong. Ferry visitor centre at 28.0295,120.6292"
+ },
+ "yandang-mountains-4": {
+  "lat": 28.3708227,
+  "lon": 121.102948,
+  "confidence": "MEDIUM",
+  "source": "OSM node/6432832587 'Entrance of Sanzhepu Scenic Area'",
+  "feature": "entrance",
+  "note": "Equals the hint; scenic area entrance"
+ },
+ "yuhai-tower": {
+  "lat": 27.78457,
+  "lon": 120.6295,
+  "confidence": "HIGH",
+  "source": "zh.wikipedia 玉海楼 coordinates; Commons geotagged files (Yuhailou, 玉海楼正门) median ~27.7849,120.6296",
+  "feature": "historic building (Rui'an)",
+  "note": "Within ~50 m"
+ },
+ "shenjiamen-fishing-port": {
+  "lat": 29.946412,
+  "lon": 122.305764,
+  "confidence": "MEDIUM",
+  "source": "Hint point; Commons geotags 沈家门夜市/沈家门/海滨 files at 29.9464-29.9468,122.306-122.309 (within ~200 m)",
+  "feature": "harbour waterfront",
+  "note": "No OSM feature named 沈家门渔港; waterfront east of the tunnel"
+ }
+}

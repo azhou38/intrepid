@@ -1,0 +1,813 @@
+{
+ "region": "zhejiang-taizhou",
+ "new_destinations": [
+  {
+   "id": "taizhou",
+   "name": "Taizhou",
+   "action": "new-destination",
+   "rank": 5,
+   "category": "city",
+   "icon": "🏙️",
+   "coordinates": {
+    "lat": 28.663,
+    "lng": 121.412
+   },
+   "coordinates_source": "proxy: Taizhou Museum, Jiaojiang (Wikipedia); city-centre point to be resolved from an OSM place=city node",
+   "defaultZoomSpanKm": 60,
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "name_evidence": "English Wikivoyage has a page \"Taizhou (Zhejiang)\" listing See/Do entries; the prefecture-level city of Jiaojiang, Huangyan and Luqiao.",
+   "reason": "Four kept places (Taizhou Museum, Ocean World, Jiufeng Mountain, Fonte Wild Mainland) inside the urban area (Fonte ~21 km, Jiufeng ~13 km from centre, within 75% of a 60 km span). Zhejiang's Taizhou, not Jiangsu's. Rank 5: local hub.",
+   "spot_ids": [
+    "taizhou-1",
+    "taizhou-2",
+    "taizhou-3",
+    "taizhou-4"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Taizhou Museum",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-1",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free prefecture museum in Jiaojiang covering the history and culture of the Taizhou area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "wiki": null,
+   "coordinates": {
+    "lat": 28.66318,
+    "lng": 121.41195
+   },
+   "coordinates_source": "wikipedia:Taizhou Museum",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "reason": "Spot of Taizhou: in the Jiaojiang/Huangyan/Luqiao urban area, within Taizhou's span. Judge: Rule 1-2: Wikivoyage See listing (hours, free entry); open prefecture museum, an hour's visit.",
+   "views": 621,
+   "counted_sources": 1
+  },
+  {
+   "name": "Taizhou Ocean World",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-2",
+   "icon": "🐠",
+   "category": "entertainment",
+   "bio": "Large Jiaojiang aquarium with more than 10,000 sea creatures and daily seal and mermaid shows.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.6648,
+     "lng": 121.4108
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): 台州海洋世界 aquarium node",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "reason": "Spot of Taizhou: in the Jiaojiang/Huangyan/Luqiao urban area, within Taizhou's span. Judge: Wikivoyage See listing plus travelchinaguide 'Sea World'; permanent aquarium, multi-hour visit, paid.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Jiufeng Mountain",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-3",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Huangyan hill climbed by stone steps past temples to views over the district, a half-day walk.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.6437,
+     "lng": 121.2754
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): 九峰公园（北门） attraction node",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "reason": "Spot of Taizhou: in the Jiaojiang/Huangyan/Luqiao urban area, within Taizhou's span. Judge: Wikivoyage Do names the Huangyan climb: stone steps, temples, a vegetarian temple restaurant and views; half-day hike.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Fonte Wild Mainland",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-4",
+   "icon": "🎢",
+   "category": "entertainment",
+   "bio": "Animation-themed Fantawild theme park in the Taizhou Bay New District at Luqiao, opened 2022.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.553,
+     "lng": 121.5718
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): 台州方特•狂野大陆 theme_park way",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "reason": "Spot of Taizhou: in the Jiaojiang/Huangyan/Luqiao urban area, within Taizhou's span. Judge: Wikivoyage See listing; permanent theme park open daily (rule 2, 4).",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tiantai Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "tiantai-mountain",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "National 5A scenic area of a box-shaped syncline mountain in Tiantai County, the range that gave Taizhou its name.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "wiki": "Mount Tiantai",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 29.271,
+     "lng": 121.0542
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): Tiantai Mountain Shiliang Scenic Area ticket way",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: only two kept places (this and Guoqing Temple) in the Tiantai area, since its sub-sights (Fangguang, Gaoming, Huading, Qiongtai) are in review; under the four-spot bar. No Wikivoyage Tiantai page. Nearest destination Taizhou is ~70 km away. Judge: Wikivoyage See and travelchinaguide: national 5A box-syncline mountain scenic area, giving Taizhou its name. Wikivoyage geo (30.13,120.65) is wrong; the 29.271,121.054 point is plausible.",
+   "views": 5255,
+   "counted_sources": 1
+  },
+  {
+   "name": "Guoqing Temple",
+   "action": "standalone",
+   "destination": null,
+   "id": "guoqing-temple",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Birthplace of Tiantai Buddhism, a working temple of about 1,400 years with a Sui-era pagoda and free entry.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "wiki": null,
+   "coordinates": {
+    "lat": 29.173141,
+    "lng": 121.042594
+   },
+   "coordinates_source": "wikipedia:Guoqing Temple",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: in the Tiantai area, with Tiantai Mountain as its only kept neighbour (two places never make a destination). Taizhou is ~70 km away. Judge: Wikivoyage lists it twice; birthplace of Tiantai Buddhism, 1,400-year-old working temple with free entry.",
+   "views": 4576,
+   "counted_sources": 1
+  },
+  {
+   "name": "Shenxianju",
+   "action": "standalone",
+   "destination": null,
+   "id": "shenxianju",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "5A scenic area of rock pillars and waterfalls in Xianju County, with the glass Ruyi Bridge.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "wiki": "Xianju National Park",
+   "coordinates": {
+    "lat": 28.69222222,
+    "lng": 120.61138889
+   },
+   "coordinates_source": "wikipedia:Xianju National Park",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Xianju County, ~80 km west of Taizhou city, with no other kept place nearby. Shown as Shenxianju (the scenic area), not a national park in the legal sense. Judge: Wikivoyage See (Shenxianju scenic area) and travelchinaguide: 5A area of rock pillars, waterfalls and the glass Ruyi bridge.",
+   "views": 464,
+   "counted_sources": 2
+  },
+  {
+   "name": "Linhai Ancient City Wall",
+   "action": "standalone",
+   "destination": null,
+   "id": "linhai-ancient-city-wall",
+   "icon": "🧱",
+   "category": "historic",
+   "bio": "Ridge-top Southern Great Wall of the Taizhou Fu walled city in Linhai, with a museum and visitor centre.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "wiki": "Walled City of Taizhou Fu",
+   "coordinates": {
+    "lat": 28.8499,
+    "lng": 121.1146
+   },
+   "coordinates_source": "OSM feature (Nominatim/Overpass, name match): 台州府城文化旅游区 way (Wikipedia coordinates are misplaced at 120.1 E); judge confirmed 28.85,121.11",
+   "pin_needed": false,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Linhai is a separate county-level city ~36 km from Jiaojiang, outside the Taizhou urban area, and visitors treat the Fucheng zone as its own trip. Only Ziyang Old Street sits beside it; Taozhu and Dongji are 50 km away, and Linhai has no Wikivoyage page, so no Linhai destination. Judge: 2 counted sources, 2352 page views",
+   "views": 2352,
+   "counted_sources": 2
+  },
+  {
+   "name": "Ziyang Old Street",
+   "action": "standalone",
+   "destination": null,
+   "id": "ziyang-old-street",
+   "icon": "🏮",
+   "category": "historic",
+   "bio": "The 1,080 m best-preserved ancient street in Linhai, lined with old shops, a national tourism and leisure street.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone beside Linhai Ancient City Wall in the Fucheng zone; two places never make a destination. Linhai is outside Taizhou urban bounds. Judge: China Daily dedicated page: 1,080 m best-preserved ancient street with old shops; Wikivoyage Fucheng entry mentions it; named a national tourism and leisure street. Sources: https://regional.chinadail",
+   "views": null,
+   "counted_sources": []
+  },
+  {
+   "name": "Taozhu Ancient City",
+   "action": "standalone",
+   "destination": null,
+   "id": "taozhu-ancient-city",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Best-preserved Ming anti-pirate guard town in the Taozhu scenic area, about 50 km east of Linhai.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.8294,
+     "lng": 121.5357
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): 桃渚城 attraction way",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: ~50 km east of Linhai on the coast, outside any destination. Judge: China Daily Zhejiang 'Taozhu Scenic Spot' page and travelchinaguide name Taozhu Ancient City (best-preserved Ming anti-pirate guard city) in Linhai geopark; two counted sources. Real name Taozhu.",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Dongji Islands",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongji-islands",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Boat-only archipelago of more than 50 islets off Linhai, known for sunrise views and a cobble beach.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 10,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.7162,
+     "lng": 121.9226
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): 东矶岛 island way",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: offshore islands reached by boat from Linhai; far from any destination. Judge: China Daily Zhejiang (2020 and 2021 islands features) names Dongji: 50+ islets, sunrise and cobble beach in Linhai.",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Dachen Islands",
+   "action": "standalone",
+   "destination": null,
+   "id": "dachen-islands",
+   "icon": "⛴️",
+   "category": "nature",
+   "bio": "Ferry-reached island group 52 km off Taizhou with marine landforms, a sea-god temple and Red-tourism sites.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.4858,
+     "lng": 121.8941
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): Dachen Islands archipelago node",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: 52 km offshore, far outside Taizhou urban bounds and span; reached by ferry. Judge: Wikivoyage, two China Daily Zhejiang pages and travelchinaguide name it: islands 52 km off Taizhou with marine landforms, sea-god temple and Red-tourism sites.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Changyu Dongtian",
+   "action": "standalone",
+   "destination": null,
+   "id": "changyu-dongtian",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "4A quarry-cave scenic area in Wenling with a rock cave concert hall and a stone museum.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "wiki": null,
+   "coordinates": {
+    "lat": 28.422888,
+    "lng": 121.439976
+   },
+   "coordinates_source": "Wikivoyage listing geo (Wenling Changyu Dongtian listing)",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Wenling, ~26 km south of Jiaojiang, outside Taizhou urban bounds; Wenling has no Wikivoyage page and its kept places (Changyu, Shitang, Shepan) are 40+ km apart, so no Wenling destination. Judge: Wikivoyage See plus travelchinaguide: 4A quarry-cave scenic area with Asia's only rock cave concert hall and stone museum.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Shitang Fishing Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "shitang-fishing-village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Wenling stone-house fishing village on the Shitang peninsula, with murals, sea views and homestays.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "wiki": "Shitang",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Wenling coast, far from Taizhou city and from the other Wenling places. Judge: China Daily 'Enchanting islands in Taizhou' and travelchinaguide ('Shitang Fishing Village') name the Wenling stone-house village with murals and sea views; homestays. Sources: https://regional.chinad",
+   "views": null,
+   "counted_sources": []
+  },
+  {
+   "name": "Shepan Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "shepan-island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Taizhou's second-largest island, called the island of a thousand caves for its 1,300 quarry caves.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: island reached by a 20-minute ferry from Liuao, outside any destination. Judge: China Daily dedicated page and travelchinaguide: Taizhou's second-largest island, 'island of a thousand caves' (1,300 quarry caves), 20-min ferry from Liuao. Sources: https://regional.chinadaily.com.c",
+   "views": null,
+   "counted_sources": []
+  },
+  {
+   "name": "Fangshan Global Geopark",
+   "action": "standalone",
+   "destination": null,
+   "id": "fangshan-geopark",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "UNESCO global geopark of rock formations and walking trails on the Yuhuan and Wenling border.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "coordinates_hint": {
+    "point": {
+     "lat": 28.425,
+     "lng": 121.2398
+    },
+    "source": "OSM feature (Nominatim/Overpass, name match): Fangshan UNESCO Global Geopark leisure=park way",
+    "note": "unverified Nominatim/OSM name match, not a pin"
+   },
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: ~18 km from the proposed Yandang Mountains centre (Wenzhou run) and outside its 75% reach (~11 km), so not its spot; Taizhou is ~25 km north, outside its urban bounds. Name and point need checking. Judge: travelchinaguide names Fangshan-Nansong Mountain Scenic Area (Fangshan, Lion Peak, Longjiangmen) linked to Yandang; kept as the single Fangshan-Nansong entry.",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Dalu Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "dalu-island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "4A forested island off Yuhuan with rock sculpture landscapes, reached by ferry from Kanmen.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "wiki": null,
+   "coordinates": {
+    "lat": 28.093376,
+    "lng": 121.395733
+   },
+   "coordinates_source": "Wikivoyage listing geo (Wikivoyage Yuhuan listing)",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: Yuhuan has a Wikivoyage page but only three kept places here (Dalu, Dongsha, Baima Ao), under the four-spot bar; Yuhuan is ~55 km from Taizhou city. Judge: Wikivoyage, China Daily and travelchinaguide name it: 4A forested island with rock sculpture landscapes, ferry from Kanmen.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Dongsha Fishing Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongsha-fishing-village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Preserved fishing village at Kanmen, a provincial historic village with seafood and a lighthouse.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "wiki": null,
+   "coordinates": {
+    "lat": 28.073915,
+    "lng": 121.288366
+   },
+   "coordinates_source": "Wikivoyage listing geo (Wikivoyage Yuhuan listing)",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: one of three kept Yuhuan places; see Dalu Island. Judge: Wikivoyage: preserved fishing village at Kanmen, 3A, provincial historic village with seafood and Pu'an lighthouse.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Baima Ao Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "baima-ao-beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sandy 3A beach at Ganjiang town in Yuhuan, a second-tier seaside stop.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "wiki": null,
+   "coordinates": {
+    "lat": 28.162999,
+    "lng": 121.374092
+   },
+   "coordinates_source": "Wikivoyage listing geo (Wikivoyage Yuhuan listing)",
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone: one of three kept Yuhuan places; see Dalu Island. Beach pin needs OSM natural/beach. Judge: Wikivoyage names the 3A sandy beach at Ganjiang; second-tier beach.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wu Zixiong Glass Art Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "wu-zixiong-glass-art-museum",
+   "icon": "🏺",
+   "category": "museum",
+   "bio": "10,000 sq m museum of about 10,000 glass artworks, listed among Taizhou's top ten attractions.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency_hint": "CNY",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "reason": "Standalone provisionally: location unconfirmed (no coordinates); if the pin lands inside Taizhou urban bounds it becomes taizhou-5. Judge: China Daily dedicated page and travelchinaguide ('Wu Zixiong Glass Art Exhibition Hall'): 10,000 sq m, about 10,000 glass artworks, one of Taizhou's top 10 attractions, 1-2 hr visit, entry about 30 yu",
+   "views": null,
+   "counted_sources": []
+  }
+ ],
+ "review": [
+  {
+   "name": "Taizhou Confucian Temple",
+   "case": "For: a historic temple complex beside the Fucheng wall area that visitors walk to. Against: no counted See listing, may be part of the Fucheng zone.",
+   "judge_reason": "Expedia lists 'Linhai the Confucius Temple', a blog and Wikivoyage photo caption name it; no counted See listing."
+  },
+  {
+   "name": "China Citrus Expo Park",
+   "case": "For: permanent themed park with a visitor exhibition. Against: farm-style park, one official feature, rural.",
+   "judge_reason": "2nd search: China Daily Taizhou feature 'A fruitful adventure awaits you in Taizhou' (2023) and Ctrip list the Huangyan expo park (180 citrus varieties, sculpture, picking, open all year); orange festival is only one season."
+  },
+  {
+   "name": "Linghu Park",
+   "case": "For: guide-named lakeside stop. Against: ordinary city park, which COVERAGE rejects as a suburban park.",
+   "judge_reason": "Wikivoyage Do names Linghu and East Lake as the two large parks for a lake walk and boating; one source, city park."
+  },
+  {
+   "name": "Qiongtai Xian Valley",
+   "case": "For: genuine Tiantai scenic valley with cliffs and a legend-rich setting. Against: possibly part of Tiantai Mountain scenic area; unverified.",
+   "judge_reason": "Qiongtai Xiangu is a Tiantai Mountain sight on the Chinese Wikipedia list; no counted visitor source found in a quick search."
+  },
+  {
+   "name": "Kuocang Mountain",
+   "case": "For: whole-range hiking and viewpoints. Against: a range not a single place, no counted source.",
+   "judge_reason": "Range in Linhai/Xianju with wind farm and Shenxianju linkage; no counted source found, widely known to hikers and drivers."
+  },
+  {
+   "name": "Yijiangshan Island",
+   "case": "For: historic site next to Dachen. Against: access and public opening unclear; coordinates (28.608,121.8135) look plausible for the island.",
+   "judge_reason": "Wikivoyage-level mention only; site of the 1955 battle with memorial; no counted visitor source found and access (military island) unverified."
+  },
+  {
+   "name": "Fangguang Temple",
+   "case": "For: significant temple in the scenic area. Against: part of Tiantai Mountain and a single thin source.",
+   "judge_reason": "Wikivoyage lists it as a national key temple on Mount Tiantai; one source, no description of what to see."
+  },
+  {
+   "name": "Gaoming Temple",
+   "case": "For: historic Tiantai temple near Guoqing. Against: nothing in visitor sources describes it.",
+   "judge_reason": "Wikivoyage listing with no description; Wikipedia lists it; nothing says what to see."
+  },
+  {
+   "name": "Huading Mountain",
+   "case": "For: a named summit with views. Against: part of Tiantai Mountain scenic area and festival-linked.",
+   "judge_reason": "Highest peak of the Tiantai range and part of the scenic area; Wikivoyage mentions it only for the cuckoo azalea festival."
+  },
+  {
+   "name": "East Lake, Linhai",
+   "case": "For: lake and old streets are distinct from the wall. Against: part of the Fucheng cultural tourism zone.",
+   "judge_reason": "Wikivoyage prices East Lake in the Fucheng zone ticket with boats and walking; also a China Daily mention of the ancient-city zone."
+  },
+  {
+   "name": "Linhai Museum",
+   "case": "For: free, guide-listed. Against: a local museum with 0 views.",
+   "judge_reason": "Wikivoyage See listing, free, closed Mondays; one source, local city museum."
+  },
+  {
+   "name": "Pu'an Lighthouse",
+   "case": "For: coastal landmark photo stop. Against: short stop, effectively part of Dongsha Fishing Village.",
+   "judge_reason": "Wikivoyage names the lighthouse; one source; it sits at Dongsha village (300 m from it)."
+  },
+  {
+   "name": "Jishan Island",
+   "case": "For: ferry-served island day out. Against: one source, thin detail.",
+   "judge_reason": "Wikivoyage lists this 3A island for seafood and scenery; no second counted source found."
+  },
+  {
+   "name": "Xuanmen Bay National Wetland Park",
+   "case": "For: real wildlife draw in winter. Against: seasonal, adjacent to the agricultural park.",
+   "judge_reason": "Wikivoyage: black-headed gull and black-faced spoonbill wintering habitat; one source."
+  },
+  {
+   "name": "Yuhuan Xuanmen Bay Sightseeing Agricultural Park",
+   "case": "For: 4A, paid attraction. Against: farm-picking park, overlaps the wetland park.",
+   "judge_reason": "Wikivoyage names it a 4A park, one of east China's largest sightseeing farms, ticket 35 yuan; one source."
+  },
+  {
+   "name": "Longxi Animation Flower Valley",
+   "case": "For: permanent family attraction. Against: commercial kids' park, thin source.",
+   "judge_reason": "Wikivoyage lists this 3A kids' flower valley and dinosaur park; one source."
+  },
+  {
+   "name": "Sansuan Island",
+   "case": "For: second-tier island a tourism board names. Against: one counted source, boat-only, thin detail.",
+   "judge_reason": "China Daily 2021 islands feature: Wenling's southernmost inhabited island, tidal flats and camping; Trip adds black pebble beach, boat ~30 min. Sources: https://zhejiang.chinadaily.com.cn/etaizhou/2021-07/15/c_642977.htm"
+  },
+  {
+   "name": "Coral Rock and Taozhu Geopark",
+   "case": "For: guide-named geological sight. Against: overlaps Taozhu Ancient City and the geopark area, Coral Rock itself has one counted source.",
+   "judge_reason": "travelchinaguide names Taozhu Provincial Scenic Area and Coral Rock; China Daily Taozhu page describes columnar volcanic rock, '13 islets' farmland and sea-eroded features in Linhai National Geopark. Sources: https://regional.chinadaily.com.cn/ezhejiang/etaizhou/2018-12/26/c_310712.htm"
+  },
+  {
+   "name": "Jinshan Park",
+   "case": "For: pagodas and hill views beside the old town. Against: counted source missing, part of the Jinshan scenic area with Longxing Temple.",
+   "judge_reason": "Trip listings: Linhai hill park with the Three Towers (Wenfeng twin towers, Thousand Buddha Tower); no tourism-board source opened. Sources: Trip.com Jinshan Pagoda Group listing"
+  },
+  {
+   "name": "Longxing Temple",
+   "case": "For: historic working temple. Against: one counted source, overlaps Jinshan Park.",
+   "judge_reason": "China Daily 'Some of most famous temples in Taizhou' names it: 1,300-year-old Linhai temple, birthplace of Japan's Tendai; Trip adds Thousand Buddha Tower. Sources: https://regional.chinadaily.com.cn/ezhejiang/etaizhou/2020-06/10/c_499284.htm"
+  },
+  {
+   "name": "Yuhuan Shaddock Orchard",
+   "case": "For: Yuhuan's famed wendan fruit. Against: seasonal, picking only, not a defined venue.",
+   "judge_reason": "travelchinaguide lists a 'Shaddock Orchard' among other spots; no named place or visitor source found for it in English or Chinese; Yuhuan Wendan Festival is autumn only. Sources: travelchinaguide Taizhou"
+  }
+ ],
+ "notes": "Linhai, Tiantai, Wenling and Yuhuan are not proposed: no Wikivoyage page for Linhai/Tiantai/Wenling, and each has fewer than four coherent kept places. Tiantai sub-sights are in review."
+}

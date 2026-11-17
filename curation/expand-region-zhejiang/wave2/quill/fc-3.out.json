@@ -1,0 +1,316 @@
+{
+ "hangzhou-23": {
+  "verdict": "edited",
+  "bio": "Spring and park in southwest Hangzhou, prized for tea-brewing water, with a memorial hall to the monk Li Shutong.",
+  "changes": [
+   "Bio: bamboo groves/tea houses unconfirmed; replaced with sourced tea-water fame and Li Shutong memorial hall",
+   "Adult 15 CNY confirmed by ticket-agent page (2025), not official"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 15 CNY from reseller only, no official source (price_source_weak stays)"
+  ]
+ },
+ "hangzhou-39": {
+  "verdict": "edited",
+  "bio": "Lake in Xiaoshan, a 4A scenic area created in 1112 as a reservoir, with lakeside paths and boat cruises.",
+  "changes": [
+   "Bio: 'causeways' unconfirmed; now 4A, created 1112 as reservoir (zh Wikipedia), boat cruises (agent page)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "entry fee unverified: free is a guess; no page states the gate price, boats are paid extras"
+  ]
+ },
+ "hangzhou-6": {
+  "verdict": "edited",
+  "bio": "Causeway across West Lake built in 1089 under the poet Su Shi, crossed by six bridges.",
+  "changes": [
+   "Bio: 'willow-lined' and 'walked or cycled' unconfirmed; 1089 and Su Shi and six bridges confirmed (Wikipedia West Lake)",
+   "Free confirmed: West Lake scenic area abolished admission fees (Wikipedia)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": []
+ },
+ "anji-6": {
+  "verdict": "edited",
+  "bio": "A high-mountain resort above Anji with a snow-season ski area, cliff swings and a grassland plateau at 1,168 m.",
+  "changes": [
+   "Adult entry (cliff park + grassland + shuttle) is 180 on agent page, not 174",
+   "placement wiki (same as name) cleared: no English article"
+  ],
+  "cost_fields": {
+   "costMin": 180,
+   "costMax": 180
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "180 from reseller, no official source; ski lift/rental extra unverified"
+  ]
+ },
+ "lake-tai": {
+  "verdict": "pass",
+  "bio": "China's third-largest freshwater lake, with about 90 islands, its southern shore forming the Zhejiang border at Huzhou.",
+  "changes": [
+   "Third-largest freshwater lake in China, about 90 islands and southern shore Zhejiang border all confirmed (Wikipedia)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "pin 31.0611,119.9807 is open water, mostly Jiangsu side: orchestrator may want a Huzhou shore point"
+  ]
+ },
+ "jiaxing-1": {
+  "verdict": "edited",
+  "bio": "Lake in Jiaxing with an islet and the Misty Rain Tower, where the Communist Party's first congress ended aboard a boat in 1921.",
+  "changes": [
+   "'Yanyu Tower' = Misty Rain Tower, rebuilt 1549 on islet; party congress boat 1921 confirmed (Wikipedia)",
+   "costBasis entry with free:true was inconsistent; set to open, cost unverified"
+  ],
+  "cost_fields": {
+   "costBasis": "open",
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "South Lake (Jiaxing)",
+  "unresolved": [
+   "Prices conflict (free vs 20 vs 55 for island); free unverified"
+  ]
+ },
+ "jinhua-3": {
+  "verdict": "edited",
+  "bio": "Forested mountain north of Jinhua, with Shuanglong Cave, a Huang Daxian temple and a belt of over 50 caves.",
+  "changes": [
+   "Bio: 'limestone' was wrong (mountain is volcanic rock; the cave belt is karst on its SW side); now Shuanglong Cave, Huang Daxian temple, 50+ caves (zh Wikipedia)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "entry fee unverified; Shuanglong scenic area inside is a separate paid area"
+  ]
+ },
+ "zhuge-bagua-village": {
+  "verdict": "pass",
+  "bio": "Ming-Qing village near Lanxi laid out on the eight trigrams around a central pond, with ancestral halls to visit.",
+  "changes": [
+   "Bio confirmed: eight-lane layout around Zhong Pond, ancestral halls, Ming-Qing halls (zh Wikipedia, Ctrip)",
+   "85 CNY is Ctrip from-price"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "85 CNY weak (Ctrip), no official source"
+  ]
+ },
+ "tongji-weir": {
+  "verdict": "pass",
+  "bio": "Weir and irrigation works at Bihu near Lishui, begun in the Liang dynasty and counted the world's earliest arch dam.",
+  "changes": [
+   "Bihu town, Liandu District; Southern Liang; 275 m arch weir, world's earliest arch dam (zh Wikipedia)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free/open unverified; no English article (Tongji Weir 404)"
+  ]
+ },
+ "five-dragon-pool": {
+  "verdict": "edited",
+  "bio": "Ningbo's 4A gorge of five dragon-named pools and waterfalls, reached by a gentle climb in Yinzhou's hills.",
+  "changes": [
+   "Bio: glass bridge unconfirmed, dropped; 4A (2005), pools, waterfalls, stepped climb confirmed (China Daily 2017)",
+   "50 CNY is a 2017 'coupon ticket' price, weak"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "50 CNY from 2017 gov page coupon price; English Wikipedia 'Five Dragon Pool' is Jinan's, needs photo override"
+  ]
+ },
+ "shanglin-lake-yue-kilns": {
+  "verdict": "hold",
+  "bio": "Cluster of Tang-to-Song kiln sites beside Shanglin Lake in Cixi where Yue celadon was fired.",
+  "changes": [
+   "Bio confirmed (Wikipedia: ~179 kiln sites, Cixi, Yue celadon; zh: archaeological park, museum)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "no fee or free status found anywhere; cost unresolved so not addable"
+  ]
+ },
+ "xikou-4": {
+  "verdict": "hold",
+  "bio": "Eco-village near Fenghua with a bonsai garden, part of the 5A Xikou-Tengtou scenic area.",
+  "changes": [
+   "Bio: 'gardens' loose; now bonsai garden, 5A with Xikou (zh Wikipedia)",
+   "ticketUrl http://www.chinatengtou.com/ loads, title 中国•滕头村"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "http://www.chinatengtou.com/",
+  "wiki": null,
+  "unresolved": [
+   "Tengtou-only adult price not found (Ctrip 210 is the Xikou+Tengtou combo)"
+  ]
+ },
+ "quzhou-1": {
+  "verdict": "edited",
+  "bio": "Walled old quarter of Quzhou with the Nankong Confucian temple, Shuiting Gate street and old city walls.",
+  "changes": [
+   "Bio: 'built around the Confucian temple' unconfirmed; now sites named by Ctrip (Nankong temple, Shuiting Gate, walls)",
+   "Ctrip: open all day, free, no ticket"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Confucian temple may charge its own entry; free from Ctrip only"
+  ]
+ },
+ "dafo-temple-xinchang": {
+  "verdict": "edited",
+  "bio": "Temple in Xinchang built around a giant Maitreya carved into the hillside, called Jiangnan's greatest Buddha.",
+  "changes": [
+   "Bio: 'first rock-cut Buddha of Jiangnan' wrong; source says '江南第一大佛' (greatest Buddha of Jiangnan)",
+   "English article Dafo Temple (Xinchang) exists",
+   "Adult 68 (agent) to 80 (Ctrip) kept"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Dafo Temple (Xinchang)",
+  "unresolved": [
+   "price weak, resellers only"
+  ]
+ },
+ "baima-ao-beach": {
+  "verdict": "hold",
+  "bio": "A 300 m golden sand beach at Baima Ao village on Yuhuan's Ganjiang coast, with fine quartz sand and sea views.",
+  "changes": [
+   "Bio confirmed (300 m golden quartz sand, Ganjiang town, maigoo)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "no fee or free status found; cost unresolved"
+  ]
+ },
+ "linhai-ancient-city-wall": {
+  "verdict": "edited",
+  "bio": "Walk the restored walls of old Taizhou Fu, nicknamed the Jiangnan Great Wall, along the ridge above Linhai.",
+  "changes": [
+   "Bio: Lanshengmen gate and 'views over old town' unconfirmed; now restored walls, Jiangnan Great Wall nickname, ridge (Wikipedia, Ctrip)",
+   "Ctrip Linhai list: 台州府城墙 from 55 CNY; the cited page 62848 is East Lake which is free"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Walled City of Taizhou Fu",
+  "unresolved": [
+   "55-60 CNY Ctrip only"
+  ]
+ },
+ "wu-zixiong-glass-art-museum": {
+  "verdict": "hold",
+  "bio": "Small museum in Jiaojiang showing glass art by Wu Zixiong, his son and his students, on the Jiazhijing cultural corridor.",
+  "changes": [
+   "Bio confirmed (first glass-carving museum; works by Wu, son, disciples; Jiazhijing corridor)",
+   "Cited sources contain no price; 30 CNY not found"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "no sourced cost"
+  ]
+ },
+ "jiangxin-island": {
+  "verdict": "edited",
+  "bio": "Islet in the Ou River at Wenzhou with twin pagodas, Jiangxin Temple and a former British consulate, reached by ferry.",
+  "changes": [
+   "Wenzhou's Jiangxinyu confirmed (English article Jiangxinyu): twin pagodas, Jiangxin Temple, restored British consulate",
+   "Adult 30 CNY incl round-trip ferry (agent page) and zh Wikipedia says price raised 25 to 30; weak flag cleared (undated)"
+  ],
+  "cost_fields": {
+   "price_source_weak": false
+  },
+  "ticketUrl": null,
+  "wiki": "Jiangxinyu",
+  "unresolved": [
+   "zh Wikipedia infobox shows 修缮中 (under repair): check at orchestrator's discretion"
+  ]
+ },
+ "yandang-mountains-2": {
+  "verdict": "edited",
+  "bio": "One of Yandang's three classic sights, with the sheer Pingxia rock wall, Tianzhu Peak and Lingyan Temple.",
+  "changes": [
+   "Bio: cliff walkway unconfirmed in fetched pages; now Pingxia wall, Tianzhu Peak, Lingyan Temple",
+   "ticketUrl https://www.wzyds.com/ loads, title 雁荡山, lists 灵岩景区, three wonders",
+   "Adult 50 CNY (agent page) confirmed"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.wzyds.com/",
+  "wiki": null,
+  "unresolved": [
+   "50 CNY reseller; official ticket page blocked, left for browser check"
+  ]
+ },
+ "dongfu-mountain": {
+  "verdict": "edited",
+  "bio": "Remote island in the Dongji archipelago where visitors hike to watch the sunrise, reached by small boat from Miaozihu.",
+  "changes": [
+   "Bio: 'first dawn of 2000' unconfirmed; now sunrise hike on Dongfu Island, small boat from Miaozihu (bendibao, thepaper)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free unverified; boat fare not cost"
+  ]
+ },
+ "luojia-shan": {
+  "verdict": "hold",
+  "bio": "Small island 5 km east of Putuo Shan with a lighthouse, reached by ferry from Putuo's main pier.",
+  "changes": [
+   "Bio claims (5 km east, lighthouse) found in no fetched source; no Wikipedia article"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Ctrip says upper-level Putuo Shan ticket needed; 70 CNY is a ferry fare, which is not a cost; island partly closed"
+  ]
+ },
+ "shenjiamen-fishing-port": {
+  "verdict": "edited",
+  "bio": "National central fishing port on Zhoushan's Putuo waterfront, with fishing boats along Binggang Road facing Lujiazhi island.",
+  "changes": [
+   "Bio: restaurants/evening stalls dropped (night stalls moved to East Port); now national central fishing port, Binggang Road, Lujiazhi (zh Wikipedia, Ctrip)",
+   "Free per Ctrip"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": []
+ }
+}

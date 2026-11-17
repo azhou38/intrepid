@@ -1,0 +1,152 @@
+{
+ "hangzhou-6": {
+  "lat": 30.2391571,
+  "lon": 120.1355676,
+  "confidence": "MEDIUM",
+  "source": "OSM way/30072138 (one of 8 ways named 苏堤 forming the causeway; middle segment)",
+  "feature": "highway=pedestrian (causeway midpoint)",
+  "note": "Linear causeway ~2.8 km; pinned on its middle segment"
+ },
+ "hangzhou-39": {
+  "lat": 30.1271755,
+  "lon": 120.1937575,
+  "confidence": "MEDIUM",
+  "source": "OSM node/11953020534 老虎洞游客中心船埠",
+  "feature": "visitor-centre boat pier",
+  "note": "Visitor-centre pier on the west shore; lake centroid (30.1365,120.2106) is in the water. Jump-off for Xianghu"
+ },
+ "yaolin-fairyland": {
+  "lat": 29.920576,
+  "lon": 119.5280786,
+  "confidence": "LOW",
+  "source": "OSM way/1463723893 named 瑶琳 (no type tags), ~2.2 km N of Yaolin town; address is 瑶琳镇桃源村瑶淋路 (Ctrip)",
+  "feature": "untyped OSM way named 瑶琳",
+  "note": "No cave or ticket-office feature in OSM; unverified it is the cave site. Needs checking"
+ },
+ "moganshan-villa-cluster": {
+  "lat": 30.6061736,
+  "lon": 119.862364,
+  "confidence": "MEDIUM",
+  "source": "OSM node/5594849503 游客中心 Tourist Center, beside 剑池 (way/751464092) and 芦花荡公园 (node/5594849506)",
+  "feature": "tourism=information",
+  "note": "Villa cluster is around Sword Pond and Lu Hua Dang; pinned at the visitor centre in that core"
+ },
+ "wuzhen-2": {
+  "lat": 30.7401647,
+  "lon": 120.4937681,
+  "confidence": "MEDIUM",
+  "source": "OSM node/13483276148 东栅景区游客中心 (relation/20135383); area way/438726256 centre is 30.74201,120.49170",
+  "feature": "visitor centre",
+  "note": "East Scenic Zone visitor centre/entrance"
+ },
+ "wuyi-3": {
+  "lat": 28.7701,
+  "lon": 119.662,
+  "confidence": "HIGH",
+  "source": "zh.wikipedia 俞源村 (28.77027778,119.66166667) and OSM node/4552019390 俞源乡 place=town (28.7701,119.662) agree within 20 m",
+  "feature": "settlement centre",
+  "note": "Village is the township seat; ancient-building cluster is in the village core"
+ },
+ "fangyan-scenic-area": {
+  "lat": 28.9273576,
+  "lon": 120.1875457,
+  "confidence": "MEDIUM",
+  "source": "OSM node/11925150184 胡公祠 (Hugong Temple, the headline sight on the Fangyan plateau); scenic area way/992603874 centre is 28.92652,120.18314",
+  "feature": "place_of_worship",
+  "note": "Hint is the area centroid; temple is the main visitor point. Parking node/11925147323 at 28.934221,120.1882575"
+ },
+ "longquan-5": {
+  "confidence": "LOW",
+  "source": "Ctrip review says the sword museum is on Jiugu Mountain (九姑山); no such feature found in OSM (searched 剑/宝剑/九姑山 within 15 km)",
+  "feature": "none",
+  "note": "Not pinned. Longquan Celadon Museum (OSM node/5137288015, 28.0581202,119.1272557) is a different museum, not used"
+ },
+ "heyang-ancient-village": {
+  "lat": 28.7276164,
+  "lon": 120.0051211,
+  "confidence": "MEDIUM",
+  "source": "OSM node/5752198856 河阳 place=village (Jinyun County; Huzhen)",
+  "feature": "place=village",
+  "note": "The ancient dwellings are the village itself; village centre point"
+ },
+ "ningbo-11": {
+  "lat": 29.7706881,
+  "lon": 121.6498491,
+  "confidence": "LOW",
+  "source": "OSM way/1134677590 湖心景区 bus_station, beside 陶公村 and 陶公岛; Hanling Old Street way/1460815995 at 29.7376378,121.6640689 is the other main hub",
+  "feature": "bus_station (lake tourism hub)",
+  "note": "Lake centroid is water; no single visitor centre found. Alternatives: Hanling Old Street, Xiaoputuo area"
+ },
+ "shanglin-lake-yue-kilns": {
+  "lat": 30.1224654,
+  "lon": 121.3402143,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1091315734 上林湖越窑博物馆",
+  "feature": "tourism=museum",
+  "note": "Hint (30.1229,121.337) is ~350 m west; museum is the site's visitor point"
+ },
+ "quzhou-7": {
+  "lat": 29.1252983,
+  "lon": 118.950553,
+  "confidence": "LOW",
+  "source": "OSM node/1584384375 杜泽镇 place=town; street is in Duze town, Quzhou Qujiang (Hangzhou news / China Daily)",
+  "feature": "town centre",
+  "note": "Old street (820 m main street) has no OSM feature; town point only"
+ },
+ "shaoxing-5": {
+  "lat": 30.0006579,
+  "lon": 120.6279927,
+  "confidence": "LOW",
+  "source": "OSM relation/10123511 绍兴东湖风景区 nature_reserve centroid",
+  "feature": "area centroid",
+  "note": "Centroid only; no gate or visitor centre found. Needs a visitor point"
+ },
+ "linhai-ancient-city-wall": {
+  "lat": 28.8412755,
+  "lon": 121.1128916,
+  "confidence": "HIGH",
+  "source": "OSM way/1554030253 兴善门 city_gate; zh.wikipedia 台州府城 coords 28.84123,121.11289",
+  "feature": "historic=city_gate",
+  "note": "Xingshan Gate, the main visitor entrance on the wall (visitor centre node/10024237685 nearby)"
+ },
+ "dalu-island": {
+  "lat": 28.0925711,
+  "lon": 121.4025844,
+  "confidence": "MEDIUM",
+  "source": "OSM node/4660677665 大鹿岛 ferry_terminal (island is 大鹿岛/大鹿山 relation/6945470)",
+  "feature": "ferry_terminal",
+  "note": "Arrival point; hint (28.0934,121.3957) ~700 m west, unsourced"
+ },
+ "south-yandang-mountain": {
+  "lat": 27.6053357,
+  "lon": 120.2788876,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1203389248 南雁荡山东西洞景区游客中心",
+  "feature": "tourism=information",
+  "note": "Main scenic area visitor centre; other sub-areas (Bihai Tiancheng, Shunxi) are elsewhere"
+ },
+ "shunxi-ancient-village": {
+  "lat": 27.566778,
+  "lon": 120.201108,
+  "confidence": "LOW",
+  "source": "Provided hint only; OSM has Shunxi town node/2691029590 at 27.5682272,120.1908382 and no ancient-village feature",
+  "feature": "unverified hint",
+  "note": "Town of Shunxi (Pingyang); village feature not in OSM"
+ },
+ "mount-putuo-1": {
+  "lat": 29.9877688,
+  "lon": 122.3824314,
+  "confidence": "HIGH",
+  "source": "OSM node/4519392716 普济寺 + way/657939310 temple; zh.wikipedia 普济寺 (普陀山) 29.98777778,122.38247222",
+  "feature": "place_of_worship",
+  "note": "Main hall"
+ },
+ "gouqi-island": {
+  "lat": 30.7166585,
+  "lon": 122.7749634,
+  "confidence": "MEDIUM",
+  "source": "OSM node/7049646092 枸杞乡 place=town (island's main settlement)",
+  "feature": "place=town",
+  "note": "Island centroid 30.7146,122.7731; ferry piers 干斜 (30.7119,122.7541) and 大王 (30.7136,122.7817)"
+ }
+}
